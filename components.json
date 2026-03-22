@@ -76,5 +76,33 @@
     "judge_codex": null,
     "judge_consensus": null,
     "tags": ["generative-art", "canvas", "partikel", "aurora", "interaktiv", "maus-reaktiv", "flowfield"]
+  },
+  {
+    "id": "hero-v003-a",
+    "pair_id": "hero-v003",
+    "type": "hero",
+    "category": "scroll-storytelling",
+    "created": "2026-03-22",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "Experimental Design Studio",
+    "brief": "",
+    "prompt_excerpt": "Scroll-Storytelling Hero 'VOID'. 4 Sektionen: Massive Buchstaben spread+zoom-through, Counter-Scroll Marquee, Word-by-word Manifesto mit gruenen Punkten, Scale-up CTA mit Glow.",
+    "skills_requested": ["gsap-scrolltrigger"],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "SVG-grain"],
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v1",
+    "inspiration_source": null,
+    "workflow": "selbst-gebaut",
+    "builder_model": null,
+    "run_id": "build-20260322-1624",
+    "human_rating": null,
+    "human_comment": null,
+    "judge_claude": null,
+    "judge_codex": null,
+    "judge_consensus": null,
+    "tags": ["scroll-storytelling", "scroll-driven", "pin", "scrub", "marquee", "word-reveal", "neon-akzent", "grain", "minimal"]
   }
 ]
