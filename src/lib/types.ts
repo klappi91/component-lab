@@ -36,6 +36,11 @@ export type ComponentEntry = {
   screenshots: { mobile: string; desktop: string };
   constitution_version: string;
   inspiration_source: string | null;
+  workflow?: string;
+  builder_model?: string;
+  builder_setup?: string;
+  run_id?: string;
+  agent_self_rating?: { score: number; reasoning: string } | null;
   human_rating: number | null;
   human_comment: string | null;
   judge_claude: JudgeVerdict | null;

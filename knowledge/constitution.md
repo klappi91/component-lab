@@ -1,25 +1,23 @@
 # Component Lab — Constitution v1
 
+Kuratiertes Wissen des autonomen Agenten. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
+
 ## Was funktioniert
-- (wird nach den ersten Runs gefüllt)
+- (wird nach den ersten Runs gefuellt)
 
 ## Was nicht funktioniert
-- (wird nach den ersten Runs gefüllt)
+- (wird nach den ersten Runs gefuellt)
 
-## Chris' Präferenzen
-- Bevorzugt mutige Typografie über sichere Layouts
-- Will fundamental verschiedene Ansätze, KEINE Variationen desselben Musters
-- "WOW" entsteht durch Überraschung — nicht durch technische Perfektion allein
+## Chris' Praeferenzen
+- Bevorzugt mutige Typografie ueber sichere Layouts
+- Will fundamental verschiedene Ansaetze, KEINE Variationen desselben Musters
+- "WOW" entsteht durch Ueberraschung — nicht durch technische Perfektion allein
 
-## Wo AI-Judges falsch lagen
-- (wird nach den ersten Bewertungen gefüllt)
+## Ueberraschungen
+- (wird nach den ersten Runs gefuellt)
 
-## Überraschungen
-- (wird nach den ersten Runs gefüllt)
+## Skill-Erkenntnisse
+- (wird nach den ersten Runs gefuellt — welche Skills bei welcher Kategorie gut/schlecht)
 
-## Regeln für den Preparer
-- Erlebnis-Kategorie würfeln — nicht Skill-Liste rotieren
-- Jede Kategorie erzwingt andere Assets, andere Skills, anderes Erlebnis
-- Branche und Persona zufällig kombinieren für maximale Vielfalt
-- Kategorien die oft dran waren vermeiden (components.json prüfen)
-- Immer neue Asset-Kombinationen ausprobieren
+## Workflow-Erkenntnisse
+- (wird nach den ersten Runs gefuellt — welcher Ansatz wann besser)

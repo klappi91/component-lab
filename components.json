@@ -48,5 +48,33 @@
     "judge_codex": null,
     "judge_consensus": null,
     "tags": ["typografie", "experimentell", "monochrom", "mix-blend"]
+  },
+  {
+    "id": "hero-v002-a",
+    "pair_id": "hero-v002",
+    "type": "hero",
+    "category": "generative-art",
+    "created": "2026-03-22",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "Digitales Kreativstudio",
+    "brief": "",
+    "prompt_excerpt": "Canvas-basiertes Partikel-Flowfield mit Aurora-Farbpalette. Maus-Repulsion, 3-Layer Tiefensystem, organische Noise-Bewegung.",
+    "skills_requested": ["gsap-scrolltrigger"],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "Canvas API", "noise2D"],
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v1",
+    "inspiration_source": null,
+    "workflow": "selbst-gebaut",
+    "builder_model": null,
+    "run_id": "build-20260322-1604",
+    "human_rating": null,
+    "human_comment": null,
+    "judge_claude": null,
+    "judge_codex": null,
+    "judge_consensus": null,
+    "tags": ["generative-art", "canvas", "partikel", "aurora", "interaktiv", "maus-reaktiv", "flowfield"]
   }
 ]
