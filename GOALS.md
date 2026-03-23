@@ -29,10 +29,12 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - Zeigen was eine Webseite ausmacht, welche Assets sie aufwerten
   - "Sei mutig und erfinde neue Dinge"
 - **Naechste Schritte:**
-  - [ ] v6: Neue Story "Vom Pixel zur Webseite" implementieren
-  - [ ] Scroll-driven Video generieren und einbauen
-  - [ ] Story-Arc komplett ueberarbeiten
+  - [x] v6: Neue Story "Vom Pixel zur Webseite" implementieren (deployed)
+  - [x] Scroll-driven Video generieren und einbauen (Veo 3.1, GSAP scrub)
+  - [x] Story-Arc komplett ueberarbeiten
   - [x] Chris-Feedback erhalten (2026-03-23 21:48)
+  - [ ] Chris-Feedback zu v6 abwarten
+  - [ ] v7: Agent-Team-Pipeline mit neuen Skills testen (gsap-plugins, awwwards-animations)
   - [x] Signature WOW-Moment hinzufuegen (WebGL/3D subtil) — v3 Hero Shader
   - [x] Hero-Layout ueberarbeiten — v4 Full-Screen (kein verbotenes Pattern mehr)
   - [x] Process-Sektion upgraden — v5 Pinned Scroll Showcase (mersi-style)
@@ -50,12 +52,12 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Entscheidung:** exp-signature-hero ist besser. Cinematic-dark als Referenz behalten.
 
 #### 3. Naechste Prozess-Experimente (Prioritaet)
+- [ ] **Agent-Team-Pipeline testen** — 5-Rollen-Team (Creative Director→Asset Creator+Animation Expert→Builder→QA)
+  - Hypothese: Spezialisierte Agents + neue Skills (gsap-plugins, awwwards-animations) → konsistent 9+/10
+  - Agent-Definitionen ready in .claude/agents/
+  - Neue Skills: SplitText, MorphSVG, Flip, DrawSVG, Generative Art, Physics
 - [ ] **Reproduzierbarkeit testen** — Bewiesenen Workflow auf NEUES Projekt anwenden (anderer Stil)
-  - Hypothese: Kann der Workflow (Opus Signature + Sonnet Builder + Overdrive) konsistent 9+/10 liefern?
-  - Stil-Idee: Light Theme, Editorial, Typografie-fokussiert (Gegenstueck zu Cinematic Dark)
 - [ ] **Parallel-Build** — 2 Builder mit verschiedenen Prompts, gleiche Reference-Daten, vergleichen
-  - Hypothese: Diversitaet → bessere Auswahl. Oder: Kosten verdoppeln ohne Qualitaetsgewinn?
-- [ ] **Designer + Rules + Assets-First** — Kombination aller bewaehrten Elemente
 - [ ] **Anderes Modell testen** — Was liefert Haiku als Builder? Oder Codex?
 
 #### 4. Abgeschlossene Prozess-Experimente (2026-03-23)
@@ -89,11 +91,13 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
-- **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
+- **Websites deployed:** 6 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial)
+- **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 wartet auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 23
+- **Skills installiert:** 6 neue (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator)
+- **Agent-Team:** 5-Rollen-Architektur designed, Agent-Definitionen ready, noch nicht getestet
+- **Sessions am 2026-03-23:** 24
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)
