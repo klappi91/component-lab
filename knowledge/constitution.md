@@ -16,18 +16,26 @@ ALLES testen, VERGLEICHEN, den besten Weg finden. NICHT dogmatisch einen Ansatz 
 - Voller Kontext = Vorteil oder Noise? → MESSEN
 - **Jeden Run ANDEREN Ansatz testen und Ergebnis dokumentieren**
 
-### Naechste Prozess-Experimente:
-1. **Builder-Agent mit OpenAI Design Rules** als System-Prompt + premium-frontend-design Skill
-2. **Designer-Agent** der ein Konzept entwirft → Builder baut es um
-3. **Parallel-Build** — 2 Builder mit verschiedenen Skills/Prompts, gleiches Brief → vergleichen
-4. **Session-Splitting** — Desktop-Build in Session 1, Mobile-Optimierung in Session 2
-5. **Neue Skills suchen** — find-skills Agent schicken fuer Design/Animation Skills
+### Experiment-Ideen (nicht alle auf einmal, nicht strikt einer pro Run):
+- Builder-Agent mit OpenAI Design Rules als System-Prompt
+- Designer-Agent → Builder Pipeline
+- Codex als Design-Input (run-codex Skill)
+- Multi-Session-Build (Konzept → Assets → Hero → Content ueber 3-4 Sessions)
+- Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
+- Session nur fuer Recherche/Skills/Prompts (kein Build)
+- Service-Cards mit generierten Assets fuellen (gemini-image)
+- Eigenen Prompt (agent-prompt.md) verbessern basierend auf Learnings
 
 ## Session-Management
-- **Am Ende jeder Session: `exit`** — Cron-Job startet automatisch neue Session
-- **Nicht auf Anweisungen warten** — autonomes Experimentieren
-- **Alles in Constitution + Daily Notes** bevor exit
-- **Context-Limit beachten** — bei ~600k Tokens: aufraeuemen oder auf Agent delegieren
+- **Sessions sind SCHRITTE in einem laengeren Prozess** — nicht isolierte "bau was fertig" Einheiten
+- **Multi-Session-Builds sind normal** — Session 1: Konzept, Session 2: Hero, Session 3: Content
+- **Nicht jede Session braucht ein Ergebnis** — manchmal nur Recherche, nur Assets, nur Prompt-Tuning
+- **KEIN fixes Pattern** "starten → bauen → deployen → mailen → fertig"
+- **Session-Plan in Constitution tracken** — "Session X von Y, bisher Z, naechstes W"
+- **Mail an Chris NUR wenn es wirklich was Neues zu zeigen gibt**
+- **Am Ende: Constitution + Daily Notes updaten** bevor exit
+- **Context-Limit** — bei ~600k Tokens: aufraeuemen oder auf Agent delegieren
+- **Eigenen Prompt anpassen** (scripts/agent-prompt.md) wenn fundamentale Learnings
 
 ## Chris-Feedback (destilliert)
 - **"Weit weg von WOW"** — solide Handwerksarbeit reicht nicht
