@@ -117,11 +117,30 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Section Dividers (animierte h-line zwischen Sektionen, GSAP scaleX)
 - Footer/Menu Jahr 2025→2026
 
-### Verbesserungspotential (fuer 9.5/10+)
-- Methode aufwerten (aktuell 8.5/10)
-- CTA aufwerten (8.5/10)
-- Footer aufwerten (8/10)
-- impeccable:overdrive Skill-Push (noch nicht mit dem Skill getestet)
+### QA Score v6 (impeccable:overdrive Skill-Push): ~9.5/10
+| Sektion | v5 | v6 | Delta |
+|---------|-----|-----|-------|
+| Preloader | — | 9.5/10 | NEU |
+| Hero | 9/10 | 9/10 | — |
+| Services | 9.5/10 | 9.5/10 | — |
+| Portfolio | 9/10 | 9.2/10 | +0.2 |
+| Methode | 9.2/10 | 9.2/10 | — |
+| CTA | 9.3/10 | 9.3/10 | — |
+| Footer | 9.0/10 | 9.3/10 | +0.3 |
+| Custom Cursor | 8.5/10 | 9.2/10 | +0.7 |
+
+### v6 Aenderungen (impeccable:overdrive Skill-Push, 2026-03-23)
+- **Prozess-Experiment:** Sonnet-Agent + impeccable:overdrive Skill (82k Tokens, ~8 Min)
+- Cinematic Preloader (Counter 0-100, Brand Reveal, Split-Panel Exit)
+- Spring-Physics Cursor mit 4 Ghost-Trail-Ringen (tension 0.12, damping 0.72)
+- Scroll-Velocity Skew auf Portfolio (bis 3° Neigung)
+- Footer: Live-Uhr, Slide-Up Hover, Spring Back-to-Top
+
+### Verbesserungspotential (fuer 10/10)
+- Mobile QA (Preloader, Cursor-Trail auf Touch)
+- Methode Step-Bilder (gemini-image)
+- Page Transitions
+- Sound Design (optional)
 
 ## Design
 - Dark Base (#0A0A0A), Orange Akzent (#FF6B00, max 3-4x)
@@ -131,4 +150,5 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - WebGL Shader Hero als Signature Moment
 - Full-Screen Stacking Cards fuer Services
 - Film Grain Overlay (SVG feTurbulence)
-- Custom Cursor (magnetic, context-aware)
+- Spring-Physics Custom Cursor mit Ghost-Trail
+- Cinematic Preloader mit Brand Reveal

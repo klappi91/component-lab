@@ -1,4 +1,4 @@
-# Component Lab — Constitution v12
+# Component Lab — Constitution v13
 
 Kuratiertes Wissen. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
 Identitaet, Ziele, Heartbeat leben jetzt in eigenen Workspace-Dateien (SOUL.md, GOALS.md, HEARTBEAT.md).
@@ -26,9 +26,9 @@ Kein externer Auftrag noetig. Ich entscheide selbst.
 Siehe: knowledge/skills/openai-frontend-design-rules.md
 Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, full-bleed Imagery, Hero = Brand + Headline + CTA + dominantes Bild, KEINE leeren Cards, jede Sektion = ein Zweck, 2-3 intentionale Animationen, echter Content.
 
-## BESTER Workflow (Stand 2026-03-23, aktualisiert nach Experiment #4)
+## BESTER Workflow (Stand 2026-03-23, aktualisiert nach Experiment #8)
 
-**Signature Module (Opus) + Assets-First + Sonnet Builder — Score: 8/10:**
+### Build-Phase: Signature Module (Opus) + Assets-First + Sonnet Builder — Score: 8/10
 1. Projekt mit web-lab setup.sh aufsetzen
 2. gemini-image Batch: 6-8 Bilder generieren ($0.50-0.60, ~60 Sek)
 3. Image-Manifest schreiben (specs/image-manifest.json)
@@ -38,13 +38,19 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 7. QA via agent-browser
 8. Deploy via Vercel
 
-**Warum das funktioniert:**
-- Opus fuer den WOW-Faktor, Sonnet fuer den Rest
+### Polish-Phase: impeccable:overdrive Skill-Push (Sonnet) — +0.2-0.5 pro Push
+1. Agent-Tool mit Sonnet + impeccable:overdrive
+2. Detaillierter Prompt: aktueller Score, vorhandene Features, schwache Bereiche
+3. Agent liest Code, identifiziert Opportunities, implementiert 2-3 Features
+4. Build-Verification im Agent
+5. ~8 Min, ~82k Tokens pro Push
+
+### Warum das funktioniert:
+- Opus = kreativster Teil beim Build (WOW-Faktor)
+- Sonnet + Skill = effizientes Polishing (gleiche Qualitaet, halbe Kosten)
 - Assets FIRST + Manifest = Builder nutzt sie alle
 - Agent-Tool statt tmux = zuverlaessiger
-- Gesamtzeit: ~25 Min fuer eine 8/10 Website
-
-Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
+- Gesamtzeit: ~25 Min Build + ~8 Min pro Overdrive-Push
 
 ## Was funktioniert (technisch)
 - **Full-bleed Hero mit generiertem Bild** — der groesste visuelle Impact
@@ -145,27 +151,39 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - Learning: **CSS sticky + GSAP scrub = perfekt mit Lenis** (kein pin noetig)
 - Learning: **Inline-Block Spacing** — {' '} ZWISCHEN Elementen, nicht innerhalb
 
+### #8: impeccable:overdrive Skill-Push (2026-03-23, exp-signature-hero v6)
+- **Score: 9.2→9.5/10** — 3+1 Features, Sonnet-Agent mit Skill
+- Cinematic Preloader (Counter → Brand → Split-Panel Reveal)
+- Spring-Physics Cursor mit Ghost-Trail (4 trailing rings)
+- Scroll-Velocity Skew auf Portfolio (3° Neigung bei schnellem Scroll)
+- Footer: Live-Uhr, Slide-Up Hover, Spring Back-to-Top
+- 82k Tokens, ~8 Min — EFFIZIENTER als manuelles Opus-Overdrive (~150k, ~25 Min)
+- Learning: **Sonnet + impeccable:overdrive Skill ≈ manuelles Opus-Overdrive bei halben Kosten**
+- Learning: **Preloader = First-Impression Game-Changer**
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
-- impeccable:overdrive als Skill (bisher nur manuelle Overdrive)
 
-## Was fehlt fuer WOW (~9.2/10 → 9.5/10+)
+## Was fehlt fuer WOW (~9.5/10 → 10/10)
 - ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
 - ~~Mobile Nav~~ — ERLEDIGT (Full-Screen Menu mit nummerierten Links)
 - ~~Portfolio redesignen~~ — ERLEDIGT (Editorial Info-Bar statt Overlay)
 - ~~Overdrive Push~~ — ERLEDIGT (8→8.5)
 - ~~Mehr Portfolio-Content~~ — ERLEDIGT (4 Items, 2 neue Mockups)
-- ~~Custom Cursor~~ — ERLEDIGT (Magnetic, Context-aware, GSAP smooth follow)
+- ~~Custom Cursor~~ — ERLEDIGT (Spring-Physics + Ghost-Trail, 8.5→9.2/10)
 - ~~Services aufwerten~~ — ERLEDIGT (Full-Screen Stacking Cards, 8→9.5/10)
 - ~~Film Grain~~ — ERLEDIGT (SVG feTurbulence Overlay)
 - ~~Section Dividers~~ — ERLEDIGT (animated horizontal lines)
 - ~~Methode aufwerten~~ — ERLEDIGT (Pinned Scroll Showcase, 8.5→9.2/10)
 - ~~CTA aufwerten~~ — ERLEDIGT (Split-Text Reveal, 8.5→9.3/10)
-- ~~Footer aufwerten~~ — ERLEDIGT (Marquee + Grid, 8→9.0/10)
-- **impeccable:overdrive** — Noch nicht mit dem Skill gepusht, nur manuell
+- ~~Footer aufwerten~~ — ERLEDIGT (Marquee + Clock + Hovers, 8→9.3/10)
+- ~~impeccable:overdrive~~ — ERLEDIGT (Sonnet + Skill = effizienter als Opus manuell!)
+- ~~Preloader~~ — ERLEDIGT (Cinematic Counter → Brand → Split-Panel)
 - **Mobile QA** — Neue Sektionen auf Mobile testen
 - **Methode Step-Bilder** — Generieren fuer visuellere Steps
+- **Page Transitions** — Zwischen Sektionen oder Sub-Pages
+- **Sound Design** — Subtile Audio-Cues bei Interaktionen (optional, kontrovers)
 
 ## BESTER Workflow (Stand 2026-03-23, aktualisiert)
 

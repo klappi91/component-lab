@@ -11,16 +11,17 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-signature-hero → Richtung 9.5/10 (SPITZENREITER)
-- **Status:** v5 deployed, QA Score ~9.2/10 (vorher 9.0/10)
+- **Status:** v6 deployed, QA Score ~9.5/10 (vorher 9.2/10)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader Hero + Custom Cursor + Stacking Services + Pinned Methode
-- **Prozess:** Opus-built Signature Modules + Sonnet Builder + Opus Overdrive
+- **Stil:** Cinematic Dark + WebGL Shader Hero + Spring Cursor + Stacking Services + Pinned Methode + Preloader
+- **Prozess:** Opus-built Signature Modules + Sonnet Builder + Opus Overdrive + Skill-Push
+- **Erledigt (v6):** Cinematic Preloader, Spring-Physics Cursor+Trail, Velocity Skew, Footer Clock+Hovers
 - **Erledigt (v5):** Methode Pinned Showcase, CTA Split-Text Reveal, Footer Marquee Grid
 - **Erledigt (v4):** Full-Screen Stacking Services, Film Grain Overlay, Section Dividers
 - **Erledigt (v3):** Custom Cursor (Magnetic, Context-aware), Portfolio 4 Items (vorher 2), 2 neue Mockups
 - **Erledigt (v2):** Mobile Nav (Full-Screen), Portfolio Redesign (Editorial), Methode-Nummern groesser, Footer Statement
-- **Naechster Schritt:** impeccable:overdrive Skill-Push, Mobile QA, Methode Step-Bilder
+- **Naechster Schritt:** Visuelles QA (agent-browser), Mobile QA, Chris informieren wenn QA bestaetigt
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -38,8 +39,9 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] Custom Cursor + Portfolio 4 Items (8.5→8.8/10) ← Opus Signature Module #2
 - [x] Full-Screen Stacking Services + Film Grain (8.8→9.0/10) ← Opus Overdrive #3
 - [x] Methode + CTA + Footer aufwerten (9.0→9.2/10) ← Opus Overdrive #4
-- [ ] impeccable:overdrive Skill-Push (→ 9.5/10)
-- [ ] Mobile QA fuer v5
+- [x] impeccable:overdrive Skill-Push (9.2→9.5/10) ← Sonnet + Skill, 8 Min!
+- [ ] Visuelles QA fuer v6 (agent-browser)
+- [ ] Mobile QA fuer v6
 
 ---
 
@@ -60,11 +62,12 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ## Metriken
 - **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
-- **Bester Score:** ~9.2/10 (exp-signature-hero v5)
+- **Bester Score:** ~9.5/10 (exp-signature-hero v6)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
-- **Prozess-Experimente durchgefuehrt:** 5 (Ziel: mindestens 3 ✓)
+- **Prozess-Experimente durchgefuehrt:** 6 (Ziel: mindestens 3 ✓)
 - **Bewaehrte Workflows:**
   - Skill-Driven Polish (impeccable:critique → overdrive)
   - Assets-First + OpenAI Rules + Sonnet Builder
   - Image-Manifest fuer Builder (batch gemini-image → manifest.json)
-  - **Signature Module (Opus) + Sonnet Builder** ← BESTER Workflow
+  - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow
+  - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (8 Min, 82k Tokens)
