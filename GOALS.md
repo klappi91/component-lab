@@ -11,7 +11,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-story-editorial — AKTIVES PROJEKT (Story-First Ansatz)
-- **Status:** v2 deployed, Self-Eval 7.5/10 (konservativ, +1.0 vs v1)
+- **Status:** v3 deployed, Self-Eval 8.0/10 (konservativ)
 - **URL:** https://exp-story-editorial.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-story-editorial
 - **Stil:** Warm Editorial, Story-Arc (Hook→Tension→Promise→Proof→Process→CTA), mersi-architecture.com inspiriert
@@ -20,10 +20,11 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Fonts:** Clash Display (bold) + Instrument Serif (editorial) + Switzer (body) — alle Fontshare
 - **Farben:** Cream #F5F0EB + Dark #0A0A0A + Orange #FF6B00 (intentional, sparsam)
 - **8 Gemini-Bilder:** Editorial-Fotografie ($0.81), alle integriert
-- **v2 Features (NEU):** ScrollThread (orangene Linie als roter Faden), FilmGrain Overlay, SectionCounter (01/06), SectionTransitions (clip-path)
+- **v3 Features (NEU):** WebGL Hero Shader (Noise Displacement, Mouse Ripple, Chromatic Aberration, Scroll-Reaktion)
 - **Naechste Schritte:**
   - [ ] Chris-Feedback abwarten
-  - [ ] Signature WOW-Moment hinzufuegen (WebGL/3D subtil)
+  - [x] Signature WOW-Moment hinzufuegen (WebGL/3D subtil) — v3 Hero Shader
+  - [ ] Hero-Layout ueberarbeiten (aktuell "Text links, Bild rechts" = verbotenes Pattern)
   - [ ] Logo als SVG + Animation
   - [ ] Evtl. echte Projekt-Screenshots statt AI-generierte Bilder
   - [ ] Video-Content (Showreel oder Ambient)
@@ -82,7 +83,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 17
+- **Sessions am 2026-03-23:** 18
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)

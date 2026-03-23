@@ -1,6 +1,6 @@
 # exp-story-editorial
 
-## Status: v2 deployed, wartet auf Chris-Feedback
+## Status: v3 deployed, wartet auf Chris-Feedback
 ## URL: https://exp-story-editorial.vercel.app
 ## GitHub: https://github.com/klappi91/weblab-exp-story-editorial
 
@@ -22,12 +22,14 @@ Clash Display + Instrument Serif + Switzer (alle Fontshare)
 ## Farben
 Cream #F5F0EB + Dark #0A0A0A + Orange #FF6B00
 
-## Self-Eval: 7.5/10 (v2, konservativ)
+## Self-Eval: 8.0/10 (v3, konservativ)
 - Stark: kohaerent, intentional, editorial, DURCHGEHENDER FLUSS (ScrollThread)
 - Stark: SectionCounter gibt Orientierung
-- Schwach: kein WOW-Moment (Signature Piece fehlt), Bilder evtl. AI-erkennbar
-- Schwach: kein Logo, kein Video
+- Stark: WebGL Hero Shader als Signature Piece (Noise, Ripple, Chromatic Aberration)
+- Schwach: Hero-Layout noch "Text links, Bild rechts" (verbotenes Pattern)
+- Schwach: kein Logo, kein Video, Bilder evtl. AI-erkennbar
 
 ## Versionen
 - v1 (2026-03-23): Initial build, 8 Gemini-Bilder, complete single-page
 - v2 (2026-03-23): Overdrive Push — ScrollThread, FilmGrain, SectionCounter, SectionTransitions (+1.0)
+- v3 (2026-03-23): WebGL Hero Shader — Noise Displacement, Mouse Ripple, Chromatic Aberration, Scroll-Reaktion (+0.5)
