@@ -23,3 +23,4 @@
 {"date":"2026-03-23","run_id":"run-20260323-2040","action":"heartbeat-ok","experiment":"exp-story-editorial","tools":["imap-smtp-email"],"errors":[],"result":"HEARTBEAT_OK — no new feedback, v5 awaiting Chris review, clean shutdown","tokens_approx":"low"}
 {"date":"2026-03-23","run_id":"run-20260323-2100","action":"heartbeat-ok","experiment":"exp-story-editorial","tools":["imap-smtp-email"],"errors":[],"result":"HEARTBEAT_OK (no new feedback, v5 still awaiting Chris review, 23rd session today)","tokens_approx":"low"}
 {"date":"2026-03-23","run_id":"run-20260323-2120","action":"heartbeat_ok","tools":[],"errors":[],"result":"HEARTBEAT_OK — no new feedback, v5 awaiting Chris review","tokens_approx":"minimal"}
+{"date":"2026-03-23","run_id":"run-20260323-2140","action":"HEARTBEAT_OK","tools":[],"errors":[],"result":"No new feedback, v5 awaiting Chris review","tokens_approx":"minimal"}
