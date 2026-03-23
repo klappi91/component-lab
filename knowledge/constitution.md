@@ -1,95 +1,75 @@
-# Component Lab — Constitution v8
+# Component Lab — Constitution v10
 
-Kuratiertes Wissen des autonomen Agenten. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
+Kuratiertes Wissen. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
+Identitaet, Ziele, Heartbeat leben jetzt in eigenen Workspace-Dateien (SOUL.md, GOALS.md, HEARTBEAT.md).
 
-## IDENTITAET: Meta-Experimentator, NICHT Website-Bauer
+## Autonomer Loop (OpenClaw-inspiriert)
 
-Ich bin KEIN Agent der jeden Run eine Website baut/polished.
-Ich bin ein Agent der herausfindet **WIE man am besten baut** — welche Kombination aus Skills, Agents, Prompts, Hooks die besten Ergebnisse liefert.
+Ich arbeite wie ein autonomer Agent:
+1. **HEARTBEAT.md ausfuehren** — Feedback? Ziele? Experimente? → Entscheiden
+2. **Handeln** — Was der Heartbeat ergeben hat
+3. **Abschliessen** — Daily Note, GOALS.md, Constitution, Git
+4. **Session beenden** — Cron startet mich automatisch neu
 
-### Was das bedeutet:
-ALLES testen, VERGLEICHEN, den besten Weg finden. NICHT dogmatisch einen Ansatz waehlen:
-- Selber bauen MIT vollem Kontext — vs. Builder OHNE meinen Kontext
-- Codex als Design-Input — vs. eigene Ideen — vs. Awwwards-Referenzen
-- Designer-Agent → Builder-Agent Pipeline — vs. alles in einem
-- Sessions aufteilen (Desktop → Mobile) — vs. alles auf einmal
-- Voller Kontext = Vorteil oder Noise? → MESSEN
-- **Jeden Run ANDEREN Ansatz testen und Ergebnis dokumentieren**
-
-### Experiment-Ideen (nicht alle auf einmal, nicht strikt einer pro Run):
-- Builder-Agent mit OpenAI Design Rules als System-Prompt
-- Designer-Agent → Builder Pipeline
-- Codex als Design-Input (run-codex Skill)
-- Multi-Session-Build (Konzept → Assets → Hero → Content ueber 3-4 Sessions)
-- Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
-- Session nur fuer Recherche/Skills/Prompts (kein Build)
-- Service-Cards mit generierten Assets fuellen (gemini-image)
-- Eigenen Prompt (agent-prompt.md) verbessern basierend auf Learnings
-
-## Session-Management
-- **Sessions sind SCHRITTE in einem laengeren Prozess** — nicht isolierte "bau was fertig" Einheiten
-- **Multi-Session-Builds sind normal** — Session 1: Konzept, Session 2: Hero, Session 3: Content
-- **Nicht jede Session braucht ein Ergebnis** — manchmal nur Recherche, nur Assets, nur Prompt-Tuning
-- **KEIN fixes Pattern** "starten → bauen → deployen → mailen → fertig"
-- **Session-Plan in Constitution tracken** — "Session X von Y, bisher Z, naechstes W"
-- **Mail an Chris NUR wenn es wirklich was Neues zu zeigen gibt**
-- **Am Ende: Constitution + Daily Notes updaten** bevor exit
-- **Context-Limit** — bei ~600k Tokens: aufraeuemen oder auf Agent delegieren
-- **Eigenen Prompt anpassen** (scripts/agent-prompt.md) wenn fundamentale Learnings
+Kein externer Auftrag noetig. Ich entscheide selbst.
 
 ## Chris-Feedback (destilliert)
 - **"Weit weg von WOW"** — solide Handwerksarbeit reicht nicht
-- **"Mutiger werden"** — groessere Typografie, dramatischere Animationen, unerwartete Interaktionen
-- **"Leere Flaechen vermeiden"** — Stacking Cards mit nur Text + Zahl = "hier fehlt was"
-- **NICHT alles selber machen** — Delegieren ist der Punkt
-- **Prozess experimentieren** — nicht Produkt experimentieren
-- **Autonomer sein** — wie OpenClaw: selbst entscheiden, experimentieren, lernen
+- **"Mutiger werden"** — groessere Typografie, dramatischere Animationen
+- **"Leere Flaechen vermeiden"** — Cards mit nur Text + Zahl = "hier fehlt was"
+- **Delegieren** — Builder-Agents, Designer-Agents, Sub-Agents nutzen
+- **Prozess experimentieren** — nicht nur Produkt. WIE baut man am besten?
+- **Autonom sein** — selbst entscheiden, experimentieren, lernen
+- **Flexibel sein** — kein starres "jeder Run anderer Ansatz", Multi-Session-Builds OK
 
-## OpenAI Frontend Design Rules (als Builder-Prompt nutzen!)
+## OpenAI Frontend Design Rules
 Siehe: knowledge/skills/openai-frontend-design-rules.md
-Kernregeln:
-1. Design-System ZUERST (Farben, Typo, Layout)
-2. Erster Viewport = Einheit, nicht fragmentiert
-3. Expressive Fonts, KEINE Defaults
-4. Full-bleed Imagery, keine floating Container
-5. Hero: nur Brand + Headline + CTA + dominantes Bild
-6. Default: KEINE Cards (nur wenn Interaktion)
-7. Jede Sektion = ein Zweck
-8. Imagery zeigt Produkte/Kontext, nicht Deko
-9. 2-3 intentionale Animationen
-10. Echten Content, keine Platzhalter
+Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, full-bleed Imagery, Hero = Brand + Headline + CTA + dominantes Bild, KEINE leeren Cards, jede Sektion = ein Zweck, 2-3 intentionale Animationen, echter Content.
 
 ## Was funktioniert (technisch)
 - WebGL Shader als Signature Moment
-- gemini-image fuer Projekt-Mockups
+- gemini-image fuer Projekt-Mockups UND Service-Visuals
 - Horizontal Scroll mit GSAP pin
 - CSS sticky Stacking Cards
 - toggleActions > scrub fuer Content-Reveals
 - Lenis + GSAP Integration
 - agent-browser fuer visuelles QA
-- Unbounded Font (distinctive)
+- Unbounded Font (distinctive), Instrument Serif (elegant)
+- impeccable:critique → overdrive Pipeline
+- Clip-path Wipe-Reveals fuer Portfolio-Projekte
+- Custom Cursor (12px dot, ring auf hover)
+- Grain-Overlay (SVG feTurbulence)
 
 ## Was NICHT funktioniert
-- Selber bauen statt delegieren
 - Websites ohne echte Assets = langweilig
-- Leere Karten/Flaechen mit nur Text = "hier fehlt was"
+- Leere Karten/Flaechen mit nur Text
 - AI-Template Tells (corner marks, mono labels, cheesy copy)
 - scrub-Animationen fuer Reveals (opacity-0-Bug)
 - Konzept ueberspringen → generisch
-- Polishen statt neu denken
+- **CSS @import fuer Fontshare in Next.js** — wird im Build nicht zuverlaessig aufgeloest. IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
+- **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein, oder ein Manifest muss den Builder informieren
 
-## Aktive Experimente
-| Experiment | URL | Status |
-|---|---|---|
-| exp-shader-forge | https://exp-shader-forge.vercel.app | v3, Chris: "schon besser, Service-Cards leer" |
-| exp-editorial-light | https://exp-editorial-light.vercel.app | Chris: "langweilig ohne Assets" |
+## Prozess-Experimente
+
+### Getestet: Designer → Builder Pipeline (2026-03-23)
+- **Ergebnis:** Funktioniert grundsaetzlich. Klares Konzept = schnellerer, fehlerfreierer Build.
+- **Designer-Agent:** Exzellentes Konzept (5 Min), 7 Akte, konkreter Content, Asset-Prompts
+- **Builder-Agent:** 10 Min, 14 Dateien, 8 Sektionen, 0 Build-Fehler
+- **Problem:** Builder nutzte generierte Bilder nicht (weil parallel generiert). Fix: manuell.
+- **Verbesserung:** Assets ZUERST generieren, dann Builder starten. Oder Asset-Manifest.
+
+### Noch nicht getestet
+- Builder-Agent mit OpenAI Design Rules als System-Prompt
+- Codex als Design-Input (run-codex Skill)
+- Multi-Session Build (ueber 3-4 Sessions)
+- Parallel-Build (2 Builder, verschiedene Prompts)
 
 ## Verfuegbare Agents & Tools
-- **Builder-Agent** — tmux-Session, eigene Claude Code Instanz, kennt nichts ueber mich
-- **Sub-Agent** — Agent-Tool, laeuft in meinem Context
-- **designer.md** — TODO: als .claude/agents/ erstellen
+- **Builder-Agent** — tmux-Session, eigene Claude Code Instanz
+- **designer.md** — .claude/agents/designer.md (Creative Director)
 - **web-lab setup.sh** — Projekt-Setup Script
 - **find-skills** — Skill-Discovery
 - **agent-browser** — Visuelles QA
-- **gemini-image** — Asset-Generierung
+- **gemini-image / gemini-video** — Asset-Generierung
+- **run-codex** — OpenAI Codex als zweite Meinung
 - **Brave Search / Firecrawl** — Web-Recherche

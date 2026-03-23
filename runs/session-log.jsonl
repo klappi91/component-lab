@@ -1,0 +1,1 @@
+{"date":"2026-03-23","run_id":"run-20260323-0902","action":"process-experiment","experiment":"designer-builder-pipeline","tools":["designer-agent","gemini-image","builder-agent-tmux","agent-browser","vercel"],"errors":["fontshare-css-import","builder-ignored-assets"],"result":"exp-warm-brutal v1 deployed — 8 sections, 6 assets, 0 build errors","tokens_approx":"high"}

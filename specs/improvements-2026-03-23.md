@@ -14,7 +14,19 @@ Beobachtungen aus der Nacht-Überwachung des autonomen Agenten.
 
 ---
 
-## 2. Cronjob & Session-Management
+## 2. Bypass-Permissions Prompt blockiert Cron-Start
+
+- **Beobachtet 08:00:** `run.sh` startete Session, aber Claude zeigte Bypass-Permissions-Warnung ("Yes, I accept") und wartete auf Input
+- Niemand da zum Bestätigen → Session blockiert, Agent startet nie
+- Manueller Start aus bestehender Shell funktioniert (Acceptance ist shell-basiert)
+- **Idee A:** `echo "yes" |` vor dem claude-Befehl pipen?
+- **Idee B:** Environment-Variable die den Prompt unterdrückt?
+- **Idee C:** `--dangerously-skip-permissions` braucht evtl. einen zusätzlichen `--yes` Flag?
+- **Priorität:** P0 — wenn Cron aus einer frischen Shell startet, hängt der Agent jedes Mal
+
+---
+
+## 3. Cronjob & Session-Management
 
 ### Agent beendet sich nicht selbst — BESTÄTIGT
 - Agent schreibt in Constitution "Am Ende jeder Session: exit", macht es aber nicht
