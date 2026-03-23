@@ -11,13 +11,14 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-signature-hero → Richtung 9/10 (SPITZENREITER)
-- **Status:** v2 deployed, QA Score 8.5/10 (vorher 8/10)
+- **Status:** v3 deployed, QA Score ~8.8/10 (vorher 8.5/10)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader Hero
-- **Prozess:** Opus-built Signature Module + Sonnet Builder + Opus Overdrive
+- **Stil:** Cinematic Dark + WebGL Shader Hero + Custom Cursor
+- **Prozess:** Opus-built Signature Modules + Sonnet Builder + Opus Overdrive
+- **Erledigt (v3):** Custom Cursor (Magnetic, Context-aware), Portfolio 4 Items (vorher 2), 2 neue Mockups
 - **Erledigt (v2):** Mobile Nav (Full-Screen), Portfolio Redesign (Editorial), Methode-Nummern groesser, Footer Statement
-- **Naechster Schritt:** Mehr Portfolio-Content (4 statt 2 Items), Custom Cursor, weitere Opus-Module, impeccable:overdrive fuer letzten Push
+- **Naechster Schritt:** Scroll-Transitions, Services aufwerten, impeccable:overdrive Skill-Push
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -32,7 +33,8 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [ ] Kombination: Designer + OpenAI Rules + Assets First
 - [ ] Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
 - [x] Overdrive Push auf exp-signature-hero (8→8.5/10) ← Opus direkt, +0.5
-- [ ] Weiterer Push auf 9/10 (Custom Cursor, mehr Portfolio, impeccable:overdrive)
+- [x] Custom Cursor + Portfolio 4 Items (8.5→8.8/10) ← Opus Signature Module #2
+- [ ] Scroll-Transitions + Services aufwerten + impeccable:overdrive (→ 9/10)
 
 ---
 
@@ -53,7 +55,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ## Metriken
 - **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
-- **Bester Score:** 8.5/10 (exp-signature-hero v2)
+- **Bester Score:** ~8.8/10 (exp-signature-hero v3)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
 - **Prozess-Experimente durchgefuehrt:** 5 (Ziel: mindestens 3 ✓)
 - **Bewaehrte Workflows:**

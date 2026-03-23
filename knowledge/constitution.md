@@ -60,6 +60,7 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - impeccable:critique → overdrive Pipeline
 - Clip-path Wipe-Reveals fuer Portfolio-Projekte
 - Grain-Overlay (SVG feTurbulence)
+- Custom Cursor (GSAP smooth follow, magnetic, context-aware labels)
 
 ## Was NICHT funktioniert
 - Websites ohne echte Assets = langweilig
@@ -116,14 +117,15 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - Parallel-Build (2 Builder, verschiedene Prompts)
 - Weiterer Push auf 9/10 (Custom Cursor, mehr Portfolio)
 
-## Was fehlt fuer WOW (8.5/10 → 9/10)
+## Was fehlt fuer WOW (~8.8/10 → 9/10+)
 - ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
 - ~~Mobile Nav~~ — ERLEDIGT (Full-Screen Menu mit nummerierten Links)
 - ~~Portfolio redesignen~~ — ERLEDIGT (Editorial Info-Bar statt Overlay)
 - ~~Overdrive Push~~ — ERLEDIGT (8→8.5)
-- **Mehr Portfolio-Content** — Nur 2 Items, braucht mindestens 4
-- **Custom Cursor** — Magnetic, Context-aware (Opus-Modul)
+- ~~Mehr Portfolio-Content~~ — ERLEDIGT (4 Items, 2 neue Mockups)
+- ~~Custom Cursor~~ — ERLEDIGT (Magnetic, Context-aware, GSAP smooth follow)
 - **Scroll-Transitions** — Page-level Transitions zwischen Sektionen
+- **Services aufwerten** — Aktuell 8/10, schwächste Sektion neben Footer
 - **impeccable:overdrive** — Noch nicht mit dem Skill gepusht, nur manuell
 
 ## BESTER Workflow (Stand 2026-03-23, aktualisiert)

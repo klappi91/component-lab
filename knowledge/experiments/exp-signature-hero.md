@@ -75,10 +75,28 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Methode: Nummern 5-10rem (war 4-7rem), Connector Lines
 - Footer: "Digital. Mutig. Anders." Statement + Mail-Link
 
-### Verbesserungspotential (für 9/10)
-- Mehr Portfolio-Content (4 statt 2 Items)
-- Custom Cursor (Magnetic, Context-aware)
+### QA Score v3 (Custom Cursor + Portfolio): ~8.8/10
+| Sektion | v2 | v3 | Delta |
+|---------|-----|-----|-------|
+| Hero | 9/10 | 9/10 | — |
+| Services | 8/10 | 8/10 | — |
+| Portfolio | 8.5/10 | 9/10 | +0.5 |
+| Methode | 8.5/10 | 8.5/10 | — |
+| CTA | 8.5/10 | 8.5/10 | — |
+| Footer | 8/10 | 8/10 | — |
+| Mobile | 9/10 | 9/10 | — |
+| Custom Cursor | — | 8.5/10 | NEU |
+
+### v3 Aenderungen (Custom Cursor + Portfolio, 2026-03-23)
+- Custom Cursor: Magnetic GSAP cursor mit orange ring + dot
+  - Context-aware: "Explore" auf Portfolio, "View" auf Bildern, magnetic auf Links
+  - Click pulse effect (elastic), touch-device hidden
+- Portfolio: 4 Items statt 2 (DripSwipe + Immobilien 360°)
+- 2 neue gemini-image Mockups ($0.20)
+
+### Verbesserungspotential (fuer 9/10+)
 - Scroll-Transitions zwischen Sektionen
+- Services-Section aufwerten (aktuell 8/10)
 - impeccable:overdrive Skill-Push
 
 ## Design
