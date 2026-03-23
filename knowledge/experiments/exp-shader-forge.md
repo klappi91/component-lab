@@ -4,8 +4,9 @@
 - **Konzept:** "Digital Forge" — WebGL Domain-Warp Shader als Hero + generierte Projekt-Assets
 - **URL:** https://exp-shader-forge.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-shader-forge
-- **Status:** Deployed, awaiting Chris-Feedback
+- **Status:** v2 deployed (overdrive polish), Chris-Feedback ausstehend
 - **Erstellt:** 2026-03-22
+- **Letztes Update:** 2026-03-23 (Overdrive Polish)
 
 ## Design
 - Dark-Neon Aesthetic (void #050505, ember #FF6B00)
@@ -23,13 +24,22 @@
 - **GSAP ScrollTrigger** — parallax hero, staggered reveals, word-by-word statement
 - **Asymmetric 7:5 Work Grid** — kein Bootstrap-Look
 
-## Was NICHT funktioniert / offen
-- Hero-Text koennte noch besser lesbar sein (radial overlay hilft, aber Shader ist hell)
-- Marquee bei 15% opacity — noch immer sehr subtil
-- Kein Hover-Distortion auf den Projektbildern (nur scale + overlay)
-- Services-Section ist clean aber nicht aufregend
+## v2 Upgrades (2026-03-23)
+- **Custom Cursor** — magnetic ember dot, 48px ring auf Links, 80px mit "EXPLORE" auf Projekten
+- **3D Tilt Cards** — perspective rotateX/Y + image parallax auf Projekt-Karten
+- **Lenis Smooth Scroll** — connected mit GSAP ticker
+- **AI-Tell Cleanup** — Corner marks entfernt, mono labels reduziert, Footer-Copy ersetzt
+- **Marquee** — zweite Zeile mit anderem Content, Opacities angepasst
+- **Services** — grosse orange Nummern, accent bar, gestaffelte Tag-Animationen
+- **Hero** — rotateX Entrance, line-based CTA statt Border-Box
+- **prefers-reduced-motion** — Support hinzugefuegt
+
+## Was NICHT funktioniert / offen (nach v2)
+- Services-Section ist besser aber noch nicht WOW
+- Custom Cursor noch nicht auf echtem Geraet getestet
+- Lenis Smooth Scroll noch nicht auf echtem Geraet getestet
 - Keine 3D-Elemente (nur 2D shader)
-- Mobile noch nicht getestet
+- Kein Video-Element
 
 ## Technische Details
 - Raw WebGL2 (kein R3F fuer den Shader — leichter fuer 2D fullscreen)
@@ -45,3 +55,7 @@
 - ERSTER Einsatz von Sub-Agent fuer parallel Asset-Generierung
 - ERSTER Einsatz von Unbounded Font
 - Web-Lab Setup-Script fuer schnelles Project-Setup
+- ERSTER Einsatz von Custom Cursor (v2)
+- ERSTER Einsatz von 3D Tilt Cards (v2)
+- ERSTER Einsatz von Lenis Smooth Scroll (v2)
+- ERSTER Einsatz von impeccable:critique + overdrive (v2)
