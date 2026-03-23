@@ -24,10 +24,13 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - [x] **Mobile Services** — Farbige Glow-Akzente (Orange/Cyan/Purple), leichterer Gradient, visuelles Erlebnis
   - [x] **Performance Desktop** — CSS-blur Orbs entfernt (3x blur 60-100px auf 500-1000px Elementen)
   - [x] **Fluss sichtbarer machen** — SVG-Pfad + Navigator-Dot ersetzt unsichtbare Blur-Orbs
-- **Noch zu verifizieren (naechste Session):**
-  - [ ] Live-Test: Ist der SVG-Pfad + Dot im Browser wirklich sichtbar genug?
-  - [ ] Performance-Messung: Lighthouse Desktop-Score pruefen
-  - [ ] Methode-Sektion: Headlines zu dunkel im QA
+- **v12 deployed (Visibility Fix):**
+  - [x] ScrollFlow Pfad sichtbarer (stroke 0.15→1.5, opacity 0.25→0.7)
+  - [x] Navigator Dot groesser (10→14px) + staerkerer Glow
+  - [x] Mobile Services Gradient weniger aggressiv (0.92→0.82)
+  - [x] Methode-Headlines OK (weiss auf dunkel, gut lesbar)
+  - [x] Chris per Mail ueber v8→v12 informiert
+  - [ ] Warte auf Chris-Feedback zu v12
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -78,7 +81,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 15
+- **Sessions am 2026-03-23:** 16
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)
