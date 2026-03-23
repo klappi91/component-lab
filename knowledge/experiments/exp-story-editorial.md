@@ -22,17 +22,20 @@ Clash Display + Instrument Serif + Switzer (alle Fontshare)
 ## Farben
 Cream #F5F0EB + Dark #0A0A0A + Orange #FF6B00
 
-## Self-Eval: 8.2/10 (v4, konservativ)
+## Self-Eval: 8.5/10 (v5, konservativ, ~7.0 Chris-geschaetzt)
 - Stark: kohaerent, intentional, editorial, DURCHGEHENDER FLUSS (ScrollThread)
 - Stark: SectionCounter gibt Orientierung
 - Stark: WebGL Hero Shader als Full-Screen Signature Piece (Noise, Ripple, Chromatic Aberration)
 - Stark: Hero jetzt Full-Screen mit Bottom-Left Editorial Text (kein verbotenes Pattern mehr)
 - Stark: Scroll-Parallax auf Hero-Shader
+- Stark: Process Pinned Scroll Showcase — mersi-style Bildwechsel beim Scrollen
+- Stark: CTA Word-by-Word 3D-Flip Reveal
+- Stark: Statement Footer mit Marquee + Live-Uhr
 - Schwach: kein Logo, kein Video, Bilder evtl. AI-erkennbar
-- Schwach: Process- und CTA-Sektionen koennten staerker sein
 
 ## Versionen
 - v1 (2026-03-23): Initial build, 8 Gemini-Bilder, complete single-page
 - v2 (2026-03-23): Overdrive Push — ScrollThread, FilmGrain, SectionCounter, SectionTransitions (+1.0)
 - v3 (2026-03-23): WebGL Hero Shader — Noise Displacement, Mouse Ripple, Chromatic Aberration, Scroll-Reaktion (+0.5)
 - v4 (2026-03-23): Full-Screen Hero Redesign — Split entfernt, Shader als BG, Bottom-Left Editorial Text, Parallax (+0.2)
+- v5 (2026-03-23): Overdrive Push — Pinned Process (mersi-style), Word-Reveal CTA, Statement Footer + QA Fixes (+0.3)
