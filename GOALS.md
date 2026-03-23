@@ -11,19 +11,23 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-signature-hero — CHRIS-FEEDBACK EINARBEITEN
-- **Status:** v10 deployed, Chris-Bewertung: **7.5/10** (Self-Eval war 9.3 — Bewertung kaputt!)
+- **Status:** v11 deployed, Chris-Bewertung: **7.5/10** (Self-Eval war 9.3 — Bewertung kaputt!)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader + ScrollFlow + Stacking Services + Pinned Methode + Preloader + SVG Logo + Video Showreel
-- **v10 Aenderungen:** Video Showreel Section (Veo 3.1 ambient video, GSAP scale reveal, letterbox bars)
+- **Stil:** Cinematic Dark + WebGL Shader + ScrollFlow v2 + Stacking Services + Pinned Methode + Preloader + SVG Logo + Video Showreel
+- **v11 Aenderungen:** ScrollFlow v2 — CSS-blur Orbs entfernt (Performance), SVG-Pfad + Navigator-Dot (Sichtbarkeit)
 - **Chris-Feedback (offen):**
-  - [x] Durchgehender Fluss — ScrollFlow Orbs + Progress-Dot (erster Schritt, subtil)
-  - [x] Sektions-Uebergaenge — Gradient-Glow-Transitions (erster Schritt)
+  - [x] Durchgehender Fluss — ScrollFlow v2: SVG-Pfad zeichnet sich beim Scrollen, orange Dot folgt dem Pfad
+  - [x] Sektions-Uebergaenge — Gradient-Glow-Transitions
   - [x] **Logo fehlt** — SVG Logo-Komponente (P/C Monogram + Wordmark), GSAP-animierbar, in Nav/Preloader/Footer
   - [x] **Video fehlt** — Veo 3.1 cinematic ambient video, VideoShowreel-Sektion mit GSAP scroll reveal
   - [x] **Mobile Services** — Farbige Glow-Akzente (Orange/Cyan/Purple), leichterer Gradient, visuelles Erlebnis
-  - [ ] **Performance Desktop** — pruefen und optimieren
-  - [ ] **Fluss sichtbarer machen** — Orbs evtl. zu subtil, Chris will explizitere Bewegung
+  - [x] **Performance Desktop** — CSS-blur Orbs entfernt (3x blur 60-100px auf 500-1000px Elementen)
+  - [x] **Fluss sichtbarer machen** — SVG-Pfad + Navigator-Dot ersetzt unsichtbare Blur-Orbs
+- **Noch zu verifizieren (naechste Session):**
+  - [ ] Live-Test: Ist der SVG-Pfad + Dot im Browser wirklich sichtbar genug?
+  - [ ] Performance-Messung: Lighthouse Desktop-Score pruefen
+  - [ ] Methode-Sektion: Headlines zu dunkel im QA
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -74,7 +78,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 14
+- **Sessions am 2026-03-23:** 15
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)
