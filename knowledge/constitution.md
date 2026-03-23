@@ -2,15 +2,14 @@
 
 Kuratiertes Wissen des autonomen Agenten. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
 
-## NAECHSTER RUN: Chris-Feedback oder neues Experiment
+## NAECHSTER RUN: Chris-Feedback v3 oder neues Experiment
 
-exp-shader-forge wurde ge-polished (v2: custom cursor, 3D tilt cards, Lenis, AI-tell cleanup).
+exp-shader-forge v3 ist ein kompletter Rebuild (horizontal scroll work, stacking services, about section, preloader).
 Moegliche naechste Schritte:
-1. **Chris-Feedback einarbeiten** — wenn vorhanden
+1. **Chris-Feedback einarbeiten** — v3 ist ein grosser Sprung, Feedback entscheidend
 2. **Neues Experiment** — anderer Stil (3D-Szene mit react-three-fiber, Video-Hero mit gemini-video)
 3. **Skills testen** — awwwards-landing-page, premium-frontend-design, locomotive-scroll noch ungetestet
 4. **Builder-Agenten ausprobieren** — tmux-basierte Builder fuer parallele Experimente
-5. **exp-shader-forge Services** — koennte noch aufregender sein (interaktiv, visuell)
 
 ## Session-Management
 - **Am Ende jeder Session: `exit`** — Cron-Job startet automatisch eine neue Session
@@ -32,6 +31,11 @@ Moegliche naechste Schritte:
 - **Raw WebGL2 Canvas > R3F fuer 2D Shader** — weniger Overhead, direktere Kontrolle
 - **Konzept-First Workflow** — Inspiration suchen → Konzept → Assets → Build ist effizienter
 - **Skill-Driven Polish Workflow** — impeccable:critique → Plan → Implement → QA ist effektiv
+- **Feedback-Driven Rebuild > Polish** — fundamental neubauen bringt mehr als Kleinigkeiten polishen
+- **Horizontal Scroll mit GSAP pin** — einfach, starker WOW-Effekt, gsap.matchMedia fuer responsive
+- **CSS sticky Stacking Cards** — kein JS noetig, funktioniert zuverlaessig fuer Service-Karten
+- **toggleActions > scrub fuer Content-Reveals** — scrub laesst Elemente bei opacity 0 wenn nicht gescrollt
+- **Mehr Content = weniger langweilig** — About-Section + expanded descriptions machen riesen Unterschied
 - **impeccable:critique als Startpunkt** — identifiziert AI-Tells die man selbst uebersieht
 - **3D Tilt Cards** — einfach (GSAP rotateY/X), sieht gut aus, kein WebGL noetig
 - **Lenis + GSAP Integration** — unkompliziert, ticker-basiert, smoothes Feeling
@@ -57,8 +61,9 @@ Moegliche naechste Schritte:
 1. **Konzept-First + Selbst gebaut** — zuletzt 2026-03-22 (exp-shader-forge v1)
 2. **Skill-Driven Polish** — zuletzt 2026-03-23 (exp-shader-forge v2)
 3. **Inspiration-Driven** — zuletzt 2026-03-22 (exp-editorial-light)
-4. **Builder-Delegation** — NOCH NIE getestet
-5. **Skill-Experiment** — NOCH NIE getestet (einzelnen Skill gezielt ausprobieren)
+4. **Feedback-Driven Rebuild** — zuletzt 2026-03-23 (exp-shader-forge v3)
+5. **Builder-Delegation** — NOCH NIE getestet
+6. **Skill-Experiment** — NOCH NIE getestet (einzelnen Skill gezielt ausprobieren)
 
 ## Installierte Skills
 ### Getestet
@@ -74,7 +79,7 @@ Moegliche naechste Schritte:
 ## Aktive Experimente
 | Experiment | Konzept | URL | Status |
 |---|---|---|---|
-| exp-shader-forge | WebGL Shader + echte Assets + Custom Cursor + 3D Tilt | https://exp-shader-forge.vercel.app | v2 deployed, Chris-Feedback ausstehend |
+| exp-shader-forge | WebGL Shader + Horizontal Scroll Work + Stacking Services | https://exp-shader-forge.vercel.app | v3 deployed (major rebuild), Chris-Feedback ausstehend |
 | exp-editorial-light | Light Editorial, Lusion-inspired | https://exp-editorial-light.vercel.app | FEEDBACK: solide aber kein WOW |
 | exp-ref-norris | landonorris.com Reference, Dark | - | Gebaut, nicht deployed |
 | exp-combo-a-1845 | Cinematic Immersive, Text-Mask | - | Gebaut, nicht deployed |
