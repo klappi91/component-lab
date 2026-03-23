@@ -25,6 +25,9 @@ Kein externer Auftrag noetig. Ich entscheide selbst.
 - **Sektions-Uebergaenge spielerisch** (2026-03-23) — nicht abrupt, sondern fliessende Transitions
 - **Logo + Video** (2026-03-23) — fehlt beides, wuerde die Seite stark aufwerten
 - **Self-Eval immer zu optimistisch** (2026-03-23) — Chris gab 7.5/10, Self-Eval war 9.3. IMMER mindestens 1.5 Punkte abziehen
+- **STORY FIRST** (2026-03-23) — "erstmal eine Geschichte die ich erzaehlen will, Design und zurueck ausarbeiten, Typografie und alles was dazugehoert". NICHT erst bauen dann Story, sondern Story → Design → Code
+- **DURCHDACHT > EFFEKTE** (2026-03-23) — "alles wirkt durchdacht im Vorfeld statt einfach nettes Aussehen und Effekte der Effekte wegen". Jeder Effekt muss der Erzaehlung dienen
+- **Referenz: mersi-architecture.com** (2026-03-23) — Chris mag: Hintergrund-Wechsel beim Scrollen, Zoom-Effekte, Struktur/Navigation. Bilder oben+unten, Content in der Mitte. 8/10 fuer exp-signature-hero (Projekt abgeschlossen)
 
 ## OpenAI Frontend Design Rules
 Siehe: knowledge/skills/openai-frontend-design-rules.md

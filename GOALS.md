@@ -10,27 +10,26 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ### Offene Teilziele
 
-#### 1. exp-signature-hero — CHRIS-FEEDBACK EINARBEITEN
-- **Status:** v11 deployed, Chris-Bewertung: **7.5/10** (Self-Eval war 9.3 — Bewertung kaputt!)
+#### 1. exp-story-editorial — NEUES PROJEKT (Story-First Ansatz)
+- **Status:** v1 deployed, Self-Eval 6.5/10 (konservativ)
+- **URL:** https://exp-story-editorial.vercel.app
+- **GitHub:** https://github.com/klappi91/weblab-exp-story-editorial
+- **Stil:** Warm Editorial, Story-Arc (Hook→Tension→Promise→Proof→Process→CTA), mersi-architecture.com inspiriert
+- **Chris-Auftrag:** "Story first, Design zurueck ausarbeiten, Typografie, durchdacht statt Effekte"
+- **Referenz:** mersi-architecture.com (Hintergrund-Wechsel, intentionales Design)
+- **Fonts:** Clash Display (bold) + Instrument Serif (editorial) + Switzer (body) — alle Fontshare
+- **Farben:** Cream #F5F0EB + Dark #0A0A0A + Orange #FF6B00 (intentional, sparsam)
+- **8 Gemini-Bilder:** Editorial-Fotografie ($0.81), alle integriert
+- **Features:** Split-Screen Hero, word-by-word reveals, Portfolio mit sticky crossfade (mersi-style center band), editorial Process layouts mit clip-path reveals, Lenis smooth scroll
+- **Naechste Schritte:**
+  - [ ] Chris-Feedback abwarten
+  - [ ] Overdrive Push wenn Richtung stimmt
+  - [ ] Evtl. echte Projekt-Screenshots statt AI-generierte Bilder
+
+#### 1b. exp-signature-hero — ABGESCHLOSSEN
+- **Status:** v12 deployed, Chris-Bewertung: **8/10**, PROJEKT ABGESCHLOSSEN
 - **URL:** https://exp-signature-hero.vercel.app
-- **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader + ScrollFlow v2 + Stacking Services + Pinned Methode + Preloader + SVG Logo + Video Showreel
-- **v11 Aenderungen:** ScrollFlow v2 — CSS-blur Orbs entfernt (Performance), SVG-Pfad + Navigator-Dot (Sichtbarkeit)
-- **Chris-Feedback (offen):**
-  - [x] Durchgehender Fluss — ScrollFlow v2: SVG-Pfad zeichnet sich beim Scrollen, orange Dot folgt dem Pfad
-  - [x] Sektions-Uebergaenge — Gradient-Glow-Transitions
-  - [x] **Logo fehlt** — SVG Logo-Komponente (P/C Monogram + Wordmark), GSAP-animierbar, in Nav/Preloader/Footer
-  - [x] **Video fehlt** — Veo 3.1 cinematic ambient video, VideoShowreel-Sektion mit GSAP scroll reveal
-  - [x] **Mobile Services** — Farbige Glow-Akzente (Orange/Cyan/Purple), leichterer Gradient, visuelles Erlebnis
-  - [x] **Performance Desktop** — CSS-blur Orbs entfernt (3x blur 60-100px auf 500-1000px Elementen)
-  - [x] **Fluss sichtbarer machen** — SVG-Pfad + Navigator-Dot ersetzt unsichtbare Blur-Orbs
-- **v12 deployed (Visibility Fix):**
-  - [x] ScrollFlow Pfad sichtbarer (stroke 0.15→1.5, opacity 0.25→0.7)
-  - [x] Navigator Dot groesser (10→14px) + staerkerer Glow
-  - [x] Mobile Services Gradient weniger aggressiv (0.92→0.82)
-  - [x] Methode-Headlines OK (weiss auf dunkel, gut lesbar)
-  - [x] Chris per Mail ueber v8→v12 informiert
-  - [ ] Warte auf Chris-Feedback zu v12
+- **Ergebnis:** Solide, aber "nicht ideal" — Chris will Story-First Ansatz
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
