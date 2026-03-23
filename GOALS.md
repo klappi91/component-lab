@@ -10,25 +10,24 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ### Offene Teilziele
 
-#### 1. exp-warm-brutal evaluieren + iterieren
-- **Status:** v1 deployed, QA zeigt Bilder korrekt, Fonts gefixt, Canvas-Animation muss in echtem Browser getestet werden
-- **URL:** https://exp-warm-brutal-rcyrwlwgq-christian-klapproths-projects.vercel.app
-- **GitHub:** https://github.com/klappi91/weblab-exp-warm-brutal
-- **Stil:** "Warmer Brutalismus trifft Editorial Craft" — warm, haptisch, typografie-dominant
-- **Naechster Schritt:** In echtem Browser testen, ggf. Chris-Feedback einholen
+#### 1. exp-cinematic-dark polieren → WOW
+- **Status:** v1 deployed, QA Score 7/10 — BESTES Ergebnis bisher
+- **URL:** https://exp-cinematic-dark.vercel.app
+- **GitHub:** https://github.com/klappi91/weblab-exp-cinematic-dark
+- **Stil:** Cinematic Dark — filmisch, full-bleed Hero, orange Akzente
+- **Naechster Schritt:** impeccable:overdrive Polish, Signature Moment hinzufuegen (WebGL/Shader/3D), Chris-Feedback einholen
 
-#### 2. exp-shader-forge ggf. weiterentwickeln
-- **Status:** v3 deployed, Chris: "schon besser, Service-Cards leer"
-- **URL:** https://exp-shader-forge.vercel.app
-- **Stil:** Dark/Neon, WebGL Shader Hero
-- **Naechster Schritt:** Ggf. Service-Cards mit generierten Assets fuellen, oder auf exp-warm-brutal fokussieren
+#### 2. exp-warm-brutal (abgeschlossene Evaluation)
+- **Status:** v1 deployed, QA Score 5/10 — Hero zu leer, Manifest-Kontrast schlecht
+- **URL:** https://exp-warm-brutal.vercel.app
+- **Entscheidung:** Nicht weiter iterieren, cinematic-dark ist besser
 
 #### 3. Weitere Prozess-Experimente
 - [x] Designer-Agent → Builder Pipeline (exp-warm-brutal, 2026-03-23)
-- [ ] Builder-Agent mit OpenAI Design Rules als System-Prompt (zum Vergleich)
-- [ ] Codex als Design-Input (run-codex Skill)
-- [ ] Multi-Session Build (Konzept → Assets → Hero → Content)
+- [x] Builder mit OpenAI Design Rules (exp-cinematic-dark, 2026-03-23) ← GEWINNER
+- [ ] Kombination: Designer + OpenAI Rules + Assets First (bestes aus beiden?)
 - [ ] Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
+- [ ] impeccable:overdrive auf exp-cinematic-dark (Push von 7/10 → 9/10?)
 
 ---
 
@@ -40,14 +39,16 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] Designer-Agent erstellt (.claude/agents/designer.md)
 - [x] Constitution v8 — Meta-Experimentator Mindset
 - [x] OpenClaw-inspiriertes Workspace-System (SOUL, HEARTBEAT, GOALS)
-- [x] **ERSTES Prozess-Experiment: Designer → Builder Pipeline** (exp-warm-brutal)
+- [x] **Prozess-Experiment #1: Designer → Builder Pipeline** (exp-warm-brutal, 5/10)
+- [x] **Prozess-Experiment #2: OpenAI Rules → Builder** (exp-cinematic-dark, 7/10)
 
 ---
 
 ## Metriken
-- **Websites deployed:** 3 (shader-forge, editorial-light, warm-brutal)
+- **Websites deployed:** 4 (shader-forge, editorial-light, warm-brutal, cinematic-dark)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
-- **Prozess-Experimente durchgefuehrt:** 1 (Ziel: mindestens 3)
+- **Prozess-Experimente durchgefuehrt:** 2 (Ziel: mindestens 3)
 - **Bewaehrte Workflows:**
   - Skill-Driven Polish (impeccable:critique → overdrive)
-  - Designer → Builder Pipeline (Designer-Konzept + parallele Asset-Gen + Builder-tmux)
+  - **Assets-First + OpenAI Rules + Sonnet Builder** ← BESTER Workflow bisher
+  - Image-Manifest fuer Builder (batch gemini-image → manifest.json)

@@ -1,4 +1,4 @@
-# Component Lab — Constitution v10
+# Component Lab — Constitution v11
 
 Kuratiertes Wissen. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
 Identitaet, Ziele, Heartbeat leben jetzt in eigenen Workspace-Dateien (SOUL.md, GOALS.md, HEARTBEAT.md).
@@ -26,18 +26,37 @@ Kein externer Auftrag noetig. Ich entscheide selbst.
 Siehe: knowledge/skills/openai-frontend-design-rules.md
 Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, full-bleed Imagery, Hero = Brand + Headline + CTA + dominantes Bild, KEINE leeren Cards, jede Sektion = ein Zweck, 2-3 intentionale Animationen, echter Content.
 
+## BESTER Workflow (Stand 2026-03-23)
+
+**Assets-First + OpenAI Rules + Sonnet Builder:**
+1. Projekt mit web-lab setup.sh aufsetzen
+2. gemini-image Batch: 6-8 Bilder generieren ($0.50, 50 Sek)
+3. Image-Manifest schreiben (specs/image-manifest.json)
+4. Minimales Design-Konzept mit OpenAI Rules eingebettet
+5. Sonnet Builder via tmux starten (~8 Min)
+6. QA via agent-browser
+7. Deploy via Vercel
+
+**Warum das funktioniert:**
+- Assets FIRST = Builder nutzt sie (statt CSS-Gradients)
+- OpenAI Rules = zuverlaessig kohaerent (besser als abstrakter Designer-Output)
+- Sonnet = schneller + guenstiger als Opus, gleiche Build-Qualitaet
+- Image-Manifest = Builder weiss GENAU was verfuegbar ist
+- Gesamtzeit: ~15 Min fuer eine vollstaendige Website
+
 ## Was funktioniert (technisch)
+- **Full-bleed Hero mit generiertem Bild** — der groesste visuelle Impact
+- gemini-image Batch fuer Projekt-Mockups UND Service-Visuals
+- Alternating asymmetric Layouts fuer Services
 - WebGL Shader als Signature Moment
-- gemini-image fuer Projekt-Mockups UND Service-Visuals
-- Horizontal Scroll mit GSAP pin
 - CSS sticky Stacking Cards
 - toggleActions > scrub fuer Content-Reveals
 - Lenis + GSAP Integration
 - agent-browser fuer visuelles QA
-- Unbounded Font (distinctive), Instrument Serif (elegant)
+- Bebas Neue (bold display), Space Grotesk (clean body)
+- Unbounded (distinctive), Instrument Serif (elegant)
 - impeccable:critique → overdrive Pipeline
 - Clip-path Wipe-Reveals fuer Portfolio-Projekte
-- Custom Cursor (12px dot, ring auf hover)
 - Grain-Overlay (SVG feTurbulence)
 
 ## Was NICHT funktioniert
@@ -46,31 +65,42 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - AI-Template Tells (corner marks, mono labels, cheesy copy)
 - scrub-Animationen fuer Reveals (opacity-0-Bug)
 - Konzept ueberspringen → generisch
-- **CSS @import fuer Fontshare in Next.js** — wird im Build nicht zuverlaessig aufgeloest. IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
-- **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein, oder ein Manifest muss den Builder informieren
-- **tmux-Sessions IMMER beenden** — Nach erfolgreichem Build: `tmux kill-session -t name`. Alternative: Agent-Tool statt tmux (beendet sich selbst). Vor Session-Ende: `tmux ls` pruefen.
+- **CSS @import fuer Fontshare in Next.js** — IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
+- **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein + Manifest
+- **tmux-Sessions IMMER beenden** — Nach Build: `tmux kill-session -t name`. Vor Session-Ende: `tmux ls` pruefen
+- **Designer-Konzept allein reicht nicht** — Designer liefert kreativere Ideen, aber Builder ignoriert Assets ohne Manifest
 
 ## Prozess-Experimente
 
-### Getestet: Designer → Builder Pipeline (2026-03-23)
-- **Ergebnis:** Funktioniert grundsaetzlich. Klares Konzept = schnellerer, fehlerfreierer Build.
-- **Designer-Agent:** Exzellentes Konzept (5 Min), 7 Akte, konkreter Content, Asset-Prompts
-- **Builder-Agent:** 10 Min, 14 Dateien, 8 Sektionen, 0 Build-Fehler
-- **Problem:** Builder nutzte generierte Bilder nicht (weil parallel generiert). Fix: manuell.
-- **Verbesserung:** Assets ZUERST generieren, dann Builder starten. Oder Asset-Manifest.
+### #1: Designer → Builder Pipeline (2026-03-23, exp-warm-brutal)
+- **Score: 5/10** — Kreatives Konzept, aber Asset-Integration gescheitert
+- Designer-Agent liefert exzellentes Konzept (7 Akte, Asset-Prompts)
+- Builder nutzte generierte Bilder nicht (parallel generiert, kein Manifest)
+- Learning: Assets ZUERST + Manifest
+
+### #2: OpenAI Rules → Builder (2026-03-23, exp-cinematic-dark) ← GEWINNER
+- **Score: 7/10** — Full-bleed Hero, alle Bilder integriert, kohaerent
+- Assets-First + Manifest = perfekte Integration (7/7 Bilder)
+- Sonnet statt Opus: schneller, guenstiger, gleiche Qualitaet
+- Learning: Rules > Designer fuer zuverlaessigen Output
 
 ### Noch nicht getestet
-- Builder-Agent mit OpenAI Design Rules als System-Prompt
-- Codex als Design-Input (run-codex Skill)
-- Multi-Session Build (ueber 3-4 Sessions)
+- Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
+- impeccable:overdrive auf bestem Experiment
+
+## Was fehlt fuer WOW (7/10 → 9/10)
+- **Signature Moment** — WebGL Shader, 3D Element, oder tech-beeindruckende Animation
+- **Mutigere Layouts** — Services sind gut aber konventionell
+- **Micro-Interactions** — Custom Cursor, Hover-Effekte, Magnetic Buttons
+- **GSAP-Animationen perfektionieren** — im Headless-Browser nicht testbar
 
 ## Verfuegbare Agents & Tools
-- **Builder-Agent** — tmux-Session, eigene Claude Code Instanz
+- **Builder-Agent** — tmux-Session, eigene Claude Code Instanz (Sonnet empfohlen)
 - **designer.md** — .claude/agents/designer.md (Creative Director)
 - **web-lab setup.sh** — Projekt-Setup Script
 - **find-skills** — Skill-Discovery
 - **agent-browser** — Visuelles QA
-- **gemini-image / gemini-video** — Asset-Generierung
+- **gemini-image / gemini-video** — Asset-Generierung (Batch!)
 - **run-codex** — OpenAI Codex als zweite Meinung
 - **Brave Search / Firecrawl** — Web-Recherche
