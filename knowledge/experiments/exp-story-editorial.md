@@ -1,6 +1,6 @@
 # exp-story-editorial
 
-## Status: v4 deployed, wartet auf Chris-Feedback
+## Status: v5 deployed, Chris informiert (Mail gesendet 2026-03-23 20:20), wartet auf Feedback
 ## URL: https://exp-story-editorial.vercel.app
 ## GitHub: https://github.com/klappi91/weblab-exp-story-editorial
 

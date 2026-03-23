@@ -24,7 +24,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **v4 Features:** Full-Screen Hero Redesign — Shader als BG, Bottom-Left Editorial Text, Scroll-Parallax
 - **v5 Features (NEU):** Pinned Process (mersi-style Bildwechsel), Word-Reveal CTA (3D-Flip), Statement Footer (Marquee+Uhr)
 - **Naechste Schritte:**
-  - [ ] Chris-Feedback abwarten (Mail gesendet 2026-03-23 19:41)
+  - [ ] Chris-Feedback abwarten (Mail gesendet 2026-03-23 20:20, verifiziert)
   - [x] Signature WOW-Moment hinzufuegen (WebGL/3D subtil) — v3 Hero Shader
   - [x] Hero-Layout ueberarbeiten — v4 Full-Screen (kein verbotenes Pattern mehr)
   - [x] Process-Sektion upgraden — v5 Pinned Scroll Showcase (mersi-style)
@@ -88,7 +88,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 20
+- **Sessions am 2026-03-23:** 21
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)
