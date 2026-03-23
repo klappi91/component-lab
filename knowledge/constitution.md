@@ -65,6 +65,20 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
   - WICHTIG: Spacer (h-screen) NACH der letzten Card, sonst hat sie 0 Scroll-Raum
   - Dim-Effekt: scale 0.92 + brightness(0.4) per scrub auf vorherige Cards
   - Parallax: GSAP fromTo y: -8% to 8% auf Images
+- **Pinned Scroll Showcase** (CSS sticky + GSAP scrub-Timeline)
+  - Outer: hohe Hoehe (500vh), Inner: sticky top-0 h-screen
+  - GSAP scrub-Timeline mapped Scroll-Progress auf Step-Transitions
+  - autoAlpha fuer Ein/Ausblenden (visibility + opacity)
+  - Funktioniert perfekt mit Lenis (kein GSAP pin noetig!)
+- **Word-by-Word Text Reveal** (GSAP stagger)
+  - y: 110% + rotateX: -15 Entrance = 3D-Flip-Effekt
+  - Stagger: 0.12s pro Wort
+  - Wrapper braucht overflow:hidden
+  - WICHTIG: {' '} ZWISCHEN inline-block Elementen platzieren, nicht innerhalb
+- **CSS Marquee** (infinite scroll, kein JS noetig)
+  - @keyframes marquee-scroll: translateX(0 → -50%)
+  - 6+ Kopien des Textes fuer nahtloses Loop
+  - WebkitTextStroke fuer Outline-Effekt
 
 ## Was NICHT funktioniert
 - Websites ohne echte Assets = langweilig
@@ -123,12 +137,20 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - Spacer-Bug entdeckt: letzte sticky Card braucht h-screen Spacer
 - Learning: **Services-Redesign war der groesste Hebel** — die "langweiligste" Sektion upgraden bringt am meisten
 
+### #7: Opus Overdrive Push #4 — Methode + CTA + Footer (2026-03-23, exp-signature-hero v5)
+- **Score: 9.0→9.2/10** — Alle 3 schwachen Sektionen aufgewertet
+- Methode: Pinned Scroll Showcase (500vh, sticky, GSAP scrub-Timeline)
+- CTA: Split-Text Reveal (word-by-word, rotateX-15, parallax bg)
+- Footer: Infinite Marquee + 4-Column Grid
+- Learning: **CSS sticky + GSAP scrub = perfekt mit Lenis** (kein pin noetig)
+- Learning: **Inline-Block Spacing** — {' '} ZWISCHEN Elementen, nicht innerhalb
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
 - impeccable:overdrive als Skill (bisher nur manuelle Overdrive)
 
-## Was fehlt fuer WOW (~9.0/10 → 9.5/10+)
+## Was fehlt fuer WOW (~9.2/10 → 9.5/10+)
 - ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
 - ~~Mobile Nav~~ — ERLEDIGT (Full-Screen Menu mit nummerierten Links)
 - ~~Portfolio redesignen~~ — ERLEDIGT (Editorial Info-Bar statt Overlay)
@@ -138,10 +160,12 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - ~~Services aufwerten~~ — ERLEDIGT (Full-Screen Stacking Cards, 8→9.5/10)
 - ~~Film Grain~~ — ERLEDIGT (SVG feTurbulence Overlay)
 - ~~Section Dividers~~ — ERLEDIGT (animated horizontal lines)
-- **Methode aufwerten** — Aktuell 8.5/10
-- **CTA aufwerten** — Aktuell 8.5/10
-- **Footer aufwerten** — Aktuell 8/10
+- ~~Methode aufwerten~~ — ERLEDIGT (Pinned Scroll Showcase, 8.5→9.2/10)
+- ~~CTA aufwerten~~ — ERLEDIGT (Split-Text Reveal, 8.5→9.3/10)
+- ~~Footer aufwerten~~ — ERLEDIGT (Marquee + Grid, 8→9.0/10)
 - **impeccable:overdrive** — Noch nicht mit dem Skill gepusht, nur manuell
+- **Mobile QA** — Neue Sektionen auf Mobile testen
+- **Methode Step-Bilder** — Generieren fuer visuellere Steps
 
 ## BESTER Workflow (Stand 2026-03-23, aktualisiert)
 
