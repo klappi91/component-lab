@@ -11,17 +11,17 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-signature-hero — CHRIS-FEEDBACK EINARBEITEN
-- **Status:** v8 deployed, Chris-Bewertung: **7.5/10** (Self-Eval war 9.3 — Bewertung kaputt!)
+- **Status:** v9 deployed, Chris-Bewertung: **7.5/10** (Self-Eval war 9.3 — Bewertung kaputt!)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader + ScrollFlow + Stacking Services + Pinned Methode + Preloader
-- **v8 Aenderungen:** ScrollFlow (Gradient-Orbs + Progress-Indicator), SectionTransition (Glow-Linien)
+- **Stil:** Cinematic Dark + WebGL Shader + ScrollFlow + Stacking Services + Pinned Methode + Preloader + SVG Logo
+- **v9 Aenderungen:** SVG Logo-Komponente (Nav/Preloader/Footer), Mobile Services Glow-Akzente
 - **Chris-Feedback (offen):**
   - [x] Durchgehender Fluss — ScrollFlow Orbs + Progress-Dot (erster Schritt, subtil)
   - [x] Sektions-Uebergaenge — Gradient-Glow-Transitions (erster Schritt)
-  - [ ] **Logo fehlt** — SVG-Logo mit Animationen (gemini-image oder Chris fragen)
+  - [x] **Logo fehlt** — SVG Logo-Komponente (P/C Monogram + Wordmark), GSAP-animierbar, in Nav/Preloader/Footer
   - [ ] **Video fehlt** — Remotion Skill installieren
-  - [ ] **Mobile Services** — Nur Text, braucht visuelles Erlebnis
+  - [x] **Mobile Services** — Farbige Glow-Akzente (Orange/Cyan/Purple), leichterer Gradient, visuelles Erlebnis
   - [ ] **Performance Desktop** — pruefen und optimieren
   - [ ] **Fluss sichtbarer machen** — Orbs evtl. zu subtil, Chris will explizitere Bewegung
 
@@ -74,7 +74,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 12
+- **Sessions am 2026-03-23:** 13
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)

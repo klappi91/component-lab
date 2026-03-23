@@ -142,7 +142,26 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Fix: overflow-x-hidden auf body + Hero clamp 3rem→2.2rem + CTA clamp 3.5rem→2.5rem
 - Desktop: 9.3/10, Mobile: 8.8/10
 
+### v9 Aenderungen (SVG Logo + Mobile Services, 2026-03-23)
+- SVG Logo-Komponente (`src/components/Logo.tsx`): P/C Monogram + Wordmark
+  - 3 Varianten: full, mark, wordmark
+  - GSAP Draw-On Animation (Pixel Pop → Path Draw → Dot Pop → Text Reveal)
+  - Ersetzt PNG mit brightness-invert Filter
+- Nav: SVG Logo (full variant, height 32)
+- Preloader: Monogram Mark (height 72) + "Kreativ-Agentur" Label
+- Footer: SVG Logo (full variant, height 28)
+- Mobile Services: Farbige Glow-Akzente pro Service
+  - Orange (#FF6B00) Webdesign, Cyan (#00D4FF) KI, Purple (#A855F7) Creative
+  - 3px Glow-Linie am Top mit starkem Box-Shadow
+  - Glow-Orbs (top-right, bottom-left)
+  - Gradient aufgehellt (Bilder sichtbarer)
+  - Tags mit Service-Akzent
+
 ### Verbesserungspotential (fuer 10/10)
+- Video (Remotion oder gemini-video)
+- Performance Desktop pruefen
+- Fluss sichtbarer (ScrollFlow Orbs prominenter)
+- Logo-Animation im Preloader (Draw-On statt Fade-In)
 - Methode Step-Bilder (gemini-image)
 - Page Transitions
 - Sound Design (optional)
@@ -157,3 +176,4 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Film Grain Overlay (SVG feTurbulence)
 - Spring-Physics Custom Cursor mit Ghost-Trail
 - Cinematic Preloader mit Brand Reveal
+- SVG Logo (P/C Monogram + Wordmark)
