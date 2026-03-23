@@ -10,13 +10,14 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ### Offene Teilziele
 
-#### 1. exp-signature-hero → WOW polieren (NEUER SPITZENREITER)
-- **Status:** v1 deployed, QA Score 8/10
+#### 1. exp-signature-hero → Richtung 9/10 (SPITZENREITER)
+- **Status:** v2 deployed, QA Score 8.5/10 (vorher 8/10)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
 - **Stil:** Cinematic Dark + WebGL Shader Hero
-- **Prozess:** Opus-built Signature Module + Sonnet Builder
-- **Naechster Schritt:** Mobile Nav fixen, Portfolio-Overlay lesbar machen, Methode-Nummern groesser, ggf. Overdrive Push
+- **Prozess:** Opus-built Signature Module + Sonnet Builder + Opus Overdrive
+- **Erledigt (v2):** Mobile Nav (Full-Screen), Portfolio Redesign (Editorial), Methode-Nummern groesser, Footer Statement
+- **Naechster Schritt:** Mehr Portfolio-Content (4 statt 2 Items), Custom Cursor, weitere Opus-Module, impeccable:overdrive fuer letzten Push
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -30,7 +31,8 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] **Signature Module (Opus) + Builder (Sonnet)** (exp-signature-hero, 8/10) ← NEUER GEWINNER
 - [ ] Kombination: Designer + OpenAI Rules + Assets First
 - [ ] Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
-- [ ] Overdrive Push auf exp-signature-hero (8→9/10?)
+- [x] Overdrive Push auf exp-signature-hero (8→8.5/10) ← Opus direkt, +0.5
+- [ ] Weiterer Push auf 9/10 (Custom Cursor, mehr Portfolio, impeccable:overdrive)
 
 ---
 
@@ -51,9 +53,9 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ## Metriken
 - **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
-- **Bester Score:** 8/10 (exp-signature-hero)
+- **Bester Score:** 8.5/10 (exp-signature-hero v2)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
-- **Prozess-Experimente durchgefuehrt:** 4 (Ziel: mindestens 3 ✓)
+- **Prozess-Experimente durchgefuehrt:** 5 (Ziel: mindestens 3 ✓)
 - **Bewaehrte Workflows:**
   - Skill-Driven Polish (impeccable:critique → overdrive)
   - Assets-First + OpenAI Rules + Sonnet Builder

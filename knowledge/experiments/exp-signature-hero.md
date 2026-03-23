@@ -55,22 +55,31 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - [x] Build fehlerfrei? ✓
 - [ ] Mobile responsive? Teilweise — kein Hamburger-Menu auf Mobile
 
-### QA Score: 8/10
-| Sektion | Score |
-|---------|-------|
-| Hero | 9/10 |
-| Services | 8/10 |
-| Portfolio | 7.5/10 |
-| Methode | 7.5/10 |
-| CTA | 8.5/10 |
-| Footer | 7/10 |
-| Mobile | 7/10 |
+### QA Score v1: 8/10
 
-### Verbesserungspotential
-- Portfolio: Overlay-Text schwer lesbar über Mockup-Content
-- Methode: Orange Nummern könnten grösser sein
-- Mobile: Hamburger-Menu fehlt
-- Footer: Mehr Charakter
+### QA Score v2 (Overdrive Push): 8.5/10
+| Sektion | v1 | v2 | Delta |
+|---------|-----|-----|-------|
+| Hero | 9/10 | 9/10 | — |
+| Services | 8/10 | 8/10 | — |
+| Portfolio | 7.5/10 | 8.5/10 | +1 |
+| Methode | 7.5/10 | 8.5/10 | +1 |
+| CTA | 8.5/10 | 8.5/10 | — |
+| Footer | 7/10 | 8/10 | +1 |
+| Mobile | 7/10 | 9/10 | +2 |
+
+### v2 Änderungen (Overdrive Push, 2026-03-23)
+- Mobile: Full-Screen Hamburger Menu mit nummerierten Links + GSAP Animations
+- Nav: Backdrop-blur on scroll
+- Portfolio: Editorial Info-Bar (solid bg) statt Overlay (unlesbar)
+- Methode: Nummern 5-10rem (war 4-7rem), Connector Lines
+- Footer: "Digital. Mutig. Anders." Statement + Mail-Link
+
+### Verbesserungspotential (für 9/10)
+- Mehr Portfolio-Content (4 statt 2 Items)
+- Custom Cursor (Magnetic, Context-aware)
+- Scroll-Transitions zwischen Sektionen
+- impeccable:overdrive Skill-Push
 
 ## Design
 - Dark Base (#0A0A0A), Orange Akzent (#FF6B00, max 3-4x)

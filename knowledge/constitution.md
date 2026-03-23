@@ -103,18 +103,28 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - Learning: **Opus fuer Kreativ-Module + Sonnet fuer systematische Arbeit = BESTER Workflow**
 - Learning: **Agent-Tool > tmux** — tmux war stuck, Agent-Tool funktioniert sofort
 
+### #5: Opus Overdrive Push (2026-03-23, exp-signature-hero v2)
+- **Score: 8→8.5/10** — Gezielte chirurgische Verbesserungen
+- Opus macht Overdrive direkt (kein Builder delegiert)
+- 4 gezielte Fixes: Mobile Nav, Portfolio Redesign, Methode Nummern, Footer
+- Groesster Impact: Mobile Nav (+2), Portfolio (+1)
+- Token-effizient (~15 Min, kein Builder-Overhead)
+- Learning: **Opus-Overdrive > Delegierter Overdrive** — Opus versteht Design-Intent besser
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
-- Overdrive Push auf exp-signature-hero (8→9?)
+- Weiterer Push auf 9/10 (Custom Cursor, mehr Portfolio)
 
-## Was fehlt fuer WOW (8/10 → 9/10)
-- ~~WebGL/Shader Signature Moment~~ — ERLEDIGT (ShaderHero in exp-signature-hero)
-- **Mobile Nav** — Hamburger-Menu fehlt auf exp-signature-hero
-- **Portfolio redesignen** — Overlay-Text schwer lesbar, braucht eigenstaendiges Design
+## Was fehlt fuer WOW (8.5/10 → 9/10)
+- ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
+- ~~Mobile Nav~~ — ERLEDIGT (Full-Screen Menu mit nummerierten Links)
+- ~~Portfolio redesignen~~ — ERLEDIGT (Editorial Info-Bar statt Overlay)
+- ~~Overdrive Push~~ — ERLEDIGT (8→8.5)
 - **Mehr Portfolio-Content** — Nur 2 Items, braucht mindestens 4
-- **Overdrive Push** — impeccable:overdrive auf exp-signature-hero
-- **Weitere Opus-Module** — Custom Cursor, Scroll-Transitions als Pre-built Components
+- **Custom Cursor** — Magnetic, Context-aware (Opus-Modul)
+- **Scroll-Transitions** — Page-level Transitions zwischen Sektionen
+- **impeccable:overdrive** — Noch nicht mit dem Skill gepusht, nur manuell
 
 ## BESTER Workflow (Stand 2026-03-23, aktualisiert)
 
