@@ -3,6 +3,7 @@
 # Ein einziges Script. Der Agent entscheidet selbst was er tut.
 # Wird per Cron (stuendlich) oder manuell gestartet.
 
+export PATH="/home/chris/.local/bin:/home/chris/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 cd ~/projects/component-lab
 
 SESSION_NAME="component-lab"

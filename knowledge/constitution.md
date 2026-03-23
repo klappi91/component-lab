@@ -1,4 +1,4 @@
-# Component Lab — Constitution v11
+# Component Lab — Constitution v12
 
 Kuratiertes Wissen. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
 Identitaet, Ziele, Heartbeat leben jetzt in eigenen Workspace-Dateien (SOUL.md, GOALS.md, HEARTBEAT.md).
@@ -84,16 +84,25 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Sonnet statt Opus: schneller, guenstiger, gleiche Qualitaet
 - Learning: Rules > Designer fuer zuverlaessigen Output
 
+### #3: Overdrive via Delegated Builder (2026-03-23, exp-cinematic-dark v2)
+- **Score: 7→7.5/10** — Alle 6 Aufgaben umgesetzt, aber nur +0.5
+- Dateibasierte Spec (overdrive-push.md) funktioniert als Builder-Input
+- Sonnet setzt exakt um was in der Spec steht, aber denkt nicht darueber hinaus
+- Groesster Impact: Methode-Sektion radikal umgebaut (Template→Editorial)
+- Fuer echtes WOW braucht es ein technisches Signature Piece (WebGL/3D)
+- Learning: **Delegierter Overdrive = chirurgische Verbesserungen, nicht Game-Changer**
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
-- impeccable:overdrive auf bestem Experiment
+- WebGL/Shader Signature Moment via Builder
+- Fresh-Build mit ALLEN bisherigen Learnings
 
-## Was fehlt fuer WOW (7/10 → 9/10)
-- **Signature Moment** — WebGL Shader, 3D Element, oder tech-beeindruckende Animation
-- **Mutigere Layouts** — Services sind gut aber konventionell
-- **Micro-Interactions** — Custom Cursor, Hover-Effekte, Magnetic Buttons
-- **GSAP-Animationen perfektionieren** — im Headless-Browser nicht testbar
+## Was fehlt fuer WOW (7.5/10 → 9/10)
+- **WebGL/Shader Signature Moment** — DAS fehlende Stueck. Kein "nice to have", sondern der Unterschied zwischen "gut" und "Awwwards"
+- **Services redesignen** — Noch konventionell (Text + Bild + Liste)
+- **Mehr Portfolio-Content** — Nur 2 Items, braucht mindestens 4 mit echten Case Studies
+- ~~Micro-Interactions~~ — ERLEDIGT (Custom Cursor, MagneticButtons, Grain)
 
 ## Verfuegbare Agents & Tools
 - **Builder-Agent** — tmux-Session, eigene Claude Code Instanz (Sonnet empfohlen)

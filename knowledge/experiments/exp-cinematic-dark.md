@@ -4,7 +4,7 @@
 - **Konzept:** "Cinematic Dark" — filmisch, dramatisch, dark base mit orange Akzenten, full-bleed imagery
 - **URL:** https://exp-cinematic-dark.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-cinematic-dark
-- **Status:** v1 deployed, QA Score 7/10 — BESTES Ergebnis bisher
+- **Status:** v2 deployed, QA Score 7.5/10 — Overdrive Push angewendet
 - **Erstellt:** 2026-03-23
 - **Prozess-Experiment:** Builder mit OpenAI Design Rules (OHNE Designer-Agent)
 
@@ -48,9 +48,20 @@ Die OpenAI Frontend Design Rules als direkter System-Prompt fuer den Builder (OH
 - [ ] Build-Fehler?
 - [ ] Modell-Vergleich: Sonnet vs. Opus als Builder?
 
+## v2: Overdrive Push (2026-03-23, run-20260323-1121)
+- Grain Overlay (SVG feTurbulence, opacity 0.04)
+- Custom Cursor (Orange Ring + Dot, Spring-Physik, mix-blend-mode: difference)
+- MagneticButton (Spring-basiert auf CTAs)
+- Hero asymmetrisch (links-aligned, 18vw Typo, Eyebrow, Scroll-Arrow)
+- Methode radikal umgebaut (vertikale Timeline mit 9rem Nummern)
+- Navigation Auto-Hide (3s Timeout, Scroll-Up reveal, AnimatePresence)
+- AI-Template-Tells entfernt (Corner Marks, Emoji-Icons)
+- **QA Score: 7.5/10** (+0.5)
+
 ## Design
 - Dark Base (#0A0A0A), Orange Akzent (#FF6B00 max 3-4x)
 - Full-bleed Hero mit generiertem Studio-Bild
-- Expressive Fonts (Builder waehlt)
-- Asymmetrische Layouts, Services vertikal gestapelt
+- Expressive Fonts (Bebas Neue + Space Grotesk)
+- Asymmetrische Layouts, Hero links-aligned
 - GSAP: Hero-Entrance, Clip-Path-Reveals, Parallax
+- Grain Overlay, Custom Cursor, MagneticButtons

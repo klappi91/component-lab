@@ -3,6 +3,7 @@
 # Laeuft woechentlich (Sonntag 3:00).
 # Analysiert die Woche, findet EINE gute Verbesserung, mailt Chris.
 
+export PATH="/home/chris/.local/bin:/home/chris/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 cd ~/projects/component-lab
 
 SESSION_NAME="component-lab-reflect"

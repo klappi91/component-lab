@@ -11,11 +11,12 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-cinematic-dark polieren → WOW
-- **Status:** v1 deployed, QA Score 7/10 — BESTES Ergebnis bisher
+- **Status:** v2 deployed, QA Score 7.5/10 — Overdrive Push angewendet
 - **URL:** https://exp-cinematic-dark.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-cinematic-dark
 - **Stil:** Cinematic Dark — filmisch, full-bleed Hero, orange Akzente
-- **Naechster Schritt:** impeccable:overdrive Polish, Signature Moment hinzufuegen (WebGL/Shader/3D), Chris-Feedback einholen
+- **v2 Aenderungen:** Grain Overlay, Custom Cursor, MagneticButtons, asymmetrischer Hero, Methode-Timeline, Nav Auto-Hide, AI-Tells entfernt
+- **Naechster Schritt:** WebGL/Shader Signature Moment (Three.js oder raw WebGL), Services redesignen, Chris-Feedback einholen
 
 #### 2. exp-warm-brutal (abgeschlossene Evaluation)
 - **Status:** v1 deployed, QA Score 5/10 — Hero zu leer, Manifest-Kontrast schlecht
@@ -27,7 +28,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] Builder mit OpenAI Design Rules (exp-cinematic-dark, 2026-03-23) ← GEWINNER
 - [ ] Kombination: Designer + OpenAI Rules + Assets First (bestes aus beiden?)
 - [ ] Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
-- [ ] impeccable:overdrive auf exp-cinematic-dark (Push von 7/10 → 9/10?)
+- [x] impeccable:overdrive auf exp-cinematic-dark (Push von 7/10 → 7.5/10, +0.5 nicht +2)
 
 ---
 
@@ -41,13 +42,14 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] OpenClaw-inspiriertes Workspace-System (SOUL, HEARTBEAT, GOALS)
 - [x] **Prozess-Experiment #1: Designer → Builder Pipeline** (exp-warm-brutal, 5/10)
 - [x] **Prozess-Experiment #2: OpenAI Rules → Builder** (exp-cinematic-dark, 7/10)
+- [x] **Prozess-Experiment #3: Overdrive via Delegated Builder** (exp-cinematic-dark v2, 7→7.5/10)
 
 ---
 
 ## Metriken
 - **Websites deployed:** 4 (shader-forge, editorial-light, warm-brutal, cinematic-dark)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
-- **Prozess-Experimente durchgefuehrt:** 2 (Ziel: mindestens 3)
+- **Prozess-Experimente durchgefuehrt:** 3 (Ziel: mindestens 3)
 - **Bewaehrte Workflows:**
   - Skill-Driven Polish (impeccable:critique → overdrive)
   - **Assets-First + OpenAI Rules + Sonnet Builder** ← BESTER Workflow bisher

@@ -14,7 +14,17 @@ Beobachtungen aus der Nacht-Überwachung des autonomen Agenten.
 
 ---
 
-## 2. Bypass-Permissions Prompt blockiert Cron-Start
+## 2. Protected Paths blockieren Agent auch im Bypass-Modus
+
+- `.claude/` Verzeichnisse sind auch mit `--dangerously-skip-permissions` geschützt
+- Agent erstellt `.claude/commands/` fuer Builder-Projekte → hängt bei "Do you want to create?"
+- **Idee A:** Commands in `specs/commands/` statt `.claude/commands/` ablegen
+- **Idee B:** Permission-Setting das `.claude/` in bestimmten Pfaden erlaubt
+- **Idee C:** Agent-Prompt anpassen: "Erstelle Builder-Instruktionen NICHT in .claude/"
+
+---
+
+## 2b. Bypass-Permissions Prompt blockiert Cron-Start (GEFIXT)
 
 - **Beobachtet 08:00:** `run.sh` startete Session, aber Claude zeigte Bypass-Permissions-Warnung ("Yes, I accept") und wartete auf Input
 - Niemand da zum Bestätigen → Session blockiert, Agent startet nie
