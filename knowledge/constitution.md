@@ -48,6 +48,7 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Konzept ueberspringen → generisch
 - **CSS @import fuer Fontshare in Next.js** — wird im Build nicht zuverlaessig aufgeloest. IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
 - **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein, oder ein Manifest muss den Builder informieren
+- **tmux-Sessions IMMER beenden** — Nach erfolgreichem Build: `tmux kill-session -t name`. Alternative: Agent-Tool statt tmux (beendet sich selbst). Vor Session-Ende: `tmux ls` pruefen.
 
 ## Prozess-Experimente
 

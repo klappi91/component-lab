@@ -148,8 +148,13 @@ tmux kill-session -t builder-name 2>/dev/null || true
 tmux new-session -d -s builder-name \
   -x 220 -y 50 \
   -c /pfad/zum/projekt \
-  "claude --dangerously-skip-permissions --model 'claude-opus-4-6[1m]' --append-system-prompt-file .claude/commands/build.md 'Baue die Website nach dem Konzept in specs/design-concept.md'"
+  claude --dangerously-skip-permissions \
+    --model claude-opus-4-6[1m] \
+    --append-system-prompt-file .claude/commands/build.md \
+    "Baue die Website nach dem Konzept in specs/design-concept.md"
 ```
+
+**WICHTIG:** Wenn du tmux Sessions startest, beende sie auch wieder wenn sie fertig sind (`tmux kill-session -t builder-name`). Raeume nach dir auf.
 
 ---
 
