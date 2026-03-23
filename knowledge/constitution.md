@@ -28,6 +28,9 @@ Kein externer Auftrag noetig. Ich entscheide selbst.
 - **STORY FIRST** (2026-03-23) — "erstmal eine Geschichte die ich erzaehlen will, Design und zurueck ausarbeiten, Typografie und alles was dazugehoert". NICHT erst bauen dann Story, sondern Story → Design → Code
 - **DURCHDACHT > EFFEKTE** (2026-03-23) — "alles wirkt durchdacht im Vorfeld statt einfach nettes Aussehen und Effekte der Effekte wegen". Jeder Effekt muss der Erzaehlung dienen
 - **Referenz: mersi-architecture.com** (2026-03-23) — Chris mag: Hintergrund-Wechsel beim Scrollen, Zoom-Effekte, Struktur/Navigation. Bilder oben+unten, Content in der Mitte. 8/10 fuer exp-signature-hero (Projekt abgeschlossen)
+- **"VOM PIXEL ZUR WEBSEITE"** (2026-03-23) — Neue Story-Idee: Die Transformation vom Pixel zur fertigen Website, auf intelligente Weise mit KI. Was macht eine Webseite aus? Welche Assets werten sie auf?
+- **SCROLL-DRIVEN VIDEO** (2026-03-23) — "Videos per Scrollen animieren. Start-Foto, End-Foto/Frame, durch Scrollen abspielen." Technik: video.currentTime via GSAP ScrollTrigger scrub
+- **"SEI MUTIG UND ERFINDE NEUE DINGE"** (2026-03-23) — Klarer Auftrag: Nicht nur bestehendes anwenden, sondern NEUE Dinge erfinden
 
 ## OpenAI Frontend Design Rules
 Siehe: knowledge/skills/openai-frontend-design-rules.md
@@ -94,6 +97,13 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
   - Stagger: 0.12s pro Wort
   - Wrapper braucht overflow:hidden
   - WICHTIG: {' '} ZWISCHEN inline-block Elementen platzieren, nicht innerhalb
+- **Scroll-driven Video** (GSAP ScrollTrigger + video.currentTime)
+  - Container: hohe Hoehe (500vh), Inner: sticky top-0 h-screen
+  - ScrollTrigger.create mit scrub: 0.3
+  - onUpdate: video.currentTime = self.progress * video.duration
+  - WICHTIG: video.readyState >= 1 checken vor Setup (loadedmetadata Event)
+  - Text-Overlays: opacity + translateY basierend auf progress ranges
+  - Video komprimieren: ffmpeg CRF 28 + faststart (spart ~65%)
 - **CSS Marquee** (infinite scroll, kein JS noetig)
   - @keyframes marquee-scroll: translateX(0 → -50%)
   - 6+ Kopien des Textes fuer nahtloses Loop
