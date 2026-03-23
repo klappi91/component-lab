@@ -136,8 +136,13 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Scroll-Velocity Skew auf Portfolio (bis 3° Neigung)
 - Footer: Live-Uhr, Slide-Up Hover, Spring Back-to-Top
 
+### v7 Aenderungen (Mobile QA Fix, 2026-03-23)
+- **QA via agent-browser** (Desktop + iPhone 14 Emulation)
+- Bug: Fehlender overflow-x:hidden auf body → horizontaler Overflow auf Mobile
+- Fix: overflow-x-hidden auf body + Hero clamp 3rem→2.2rem + CTA clamp 3.5rem→2.5rem
+- Desktop: 9.3/10, Mobile: 8.8/10
+
 ### Verbesserungspotential (fuer 10/10)
-- Mobile QA (Preloader, Cursor-Trail auf Touch)
 - Methode Step-Bilder (gemini-image)
 - Page Transitions
 - Sound Design (optional)

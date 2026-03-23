@@ -11,7 +11,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ### Offene Teilziele
 
 #### 1. exp-signature-hero → Richtung 9.5/10 (SPITZENREITER)
-- **Status:** v6 deployed, QA Score ~9.5/10 (vorher 9.2/10)
+- **Status:** v7 deployed, Desktop 9.3/10, Mobile 8.8/10 (QA bestanden, Mobile-Overflow gefixt)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
 - **Stil:** Cinematic Dark + WebGL Shader Hero + Spring Cursor + Stacking Services + Pinned Methode + Preloader
@@ -40,8 +40,9 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] Full-Screen Stacking Services + Film Grain (8.8→9.0/10) ← Opus Overdrive #3
 - [x] Methode + CTA + Footer aufwerten (9.0→9.2/10) ← Opus Overdrive #4
 - [x] impeccable:overdrive Skill-Push (9.2→9.5/10) ← Sonnet + Skill, 8 Min!
-- [ ] Visuelles QA fuer v6 (agent-browser)
-- [ ] Mobile QA fuer v6
+- [x] Visuelles QA fuer v6 (agent-browser) ← Desktop 9.3/10 bestätigt
+- [x] Mobile QA fuer v6 ← overflow-x Bug gefixed, Mobile 8.8/10
+- [x] Chris informieren — v7 deployed, QA bestanden ← Mail gesendet
 
 ---
 

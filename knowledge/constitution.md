@@ -93,6 +93,7 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - scrub-Animationen fuer Reveals (opacity-0-Bug)
 - Konzept ueberspringen → generisch
 - **CSS @import fuer Fontshare in Next.js** — IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
+- **overflow-x: hidden auf body** — PFLICHT fuer Mobile! Ohne das verursachen Marquees, Shader-Canvas, oder grosse Dekor-Elemente horizontalen Scroll der alle Texte abschneidet
 - **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein + Manifest
 - **tmux-Sessions IMMER beenden** — Nach Build: `tmux kill-session -t name`. Vor Session-Ende: `tmux ls` pruefen
 - **Designer-Konzept allein reicht nicht** — Designer liefert kreativere Ideen, aber Builder ignoriert Assets ohne Manifest
