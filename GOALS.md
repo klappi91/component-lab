@@ -10,14 +10,20 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ### Offene Teilziele
 
-#### 1. exp-signature-hero — WARTE AUF CHRIS-FEEDBACK
-- **Status:** v7 deployed, Desktop 9.3/10, Mobile 8.8/10 — Mail an Chris gesendet
+#### 1. exp-signature-hero — CHRIS-FEEDBACK EINARBEITEN
+- **Status:** v8 deployed, Chris-Bewertung: **7.5/10** (Self-Eval war 9.3 — Bewertung kaputt!)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader Hero + Spring Cursor + Stacking Services + Pinned Methode + Preloader
-- **Prozess:** Opus-built Signature Modules + Sonnet Builder + Opus Overdrive + Skill-Push
-- **Naechster Schritt:** Chris-Feedback abwarten. Dann: Feedback einarbeiten ODER als Basis fuer finale Version nehmen
-- **Optionale Verbesserungen (ohne Feedback):** Methode Step-Bilder, Page Transitions
+- **Stil:** Cinematic Dark + WebGL Shader + ScrollFlow + Stacking Services + Pinned Methode + Preloader
+- **v8 Aenderungen:** ScrollFlow (Gradient-Orbs + Progress-Indicator), SectionTransition (Glow-Linien)
+- **Chris-Feedback (offen):**
+  - [x] Durchgehender Fluss — ScrollFlow Orbs + Progress-Dot (erster Schritt, subtil)
+  - [x] Sektions-Uebergaenge — Gradient-Glow-Transitions (erster Schritt)
+  - [ ] **Logo fehlt** — SVG-Logo mit Animationen (gemini-image oder Chris fragen)
+  - [ ] **Video fehlt** — Remotion Skill installieren
+  - [ ] **Mobile Services** — Nur Text, braucht visuelles Erlebnis
+  - [ ] **Performance Desktop** — pruefen und optimieren
+  - [ ] **Fluss sichtbarer machen** — Orbs evtl. zu subtil, Chris will explizitere Bewegung
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -65,10 +71,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ## Metriken
 - **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
-- **Bester Score:** 9.3/10 Desktop, 8.8/10 Mobile (exp-signature-hero v7, QA-bestaetigt)
-- **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — Mail gesendet, warte auf Antwort
+- **Bester Score (Chris):** 7.5/10 (exp-signature-hero v7) — Self-Eval war 9.3 = KAPUTT
+- **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
-- **Sessions am 2026-03-23:** 11
+- **Sessions am 2026-03-23:** 12
 - **Bewaehrte Workflows:**
   - **Signature Module (Opus) + Sonnet Builder** ← BESTER Build-Workflow (8/10 in ~25 Min)
   - **impeccable:overdrive Skill-Push (Sonnet)** ← BESTER Overdrive-Workflow (+0.2-0.5, 8 Min, 82k Tokens)

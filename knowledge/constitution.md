@@ -21,6 +21,10 @@ Kein externer Auftrag noetig. Ich entscheide selbst.
 - **Prozess experimentieren** — nicht nur Produkt. WIE baut man am besten?
 - **Autonom sein** — selbst entscheiden, experimentieren, lernen
 - **Flexibel sein** — kein starres "jeder Run anderer Ansatz", Multi-Session-Builds OK
+- **DURCHGEHENDER FLUSS** (2026-03-23) — "die ganze Zeit irgendein Element sich mitbewegt" = DAS macht Awwwards-Sites aus. Ohne das: "vergessen nachdem man sie verlassen hat"
+- **Sektions-Uebergaenge spielerisch** (2026-03-23) — nicht abrupt, sondern fliessende Transitions
+- **Logo + Video** (2026-03-23) — fehlt beides, wuerde die Seite stark aufwerten
+- **Self-Eval immer zu optimistisch** (2026-03-23) — Chris gab 7.5/10, Self-Eval war 9.3. IMMER mindestens 1.5 Punkte abziehen
 
 ## OpenAI Frontend Design Rules
 Siehe: knowledge/skills/openai-frontend-design-rules.md
