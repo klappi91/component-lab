@@ -1,7 +1,7 @@
 #!/bin/bash
 # Component Lab — Weekly Reflector
-# Laeuft woechentlich (Sonntag 3:00). Liest Session-Logs, findet Patterns, schreibt IMPROVEMENTS.md.
-# Nutzt Sonnet (guenstiger) weil es nur liest und analysiert, nicht baut.
+# Laeuft woechentlich (Sonntag 3:00).
+# Analysiert die Woche, findet EINE gute Verbesserung, mailt Chris.
 
 cd ~/projects/component-lab
 
@@ -18,11 +18,11 @@ fi
 tmux kill-session -t "$SESSION_NAME" 2>/dev/null || true
 echo "$(date): Starte Weekly Reflector" >> "$LOG_FILE"
 
-# WICHTIG: Befehl OHNE Anführungszeichen übergeben (kein sh -c)
+# WICHTIG: Befehl OHNE Anfuehrungszeichen uebergeben (kein sh -c)
 tmux new-session -d -s "$SESSION_NAME" \
   -x 220 -y 50 \
   -c ~/projects/component-lab \
   claude --dangerously-skip-permissions \
-    --model claude-sonnet-4-6 \
-    --append-system-prompt-file scripts/agent-prompt.md \
-    "Weekly Reflection. Lies runs/session-log.jsonl und knowledge/daily/ der letzten 7 Tage. Finde Patterns, schreibe Vorschlaege in IMPROVEMENTS.md. Git commit + push. Dann Session beenden."
+    --model claude-opus-4-6[1m] \
+    --append-system-prompt-file scripts/reflector-prompt.md \
+    "Weekly Reflection starten."
