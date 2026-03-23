@@ -59,8 +59,12 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - Unbounded (distinctive), Instrument Serif (elegant)
 - impeccable:critique → overdrive Pipeline
 - Clip-path Wipe-Reveals fuer Portfolio-Projekte
-- Grain-Overlay (SVG feTurbulence)
+- Grain-Overlay (SVG feTurbulence, opacity ~0.04, overlay blend)
 - Custom Cursor (GSAP smooth follow, magnetic, context-aware labels)
+- **Full-Screen Stacking Cards** (sticky top-0, z-index stacking, GSAP dim auf vorherige)
+  - WICHTIG: Spacer (h-screen) NACH der letzten Card, sonst hat sie 0 Scroll-Raum
+  - Dim-Effekt: scale 0.92 + brightness(0.4) per scrub auf vorherige Cards
+  - Parallax: GSAP fromTo y: -8% to 8% auf Images
 
 ## Was NICHT funktioniert
 - Websites ohne echte Assets = langweilig
@@ -112,20 +116,31 @@ Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 - Token-effizient (~15 Min, kein Builder-Overhead)
 - Learning: **Opus-Overdrive > Delegierter Overdrive** — Opus versteht Design-Intent besser
 
+### #6: Opus Overdrive Push #3 — Stacking Services (2026-03-23, exp-signature-hero v4)
+- **Score: 8.8→9.0/10** — Services von 8→9.5, groesster Einzelsprung
+- Full-Screen Stacking Cards ersetzen alternating blocks
+- Film Grain Overlay + Section Dividers
+- Spacer-Bug entdeckt: letzte sticky Card braucht h-screen Spacer
+- Learning: **Services-Redesign war der groesste Hebel** — die "langweiligste" Sektion upgraden bringt am meisten
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
-- Weiterer Push auf 9/10 (Custom Cursor, mehr Portfolio)
+- impeccable:overdrive als Skill (bisher nur manuelle Overdrive)
 
-## Was fehlt fuer WOW (~8.8/10 → 9/10+)
+## Was fehlt fuer WOW (~9.0/10 → 9.5/10+)
 - ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
 - ~~Mobile Nav~~ — ERLEDIGT (Full-Screen Menu mit nummerierten Links)
 - ~~Portfolio redesignen~~ — ERLEDIGT (Editorial Info-Bar statt Overlay)
 - ~~Overdrive Push~~ — ERLEDIGT (8→8.5)
 - ~~Mehr Portfolio-Content~~ — ERLEDIGT (4 Items, 2 neue Mockups)
 - ~~Custom Cursor~~ — ERLEDIGT (Magnetic, Context-aware, GSAP smooth follow)
-- **Scroll-Transitions** — Page-level Transitions zwischen Sektionen
-- **Services aufwerten** — Aktuell 8/10, schwächste Sektion neben Footer
+- ~~Services aufwerten~~ — ERLEDIGT (Full-Screen Stacking Cards, 8→9.5/10)
+- ~~Film Grain~~ — ERLEDIGT (SVG feTurbulence Overlay)
+- ~~Section Dividers~~ — ERLEDIGT (animated horizontal lines)
+- **Methode aufwerten** — Aktuell 8.5/10
+- **CTA aufwerten** — Aktuell 8.5/10
+- **Footer aufwerten** — Aktuell 8/10
 - **impeccable:overdrive** — Noch nicht mit dem Skill gepusht, nur manuell
 
 ## BESTER Workflow (Stand 2026-03-23, aktualisiert)

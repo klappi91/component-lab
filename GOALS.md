@@ -10,15 +10,16 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ### Offene Teilziele
 
-#### 1. exp-signature-hero → Richtung 9/10 (SPITZENREITER)
-- **Status:** v3 deployed, QA Score ~8.8/10 (vorher 8.5/10)
+#### 1. exp-signature-hero → Richtung 9.5/10 (SPITZENREITER)
+- **Status:** v4 deployed, QA Score ~9.0/10 (vorher 8.8/10)
 - **URL:** https://exp-signature-hero.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
-- **Stil:** Cinematic Dark + WebGL Shader Hero + Custom Cursor
+- **Stil:** Cinematic Dark + WebGL Shader Hero + Custom Cursor + Stacking Services
 - **Prozess:** Opus-built Signature Modules + Sonnet Builder + Opus Overdrive
+- **Erledigt (v4):** Full-Screen Stacking Services, Film Grain Overlay, Section Dividers
 - **Erledigt (v3):** Custom Cursor (Magnetic, Context-aware), Portfolio 4 Items (vorher 2), 2 neue Mockups
 - **Erledigt (v2):** Mobile Nav (Full-Screen), Portfolio Redesign (Editorial), Methode-Nummern groesser, Footer Statement
-- **Naechster Schritt:** Scroll-Transitions, Services aufwerten, impeccable:overdrive Skill-Push
+- **Naechster Schritt:** Methode aufwerten, CTA aufwerten, impeccable:overdrive Skill-Push
 
 #### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
 - **Status:** v2 deployed, QA Score 7.5/10
@@ -34,7 +35,8 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [ ] Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
 - [x] Overdrive Push auf exp-signature-hero (8→8.5/10) ← Opus direkt, +0.5
 - [x] Custom Cursor + Portfolio 4 Items (8.5→8.8/10) ← Opus Signature Module #2
-- [ ] Scroll-Transitions + Services aufwerten + impeccable:overdrive (→ 9/10)
+- [x] Full-Screen Stacking Services + Film Grain (8.8→9.0/10) ← Opus Overdrive #3
+- [ ] Methode + CTA aufwerten + impeccable:overdrive (→ 9.5/10)
 
 ---
 
@@ -55,7 +57,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ## Metriken
 - **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
-- **Bester Score:** ~8.8/10 (exp-signature-hero v3)
+- **Bester Score:** ~9.0/10 (exp-signature-hero v4)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
 - **Prozess-Experimente durchgefuehrt:** 5 (Ziel: mindestens 3 ✓)
 - **Bewaehrte Workflows:**

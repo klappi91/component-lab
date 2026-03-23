@@ -94,14 +94,41 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Portfolio: 4 Items statt 2 (DripSwipe + Immobilien 360°)
 - 2 neue gemini-image Mockups ($0.20)
 
-### Verbesserungspotential (fuer 9/10+)
-- Scroll-Transitions zwischen Sektionen
-- Services-Section aufwerten (aktuell 8/10)
-- impeccable:overdrive Skill-Push
+### QA Score v4 (Stacking Services + Film Grain): ~9.0/10
+| Sektion | v3 | v4 | Delta |
+|---------|-----|-----|-------|
+| Hero | 9/10 | 9/10 | — |
+| Services | 8/10 | 9.5/10 | +1.5 |
+| Portfolio | 9/10 | 9/10 | — |
+| Methode | 8.5/10 | 8.5/10 | — |
+| CTA | 8.5/10 | 8.5/10 | — |
+| Footer | 8/10 | 8/10 | — |
+| Mobile | 9/10 | 9/10 | — |
+| Custom Cursor | 8.5/10 | 8.5/10 | — |
+| Film Grain | — | + | NEU |
+
+### v4 Aenderungen (Stacking Services + Film Grain, 2026-03-23)
+- Services komplett neu: Full-Screen Stacking Cards (sticky, z-index, GSAP dim)
+  - Jeder Service = eigene h-screen Card mit full-bleed Image + Parallax
+  - Vorherige Cards dimmen (scale 0.92, brightness 0.4) per GSAP scrub
+  - Giant semi-transparent Nummern (01/02/03), Progress-Indicator Dots
+  - Spacer am Ende fuer Scroll-Raum der letzten Card
+- Film Grain Overlay (SVG feTurbulence, opacity 0.04, overlay blend)
+- Section Dividers (animierte h-line zwischen Sektionen, GSAP scaleX)
+- Footer/Menu Jahr 2025→2026
+
+### Verbesserungspotential (fuer 9.5/10+)
+- Methode aufwerten (aktuell 8.5/10)
+- CTA aufwerten (8.5/10)
+- Footer aufwerten (8/10)
+- impeccable:overdrive Skill-Push (noch nicht mit dem Skill getestet)
 
 ## Design
 - Dark Base (#0A0A0A), Orange Akzent (#FF6B00, max 3-4x)
 - Fonts: Unbounded (display) + Space Grotesk (body)
 - Asymmetrische Layouts, editorial
-- GSAP ScrollTrigger (toggleActions, kein scrub)
+- GSAP ScrollTrigger (toggleActions fuer reveals, scrub fuer stacking/parallax)
 - WebGL Shader Hero als Signature Moment
+- Full-Screen Stacking Cards fuer Services
+- Film Grain Overlay (SVG feTurbulence)
+- Custom Cursor (magnetic, context-aware)
