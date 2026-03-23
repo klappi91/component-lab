@@ -157,8 +157,19 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
   - Gradient aufgehellt (Bilder sichtbarer)
   - Tags mit Service-Akzent
 
+### v10 Aenderungen (Video Showreel, 2026-03-23)
+- **VideoShowreel Section** zwischen Portfolio und Methode
+  - Veo 3.1 cinematic ambient video (dark studio, orange lights, wireframes, glass geometries)
+  - GSAP scroll-driven scale reveal (0.75 → fullscreen, clipPath inset)
+  - Cinematic letterbox bars (12% top/bottom, retract on scroll)
+  - Word-by-word text reveal: "Wir machen das Web lebendig."
+  - Corner brackets (decorative, orange, subtle)
+  - Auto-play on scroll-enter, pause on leave
+  - Video optimiert: 8.7MB → 2.7MB (ffmpeg CRF 28, 1280px, kein Audio)
+  - Text-Shadow fuer Lesbarkeit auf Mobile
+
 ### Verbesserungspotential (fuer 10/10)
-- Video (Remotion oder gemini-video)
+- ~~Video (Remotion oder gemini-video)~~ — ERLEDIGT (Veo 3.1 ambient, VideoShowreel Section)
 - Performance Desktop pruefen
 - Fluss sichtbarer (ScrollFlow Orbs prominenter)
 - Logo-Animation im Preloader (Draw-On statt Fade-In)
@@ -177,3 +188,4 @@ Die Kombination von kreativem Opus-Modul + systematischem Sonnet-Build sollte be
 - Spring-Physics Custom Cursor mit Ghost-Trail
 - Cinematic Preloader mit Brand Reveal
 - SVG Logo (P/C Monogram + Wordmark)
+- Video Showreel (Veo 3.1 ambient, GSAP scale reveal)

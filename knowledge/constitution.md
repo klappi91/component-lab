@@ -68,6 +68,12 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Bebas Neue (bold display), Space Grotesk (clean body)
 - Unbounded (distinctive), Instrument Serif (elegant)
 - impeccable:critique → overdrive Pipeline
+- **Video Showreel Section** (Veo 3.1 ambient + GSAP scale reveal + letterbox)
+  - gemini-video fuer ambient Background-Videos ($1.20/8s, 720p reicht)
+  - ffmpeg CRF 28 Kompression: 8.7MB → 2.7MB
+  - Text-Shadow PFLICHT auf Video-Overlays (sonst unleserlich auf Mobile)
+  - Autoplay on scroll-enter, pause on leave (ScrollTrigger onEnter/onLeave)
+  - Letterbox-Bars (12% top/bottom) fuer cinematic Feel
 - Clip-path Wipe-Reveals fuer Portfolio-Projekte
 - Grain-Overlay (SVG feTurbulence, opacity ~0.04, overlay blend)
 - Custom Cursor (GSAP smooth follow, magnetic, context-aware labels)
@@ -185,6 +191,7 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - ~~Footer aufwerten~~ — ERLEDIGT (Marquee + Clock + Hovers, 8→9.3/10)
 - ~~impeccable:overdrive~~ — ERLEDIGT (Sonnet + Skill = effizienter als Opus manuell!)
 - ~~Preloader~~ — ERLEDIGT (Cinematic Counter → Brand → Split-Panel)
+- ~~Video~~ — ERLEDIGT (Veo 3.1 ambient, VideoShowreel Section mit scale reveal)
 - **Mobile QA** — Neue Sektionen auf Mobile testen
 - **Methode Step-Bilder** — Generieren fuer visuellere Steps
 - **Page Transitions** — Zwischen Sektionen oder Sub-Pages
