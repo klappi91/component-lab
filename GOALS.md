@@ -10,25 +10,27 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 
 ### Offene Teilziele
 
-#### 1. exp-cinematic-dark polieren → WOW
-- **Status:** v2 deployed, QA Score 7.5/10 — Overdrive Push angewendet
-- **URL:** https://exp-cinematic-dark.vercel.app
-- **GitHub:** https://github.com/klappi91/weblab-exp-cinematic-dark
-- **Stil:** Cinematic Dark — filmisch, full-bleed Hero, orange Akzente
-- **v2 Aenderungen:** Grain Overlay, Custom Cursor, MagneticButtons, asymmetrischer Hero, Methode-Timeline, Nav Auto-Hide, AI-Tells entfernt
-- **Naechster Schritt:** WebGL/Shader Signature Moment (Three.js oder raw WebGL), Services redesignen, Chris-Feedback einholen
+#### 1. exp-signature-hero → WOW polieren (NEUER SPITZENREITER)
+- **Status:** v1 deployed, QA Score 8/10
+- **URL:** https://exp-signature-hero.vercel.app
+- **GitHub:** https://github.com/klappi91/weblab-exp-signature-hero
+- **Stil:** Cinematic Dark + WebGL Shader Hero
+- **Prozess:** Opus-built Signature Module + Sonnet Builder
+- **Naechster Schritt:** Mobile Nav fixen, Portfolio-Overlay lesbar machen, Methode-Nummern groesser, ggf. Overdrive Push
 
-#### 2. exp-warm-brutal (abgeschlossene Evaluation)
-- **Status:** v1 deployed, QA Score 5/10 — Hero zu leer, Manifest-Kontrast schlecht
-- **URL:** https://exp-warm-brutal.vercel.app
-- **Entscheidung:** Nicht weiter iterieren, cinematic-dark ist besser
+#### 2. exp-cinematic-dark (bisheriger Spitzenreiter)
+- **Status:** v2 deployed, QA Score 7.5/10
+- **URL:** https://exp-cinematic-dark.vercel.app
+- **Entscheidung:** exp-signature-hero ist besser. Cinematic-dark als Referenz behalten.
 
 #### 3. Weitere Prozess-Experimente
 - [x] Designer-Agent → Builder Pipeline (exp-warm-brutal, 2026-03-23)
-- [x] Builder mit OpenAI Design Rules (exp-cinematic-dark, 2026-03-23) ← GEWINNER
-- [ ] Kombination: Designer + OpenAI Rules + Assets First (bestes aus beiden?)
+- [x] Builder mit OpenAI Design Rules (exp-cinematic-dark, 2026-03-23)
+- [x] impeccable:overdrive auf exp-cinematic-dark (7→7.5/10)
+- [x] **Signature Module (Opus) + Builder (Sonnet)** (exp-signature-hero, 8/10) ← NEUER GEWINNER
+- [ ] Kombination: Designer + OpenAI Rules + Assets First
 - [ ] Parallel-Build (2 Builder, verschiedene Prompts, vergleichen)
-- [x] impeccable:overdrive auf exp-cinematic-dark (Push von 7/10 → 7.5/10, +0.5 nicht +2)
+- [ ] Overdrive Push auf exp-signature-hero (8→9/10?)
 
 ---
 
@@ -43,14 +45,17 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - [x] **Prozess-Experiment #1: Designer → Builder Pipeline** (exp-warm-brutal, 5/10)
 - [x] **Prozess-Experiment #2: OpenAI Rules → Builder** (exp-cinematic-dark, 7/10)
 - [x] **Prozess-Experiment #3: Overdrive via Delegated Builder** (exp-cinematic-dark v2, 7→7.5/10)
+- [x] **Prozess-Experiment #4: Signature Module + Builder** (exp-signature-hero, 8/10) ← BESTES ERGEBNIS
 
 ---
 
 ## Metriken
-- **Websites deployed:** 4 (shader-forge, editorial-light, warm-brutal, cinematic-dark)
+- **Websites deployed:** 5 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero)
+- **Bester Score:** 8/10 (exp-signature-hero)
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1)
-- **Prozess-Experimente durchgefuehrt:** 3 (Ziel: mindestens 3)
+- **Prozess-Experimente durchgefuehrt:** 4 (Ziel: mindestens 3 ✓)
 - **Bewaehrte Workflows:**
   - Skill-Driven Polish (impeccable:critique → overdrive)
-  - **Assets-First + OpenAI Rules + Sonnet Builder** ← BESTER Workflow bisher
+  - Assets-First + OpenAI Rules + Sonnet Builder
   - Image-Manifest fuer Builder (batch gemini-image → manifest.json)
+  - **Signature Module (Opus) + Sonnet Builder** ← BESTER Workflow

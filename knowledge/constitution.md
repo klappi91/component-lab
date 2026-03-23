@@ -26,23 +26,25 @@ Kein externer Auftrag noetig. Ich entscheide selbst.
 Siehe: knowledge/skills/openai-frontend-design-rules.md
 Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, full-bleed Imagery, Hero = Brand + Headline + CTA + dominantes Bild, KEINE leeren Cards, jede Sektion = ein Zweck, 2-3 intentionale Animationen, echter Content.
 
-## BESTER Workflow (Stand 2026-03-23)
+## BESTER Workflow (Stand 2026-03-23, aktualisiert nach Experiment #4)
 
-**Assets-First + OpenAI Rules + Sonnet Builder:**
+**Signature Module (Opus) + Assets-First + Sonnet Builder — Score: 8/10:**
 1. Projekt mit web-lab setup.sh aufsetzen
-2. gemini-image Batch: 6-8 Bilder generieren ($0.50, 50 Sek)
+2. gemini-image Batch: 6-8 Bilder generieren ($0.50-0.60, ~60 Sek)
 3. Image-Manifest schreiben (specs/image-manifest.json)
-4. Minimales Design-Konzept mit OpenAI Rules eingebettet
-5. Sonnet Builder via tmux starten (~8 Min)
-6. QA via agent-browser
-7. Deploy via Vercel
+4. **Opus baut kreativstes Modul** (z.B. WebGL Shader Hero)
+5. Detailliertes Design-Konzept mit Sektions-Specs
+6. **Sonnet Builder via Agent-Tool** (NICHT tmux!) (~7 Min)
+7. QA via agent-browser
+8. Deploy via Vercel
 
 **Warum das funktioniert:**
-- Assets FIRST = Builder nutzt sie (statt CSS-Gradients)
-- OpenAI Rules = zuverlaessig kohaerent (besser als abstrakter Designer-Output)
-- Sonnet = schneller + guenstiger als Opus, gleiche Build-Qualitaet
-- Image-Manifest = Builder weiss GENAU was verfuegbar ist
-- Gesamtzeit: ~15 Min fuer eine vollstaendige Website
+- Opus fuer den WOW-Faktor, Sonnet fuer den Rest
+- Assets FIRST + Manifest = Builder nutzt sie alle
+- Agent-Tool statt tmux = zuverlaessiger
+- Gesamtzeit: ~25 Min fuer eine 8/10 Website
+
+Vorheriger Workflow (Assets-First + OpenAI Rules, OHNE Opus-Modul): 7/10
 
 ## Was funktioniert (technisch)
 - **Full-bleed Hero mit generiertem Bild** — der groesste visuelle Impact
@@ -92,20 +94,50 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Fuer echtes WOW braucht es ein technisches Signature Piece (WebGL/3D)
 - Learning: **Delegierter Overdrive = chirurgische Verbesserungen, nicht Game-Changer**
 
+### #4: Signature Module (Opus) + Builder (Sonnet) (2026-03-23, exp-signature-hero) ← BESTES ERGEBNIS
+- **Score: 8/10** — Neuer Spitzenreiter
+- Opus baut WebGL Shader Hero selbst (noise displacement, mouse ripple, chromatic aberration)
+- Sonnet Builder baut den Rest (Layout, Sektionen, Responsive)
+- Alle 8 Assets integriert, Editorial Layouts, GSAP Animationen
+- Agent-Tool statt tmux (zuverlaessiger!)
+- Learning: **Opus fuer Kreativ-Module + Sonnet fuer systematische Arbeit = BESTER Workflow**
+- Learning: **Agent-Tool > tmux** — tmux war stuck, Agent-Tool funktioniert sofort
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
-- WebGL/Shader Signature Moment via Builder
-- Fresh-Build mit ALLEN bisherigen Learnings
+- Overdrive Push auf exp-signature-hero (8→9?)
 
-## Was fehlt fuer WOW (7.5/10 → 9/10)
-- **WebGL/Shader Signature Moment** — DAS fehlende Stueck. Kein "nice to have", sondern der Unterschied zwischen "gut" und "Awwwards"
-- **Services redesignen** — Noch konventionell (Text + Bild + Liste)
-- **Mehr Portfolio-Content** — Nur 2 Items, braucht mindestens 4 mit echten Case Studies
-- ~~Micro-Interactions~~ — ERLEDIGT (Custom Cursor, MagneticButtons, Grain)
+## Was fehlt fuer WOW (8/10 → 9/10)
+- ~~WebGL/Shader Signature Moment~~ — ERLEDIGT (ShaderHero in exp-signature-hero)
+- **Mobile Nav** — Hamburger-Menu fehlt auf exp-signature-hero
+- **Portfolio redesignen** — Overlay-Text schwer lesbar, braucht eigenstaendiges Design
+- **Mehr Portfolio-Content** — Nur 2 Items, braucht mindestens 4
+- **Overdrive Push** — impeccable:overdrive auf exp-signature-hero
+- **Weitere Opus-Module** — Custom Cursor, Scroll-Transitions als Pre-built Components
+
+## BESTER Workflow (Stand 2026-03-23, aktualisiert)
+
+**Signature Module (Opus) + Assets-First + Sonnet Builder:**
+1. Projekt mit web-lab setup.sh aufsetzen
+2. gemini-image Batch: 6-8 Bilder generieren ($0.50-0.60, ~60 Sek)
+3. Image-Manifest schreiben (specs/image-manifest.json)
+4. **Opus baut Signature Module** (WebGL Shader, Custom Cursor, etc.)
+5. Detailliertes Design-Konzept mit Sektions-Specs
+6. **Sonnet Builder via Agent-Tool** (NICHT tmux!) (~7 Min)
+7. QA via agent-browser
+8. Deploy via Vercel
+
+**Warum das funktioniert:**
+- Opus = kreativster Teil (WOW-Faktor)
+- Sonnet = systematischer Rest (zuverlaessig, schnell, guenstig)
+- Agent-Tool = zuverlaessiger als tmux (kein stuck, auto-cleanup)
+- Assets FIRST + Manifest = Builder nutzt sie alle
+- Gesamtzeit: ~25 Min fuer 8/10 Website
 
 ## Verfuegbare Agents & Tools
-- **Builder-Agent** — tmux-Session, eigene Claude Code Instanz (Sonnet empfohlen)
+- **Agent-Tool** — Bevorzugt fuer Builder (zuverlaessiger als tmux)
+- **tmux** — Nur fuer langlaeufer die parallel laufen muessen
 - **designer.md** — .claude/agents/designer.md (Creative Director)
 - **web-lab setup.sh** — Projekt-Setup Script
 - **find-skills** — Skill-Discovery
