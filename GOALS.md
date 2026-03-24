@@ -96,7 +96,10 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] **v2: Vertikaler Strom (top→bottom) + Pixel-Aesthetik (1/5 Offscreen Canvas)**
 - [x] **Desktop QA: Vertikaler Flow ✓, Pixel-Optik ✓, Text ✓, Branches ✓**
 - [x] **Chris per Mail informiert**
-- [ ] Chris v2 Feedback abwarten
+- [x] **Chris v2 Feedback (UID 23): "ist zu pixelig"**
+- [x] **v3: PIXEL_SCALE 5→2, proportionale Skalierung aller Werte**
+- [x] **Chris per Mail informiert**
+- [ ] Chris v3 Feedback abwarten
 - [ ] Mobile QA
 - [ ] Optional: Lenis Smooth Scroll
 - [ ] Optional: Text-Glow wenn Strom nahe an Text ist
@@ -109,7 +112,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Build erfolgreich, components.json aktualisiert
 - [ ] Visual QA (Desktop + Mobile)
 - [x] Chris per Mail informiert (zusammen mit v013-a)
-- [ ] Chris-Feedback abwarten
+- [x] **Chris-Feedback (UID 24): "gefaellt mir, auf der Stelle stehen + alles fliegt vorbei" → hero-v014-a**
 - [ ] Optional: SplitText fuer character-level Brand-Reveal
 - [ ] Optional: Echte Fotos / besseres Hero-Bild
 
@@ -125,6 +128,18 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Chris-Feedback abwarten
 - [ ] Optional: 1080p/4K Video regenerieren
 - [ ] Optional: Video-Poster-Frame als Fallback
+
+#### hero-v014-a: STILL POINT — Pinned Creative Storm
+- [x] Chris-Feedback (UID 24) als Inspiration: "auf der Stelle stehen, alles fliegt vorbei"
+- [x] Utopia Tokyo (SOTD 16.03.2026, 8/8/8/8) analysiert — GSAP + immersive scroll
+- [x] Konzept: Gesamter Viewport pinned, 5 Phasen, 18 Worte + 10 Formen fliegen durch
+- [x] Erlebnis gebaut: Erste PINNED experience im Lab
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail informiert
+- [ ] Chris-Feedback abwarten
+- [ ] Mobile QA
+- [ ] Optional: Lenis Smooth Scroll
+- [ ] Optional: Mouse-Interaction (Worte weichen Maus aus)
 
 #### Naechstes Erlebnis
 - [ ] Awwwards SOTD als Inspiration weiter analysieren
@@ -170,11 +185,11 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 13 (hero-v001 bis v013)
+- **Erlebnisse im Lab:** 14 (hero-v001 bis v014)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 4 (text-animation, gsap-plugins, awwwards-animations, gemini-video)
-- **Neue Technik:** Creation Timeline (hero-v013-a) — erster Video-Hero, scroll-driven video.currentTime + KI-generiertes Video
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, **video-hero** (NEU)
+- **Neue Technik:** STILL POINT (hero-v014-a) — erster pinned Hero, Viewport fixiert + Elemente fliegen durch
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, **pinned-experience** (NEU)
 - **exp-signature-hero Score korrigiert:** 7.5/10 (nicht 8/10 wie vorher angenommen)
 - **Inspiration-Analysen:** 10 (+The Camel Fabric Game, +Video-Trends 2026)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)

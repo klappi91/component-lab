@@ -814,5 +814,68 @@
       "5-phasen",
       "first-video-hero"
     ]
+  },
+  {
+    "id": "hero-v014-a",
+    "pair_id": "hero-v014",
+    "type": "experience",
+    "category": "interaktiv",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "STILL POINT — Du stehst still, Kreativitaet fliegt vorbei. Gesamter Viewport pinned, Scrollen treibt Elemente durch den Raum statt die Seite zu bewegen. Chris-Feedback: 'auf der Stelle stehen bleiben und alles fliegt vorbei'.",
+    "skills_loaded": [
+      "awwwards-animations",
+      "gsap-plugins"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "custom-cursor",
+      "SVG-grain",
+      "vignette",
+      "expo.out",
+      "power2.out",
+      "power1.in",
+      "power4.inOut"
+    ],
+    "design_philosophy": "STILL POINT — Der Betrachter steht im Zentrum eines kreativen Sturms. Scrollen bewegt nicht die Seite, sondern jagt Worte, Formen und Linien durch den Viewport. 5 Phasen: VOID (orange Puls) → AWAKENING (erste Worte) → STORM (Peak, alles rast) → CONVERGENCE (Services halten kurz) → CLARITY (Brand materialisiert). Rein DOM-basiert, kein Canvas/WebGL. Direkte Umsetzung von Chris' Idee.",
+    "inspiration_source": "Chris-Feedback UID 24: 'ohne das Gefuehl nach unten zu scrollen, auf der Stelle stehen bleiben und alles fliegt vorbei'. Utopia Tokyo (SOTD 16.03.2026, 8/8/8/8) — GSAP + BARBA.js, immersive scroll transitions.",
+    "choreography_notes": "Pinned viewport, 600vh scroll space.\n\nVOID (0-8%): Center pulse scales from 0.3→1. Dark, grain, vignette.\n\nAWAKENING (8-25%): 4 Worte fliegen langsam durch (PIXEL, DIGITAL, ERLEBNIS, FLOW). Von links/rechts/unten. Sparse, meditative.\n\nSTORM (25-55%): 14 Worte + 10 Formen rasen multi-directional durch. MUTIG (11vw, orange), WOW (14vw), DESIGN (9vw). Geometrische Formen (Kreise, Quadrate, Linien, Dot-Grids). Peak bei ~40%. Vignette intensiviert sich.\n\nCONVERGENCE (55-78%): Services erscheinen im Zentrum: WEBDESIGN → KI-INTEGRATION → CREATIVE DEV. Expo.out ein, Power2.in aus. Vignette entspannt sich.\n\nCLARITY (78-100%): PIXINT CREATORS materialisiert (letter-spacing 0.5em→0.15em). Tagline + CTA fade in.\n\nEasings: expo.out (Brand), power2.out (fade-ins), power1.in (fly-outs), none (shapes).",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, Chris-Feedback-driven concept)",
+    "builder_model": null,
+    "run_id": "run-20260324-1220",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "pinned-experience",
+      "still-point",
+      "pixintcreators",
+      "brand",
+      "flying-elements",
+      "creative-storm",
+      "dom-based",
+      "no-canvas",
+      "multi-directional",
+      "geometric-shapes",
+      "vignette",
+      "grain",
+      "custom-cursor",
+      "5-phasen",
+      "chris-feedback-driven",
+      "first-pinned-hero"
+    ]
   }
 ]

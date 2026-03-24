@@ -8,23 +8,14 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══════════════════════════════════════════════════════════
-   hero-v011-a v2: PIXEL FLOW — Der digitale Strom
+   hero-v011-a v3: PIXEL FLOW — Der digitale Strom
 
-   Chris-Feedback (UID 22): "richtig gut, weiter verfolgen.
-   Aber eher in Scroll-Richtung statt seitwärts und
-   Richtung Pixeloptik."
+   Chris-Feedback (UID 23): "ist zu pixelig"
+   → PIXEL_SCALE von 5 auf 2 reduziert: subtiler Digital-Look
+     statt grober Pixel-Aesthetik. Partikel etwas groesser
+     in absoluten Pixeln, aber weniger blocky.
 
-   v2 Aenderungen:
-   - Stream fliesst VERTIKAL (top→bottom, mit Scroll-Richtung)
-   - PIXEL-AESTHETIK: Low-Res Canvas + Nearest-Neighbor Upscale
-   - Quadratische Partikel statt runde
-   - Alles rastet auf Pixel-Grid
-
-   Technik: Offscreen Canvas bei 1/PIXEL_SCALE Aufloesung,
-   dann mit imageSmoothingEnabled=false hochskaliert.
-   Das gibt dem GESAMTEN Stream automatisch Pixel-Look.
-
-   Choreografie (unveraendert, aber vertikal):
+   Choreografie (unveraendert):
    ORIGIN  (0-15%)  — Pixel-Punkt → vertikaler Strom entsteht
    FORM    (15-35%) — Sanfte Welle, Worte erscheinen
    ENERGIE (35-60%) — Wilde Oszillation, Peak-Intensitaet
@@ -35,7 +26,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ORANGE = "#FF6B00";
 const DARK = "#0A0A0A";
 const PARTICLE_COUNT = 350;
-const PIXEL_SCALE = 5; // 1/5 resolution → chunky pixels
+const PIXEL_SCALE = 2; // 1/2 resolution → subtle digital texture (v3: was 5, Chris: "zu pixelig")
 
 /* ─── Vertical Stream Path ─── */
 
@@ -188,7 +179,7 @@ export default function FlowHero() {
         t: Math.random(),
         speed: 0.0005 + Math.random() * 0.0015,
         offset: (Math.random() - 0.5) * 2,
-        size: 1 + Math.floor(Math.random() * 3), // 1, 2, or 3 low-res pixels
+        size: 2 + Math.floor(Math.random() * 4), // 2-5 low-res pixels (scaled for PIXEL_SCALE=2)
         baseAlpha: 0.25 + Math.random() * 0.75,
         hueShift: Math.random() * 30 - 15,
       });
@@ -283,16 +274,16 @@ export default function FlowHero() {
         }
       }
 
-      // Stream width (in low-res pixels)
+      // Stream width (in low-res pixels, scaled for PIXEL_SCALE=2)
       let streamWidth: number;
       if (scrollP < 0.15) {
-        streamWidth = (scrollP / 0.15) * 4;
+        streamWidth = (scrollP / 0.15) * 10;
       } else if (scrollP < 0.5) {
-        streamWidth = 4 + ((scrollP - 0.15) / 0.35) * 8;
+        streamWidth = 10 + ((scrollP - 0.15) / 0.35) * 20;
       } else if (scrollP < 0.8) {
-        streamWidth = 12 - ((scrollP - 0.5) / 0.3) * 5;
+        streamWidth = 30 - ((scrollP - 0.5) / 0.3) * 13;
       } else {
-        streamWidth = 7;
+        streamWidth = 17;
       }
 
       // ─── Draw pixelated glow layers ───
@@ -414,11 +405,11 @@ export default function FlowHero() {
         const mdx = px - mpx;
         const mdy = py - mpy;
         const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
-        const mRadius = 25; // in low-res pixels
+        const mRadius = 60; // in low-res pixels (scaled for PIXEL_SCALE=2)
         let finalX = px;
         let finalY = py;
         if (mDist < mRadius && mDist > 0) {
-          const mForce = (1 - mDist / mRadius) * 5;
+          const mForce = (1 - mDist / mRadius) * 12;
           finalX = pixSnap(px + (mdx / mDist) * mForce, 1);
           finalY = pixSnap(py + (mdy / mDist) * mForce, 1);
         }
@@ -463,7 +454,7 @@ export default function FlowHero() {
       // ─── Cursor glow (pixelated) ───
       const cursorLR_X = mouse.x * ow;
       const cursorLR_Y = mouse.y * oh;
-      const glowRadius = 15; // low-res pixels
+      const glowRadius = 35; // low-res pixels (scaled for PIXEL_SCALE=2)
       for (let gy = -glowRadius; gy <= glowRadius; gy += 1) {
         for (let gx = -glowRadius; gx <= glowRadius; gx += 1) {
           const dist = Math.sqrt(gx * gx + gy * gy);
