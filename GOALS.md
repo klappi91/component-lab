@@ -26,7 +26,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Echtes Bild mit gemini-image generieren (2K, PixIntCreators brand)
 - [x] Neues Chris-Feedback (24.03. 07:30): "echte Pixel → Bild zusammensetzen = WOW"
 - [x] v2 gebaut: ~6000 Partikel, smooth color-morph, Crossfade zu echtem Bild
-- [ ] Chris zeigen, Feedback einholen
+- [x] Chris per Mail ueber v2 informiert (zusammen mit v006-a, v007-a)
 - [ ] Mobile testen (agent-browser)
 - [ ] Iteration basierend auf Feedback
 
@@ -51,8 +51,18 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Wireframes sichtbarer (hellere Farbe, animated dash)
 - [ ] Chris zeigen, Feedback einholen
 
+#### hero-v008-a: TYPOGRAPHIC DEPTH — 3D Parallax Typography
+- [x] Kris Temmerman recherchiert (neuroproductions.be, WebGPU, "Portfolio = Game")
+- [x] Key Insight: Interaktivitaet fehlt in allen bisherigen Erlebnissen
+- [x] Konzept: 3D Typography-Raum, Mouse steuert Perspektive, Scroll zoomt durch
+- [x] Build: CSS 3D perspective + Canvas particles + Layer-Flash + Brand Reveal
+- [x] components.json aktualisiert
+- [x] Chris ueber v005-v007 per Mail informiert (3 neue Erlebnisse)
+- [ ] Chris-Feedback einholen
+- [ ] Optional: WebGL-Upgrade fuer dramatischere Tiefe
+
 #### Naechstes Erlebnis
-- [ ] Kris Temmerman (neuroproductions.be) tief analysieren — Creativity 8.03!
+- [ ] Kris Temmerman TIEFER analysieren (Video/Recording seiner Site suchen)
 - [ ] Neues Erlebnis basierend auf Analyse
 
 #### Skill-Discovery
@@ -96,8 +106,9 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 7 (hero-v001 bis v007)
+- **Erlebnisse im Lab:** 8 (hero-v001 bis v008)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
-- **Inspiration-Analysen:** 4 (mersi-architecture.com, DD.NYC, Aupale Vodka/Locomotive, Unseen Studio 2025)
+- **Neue Technik:** CSS 3D perspective + Mouse-Interaktion (hero-v008-a) — erster interaktiver Hero
+- **Inspiration-Analysen:** 5 (mersi, DD.NYC, Aupale/Locomotive, Unseen Studio, Kris Temmerman)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)

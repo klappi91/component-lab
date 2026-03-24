@@ -208,5 +208,32 @@
     "human_rating": null,
     "human_comment": null,
     "tags": ["scroll-storytelling", "pixintcreators", "brand", "browser-mockup", "progressive-build", "website-creation", "5-phasen", "wireframe-to-website", "scroll-driven", "chapter-cards", "progress-bar", "clip-path-wipe", "custom-cursor", "grain", "chris-feedback", "meta-erlebnis"]
+  },
+  {
+    "id": "hero-v008-a",
+    "pair_id": "hero-v008",
+    "type": "experience",
+    "category": "typografie-only",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "Typographic Depth: Erstes Erlebnis mit MOUSE-INTERAKTION. 5 massive Typography-Layer auf verschiedenen Z-Ebenen (CSS 3D perspective + translateZ). Mouse steuert 3D-Perspektive (rotateX/Y). Scroll zoomt durch die Schichten — jeder Layer flasht beim Passieren. Ambient-Partikel im Raum (Canvas, maus-reaktiv). Brand Reveal am Ende.",
+    "skills_loaded": [],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "CSS-3D-perspective", "translateZ", "preserve-3d", "quickTo-mouse", "canvas-particles", "mouse-parallax", "custom-cursor", "SVG-grain", "vignette", "text-shadow-glow", "layer-flash", "expo.out", "power4.inOut", "mobile-auto-tilt"],
+    "design_philosophy": "Typografie als 3D-Raum. Interaktivitaet > Scroll. Der User BEWEGT sich durch die Worte — das schafft Praesenz und Erinnerung. Erster Test: kann Mouse-Interaktion das gleiche WOW wie Scroll erzeugen?",
+    "inspiration_source": "Kris Temmerman neuroproductions.be (Portfolio = Game, Creativity 8.03). Awwwards-Recherche: Interaktivitaet ist der vergessene WOW-Faktor — alle bisherigen Erlebnisse nur scroll-driven.",
+    "choreography_notes": "Entrance: 0.3s delay, Layers gestaffelt (deepest first, 0.12s stagger, expo.out), Brand overlapping ab 0.5s. Mouse idle: camera rotateX/Y (power2.out 1s), Layer parallax depth-based. Scroll 0-55%: camera z 0→2600, each layer brightens (3x opacity) → flash (radial gradient pulse 0.02s) → scale 4x + fade (power3.in 0.08s). Scroll 55-75%: Brand scale 1→1.12 (power4.inOut). Scroll 75-100%: settle 1.12→1, tagline y50→0 (expo.out), subtitle, decorative line scaleX 0→1. Particles: 120 ambient dots, mouse repulsion radius 200px, orange (z>0.7) + white, depth-scaled opacity.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, inspiration-driven + interactivity-first)",
+    "builder_model": null,
+    "run_id": "run-20260324-0820",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": ["typografie-only", "pixintcreators", "brand", "3d-perspective", "mouse-interactive", "translateZ", "preserve-3d", "zoom-through", "layer-flash", "ambient-particles", "canvas", "custom-cursor", "cursor-glow", "text-glow", "vignette", "grain", "mobile-fallback", "auto-tilt", "depth-parallax", "interactivity-first"]
   }
 ]
