@@ -110,6 +110,7 @@ Der Unterschied:
 - Naming: hero-vXXX-[a|b] (naechste freie Nummer aus components.json)
 
 ## Was funktioniert (technisch)
+- **Progressive Depixelation** (Canvas drawImage + imageSmoothingEnabled=false + Offscreen Canvas) — stufenloser Pixel→Scharf Uebergang. Pixelgroesse exponentiell verkleinern: `maxCellSize^(1-t)` fuer perceptually linear sharpening. Depixelation an Reassembly-Progress koppeln, nicht an scrollP.
 - Lenis + GSAP Integration
 - Full-bleed Hero mit generiertem Bild
 - WebGL Shader als Signature Moment

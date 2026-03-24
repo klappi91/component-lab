@@ -160,6 +160,8 @@ export default function HeroV005A() {
   const areaRef = useRef<ImgArea | null>(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const imageLoadedRef = useRef(false);
+  const depixCanvasRef = useRef<HTMLCanvasElement | null>(null);
+  const depixCtxRef = useRef<CanvasRenderingContext2D | null>(null);
 
   /* ═══ Canvas + Particle System ═══ */
   useEffect(() => {
@@ -225,6 +227,13 @@ export default function HeroV005A() {
       particlesRef.current = createParticles(imgData, area, cw, ch);
       imageLoadedRef.current = true;
 
+      // Offscreen canvas for progressive depixelation
+      const depixCanvas = document.createElement("canvas");
+      depixCanvas.width = 512;
+      depixCanvas.height = 512;
+      depixCanvasRef.current = depixCanvas;
+      depixCtxRef.current = depixCanvas.getContext("2d")!;
+
       // Start assembled, then auto-shatter after brief delay
       shatterProgressRef.current = 0;
       setTimeout(() => {
@@ -266,6 +275,16 @@ export default function HeroV005A() {
       // This creates a dramatic "nothing happening... BAM assembled" feel
       const reassembleT = clamp01(scrollP / 0.85); // Use 85% of scroll for reassembly
       const reassembleEase = easeInCubic(reassembleT); // Slow start, fast finish
+
+      /* ═══ PROGRESSIVE DEPIXELATION ═══ */
+      // Depixelation progress: tied to reassembly state
+      // When particles are 50% assembled → image starts appearing at particle-grid resolution
+      // When 100% assembled → image is full resolution, particles gone
+      const depixBlendStart = 0.5; // reassembleEase threshold to start blend
+      const depixProgress = clamp01((reassembleEase - depixBlendStart) / (1 - depixBlendStart));
+      const depixEase = easeOutCubic(depixProgress);
+      // Particle fade: particles become transparent as image takes over
+      const particleFadeFactor = 1 - depixProgress * depixProgress; // Quadratic fadeout
 
       /* ═══ DRAW PARTICLES ═══ */
       for (let i = 0; i < particles.length; i++) {
@@ -311,9 +330,11 @@ export default function HeroV005A() {
         const maxCell = Math.max(px.cellW, px.cellH);
         const size = lerp(maxCell * 1.02, maxCell * 0.6, currentScatter);
 
-        // Alpha: full when assembled, slightly transparent when scattered
-        const alpha = lerp(1, 0.7 + Math.random() * 0.05, currentScatter);
+        // Alpha: reduce during depixelation blend (particles fade as image takes over)
+        const scatterAlpha = lerp(1, 0.7 + Math.random() * 0.05, currentScatter);
+        const alpha = scatterAlpha * particleFadeFactor;
 
+        if (alpha < 0.01) continue; // Skip invisible particles
         ctx.fillStyle = `rgb(${px.r},${px.g},${px.b})`;
         ctx.globalAlpha = clamp01(alpha);
         ctx.fillRect(x - size / 2, y - size / 2, size, size);
@@ -402,23 +423,49 @@ export default function HeroV005A() {
         ctx.restore();
       }
 
-      /* ═══ CROSSFADE: Sharp image over assembled particles ═══ */
-      if (scrollP > 0.75 && imgElRef.current && area) {
-        const fadeT = easeOutCubic(clamp01((scrollP - 0.75) / 0.2));
-        ctx.globalAlpha = fadeT;
+      /* ═══ PROGRESSIVE DEPIXELATION: Smooth pixel → sharp image ═══ */
+      // Instead of hard crossfade, progressively decrease pixel block size
+      // Image appears at particle-grid resolution (invisible blend) → gets sharper
+      if (depixProgress > 0 && imgElRef.current && area && depixCtxRef.current && depixCanvasRef.current) {
+        const depixCanvas = depixCanvasRef.current;
+        const depixCtx = depixCtxRef.current;
+        const img = imgElRef.current;
 
-        // Rounded rect clip
+        // Pixel size: exponential decay from cell-size → 1px (perceptually linear sharpening)
+        const maxCellSize = Math.max(area.cellW, area.cellH);
+        const pixelSize = Math.max(1, maxCellSize ** (1 - depixEase));
+
+        // Image alpha: ramp in smoothly, matches particle fadeout
+        const imageAlpha = clamp01(depixProgress * 1.3);
+
         const r = 10;
         ctx.save();
+        ctx.globalAlpha = imageAlpha;
         ctx.beginPath();
         ctx.roundRect(area.x - 2, area.y - 2, area.w + 4, area.h + 4, r);
         ctx.clip();
-        ctx.drawImage(imgElRef.current, area.x, area.y, area.w, area.h);
+
+        if (pixelSize > 1.5) {
+          // Draw pixelated: render image small on offscreen, scale up without smoothing
+          const tw = Math.max(2, Math.ceil(area.w / pixelSize));
+          const th = Math.max(2, Math.ceil(area.h / pixelSize));
+
+          depixCtx.clearRect(0, 0, depixCanvas.width, depixCanvas.height);
+          depixCtx.drawImage(img, 0, 0, tw, th);
+
+          ctx.imageSmoothingEnabled = false;
+          ctx.drawImage(depixCanvas, 0, 0, tw, th, area.x, area.y, area.w, area.h);
+          ctx.imageSmoothingEnabled = true;
+        } else {
+          // Full resolution — no pixelation needed
+          ctx.drawImage(img, area.x, area.y, area.w, area.h);
+        }
+
         ctx.restore();
 
-        // Subtle orange border glow when image is visible
-        if (fadeT > 0.3) {
-          ctx.globalAlpha = (fadeT - 0.3) * 0.25;
+        // Orange border glow when image is mostly sharp
+        if (depixEase > 0.7) {
+          ctx.globalAlpha = (depixEase - 0.7) * 0.4;
           ctx.strokeStyle = ORANGE;
           ctx.lineWidth = 1.5;
           ctx.beginPath();

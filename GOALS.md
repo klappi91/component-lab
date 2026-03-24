@@ -30,7 +30,13 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] **v3.1: Canvas-Text statt DOM, easeInCubic fuer langsamere Reassembly**
 - [x] **Besseres Target-Bild generiert (WIR GESTALTEN ERLEBNISSE, sauberer)**
 - [x] **Desktop QA: Shatter ✓, Chaos ✓, Reassembly ✓, Crossfade ✓, Text ✓**
-- [ ] Chris v3 zeigen (Mail mit Screenshots)
+- [x] Chris v3 zeigen (Mail mit Screenshots)
+- [x] **Chris v4-Feedback (UID 20): "Pixel→Bild noch zu drastisch, Recherche machen"**
+- [x] **Recherche: Progressive Depixelation (Canvas drawImage + imageSmoothingEnabled=false)**
+- [x] **v4 gebaut: Progressive Depixelation statt hartem Crossfade**
+- [x] **Desktop QA: Shatter ✓, Reassembly ✓, Depixelation ✓, Sharp Image ✓, Text ✓**
+- [x] **Chris per Mail informiert**
+- [ ] Chris v4 Feedback abwarten
 - [ ] Mobile testen (agent-browser)
 - [ ] Canvas-Text Alignment fixen
 

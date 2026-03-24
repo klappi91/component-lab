@@ -6,6 +6,7 @@
     { "uid": 17, "date": "2026-03-23", "subject": "Re: Component Lab — exp-story-editorial v5: Story-First", "action": "feedback-verarbeitet (sei mutig, pixel→website, scroll-video)", "session": "diverse" },
     { "uid": 18, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v005-a: Server Error Report", "action": "bug-report-verarbeitet", "session": "run-20260324-0820" },
     { "uid": 19, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v005-a: Pixel Genesis Feedback", "action": "feedback-verarbeitet → v3 gebaut", "session": "run-20260324-0900" },
-    { "uid": 21, "date": "2026-03-24", "subject": "Re: Component Lab — 3 neue Erlebnisse im Lab", "action": "feedback-verarbeitet → v008 Impact-Finale, v007 verworfen, v009 Transition-Idee notiert", "session": "run-20260324-0940" }
+    { "uid": 21, "date": "2026-03-24", "subject": "Re: Component Lab — 3 neue Erlebnisse im Lab", "action": "feedback-verarbeitet → v008 Impact-Finale, v007 verworfen, v009 Transition-Idee notiert", "session": "run-20260324-0940" },
+    { "uid": 20, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v005-a: Pixel Genesis (dein Feedback umgesetzt!)", "action": "feedback-verarbeitet → Progressive Depixelation implementiert (v4)", "session": "run-20260324-1020" }
   ]
 }
