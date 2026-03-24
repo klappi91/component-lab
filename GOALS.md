@@ -88,16 +88,16 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Mobile QA (agent-browser)
 - [ ] Chris zeigen
 
-#### hero-v011-a: FLOW — Der kreative Faden (CONTINUOUS FLOW)
+#### hero-v011-a: PIXEL FLOW — Vertikaler Pixel-Strom
 - [x] Chris-Feedback (UID 11) verarbeitet: "durchgehender Fluss fehlt", 7.5/10 exp-signature-hero
 - [x] FC Porto Memorial (SOTD 23.03.2026) analysiert — Tunnel Animation, Community Creativity 9.0
-- [x] Konzept: Erster Hero mit PERSISTENTEM, LEBENDIGEM Element das IMMER sichtbar ist
-- [x] Build: Canvas-Partikelstrom + Catmull-Rom Spline + Scroll-morphing + Mouse-Reaktion
-- [x] Choreografie: 5 Phasen (Origin→Form→Energie→Fokus→Brand) mit durchgehendem Strom
-- [x] Build erfolgreich, components.json aktualisiert
-- [ ] Desktop QA (agent-browser oder manuell)
+- [x] v1: Erster Hero mit PERSISTENTEM, LEBENDIGEM Element (horizontal)
+- [x] **Chris-Feedback (UID 22): "richtig gut, weiter verfolgen. Scroll-Richtung + Pixeloptik"**
+- [x] **v2: Vertikaler Strom (top→bottom) + Pixel-Aesthetik (1/5 Offscreen Canvas)**
+- [x] **Desktop QA: Vertikaler Flow ✓, Pixel-Optik ✓, Text ✓, Branches ✓**
+- [x] **Chris per Mail informiert**
+- [ ] Chris v2 Feedback abwarten
 - [ ] Mobile QA
-- [ ] Chris zeigen + Feedback einholen
 - [ ] Optional: Lenis Smooth Scroll
 - [ ] Optional: Text-Glow wenn Strom nahe an Text ist
 
@@ -149,7 +149,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - **Erlebnisse im Lab:** 11 (hero-v001 bis v011)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
-- **Neue Technik:** Continuous Flow Stream (hero-v011-a) — erster Hero mit persistentem lebendigem Element
+- **Neue Technik:** Pixel Flow (hero-v011-a v2) — vertikaler Strom + Low-Res Offscreen Canvas + Nearest-Neighbor Upscale
 - **exp-signature-hero Score korrigiert:** 7.5/10 (nicht 8/10 wie vorher angenommen)
 - **Inspiration-Analysen:** 7 (mersi, DD.NYC, Aupale/Locomotive, Unseen Studio, Kris Temmerman, shed.design, Darknode)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)

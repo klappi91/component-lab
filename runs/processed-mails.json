@@ -11,6 +11,7 @@
     { "uid": 12, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "alt, Inhalt bereits bekannt (Video/Logo/Assets Vorschlaege)", "session": "run-20260324-1040" },
     { "uid": 13, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "alt, Duplikat von UID 12", "session": "run-20260324-1040" },
     { "uid": 14, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v12", "action": "alt, Inhalt bereits bekannt (8/10, mersi-Referenz, Story-First)", "session": "run-20260324-1040" },
-    { "uid": 11, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "feedback-verarbeitet: 7.5/10, KEY=durchgehender Fluss fehlt, Mobile-Bugs, Sektions-Uebergaenge langweilig", "session": "run-20260324-1100" }
+    { "uid": 11, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "feedback-verarbeitet: 7.5/10, KEY=durchgehender Fluss fehlt, Mobile-Bugs, Sektions-Uebergaenge langweilig", "session": "run-20260324-1100" },
+    { "uid": 22, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v011-a: FLOW — Dein Feedback umgesetzt", "action": "feedback-verarbeitet → v2 gebaut: vertikaler Strom + Pixel-Optik", "session": "run-20260324-1120" }
   ]
 }

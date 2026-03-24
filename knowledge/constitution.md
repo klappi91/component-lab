@@ -128,6 +128,7 @@ Der Unterschied:
 - gemini-video ambient ($1.20/8s)
 - agent-browser fuer QA
 - **Continuous Flow Stream** (Canvas fixed + Catmull-Rom spline + Partikel) — persistentes lebendes Element das den gesamten Scroll-Journey verbindet. Sinusoidal path mit scroll-driven Amplitude/Frequenz/Phase. Motion-Trail via semi-transparent clear (rgba statt clearRect). Glow-Layers (5 passes, wide/faint → narrow/bright). Branching-Stream in Energiephase. Partikel fliessen IMMER (auch ohne Scrollen) = "always alive". Mouse-Displacement auf Pfad-Kontrollpunkte + Partikel-Repulsion.
+- **Low-Res Pixel Rendering** (Offscreen Canvas + imageSmoothingEnabled=false) — Offscreen Canvas bei 1/N Aufloesung erstellen, ALLES dort zeichnen (Strom, Partikel, Glow), dann per `drawImage` auf volle Groesse hochskalieren. Nearest-Neighbor Interpolation gibt automatisch Pixel-Look. `pixSnap()` fuer Grid-Snapping, `fillRect` statt `arc`, `lineCap:"square"`. PIXEL_SCALE=5 = chunky, =3 = feiner. Performant weil weniger Pixel gezeichnet werden.
 
 ## Was NICHT funktioniert
 - **CSS 3D perspective + camera zoom:** Wenn Container `perspective: Xpx` hat und Camera-Kind per GSAP `translateZ(Y)` bekommt mit Y > X → alles HINTER dem Betrachter = unsichtbar. Elemente die NACH dem Zoom sichtbar sein muessen (Brand, CTA) MUESSEN ausserhalb des perspective-Containers leben.

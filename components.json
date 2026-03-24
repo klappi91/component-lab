@@ -620,7 +620,7 @@
     "persona": "Flow Choreographer",
     "branche": "PixIntCreators (eigene Agentur)",
     "brief": null,
-    "prompt_excerpt": "FLOW — Der kreative Faden. ERSTER Hero mit DURCHGEHENDEM lebendigem Element. Fixed Canvas mit Partikelstrom der durch die gesamte Seite fliesst, sich mit Scroll verwandelt, auf Maus reagiert. 5 Phasen: ORIGIN (Punkt→Linie), FORM (sanfte Welle), ENERGIE (wilde Oszillation + Branching), FOKUS (Konvergenz), BRAND (horizontaler Strom + Reveal).",
+    "prompt_excerpt": "PIXEL FLOW v2 — Vertikaler Partikelstrom + Pixel-Aesthetik. Chris-Feedback: 'in Scroll-Richtung statt seitwärts + Pixeloptik'. Low-Res Offscreen Canvas (1/5 Aufloesung) + imageSmoothingEnabled=false = automatische Pixel-Optik. Quadratische Partikel. 5 Phasen vertikal: ORIGIN → FORM → ENERGIE (3 Branches) → FOKUS → BRAND.",
     "skills_loaded": [],
     "skills_detected": [
       "gsap",
@@ -639,9 +639,9 @@
       "motion-trail",
       "mix-blend-difference"
     ],
-    "design_philosophy": "CONTINUOUS FLOW als Kern-Prinzip. Ein persistentes, lebendiges Element das den ganzen Scroll-Journey verbindet. Direkte Antwort auf Chris-Feedback: 'die ganze Zeit irgendein Element sich mitbewegt'. Der Strom IST die Choreografie — er definiert den Rhythmus, die Intensitaet, den Flow.",
-    "inspiration_source": "Chris-Feedback UID 11: 'Was mir fehlt ist ein Fluss von oben nach unten, die ganze Zeit irgendein Element sich mitbewegt — DAS macht Awwwards-Sites aus'. FC Porto Memorial (SOTD 23.03.2026, Significa) — Tunnel Animation + continuous scroll journey.",
-    "choreography_notes": "Fixed Canvas (always visible) + scrolling content (zIndex above). Stream shape = 16-point Catmull-Rom spline driven by sinusoidal functions. Amplitude envelope: dot(0%) → thin(15%) → growing(35%) → peak(60%) → converging(80%) → focused(100%). Frequency rises then settles. Branching second stream appears 30-75%. 300 particles flow continuously (even without scroll). Mouse displaces path control points + repels particles. 5 glow layers (wide/faint → narrow/bright). Text animations: expo.out reveals triggered by scroll position. Motion blur via semi-transparent clear (rgba fill instead of clearRect). Cursor glow follows mouse.",
+    "design_philosophy": "PIXEL FLOW — Continuous Flow + Pixel-Aesthetik. Vertikaler Strom (mit Scroll-Richtung) statt horizontal. Offscreen Canvas bei 1/5 Aufloesung mit Nearest-Neighbor Upscale = automatischer Pixel-Look fuer ALLES (Strom, Partikel, Glow, Cursor). Verbindet das lebendige Element (v1) mit der Pixel-Identitaet der Marke.",
+    "inspiration_source": "Chris-Feedback UID 22: 'richtig gut, weiter verfolgen. Eher in Scroll-Richtung statt seitwärts und Richtung Pixeloptik'. Kombination von hero-v011-a v1 (Continuous Flow) + hero-v005-a (Pixel-Aesthetik).",
+    "choreography_notes": "v2: VERTIKALER PIXEL FLOW. Offscreen Canvas (1/5 res) → drawImage upscale (imageSmoothingEnabled=false). Stream path: 20-point Catmull-Rom, Y flows top→bottom, X oscillates. Amplitude/frequency/phase driven by scrollP. 350 square particles (fillRect), sizes 1-3 low-res px, grid-snapped. 3 branch streams in energy phase (30-75%). 5 glow layers with square lineCap/lineJoin. Ambient scattered pixels for atmosphere. Pixelated cursor glow (loop-drawn squares). Motion trail via rgba(10,10,10,0.18) fill.",
     "assets_generated": [],
     "assets_used": [],
     "screenshots": {
@@ -651,9 +651,9 @@
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, Chris-Feedback-driven concept)",
     "builder_model": null,
-    "run_id": "run-20260324-1100",
+    "run_id": "run-20260324-1120",
     "human_rating": null,
-    "human_comment": null,
+    "human_comment": "v1: 'richtig gut, weiter verfolgen. Eher in Scroll-Richtung statt seitwärts und Richtung Pixeloptik' (UID 22)",
     "tags": [
       "scroll-storytelling",
       "pixintcreators",
