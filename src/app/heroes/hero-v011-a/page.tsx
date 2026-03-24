@@ -8,80 +8,83 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══════════════════════════════════════════════════════════
-   hero-v011-a: FLOW — Der kreative Faden
+   hero-v011-a v2: PIXEL FLOW — Der digitale Strom
 
-   ERSTER Hero mit DURCHGEHENDEM, LEBENDIGEM Element.
-   Ein fliessender Partikelstrom der durch die gesamte Seite
-   fliesst, sich verwandelt, auf Maus reagiert, Content verbindet.
+   Chris-Feedback (UID 22): "richtig gut, weiter verfolgen.
+   Aber eher in Scroll-Richtung statt seitwärts und
+   Richtung Pixeloptik."
 
-   Chris-Feedback (UID 11): "die ganze Zeit irgendein Element
-   sich mitbewegt — DAS macht Awwwards-Sites aus"
+   v2 Aenderungen:
+   - Stream fliesst VERTIKAL (top→bottom, mit Scroll-Richtung)
+   - PIXEL-AESTHETIK: Low-Res Canvas + Nearest-Neighbor Upscale
+   - Quadratische Partikel statt runde
+   - Alles rastet auf Pixel-Grid
 
-   Innovation:
-   - Fixed Canvas mit fliessender Partikel-Linie
-   - Form morpht mit Scroll (Sinus → komplex → konvergent)
-   - Partikel fliessen IMMER (auch ohne Scrollen)
-   - Maus biegt den Strom (Gummiband-Effekt)
-   - Text erscheint MIT dem Strom (nicht separat)
+   Technik: Offscreen Canvas bei 1/PIXEL_SCALE Aufloesung,
+   dann mit imageSmoothingEnabled=false hochskaliert.
+   Das gibt dem GESAMTEN Stream automatisch Pixel-Look.
 
-   Choreografie:
-   ORIGIN  (0-15%)  — Punkt → fliessende Linie entsteht
+   Choreografie (unveraendert, aber vertikal):
+   ORIGIN  (0-15%)  — Pixel-Punkt → vertikaler Strom entsteht
    FORM    (15-35%) — Sanfte Welle, Worte erscheinen
    ENERGIE (35-60%) — Wilde Oszillation, Peak-Intensitaet
    FOKUS   (60-80%) — Konvergenz, Klarheit
-   BRAND   (80-100%) — Horizontaler Strom, Brand Reveal
+   BRAND   (80-100%) — Vertikaler Strom, Brand Reveal
    ═══════════════════════════════════════════════════════════ */
 
 const ORANGE = "#FF6B00";
 const DARK = "#0A0A0A";
-const PARTICLE_COUNT = 300;
+const PARTICLE_COUNT = 350;
+const PIXEL_SCALE = 5; // 1/5 resolution → chunky pixels
 
-/* ─── Stream Path ─── */
+/* ─── Vertical Stream Path ─── */
 
 function getStreamPoints(
   scrollP: number,
   time: number
 ): { x: number; y: number }[] {
-  const NUM_POINTS = 16;
+  const NUM_POINTS = 20;
   const points: { x: number; y: number }[] = [];
 
   // Emergence: dot → line in first 15%
   const emergence = Math.min(1, scrollP / 0.15);
 
-  // Amplitude envelope — controls wave height
+  // Amplitude envelope (horizontal oscillation)
   let amplitude: number;
   if (scrollP < 0.15) {
-    amplitude = (scrollP / 0.15) * 0.06;
+    amplitude = (scrollP / 0.15) * 0.04;
   } else if (scrollP < 0.35) {
-    amplitude = 0.06 + ((scrollP - 0.15) / 0.2) * 0.14;
+    amplitude = 0.04 + ((scrollP - 0.15) / 0.2) * 0.1;
   } else if (scrollP < 0.6) {
-    amplitude = 0.2 + ((scrollP - 0.35) / 0.25) * 0.15;
+    amplitude = 0.14 + ((scrollP - 0.35) / 0.25) * 0.12;
   } else if (scrollP < 0.8) {
-    amplitude = 0.35 - ((scrollP - 0.6) / 0.2) * 0.25;
+    amplitude = 0.26 - ((scrollP - 0.6) / 0.2) * 0.16;
   } else {
-    amplitude = 0.1 - ((scrollP - 0.8) / 0.2) * 0.07;
+    amplitude = 0.1 - ((scrollP - 0.8) / 0.2) * 0.05;
   }
 
   // Frequency: rises then settles
   const frequency =
-    scrollP < 0.6 ? 1 + scrollP * 3.5 : 3.1 - (scrollP - 0.6) * 2.5;
+    scrollP < 0.6 ? 1.5 + scrollP * 3 : 3.3 - (scrollP - 0.6) * 2;
 
   // Phase: continuous rotation + time for life
-  const phase = scrollP * Math.PI * 6 + time * 0.4;
+  const phase = scrollP * Math.PI * 5 + time * 0.35;
 
-  // Center Y: subtle drift
-  const centerY = 0.5 + Math.sin(scrollP * Math.PI * 2) * 0.04;
+  // Center X: subtle drift
+  const centerX = 0.5 + Math.sin(scrollP * Math.PI * 2) * 0.03;
 
   for (let i = 0; i <= NUM_POINTS; i++) {
     const t = i / NUM_POINTS;
-    const x = t * 1.2 - 0.1;
+    // Y goes top to bottom (vertical flow)
+    const y = t * 1.3 - 0.15;
 
     const wave1 = Math.sin(t * Math.PI * frequency + phase);
     const wave2 =
       Math.sin(t * Math.PI * frequency * 1.7 + phase * 1.3) * 0.3;
-    const breath = Math.sin(time * 0.25 + t * Math.PI * 2) * 0.008;
+    const breath = Math.sin(time * 0.25 + t * Math.PI * 2) * 0.006;
 
-    const y = centerY + amplitude * (wave1 + wave2) * emergence + breath;
+    // X oscillates horizontally
+    const x = centerX + amplitude * (wave1 + wave2) * emergence + breath;
     points.push({ x, y });
   }
 
@@ -122,7 +125,7 @@ function getPointOnPath(
       (2 * p0.y - 5 * p1.y + 4 * p2.y - p3.y) * tt2 +
       (-p0.y + 3 * p1.y - 3 * p2.y + p3.y) * tt3);
 
-  // Tangent
+  // Tangent for normal calculation
   const dx =
     0.5 *
     (-p0.x +
@@ -140,15 +143,20 @@ function getPointOnPath(
   return { x, y, nx: -dy / len, ny: dx / len };
 }
 
+/* ─── Pixel-snap helper ─── */
+function pixSnap(v: number, grid: number): number {
+  return Math.round(v / grid) * grid;
+}
+
 /* ─── Particle type ─── */
 
 interface StreamParticle {
   t: number;
   speed: number;
   offset: number;
-  size: number;
+  size: number; // in low-res pixels
   baseAlpha: number;
-  hueShift: number; // color variation
+  hueShift: number;
 }
 
 /* ─── Component ─── */
@@ -161,7 +169,9 @@ export default function FlowHero() {
   const particlesRef = useRef<StreamParticle[]>([]);
   const frameRef = useRef(0);
   const timeRef = useRef(0);
-  const dprRef = useRef(1);
+
+  // Offscreen canvas for pixel rendering
+  const offscreenRef = useRef<HTMLCanvasElement | null>(null);
 
   // Section refs for text animations
   const s1Ref = useRef<HTMLElement>(null);
@@ -176,10 +186,10 @@ export default function FlowHero() {
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       ps.push({
         t: Math.random(),
-        speed: 0.0004 + Math.random() * 0.0012,
+        speed: 0.0005 + Math.random() * 0.0015,
         offset: (Math.random() - 0.5) * 2,
-        size: 0.8 + Math.random() * 2.5,
-        baseAlpha: 0.2 + Math.random() * 0.8,
+        size: 1 + Math.floor(Math.random() * 3), // 1, 2, or 3 low-res pixels
+        baseAlpha: 0.25 + Math.random() * 0.75,
         hueShift: Math.random() * 30 - 15,
       });
     }
@@ -192,14 +202,21 @@ export default function FlowHero() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    dprRef.current = dpr;
+    // Create offscreen canvas
+    const offscreen = document.createElement("canvas");
+    offscreenRef.current = offscreen;
 
     const resize = () => {
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      // Main canvas at full resolution
+      canvas.width = w;
+      canvas.height = h;
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      // Offscreen at 1/PIXEL_SCALE (low-res for pixel effect)
+      offscreen.width = Math.ceil(w / PIXEL_SCALE);
+      offscreen.height = Math.ceil(h / PIXEL_SCALE);
     };
     resize();
     window.addEventListener("resize", resize);
@@ -212,7 +229,6 @@ export default function FlowHero() {
     };
     window.addEventListener("mousemove", onMouse);
 
-    // Touch support
     const onTouch = (e: TouchEvent) => {
       if (e.touches.length > 0) {
         mouseRef.current = {
@@ -233,24 +249,26 @@ export default function FlowHero() {
       lastTime = now;
       timeRef.current += dt;
 
-      const ctx = canvas.getContext("2d");
-      if (!ctx) {
+      const offCtx = offscreen.getContext("2d");
+      const mainCtx = canvas.getContext("2d");
+      if (!offCtx || !mainCtx) {
         frameRef.current = requestAnimationFrame(animate);
         return;
       }
 
-      const dp = dprRef.current;
-      const w = canvas.width;
-      const h = canvas.height;
+      const ow = offscreen.width;
+      const oh = offscreen.height;
       const time = timeRef.current;
       const scrollP = scrollPRef.current;
       const mouse = mouseRef.current;
 
-      // Clear with subtle trail (motion blur)
-      ctx.fillStyle = "rgba(10, 10, 10, 0.15)";
-      ctx.fillRect(0, 0, w, h);
+      // ─── Draw to LOW-RES offscreen canvas ───
 
-      // Get stream path
+      // Motion trail: semi-transparent clear
+      offCtx.fillStyle = "rgba(10, 10, 10, 0.18)";
+      offCtx.fillRect(0, 0, ow, oh);
+
+      // Get vertical stream path
       const pathPoints = getStreamPoints(scrollP, time);
 
       // Mouse displacement on path control points
@@ -258,173 +276,214 @@ export default function FlowHero() {
         const dx = mouse.x - p.x;
         const dy = mouse.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 0.18) {
-          const force = (1 - dist / 0.18) * 0.1;
+        if (dist < 0.2) {
+          const force = (1 - dist / 0.2) * 0.12;
           p.x += dx * force;
           p.y += dy * force;
         }
       }
 
-      // Stream width varies with scroll
+      // Stream width (in low-res pixels)
       let streamWidth: number;
       if (scrollP < 0.15) {
-        streamWidth = (scrollP / 0.15) * 20;
+        streamWidth = (scrollP / 0.15) * 4;
       } else if (scrollP < 0.5) {
-        streamWidth = 20 + ((scrollP - 0.15) / 0.35) * 50;
+        streamWidth = 4 + ((scrollP - 0.15) / 0.35) * 8;
       } else if (scrollP < 0.8) {
-        streamWidth = 70 - ((scrollP - 0.5) / 0.3) * 30;
+        streamWidth = 12 - ((scrollP - 0.5) / 0.3) * 5;
       } else {
-        streamWidth = 40;
+        streamWidth = 7;
       }
 
-      // ─── Draw glow layers ───
+      // ─── Draw pixelated glow layers ───
+      // Use rectangles for pixel aesthetic
       const glowLayers = [
-        { w: streamWidth * 2.5, a: 0.015 },
-        { w: streamWidth * 1.5, a: 0.03 },
-        { w: streamWidth * 0.8, a: 0.06 },
-        { w: streamWidth * 0.3, a: 0.12 },
-        { w: Math.max(1, streamWidth * 0.08), a: 0.35 },
+        { w: streamWidth * 3, a: 0.02 },
+        { w: streamWidth * 1.8, a: 0.04 },
+        { w: streamWidth * 1, a: 0.08 },
+        { w: streamWidth * 0.5, a: 0.18 },
+        { w: Math.max(1, streamWidth * 0.15), a: 0.5 },
       ];
 
       for (const layer of glowLayers) {
-        ctx.beginPath();
-        ctx.lineWidth = layer.w * dp;
-        ctx.strokeStyle = `rgba(255, 107, 0, ${layer.a})`;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
+        offCtx.lineWidth = Math.max(1, Math.round(layer.w));
+        offCtx.strokeStyle = `rgba(255, 107, 0, ${layer.a})`;
+        offCtx.lineCap = "square";
+        offCtx.lineJoin = "miter";
 
+        offCtx.beginPath();
         const first = pathPoints[0];
-        ctx.moveTo(first.x * w, first.y * h);
+        offCtx.moveTo(pixSnap(first.x * ow, 1), pixSnap(first.y * oh, 1));
 
-        for (let i = 1; i < pathPoints.length - 1; i++) {
+        for (let i = 1; i < pathPoints.length; i++) {
           const curr = pathPoints[i];
-          const next = pathPoints[i + 1];
-          ctx.quadraticCurveTo(
-            curr.x * w,
-            curr.y * h,
-            ((curr.x + next.x) / 2) * w,
-            ((curr.y + next.y) / 2) * h
+          offCtx.lineTo(
+            pixSnap(curr.x * ow, 1),
+            pixSnap(curr.y * oh, 1)
           );
         }
-        const last = pathPoints[pathPoints.length - 1];
-        ctx.lineTo(last.x * w, last.y * h);
-        ctx.stroke();
+        offCtx.stroke();
       }
 
-      // ─── Draw second stream (branching) in energy phase ───
+      // ─── Branching stream in energy phase ───
       if (scrollP > 0.3 && scrollP < 0.75) {
-        const branchIntensity = scrollP < 0.5
-          ? (scrollP - 0.3) / 0.2
-          : 1 - (scrollP - 0.5) / 0.25;
-        const branchAlpha = branchIntensity * 0.4;
+        const branchIntensity =
+          scrollP < 0.5
+            ? (scrollP - 0.3) / 0.2
+            : 1 - (scrollP - 0.5) / 0.25;
+        const branchAlpha = branchIntensity * 0.3;
 
         const branch2 = getStreamPoints(scrollP, time + 1.5);
         for (const p of branch2) {
-          p.y += 0.08 * branchIntensity;
+          // Offset horizontally for branch
+          p.x += 0.08 * branchIntensity;
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 0.18) {
-            const force = (1 - dist / 0.18) * 0.08;
+          if (dist < 0.2) {
+            const force = (1 - dist / 0.2) * 0.08;
             p.x += dx * force;
             p.y += dy * force;
           }
         }
 
-        ctx.beginPath();
-        ctx.lineWidth = streamWidth * 0.4 * dp;
-        ctx.strokeStyle = `rgba(255, 140, 50, ${branchAlpha * 0.08})`;
-        ctx.lineCap = "round";
+        offCtx.lineWidth = Math.max(1, Math.round(streamWidth * 0.5));
+        offCtx.strokeStyle = `rgba(255, 140, 50, ${branchAlpha * 0.12})`;
+        offCtx.lineCap = "square";
+
+        offCtx.beginPath();
         const f = branch2[0];
-        ctx.moveTo(f.x * w, f.y * h);
-        for (let i = 1; i < branch2.length - 1; i++) {
+        offCtx.moveTo(pixSnap(f.x * ow, 1), pixSnap(f.y * oh, 1));
+        for (let i = 1; i < branch2.length; i++) {
           const curr = branch2[i];
-          const next = branch2[i + 1];
-          ctx.quadraticCurveTo(
-            curr.x * w,
-            curr.y * h,
-            ((curr.x + next.x) / 2) * w,
-            ((curr.y + next.y) / 2) * h
+          offCtx.lineTo(
+            pixSnap(curr.x * ow, 1),
+            pixSnap(curr.y * oh, 1)
           );
         }
-        const l2 = branch2[branch2.length - 1];
-        ctx.lineTo(l2.x * w, l2.y * h);
-        ctx.stroke();
+        offCtx.stroke();
+
+        // Second branch (opposite side)
+        const branch3 = getStreamPoints(scrollP, time + 3.0);
+        for (const p of branch3) {
+          p.x -= 0.06 * branchIntensity;
+        }
+
+        offCtx.lineWidth = Math.max(1, Math.round(streamWidth * 0.3));
+        offCtx.strokeStyle = `rgba(255, 160, 80, ${branchAlpha * 0.08})`;
+        offCtx.beginPath();
+        const f3 = branch3[0];
+        offCtx.moveTo(pixSnap(f3.x * ow, 1), pixSnap(f3.y * oh, 1));
+        for (let i = 1; i < branch3.length; i++) {
+          const curr = branch3[i];
+          offCtx.lineTo(
+            pixSnap(curr.x * ow, 1),
+            pixSnap(curr.y * oh, 1)
+          );
+        }
+        offCtx.stroke();
       }
 
-      // ─── Particles ───
+      // ─── Pixel Particles ───
       const particles = particlesRef.current;
       const activeCount = Math.floor(
         scrollP < 0.08
-          ? (scrollP / 0.08) * 60
+          ? (scrollP / 0.08) * 80
           : scrollP < 0.5
-            ? 60 + ((scrollP - 0.08) / 0.42) * 240
+            ? 80 + ((scrollP - 0.08) / 0.42) * 270
             : PARTICLE_COUNT
       );
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // Always flow
-        p.t += p.speed * (1 + scrollP * 0.5);
+        // Always flow (downward)
+        p.t += p.speed * (1 + scrollP * 0.6);
         if (p.t > 1) p.t -= 1;
 
         if (i >= activeCount) continue;
 
         const pos = getPointOnPath(pathPoints, p.t);
-        const spread = streamWidth * 0.015;
-        let px = (pos.x + pos.nx * p.offset * spread) * w;
-        let py = (pos.y + pos.ny * p.offset * spread) * h;
+        const spread = streamWidth * 0.12;
+        const px = pixSnap((pos.x + pos.nx * p.offset * spread) * ow, 1);
+        const py = pixSnap((pos.y + pos.ny * p.offset * spread) * oh, 1);
 
         // Mouse repulsion
-        const mpx = mouse.x * w;
-        const mpy = mouse.y * h;
+        const mpx = mouse.x * ow;
+        const mpy = mouse.y * oh;
         const mdx = px - mpx;
         const mdy = py - mpy;
         const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
-        const mRadius = 120 * dp;
+        const mRadius = 25; // in low-res pixels
+        let finalX = px;
+        let finalY = py;
         if (mDist < mRadius && mDist > 0) {
-          const mForce = ((1 - mDist / mRadius) * 25 * dp);
-          px += (mdx / mDist) * mForce;
-          py += (mdy / mDist) * mForce;
+          const mForce = (1 - mDist / mRadius) * 5;
+          finalX = pixSnap(px + (mdx / mDist) * mForce, 1);
+          finalY = pixSnap(py + (mdy / mDist) * mForce, 1);
         }
 
         // Alpha with pulse
-        const pulse = 0.5 + 0.5 * Math.sin(time * 2.5 + p.t * Math.PI * 6);
+        const pulse =
+          0.5 + 0.5 * Math.sin(time * 2.5 + p.t * Math.PI * 6);
         const alpha = p.baseAlpha * (0.5 + 0.5 * pulse);
 
-        // Color variation: orange → warm amber → near-white
+        // Color variation: orange → warm amber
         const r = Math.min(255, 255 + p.hueShift * 0.5);
         const g = Math.min(255, Math.max(60, 107 + p.hueShift * 2));
         const b = Math.max(0, 0 + p.hueShift);
 
-        ctx.beginPath();
-        ctx.arc(px, py, p.size * dp, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-        ctx.fill();
+        // SQUARE particles (pixel aesthetic)
+        offCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        offCtx.fillRect(finalX, finalY, p.size, p.size);
 
         // Hot core for bright particles
-        if (p.size > 2 && p.baseAlpha > 0.6) {
-          ctx.beginPath();
-          ctx.arc(px, py, p.size * 0.35 * dp, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 220, 180, ${alpha * 0.4})`;
-          ctx.fill();
+        if (p.size >= 2 && p.baseAlpha > 0.6) {
+          offCtx.fillStyle = `rgba(255, 220, 180, ${alpha * 0.5})`;
+          offCtx.fillRect(finalX, finalY, 1, 1);
         }
       }
 
-      // ─── Cursor glow ───
-      const cursorGlow = ctx.createRadialGradient(
-        mouse.x * w,
-        mouse.y * h,
-        0,
-        mouse.x * w,
-        mouse.y * h,
-        80 * dp
-      );
-      cursorGlow.addColorStop(0, "rgba(255, 107, 0, 0.06)");
-      cursorGlow.addColorStop(1, "rgba(255, 107, 0, 0)");
-      ctx.fillStyle = cursorGlow;
-      ctx.fillRect(0, 0, w, h);
+      // ─── Scattered ambient pixels (atmosphere) ───
+      const ambientCount = Math.floor(scrollP * 30);
+      for (let i = 0; i < ambientCount; i++) {
+        const seed = i * 7919 + Math.floor(time * 0.5);
+        const ax = pixSnap(((Math.sin(seed) * 0.5 + 0.5) * 0.8 + 0.1) * ow, 1);
+        const ay = pixSnap(
+          ((Math.cos(seed * 1.3) * 0.5 + 0.5) * 0.8 + 0.1) * oh,
+          1
+        );
+        const aa =
+          (0.03 + Math.sin(time * 1.5 + i) * 0.02) *
+          Math.min(1, scrollP * 3);
+        offCtx.fillStyle = `rgba(255, 107, 0, ${aa})`;
+        offCtx.fillRect(ax, ay, 1, 1);
+      }
+
+      // ─── Cursor glow (pixelated) ───
+      const cursorLR_X = mouse.x * ow;
+      const cursorLR_Y = mouse.y * oh;
+      const glowRadius = 15; // low-res pixels
+      for (let gy = -glowRadius; gy <= glowRadius; gy += 1) {
+        for (let gx = -glowRadius; gx <= glowRadius; gx += 1) {
+          const dist = Math.sqrt(gx * gx + gy * gy);
+          if (dist > glowRadius) continue;
+          const ga = (1 - dist / glowRadius) * 0.04;
+          if (ga < 0.005) continue;
+          offCtx.fillStyle = `rgba(255, 107, 0, ${ga})`;
+          offCtx.fillRect(
+            pixSnap(cursorLR_X + gx, 1),
+            pixSnap(cursorLR_Y + gy, 1),
+            1,
+            1
+          );
+        }
+      }
+
+      // ─── Upscale to main canvas with NEAREST NEIGHBOR ───
+      mainCtx.imageSmoothingEnabled = false;
+      mainCtx.clearRect(0, 0, canvas.width, canvas.height);
+      mainCtx.drawImage(offscreen, 0, 0, canvas.width, canvas.height);
 
       frameRef.current = requestAnimationFrame(animate);
     };
@@ -564,7 +623,6 @@ export default function FlowHero() {
   /* ─── Render ─── */
   return (
     <>
-      {/* Font imports */}
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
         href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600&f[]=instrument-serif@400,400-italic&display=swap"
@@ -582,7 +640,7 @@ export default function FlowHero() {
           cursor: "none",
         }}
       >
-        {/* Fixed canvas stream */}
+        {/* Fixed canvas — pixel stream */}
         <canvas
           ref={canvasRef}
           style={{
@@ -593,6 +651,7 @@ export default function FlowHero() {
             height: "100vh",
             pointerEvents: "none",
             zIndex: 2,
+            imageRendering: "pixelated",
           }}
         />
 
@@ -633,10 +692,10 @@ export default function FlowHero() {
             height: "100%",
             zIndex: 100,
             pointerEvents: "none",
-            opacity: 0.035,
+            opacity: 0.03,
           }}
         >
-          <filter id="grain011">
+          <filter id="grain011v2">
             <feTurbulence
               type="fractalNoise"
               baseFrequency="0.65"
@@ -644,7 +703,7 @@ export default function FlowHero() {
               stitchTiles="stitch"
             />
           </filter>
-          <rect width="100%" height="100%" filter="url(#grain011)" />
+          <rect width="100%" height="100%" filter="url(#grain011v2)" />
         </svg>
 
         {/* Vignette */}
@@ -655,7 +714,7 @@ export default function FlowHero() {
             zIndex: 3,
             pointerEvents: "none",
             background:
-              "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%)",
+              "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.55) 100%)",
           }}
         />
 
@@ -683,7 +742,7 @@ export default function FlowHero() {
               mixBlendMode: "difference",
             }}
           >
-            <span style={{ display: "block" }}>ALLES</span>
+            <span style={{ display: "block" }}>PIXEL</span>
             <span
               style={{
                 display: "block",
@@ -694,7 +753,7 @@ export default function FlowHero() {
                 mixBlendMode: "normal",
               }}
             >
-              fliesst.
+              flow.
             </span>
           </h1>
         </section>
@@ -721,16 +780,16 @@ export default function FlowHero() {
               }}
             >
               <span className="flow-line" style={{ display: "block" }}>
-                Form.
+                Vom Pixel
               </span>
               <span className="flow-line" style={{ display: "block" }}>
-                Raum.
+                zum
               </span>
               <span
                 className="flow-line"
                 style={{ display: "block", color: ORANGE }}
               >
-                Rhythmus.
+                Erlebnis.
               </span>
             </p>
             <p
@@ -744,8 +803,8 @@ export default function FlowHero() {
                 maxWidth: "400px",
               }}
             >
-              Jedes Erlebnis beginnt mit Struktur — unsichtbar, aber
-              unverzichtbar.
+              Jedes digitale Erlebnis beginnt als einzelner Pixel — und wird
+              zu etwas das man fuehlt.
             </p>
           </div>
         </section>
@@ -867,7 +926,9 @@ export default function FlowHero() {
               }}
             >
               <span style={{ display: "block" }}>PIXINT</span>
-              <span style={{ display: "block", color: ORANGE }}>CREATORS</span>
+              <span style={{ display: "block", color: ORANGE }}>
+                CREATORS
+              </span>
             </h2>
           </div>
           <p
@@ -880,7 +941,7 @@ export default function FlowHero() {
               opacity: 0.6,
             }}
           >
-            Webdesign das fliesst.
+            Vom Pixel zum Erlebnis.
           </p>
           <a
             href="#"
@@ -912,7 +973,7 @@ export default function FlowHero() {
         </section>
       </div>
 
-      {/* Cursor follower script */}
+      {/* Cursor follower */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -929,8 +990,6 @@ export default function FlowHero() {
                 requestAnimationFrame(update);
               }
               update();
-
-              // Hide on mobile
               if ('ontouchstart' in window) {
                 dot.style.display = 'none';
                 document.body.style.cursor = 'auto';
