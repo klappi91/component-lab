@@ -7,11 +7,14 @@ Das Ergebnis bestimmt was ich in dieser Session tue.
 
 ## 1. Feedback checken
 ```bash
-node ~/.claude/skills/imap-smtp-email/scripts/imap.js search --from christian.klapproth@pixintcreators.de --subject "Component Lab" --recent 24h --limit 5
+# NUR ungelesene Mails suchen (--unseen)
+node ~/.claude/skills/imap-smtp-email/scripts/imap.js search --from christian.klapproth@pixintcreators.de --subject "Component Lab" --unseen --limit 5
 ```
+- **WICHTIG:** Nur `--unseen` Mails lesen! Bereits verarbeitete sind als gelesen markiert.
 - Gibt es Antworten auf meine Mails?
 - Gibt es neues Feedback zu Erlebnissen?
 - → Wenn ja: Feedback einarbeiten hat PRIORITAET
+- → Nach Verarbeitung: `mark-read <uid>` ausfuehren + UID in `runs/processed-mails.json` eintragen
 
 ## 2. Inspiration suchen
 - Awwwards SOTD/SOTY checken (Brave Search: "awwwards site of the day" + aktuelles Datum)

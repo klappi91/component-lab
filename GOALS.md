@@ -19,16 +19,20 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 
 ### Offene Aufgaben
 
-#### hero-v005-a: Pixel Genesis v2 — Chris-Feedback Iteration
+#### hero-v005-a: Pixel Genesis v3 — TRUE Pixel Decomposition
 - [x] Chris-Feedback einarbeiten (scroll-driven transformation, "Vom Pixel zur Website")
 - [x] Erlebnis choreografieren und bauen (canvas particle system, 4 Phasen)
 - [x] In components.json tracken
 - [x] Echtes Bild mit gemini-image generieren (2K, PixIntCreators brand)
 - [x] Neues Chris-Feedback (24.03. 07:30): "echte Pixel → Bild zusammensetzen = WOW"
 - [x] v2 gebaut: ~6000 Partikel, smooth color-morph, Crossfade zu echtem Bild
-- [x] Chris per Mail ueber v2 informiert (zusammen mit v006-a, v007-a)
+- [x] **v3 gebaut: Fundamentaler Ansatz-Wechsel — Image-First Shatter → Reassemble**
+- [x] **v3.1: Canvas-Text statt DOM, easeInCubic fuer langsamere Reassembly**
+- [x] **Besseres Target-Bild generiert (WIR GESTALTEN ERLEBNISSE, sauberer)**
+- [x] **Desktop QA: Shatter ✓, Chaos ✓, Reassembly ✓, Crossfade ✓, Text ✓**
+- [ ] Chris v3 zeigen (Mail mit Screenshots)
 - [ ] Mobile testen (agent-browser)
-- [ ] Iteration basierend auf Feedback
+- [ ] Canvas-Text Alignment fixen
 
 #### hero-v006-a: DESTILLIERT — Typographic Process Dissection
 - [x] Awwwards SOTD analysieren (Aupale Vodka/Locomotive, Unseen Studio, Kris Temmerman)
