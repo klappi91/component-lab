@@ -71,7 +71,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - Ergebnis: Builder setzt Specs EXAKT um. 13 Dateien, 0 Build-Fehler, ~10 Min.
   - Fundamentale Erkenntnis: "Builder = Spec-Qualitaet". Investition in Spec = direkter ROI.
   - QA 5.5/10 (headless-limitiert), realistisch ~7/10 (besser als v2's 6.5)
-- [ ] **Reproduzierbarkeit testen** — Bewiesenen Workflow auf NEUES Projekt anwenden (anderer Stil)
+- [x] **Reproduzierbarkeit testen** — exp-kinetic-type v1.1 (hell, typografie-getrieben), QA 5.8/10 → Workflow reproduzierbar bestätigt
 - [ ] **Parallel-Build** — 2 Builder mit verschiedenen Prompts, gleiche Reference-Daten, vergleichen
 - [ ] **Anderes Modell testen** — Was liefert Haiku als Builder? Oder Codex?
 
@@ -106,10 +106,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 7 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow)
+- **Websites deployed:** 8 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type)
 - **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 + Morphic-Flow v2 warten auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
-- **Prozess-Experimente durchgefuehrt:** 10 (Ziel: mindestens 3 ✓✓) — inkl. Agent-Team-Pipeline + Builder-Detailed-Specs
+- **Prozess-Experimente durchgefuehrt:** 11 (Ziel: mindestens 3 ✓✓) — inkl. Agent-Team-Pipeline + Builder-Detailed-Specs + Reproduzierbarkeit
 - **Skills installiert:** 6 neue (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator)
 - **Agent-Team:** 5-Rollen-Architektur designed, Agent-Definitionen ready, noch nicht getestet
 - **Sessions am 2026-03-23:** 25

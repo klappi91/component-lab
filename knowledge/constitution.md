@@ -116,6 +116,8 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - scrub-Animationen fuer Reveals (opacity-0-Bug)
 - Konzept ueberspringen → generisch
 - **CSS @import fuer Fontshare in Next.js** — IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
+- **ASCII-Umlaute in Specs** — IMMER UTF-8 verwenden (ä/ö/ü, nicht ae/oe/ue), Builder kopiert 1:1
+- **mix-blend-difference auf hellem BG** — macht schwarzen Text unsichtbar, nur fuer Dark Themes
 - **overflow-x: hidden auf body** — PFLICHT fuer Mobile! Ohne das verursachen Marquees, Shader-Canvas, oder grosse Dekor-Elemente horizontalen Scroll der alle Texte abschneidet
 - **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein + Manifest
 - **tmux-Sessions IMMER beenden** — Nach Build: `tmux kill-session -t name`. Vor Session-Ende: `tmux ls` pruefen
@@ -197,6 +199,14 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
   - **Investition in die Spec = direkter ROI auf den Output**
 - Learning: **creative-brief.md als SINGLE-INPUT Format funktioniert** — Story + Design + Code pro Sektion
 - Learning: **~25 Min total (15 Spec + 10 Build)** fuer einen vollstaendigen Website-Rebuild
+
+### #10: Reproduzierbarkeit (2026-03-24, exp-kinetic-type v1)
+- **Score: ~6.5/10 geschaetzt** (QA 5.8 headless-limitiert)
+- Gleicher Spec→Builder Workflow, komplett anderer Stil (hell, typografie-getrieben)
+- 400+ Zeilen creative-brief.md → Sonnet Builder: 11 Dateien, 0 Build-Fehler, ~4 Min
+- **Hypothese BESTAETIGT:** Workflow ist reproduzierbar, unabhaengig vom Stil
+- 3 Bugs gefunden: ASCII-Umlaute, mix-blend-difference auf light, mobile overflow
+- Learning: **UTF-8 Pflicht in Specs**, **Heller Stil braucht subtilere Spec-Arbeit**
 
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
