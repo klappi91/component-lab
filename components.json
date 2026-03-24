@@ -10,18 +10,33 @@
     "branche": "Architekturbüro",
     "brief": "briefs/hero-v001-a.md",
     "prompt_excerpt": "Baue einen Hero der NUR aus Typografie besteht. Kein Bild. Schrift IST das Design.",
-    "skills_loaded": ["text-animation", "gsap-scrolltrigger"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP"],
+    "skills_loaded": [
+      "text-animation",
+      "gsap-scrolltrigger"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP"
+    ],
     "design_philosophy": null,
     "inspiration_source": null,
     "choreography_notes": null,
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v1",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["typografie", "brutalistisch", "schwarz-weiss", "scroll-driven"]
+    "tags": [
+      "typografie",
+      "brutalistisch",
+      "schwarz-weiss",
+      "scroll-driven"
+    ]
   },
   {
     "id": "hero-v001-b",
@@ -34,18 +49,33 @@
     "branche": "Architekturbüro",
     "brief": "briefs/hero-v001-b.md",
     "prompt_excerpt": "Typografie als interaktives Erlebnis. Buchstaben SIND die Architektur. Masken, Clipping, Mix-Blend.",
-    "skills_loaded": ["motion-framer", "creative-effects"],
-    "skills_detected": ["framer-motion", "mix-blend-mode", "noise-overlay"],
+    "skills_loaded": [
+      "motion-framer",
+      "creative-effects"
+    ],
+    "skills_detected": [
+      "framer-motion",
+      "mix-blend-mode",
+      "noise-overlay"
+    ],
     "design_philosophy": null,
     "inspiration_source": null,
     "choreography_notes": null,
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v1",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["typografie", "experimentell", "monochrom", "mix-blend"]
+    "tags": [
+      "typografie",
+      "experimentell",
+      "monochrom",
+      "mix-blend"
+    ]
   },
   {
     "id": "hero-v002-a",
@@ -58,21 +88,40 @@
     "branche": "Digitales Kreativstudio",
     "brief": "",
     "prompt_excerpt": "Canvas-basiertes Partikel-Flowfield mit Aurora-Farbpalette. Maus-Repulsion, 3-Layer Tiefensystem, organische Noise-Bewegung.",
-    "skills_loaded": ["gsap-scrolltrigger"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "Canvas API", "noise2D"],
+    "skills_loaded": [
+      "gsap-scrolltrigger"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "Canvas API",
+      "noise2D"
+    ],
     "design_philosophy": null,
     "inspiration_source": null,
     "choreography_notes": null,
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v1",
     "workflow": "selbst-gebaut",
     "builder_model": null,
     "run_id": "build-20260322-1604",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["generative-art", "canvas", "partikel", "aurora", "interaktiv", "maus-reaktiv", "flowfield"]
+    "tags": [
+      "generative-art",
+      "canvas",
+      "partikel",
+      "aurora",
+      "interaktiv",
+      "maus-reaktiv",
+      "flowfield"
+    ]
   },
   {
     "id": "hero-v003-a",
@@ -85,21 +134,43 @@
     "branche": "Experimental Design Studio",
     "brief": "",
     "prompt_excerpt": "Scroll-Storytelling Hero 'VOID'. 4 Sektionen: Massive Buchstaben spread+zoom-through, Counter-Scroll Marquee, Word-by-word Manifesto mit gruenen Punkten, Scale-up CTA mit Glow.",
-    "skills_loaded": ["gsap-scrolltrigger"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "SVG-grain"],
+    "skills_loaded": [
+      "gsap-scrolltrigger"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "SVG-grain"
+    ],
     "design_philosophy": null,
     "inspiration_source": null,
     "choreography_notes": null,
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v1",
     "workflow": "selbst-gebaut",
     "builder_model": null,
     "run_id": "build-20260322-1624",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["scroll-storytelling", "scroll-driven", "pin", "scrub", "marquee", "word-reveal", "neon-akzent", "grain", "minimal"]
+    "tags": [
+      "scroll-storytelling",
+      "scroll-driven",
+      "pin",
+      "scrub",
+      "marquee",
+      "word-reveal",
+      "neon-akzent",
+      "grain",
+      "minimal"
+    ]
   },
   {
     "id": "hero-v004-a",
@@ -113,20 +184,44 @@
     "brief": "",
     "prompt_excerpt": "Typografie-First Experience fuer PixIntCreators. PIXINT-Buchstaben als massive Hero-Elemente die sich beim Scrollen auseinanderziehen, CREATORS enthuellen, Services als Text-Theater cyclen, CTA mit Farb-Morph.",
     "skills_loaded": [],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "mouse-parallax", "SVG-grain", "custom-cursor"],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "mouse-parallax",
+      "SVG-grain",
+      "custom-cursor"
+    ],
     "design_philosophy": "Typografie IST der Hero. Keine Bilder, kein WebGL, kein Video. Die Worte und ihre Animation sind das Erlebnis.",
     "inspiration_source": "DD.NYC (dd.nyc) — Awwwards SOTD. Massive 130px Headline, Single Font, Orange Akzent, Worte SIND der Hero.",
     "choreography_notes": "4 Phasen Hero: Entrance (expo.out stagger) → Spread (power4.inOut, 6 Richtungen) → CREATORS reveal → Reassemble + Exit. Services: 3x Enter/Exit cycling (blur-exit). CTA: scale 0.2→1 + scaleY background fill + pulse.",
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, inspiration-driven)",
     "builder_model": null,
     "run_id": "run-20260324-0620",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["typografie-only", "pixintcreators", "brand", "massive-type", "mouse-parallax", "scroll-driven", "services-theater", "cta-morph", "grain", "custom-cursor", "dd-nyc-inspired"]
+    "tags": [
+      "typografie-only",
+      "pixintcreators",
+      "brand",
+      "massive-type",
+      "mouse-parallax",
+      "scroll-driven",
+      "services-theater",
+      "cta-morph",
+      "grain",
+      "custom-cursor",
+      "dd-nyc-inspired"
+    ]
   },
   {
     "id": "hero-v005-a",
@@ -139,21 +234,64 @@
     "branche": "PixIntCreators (eigene Agentur)",
     "brief": "",
     "prompt_excerpt": "Pixel Genesis v3: TRUE Pixel Decomposition. Echtes Website-Bild wird kurz angezeigt, dann ZERBRICHT es in ~5000 Pixel-Partikel (jeder mit ECHTER Bildfarbe). Scroll reassembled die Partikel zurueck. Crossfade zum kristallklaren Originalbild. Kein Orange-Phase — Farben sind IMMER die echten Bildfarben. Mouse-Push-Interaktion.",
-    "skills_loaded": ["gemini-image"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "canvas", "particle-system", "custom-cursor", "SVG-grain", "DPR-scaling", "image-crossfade", "rounded-rect-clip", "mouse-push", "vignette", "shatter-physics"],
+    "skills_loaded": [
+      "gemini-image"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "canvas",
+      "particle-system",
+      "custom-cursor",
+      "SVG-grain",
+      "DPR-scaling",
+      "image-crossfade",
+      "rounded-rect-clip",
+      "mouse-push",
+      "vignette",
+      "shatter-physics"
+    ],
     "design_philosophy": "Image-First Shatter: Bild laden → zeigen → zerbrechen → scroll reassemble. Chris: 'Website in echte Pixel zerlegen, zusammen = Bild = WOW'. KEINE Farb-Transformation — Pixel sind IMMER ihre echte Farbe.",
     "inspiration_source": "Chris-Feedback (2026-03-24 07:30): 'Eine Webseite in echte Pixel zerlegen die wenn alle wieder zusammen kommen dann das Bild ergeben'. Fundamentaler Ansatz-Wechsel in v3.",
     "choreography_notes": "v3 Choreografie: Image loads → 0.8s assembled visible → auto SHATTER (expo.out, 1.8s, center-first stagger) → Particles scattered with drift + mouse-push → Scroll 0-82% reassembly (inOutQuart, edge-first wave) → Scroll 70-95% crossfade to sharp image + orange border glow. 500vh scroll space. Text: 'ZERLEGT.' after shatter, progress counter, 'Vom Pixel zur Website.' at end.",
-    "assets_generated": ["target.png (gemini-image, 2K, $0.10)", "target-v3.png (gemini-image, 2K, $0.10, besserer Text)"],
-    "assets_used": ["/heroes/hero-v005-a/target.png"],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "assets_generated": [
+      "target.png (gemini-image, 2K, $0.10)",
+      "target-v3.png (gemini-image, 2K, $0.10, besserer Text)"
+    ],
+    "assets_used": [
+      "/heroes/hero-v005-a/target.png"
+    ],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, Chris-Feedback iteration v3)",
     "builder_model": null,
     "run_id": "run-20260324-0900",
     "human_rating": null,
     "human_comment": "Idee gut, Umsetzung noch nicht (v1/v2). V3: fundamentaler Ansatz-Wechsel — Image-First Shatter.",
-    "tags": ["scroll-storytelling", "pixintcreators", "canvas", "particle-system", "scroll-driven", "pixel-genesis", "shatter-reassemble", "image-first", "custom-cursor", "grain", "real-image", "crossfade", "mouse-push", "chris-feedback-v3", "gemini-image", "true-pixel-decomposition"]
+    "tags": [
+      "scroll-storytelling",
+      "pixintcreators",
+      "canvas",
+      "particle-system",
+      "scroll-driven",
+      "pixel-genesis",
+      "shatter-reassemble",
+      "image-first",
+      "custom-cursor",
+      "grain",
+      "real-image",
+      "crossfade",
+      "mouse-push",
+      "chris-feedback-v3",
+      "gemini-image",
+      "true-pixel-decomposition"
+    ]
   },
   {
     "id": "hero-v006-a",
@@ -166,21 +304,61 @@
     "branche": "PixIntCreators (eigene Agentur)",
     "brief": "",
     "prompt_excerpt": "Typographic Process Dissection — DESTILLIERT. 3 Phasen: TYPOGRAFIE (massive Clash Display 16vw, character spread + variable weight wave), BEWEGUNG (Canvas easing curves visualization, 3 curves linear/ease-out/expo.out drawn live), DESTILLIERT (orange background flood, Instrument Serif italic 14vw, brand reveal).",
-    "skills_loaded": ["text-animation", "gsap-plugins", "awwwards-animations"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "SplitType", "pin", "scrub", "canvas", "custom-cursor", "SVG-grain", "variable-font-weight", "scramble-decode", "character-reveal", "line-reveal", "word-reveal", "color-morph"],
+    "skills_loaded": [
+      "text-animation",
+      "gsap-plugins",
+      "awwwards-animations"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "SplitType",
+      "pin",
+      "scrub",
+      "canvas",
+      "custom-cursor",
+      "SVG-grain",
+      "variable-font-weight",
+      "scramble-decode",
+      "character-reveal",
+      "line-reveal",
+      "word-reveal",
+      "color-morph"
+    ],
     "design_philosophy": "Self-demonstrating Webdesign: Jede Sektion demonstriert IHR Thema durch sich selbst. TYPOGRAFIE-Sektion IST spektakulaere Typografie. BEWEGUNG-Sektion ZEIGT Easing live. DESTILLIERT = das Ergebnis wenn alles zusammenkommt.",
     "inspiration_source": "Aupale Vodka (Locomotive, SOTD 17.03.2026) — Product-Dissection Pattern: Ein Objekt in Aspekte zerlegen, jeder mit eigenem Sticky-Reveal. 168px Headings, Instrument Serif + Helvetica Now Display. Unseen Studio 2025 Wrapped (SOTD 24.03.2026) — Timeline + mixed media.",
     "choreography_notes": "Intro: Scramble decode (30ms/tick, 0.4 chars/frame). Phase 1 TYPOGRAFIE: back.out(1.7) char entrance → scrub char spread (individual y/x/rotate/scale/color, 200% scroll) + continuous weight wave (300↔900, 0.08s stagger). Phase 2 BEWEGUNG: chars from center (expo.out) → Canvas easing curves drawn live (scrub, 3 curves with moving dots + glow on orange) → word-by-word opacity reveal. Phase 3 DESTILLIERT: scaleY orange flood (power4.inOut) → char scale 0.2→1 (expo.out, 0.06s stagger) → subtitle + brand fade in.",
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, inspiration-driven + skills aktiv geladen)",
     "builder_model": null,
     "run_id": "run-20260324-0700",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["typografie-only", "pixintcreators", "brand", "self-demonstrating", "process-dissection", "scramble-decode", "character-spread", "variable-font-wave", "easing-visualization", "canvas", "color-flood", "destilliert", "aupale-inspired", "skills-active", "custom-cursor", "grain"]
+    "tags": [
+      "typografie-only",
+      "pixintcreators",
+      "brand",
+      "self-demonstrating",
+      "process-dissection",
+      "scramble-decode",
+      "character-spread",
+      "variable-font-wave",
+      "easing-visualization",
+      "canvas",
+      "color-flood",
+      "destilliert",
+      "aupale-inspired",
+      "skills-active",
+      "custom-cursor",
+      "grain"
+    ]
   },
   {
     "id": "hero-v007-a",
@@ -193,21 +371,56 @@
     "branche": "PixIntCreators (eigene Agentur)",
     "brief": "",
     "prompt_excerpt": "Scroll-driven Creation Story: Browser-Mockup zeigt eine Website die sich beim Scrollen Schicht fuer Schicht aufbaut. 5 Phasen: Struktur (Wireframe) → Typografie → Farbe → Bild → Bewegung. Jede Phase erklaert was eine Website besonders macht.",
-    "skills_loaded": ["gsap-scrolltrigger"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "clip-path", "custom-cursor", "SVG-grain", "stagger", "back.out", "expo.out", "power4.inOut"],
+    "skills_loaded": [
+      "gsap-scrolltrigger"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "clip-path",
+      "custom-cursor",
+      "SVG-grain",
+      "stagger",
+      "back.out",
+      "expo.out",
+      "power4.inOut"
+    ],
     "design_philosophy": "Meta-Erlebnis: Eine Website die zeigt wie eine Website entsteht. Browser-Mockup als Buehne, Scroll als Zeitachse. Jede Phase fuegt einen Layer hinzu der eine Website von 'nichts' zu 'besonders' macht.",
     "inspiration_source": "Chris-Feedback: 'Vom Pixel zur Website', 'Was macht eine Website aus', 'scroll-driven Video/Frames', 'sei mutig und erfinde neue Dinge'. Apple-style scroll-driven sequences.",
     "choreography_notes": "Intro: 'Was macht eine Website besonders?' (7vw Clash Display + Instrument Serif italic). Journey: pinned browser (74vw, 72vh) mit 8000px scroll space. Phase-Labels als chapter cards links (4vw, Clash Display). P1 STRUKTUR: wireframe boxes stagger in (power2.out). P2 TYPOGRAFIE: word-by-word hero reveal (expo.out, rotateX:-15), nav + service texts. P3 FARBE: borders dashed→solid, backgrounds add, CTA turns orange. P4 BILD: hero image clip-path wipe (inset, power4.inOut), service icons back.out(1.7). P5 BEWEGUNG: parallax shifts, CTA glow, motion lines sweep. End: chrome fades, result overlay. Progress bar throughout.",
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, Chris-Feedback-driven)",
     "builder_model": null,
     "run_id": "run-20260324-0720",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["scroll-storytelling", "pixintcreators", "brand", "browser-mockup", "progressive-build", "website-creation", "5-phasen", "wireframe-to-website", "scroll-driven", "chapter-cards", "progress-bar", "clip-path-wipe", "custom-cursor", "grain", "chris-feedback", "meta-erlebnis"]
+    "tags": [
+      "scroll-storytelling",
+      "pixintcreators",
+      "brand",
+      "browser-mockup",
+      "progressive-build",
+      "website-creation",
+      "5-phasen",
+      "wireframe-to-website",
+      "scroll-driven",
+      "chapter-cards",
+      "progress-bar",
+      "clip-path-wipe",
+      "custom-cursor",
+      "grain",
+      "chris-feedback",
+      "meta-erlebnis"
+    ]
   },
   {
     "id": "hero-v008-a",
@@ -221,13 +434,36 @@
     "brief": "",
     "prompt_excerpt": "Typographic Depth: Erstes Erlebnis mit MOUSE-INTERAKTION. 5 massive Typography-Layer auf verschiedenen Z-Ebenen (CSS 3D perspective + translateZ). Mouse steuert 3D-Perspektive (rotateX/Y). Scroll zoomt durch die Schichten — jeder Layer flasht beim Passieren. Ambient-Partikel im Raum (Canvas, maus-reaktiv). Brand Reveal am Ende.",
     "skills_loaded": [],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "CSS-3D-perspective", "translateZ", "preserve-3d", "quickTo-mouse", "canvas-particles", "mouse-parallax", "custom-cursor", "SVG-grain", "vignette", "text-shadow-glow", "layer-flash", "expo.out", "power4.inOut", "mobile-auto-tilt"],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "CSS-3D-perspective",
+      "translateZ",
+      "preserve-3d",
+      "quickTo-mouse",
+      "canvas-particles",
+      "mouse-parallax",
+      "custom-cursor",
+      "SVG-grain",
+      "vignette",
+      "text-shadow-glow",
+      "layer-flash",
+      "expo.out",
+      "power4.inOut",
+      "mobile-auto-tilt"
+    ],
     "design_philosophy": "Typografie als 3D-Raum. Interaktivitaet > Scroll. Der User BEWEGT sich durch die Worte — das schafft Praesenz und Erinnerung. Erster Test: kann Mouse-Interaktion das gleiche WOW wie Scroll erzeugen?",
     "inspiration_source": "Kris Temmerman neuroproductions.be (Portfolio = Game, Creativity 8.03). Awwwards-Recherche: Interaktivitaet ist der vergessene WOW-Faktor — alle bisherigen Erlebnisse nur scroll-driven.",
     "choreography_notes": "Entrance: 0.3s delay, Layers gestaffelt (deepest first, 0.12s stagger, expo.out), Brand overlapping ab 0.5s. Mouse idle: camera rotateX/Y (power2.out 1s), Layer parallax depth-based. Scroll 0-55%: camera z 0→2600, each layer brightens (3x opacity) → flash (radial gradient pulse 0.02s) → scale 4x + fade (power3.in 0.08s). Scroll 55-75%: Brand scale 1→1.12 (power4.inOut). Scroll 75-100%: settle 1.12→1, tagline y50→0 (expo.out), subtitle, decorative line scaleX 0→1. Particles: 120 ambient dots, mouse repulsion radius 200px, orange (z>0.7) + white, depth-scaled opacity.",
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, inspiration-driven + interactivity-first)",
     "builder_model": null,
@@ -235,7 +471,32 @@
     "human_rating": null,
     "human_comment": "v007 langweilig. v008 Potenzial, aber Ende fehlte. v009 gut als Transition.",
     "iteration_notes": "v2: Impact-Finale hinzugefuegt — Partikel-Konvergenz → Orange Glow-Pulse → Brand materialisiert → Tagline + CTA. Brand/Impact aus 3D-Camera rausgelöst (z>perspective = unsichtbar Bug). Corner marks entfernt.",
-    "tags": ["typografie-only", "pixintcreators", "brand", "3d-perspective", "mouse-interactive", "translateZ", "preserve-3d", "zoom-through", "layer-flash", "ambient-particles", "canvas", "custom-cursor", "cursor-glow", "text-glow", "vignette", "grain", "mobile-fallback", "auto-tilt", "depth-parallax", "interactivity-first", "impact-moment", "particle-convergence", "brand-emergence", "cta"]
+    "tags": [
+      "typografie-only",
+      "pixintcreators",
+      "brand",
+      "3d-perspective",
+      "mouse-interactive",
+      "translateZ",
+      "preserve-3d",
+      "zoom-through",
+      "layer-flash",
+      "ambient-particles",
+      "canvas",
+      "custom-cursor",
+      "cursor-glow",
+      "text-glow",
+      "vignette",
+      "grain",
+      "mobile-fallback",
+      "auto-tilt",
+      "depth-parallax",
+      "interactivity-first",
+      "impact-moment",
+      "particle-convergence",
+      "brand-emergence",
+      "cta"
+    ]
   },
   {
     "id": "hero-v009-a",
@@ -248,20 +509,105 @@
     "branche": "PixIntCreators (eigene Agentur)",
     "brief": "",
     "prompt_excerpt": "Magnetic Type Field: 30 Webdesign-Worte als Physik-Entitaeten im Raum. Mouse = Magnet (Anziehung). Scroll transformiert 4 Phasen: CHAOS (freies Driften, Mouse zieht an) → GRAVITATION (Schwerkraft steigt, wichtige Worte werden orange) → FORMATION (Golden-Angle Spirale, Chaos → Ordnung) → BRAND (Worte orbiten raus, PIXINT CREATORS erscheint).",
-    "skills_loaded": ["awwwards-animations"],
-    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "custom-physics", "magnetic-attraction", "word-repulsion", "golden-angle-spiral", "cursor-glow-canvas", "touch-support", "SVG-grain", "vignette"],
+    "skills_loaded": [
+      "awwwards-animations"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "pin",
+      "scrub",
+      "custom-physics",
+      "magnetic-attraction",
+      "word-repulsion",
+      "golden-angle-spiral",
+      "cursor-glow-canvas",
+      "touch-support",
+      "SVG-grain",
+      "vignette"
+    ],
     "design_philosophy": "Physik-basierte Interaktion statt nur Scroll. Worte als lebendige Entitaeten die auf Mouse reagieren. Chaos → Ordnung = die Transformation die ein Designer schafft. Erster Hero mit eigener Physik-Simulation.",
     "inspiration_source": "shed.design (SOTD 23.03.2026, Isaac Powell) — massive Typography, character-spaced headings, 3-font system. Kris Temmerman neuroproductions.be — Interaktivitaet als Differenzierungsmerkmal. Constitution: 'Interaktivitaet ist der vergessene WOW-Faktor'.",
     "choreography_notes": "Phase 0 CHAOS (0-15%): 30 Worte driften, vx/vy random, gentle sine drift. Mouse: magnetStrength 800, radius 350. Phase 1 GRAVITATION (15-45%): gravityY 0.15, damping 0.97, important words turn orange (lerp colorProgress). Phase 2 FORMATION (45-70%): Golden Angle spiral sort by importance, spring 0.08 rising to formation. Rotation dampens. Phase 3 BRAND (70-100%): words orbit out (radius 0.55*vh), fade to 15% opacity. PIXINT (white) + CREATORS (orange) scale in (expo.out), tagline + subtitle follow. Cursor canvas: radial orange glow + magnetic field lines (8 rotating lines). 500vh scroll space.",
     "assets_generated": [],
     "assets_used": [],
-    "screenshots": { "mobile": "", "desktop": "" },
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
     "constitution_version": "v14",
     "workflow": "selbst-gebaut (Opus direkt, physics-first + interaction-driven)",
     "builder_model": null,
     "run_id": "run-20260324-0840",
     "human_rating": null,
     "human_comment": null,
-    "tags": ["interaktiv", "pixintcreators", "brand", "physics-simulation", "magnetic-mouse", "word-field", "golden-angle-spiral", "chaos-to-order", "dom-physics", "cursor-glow", "canvas-overlay", "touch-support", "formation", "brand-reveal", "grain", "vignette", "custom-cursor", "scroll-driven", "4-phasen"]
+    "tags": [
+      "interaktiv",
+      "pixintcreators",
+      "brand",
+      "physics-simulation",
+      "magnetic-mouse",
+      "word-field",
+      "golden-angle-spiral",
+      "chaos-to-order",
+      "dom-physics",
+      "cursor-glow",
+      "canvas-overlay",
+      "touch-support",
+      "formation",
+      "brand-reveal",
+      "grain",
+      "vignette",
+      "custom-cursor",
+      "scroll-driven",
+      "4-phasen"
+    ]
+  },
+  {
+    "id": "hero-v010-a",
+    "pair_id": "hero-v010",
+    "type": "experience",
+    "category": "scroll-storytelling",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Horizontal Scroll Choreographer",
+    "branche": "Kreativagentur",
+    "brief": null,
+    "prompt_excerpt": "Horizontal Scroll Journey durch den kreativen Prozess. 5 Panels: IDEE→CHAOS→ORDNUNG→ERLEBNIS→MARKE. Erster nicht-vertikaler Hero.",
+    "skills_loaded": [
+      "gsap-scrolltrigger",
+      "awwwards-animations",
+      "creative-effects"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "containerAnimation",
+      "clip-path"
+    ],
+    "design_philosophy": "Horizontal scroll als Storytelling-Device. Story: Von der Idee zum Erlebnis.",
+    "inspiration_source": "Awwwards SOTD Analyse (Yes Now, ZettaJoule/Zypsy). Horizontal Scroll ist Standard-Pattern bei SOTD-Gewinnern, aber erster Versuch im Lab.",
+    "choreography_notes": "Panel 1: Zoom-through Exit. Panel 2: Fragments fly in from edges. Panel 3: Grid draws + text assembles (expo.out). Panel 4: Circle clip-path reveal (power4.inOut). Panel 5: Brand stagger reveal. Continuous progress bar + grain overlay + custom cursor.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": "v14",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "horizontal-scroll",
+      "clip-path",
+      "chaos-ordnung",
+      "storytelling",
+      "custom-cursor",
+      "grain",
+      "parallax",
+      "brand"
+    ]
   }
 ]

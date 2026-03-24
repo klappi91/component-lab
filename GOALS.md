@@ -77,8 +77,19 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Physics-Konstanten feintunlen
 - [ ] Lenis Smooth Scroll integrieren
 
+#### hero-v010-a: CREATIVE VELOCITY — Horizontal Scroll Journey
+- [x] Awwwards SOTD recherchiert (Yes Now Agency, ZettaJoule/Zypsy)
+- [x] Erster horizontal-scroll Hero gebaut (5 Panels, containerAnimation)
+- [x] Build erfolgreich, components.json aktualisiert
+- [ ] ERLEBNIS Panel: echtes Visual (gemini-image oder Canvas-Effekt)
+- [ ] CHAOS Panel: visuelle Elemente (Rechtecke, Kreise, Bilder)
+- [ ] Lenis Smooth Scroll integrieren
+- [ ] Per-Letter Animationen (aktuell word-level)
+- [ ] Mobile QA (agent-browser)
+- [ ] Chris zeigen
+
 #### Naechstes Erlebnis
-- [ ] Neues Erlebnis: Horizontal Scroll, Clip-Path Wipe, oder Video-Integration
+- [ ] Video-basierter Hero (gemini-video Ambient Loop)
 - [ ] Awwwards SOTD als Inspiration weiter analysieren
 
 #### Skill-Discovery
@@ -122,7 +133,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 9 (hero-v001 bis v009)
+- **Erlebnisse im Lab:** 10 (hero-v001 bis v010)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
 - **Neue Technik:** DOM-Physics + Magnetic Mouse (hero-v009-a) — erster Hero mit eigener Physik-Simulation
