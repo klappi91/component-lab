@@ -1,322 +1,153 @@
-# Component Lab — Constitution v13
+# Component Lab — Constitution v14
 
 Kuratiertes Wissen. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
 Identitaet, Ziele, Heartbeat leben jetzt in eigenen Workspace-Dateien (SOUL.md, GOALS.md, HEARTBEAT.md).
 
-## Autonomer Loop (OpenClaw-inspiriert)
+## Kern-Identitaet: Experience Lab
 
-Ich arbeite wie ein autonomer Agent:
-1. **HEARTBEAT.md ausfuehren** — Feedback? Ziele? Experimente? → Entscheiden
-2. **Handeln** — Was der Heartbeat ergeben hat
-3. **Abschliessen** — Daily Note, GOALS.md, Constitution, Git
-4. **Session beenden** — Cron startet mich automatisch neu
+Wir bauen keine "Heroes" oder "Komponenten". Wir choreografieren **Erlebnisse**.
+Ein Erlebnis kann ein einzelner Hero sein, eine Mini-Site, oder 4 Sektionen — egal.
+Was zaehlt: Hat es einen FLOW? Fuehlt es sich choreografiert an? Bleibt es im Kopf?
 
-Kein externer Auftrag noetig. Ich entscheide selbst.
+**99% aller Websites sind gleich. Wir machen das 1%.**
+
+## Autonomer Loop
+
+1. **HEARTBEAT.md ausfuehren** — Feedback? Inspiration? Skills? → Entscheiden
+2. **Inspiration suchen** — Awwwards-Sites, Referenzen, Design-Blogs analysieren
+3. **Choreografie verstehen** — NICHT "sieht cool aus" sondern: Welches Easing? Welche Uebergaenge? Welches Timing? Wie funktioniert der Flow?
+4. **Skills suchen/nutzen** — Gibt es einen Skill der das kann? Neuen installieren? (find-skills)
+5. **Erlebnis erschaffen** — direkt im Component Lab unter /heroes/, KEIN neues Repo
+6. **Tracken** — components.json: Inspiration, Skills, Choreografie-Entscheidungen
+7. **Abschliessen** — Daily Note, GOALS.md, Constitution, Git
+8. **Session beenden** — Cron startet mich automatisch neu
 
 ## Chris-Feedback (destilliert)
-- **"Weit weg von WOW"** — solide Handwerksarbeit reicht nicht
-- **"Mutiger werden"** — groessere Typografie, dramatischere Animationen
-- **"Leere Flaechen vermeiden"** — Cards mit nur Text + Zahl = "hier fehlt was"
-- **Delegieren** — Builder-Agents, Designer-Agents, Sub-Agents nutzen
-- **Prozess experimentieren** — nicht nur Produkt. WIE baut man am besten?
-- **Autonom sein** — selbst entscheiden, experimentieren, lernen
-- **Flexibel sein** — kein starres "jeder Run anderer Ansatz", Multi-Session-Builds OK
-- **DURCHGEHENDER FLUSS** (2026-03-23) — "die ganze Zeit irgendein Element sich mitbewegt" = DAS macht Awwwards-Sites aus. Ohne das: "vergessen nachdem man sie verlassen hat"
-- **Sektions-Uebergaenge spielerisch** (2026-03-23) — nicht abrupt, sondern fliessende Transitions
-- **Logo + Video** (2026-03-23) — fehlt beides, wuerde die Seite stark aufwerten
-- **Self-Eval immer zu optimistisch** (2026-03-23) — Chris gab 7.5/10, Self-Eval war 9.3. IMMER mindestens 1.5 Punkte abziehen
-- **STORY FIRST** (2026-03-23) — "erstmal eine Geschichte die ich erzaehlen will, Design und zurueck ausarbeiten, Typografie und alles was dazugehoert". NICHT erst bauen dann Story, sondern Story → Design → Code
-- **DURCHDACHT > EFFEKTE** (2026-03-23) — "alles wirkt durchdacht im Vorfeld statt einfach nettes Aussehen und Effekte der Effekte wegen". Jeder Effekt muss der Erzaehlung dienen
-- **Referenz: mersi-architecture.com** (2026-03-23) — Chris mag: Hintergrund-Wechsel beim Scrollen, Zoom-Effekte, Struktur/Navigation. Bilder oben+unten, Content in der Mitte. 8/10 fuer exp-signature-hero (Projekt abgeschlossen)
-- **"VOM PIXEL ZUR WEBSEITE"** (2026-03-23) — Neue Story-Idee: Die Transformation vom Pixel zur fertigen Website, auf intelligente Weise mit KI. Was macht eine Webseite aus? Welche Assets werten sie auf?
-- **SCROLL-DRIVEN VIDEO** (2026-03-23) — "Videos per Scrollen animieren. Start-Foto, End-Foto/Frame, durch Scrollen abspielen." Technik: video.currentTime via GSAP ScrollTrigger scrub
-- **"SEI MUTIG UND ERFINDE NEUE DINGE"** (2026-03-23) — Klarer Auftrag: Nicht nur bestehendes anwenden, sondern NEUE Dinge erfinden
 
-## OpenAI Frontend Design Rules
-Siehe: knowledge/skills/openai-frontend-design-rules.md
-Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, full-bleed Imagery, Hero = Brand + Headline + CTA + dominantes Bild, KEINE leeren Cards, jede Sektion = ein Zweck, 2-3 intentionale Animationen, echter Content.
+### Fundamentale Prinzipien (2026-03-24)
+- **ERLEBNISSE, KEINE KOMPONENTEN** — nicht "baue Hero + 3 Sections" sondern "choreografiere ein Erlebnis"
+- **POTENZIAL > PERFEKTION** — muss nicht bugfrei sein, wenn man das WOW-Potenzial erkennt
+- **ZUSAMMEN ITERIEREN** — frueh zeigen, nicht autonom bis v12 polieren. Wenn WOW-Potenzial da: zusammen weiterarbeiten
+- **SKILLS AKTIV NUTZEN** — installierte Skills MUESSEN ins Konzept einfliessen, nicht nur Code-Hilfe
+- **PROMPTS/SKILLS ITERIEREN > MODELLE VERGLEICHEN** — gleiche Prompts + anderes Modell = aehnliches Ergebnis
+- **INSPIRATION SUCHEN + CHOREOGRAFIE VERSTEHEN** — Awwwards-Sites analysieren, den ABLAUF verstehen, dann selber erschaffen
+- **NEUE SKILLS SUCHEN** — aktiv nach Skills suchen die neue Moeglichkeiten eroeffnen
 
-## BESTER Workflow (Stand 2026-03-23, aktualisiert nach Experiment #8)
+### Design-Feedback (2026-03-23)
+- **DURCHGEHENDER FLUSS** — "die ganze Zeit irgendein Element sich mitbewegt" = DAS macht Awwwards-Sites aus
+- **STORY FIRST** — erst Geschichte, dann Design, dann Code
+- **DURCHDACHT > EFFEKTE** — jeder Effekt muss der Erzaehlung dienen
+- **"SEI MUTIG UND ERFINDE NEUE DINGE"**
+- **Self-Eval immer zu optimistisch** — Formel: `chris_score = self_eval - 2.0`
 
-### Build-Phase: Signature Module (Opus) + Assets-First + Sonnet Builder — Score: 8/10
-1. Projekt mit web-lab setup.sh aufsetzen
-2. gemini-image Batch: 6-8 Bilder generieren ($0.50-0.60, ~60 Sek)
-3. Image-Manifest schreiben (specs/image-manifest.json)
-4. **Opus baut kreativstes Modul** (z.B. WebGL Shader Hero)
-5. Detailliertes Design-Konzept mit Sektions-Specs
-6. **Sonnet Builder via Agent-Tool** (NICHT tmux!) (~7 Min)
-7. QA via agent-browser
-8. Deploy via Vercel
+## Was Awwwards-Gewinner KONKRET anders machen (Recherche 2026-03-24)
 
-### Polish-Phase: impeccable:overdrive Skill-Push (Sonnet) — +0.2-0.5 pro Push
-1. Agent-Tool mit Sonnet + impeccable:overdrive
-2. Detaillierter Prompt: aktueller Score, vorhandene Features, schwache Bereiche
-3. Agent liest Code, identifiziert Opportunities, implementiert 2-3 Features
-4. Build-Verification im Agent
-5. ~8 Min, ~82k Tokens pro Push
+### Tech-Stack der Gewinner
+- **GSAP + ScrollTrigger** = 100% aller SOTD-Gewinner, Industriestandard
+- **Lenis** = ~80%, hat Locomotive abgeloest, Smooth Scroll Standard
+- **Three.js + custom GLSL** = ~40%, nur bei 3D-lastigen Sites
+- **Lottie** = ~20%, NUR fuer Micro-Animations (Icons, Loader), NIE fuer Heroes
+- **KEINE Preset-Libraries** — kein animate.css, kein AOS, kein wow.js. ALLES custom GSAP.
 
-### Warum das funktioniert:
-- Opus = kreativster Teil beim Build (WOW-Faktor)
-- Sonnet + Skill = effizientes Polishing (gleiche Qualitaet, halbe Kosten)
-- Assets FIRST + Manifest = Builder nutzt sie alle
-- Agent-Tool statt tmux = zuverlaessiger
-- Gesamtzeit: ~25 Min Build + ~8 Min pro Overdrive-Push
+### Der Unterschied ist CHOREOGRAFIE, nicht Tools
+Reksa Andhika gewinnt SOTD mit NUR Nuxt + GSAP + Lenis. Kein 3D, kein Lottie.
+Der Unterschied:
+1. **Easing-Praezision** — custom curves, nicht Standard ease-in-out
+2. **Timeline-Choreografie** — exaktes Stagger, Overlap, Sequencing
+3. **ScrollTrigger-Feintuning** — exakte Start/End-Punkte
+4. **Micro-Interactions** — Cursor, Hover-States, magnetische Buttons
+5. **60fps durchgehend** — Performance ist kein Afterthought
+
+### Sektions-Uebergaenge (die 6 Patterns)
+1. **Color/Background Morphing** — BG-Farbe wechselt smooth beim Scrollen
+2. **Clip-Path Wipe** — inset() animiert, neue Sektion wischt ueber alte
+3. **Stacking Cards** — CSS sticky, vorherige dimmt (scale 0.92 + brightness 0.4)
+4. **Parallax-Layering** — verschiedene Geschwindigkeiten = Tiefe ohne 3D
+5. **Horizontal Scroll** — pinned Container + scrub translateX
+6. **Dissolve/Blur** — blur() + opacity Transition, cinematic
+
+### Animations-Choreografie (Standard-Ablauf)
+- **Preloader → Hero** = EINE Timeline, overlapping (-2.4s)
+- **Hero Reveal** = clipPath/scale Bild → SplitText Headline (expo.out) → Subtext → CTA
+- **Section Reveals** = trigger "top 80%", toggleActions (NICHT scrub!), SplitText + mask
+- **Signature Moment** = EINER der im Kopf bleibt, 3-5x mehr Scroll-Raum
+- **Easing-Standard:** expo.out (Text), power4.inOut (Wipes), power2.out (Fades)
+- **Timing:** Stagger Buchstaben 0.03-0.05s, Woerter 0.08-0.12s, Zeilen 0.1-0.15s
+
+## Skills — AKTIV nutzen, nicht nur installieren
+
+### Pflicht-Skills (bei JEDEM Erlebnis laden)
+- **awwwards-animations** — Design-Philosophien, algorithmische Art-Patterns, Magnetic Cursor, Text Effects
+- **gsap-plugins** — SplitText (mask!), MorphSVG, Flip, DrawSVG, ScrambleText, CustomEase
+
+### Konzept-Skills (je nach Erlebnis-Typ)
+- **scroll-storyteller** — Narrativ-Framework, Kapitel-Struktur, Mood-Paletten
+- **svg-animations** — Path Drawing, Morphing, SMIL fuer self-contained SVGs
+- **lottie-animator** — Micro-Interactions, animierte Icons/Logos
+- **3d-web-experience** — Scroll-driven 3D, WebGL-Szenen
+
+### Skill-Discovery (regelmaessig)
+- `find-skills` nutzen um neue Skills zu entdecken
+- Nach Inspiration-Analyse: gibt es einen Skill der das Pattern abdeckt?
+- Neuen Skill installieren wenn er eine Luecke fuellt
+
+## Build-Workflow (aktualisiert)
+
+### Experience-Build
+1. **Inspiration analysieren** — konkrete Referenz-Site choreografie-technisch zerlegen
+2. **Skills laden** — awwwards-animations + gsap-plugins + relevante Konzept-Skills
+3. **Choreografie-Konzept** — Ablauf, Easings, Uebergaenge, Timing BEVOR Code
+4. **Assets generieren** — gemini-image/video Batch, komprimieren
+5. **Opus baut Erlebnis** — mit Skills geladen, Choreografie-Konzept als Input
+6. **Build-Verification** — npm run build (KEIN next dev!)
+7. **QA** — agent-browser Desktop + Mobile
+8. **Tracken** — components.json aktualisieren
+
+### WICHTIG: Alles im Component Lab
+- KEIN neues Repo, KEIN Vercel Deploy fuer jedes Erlebnis
+- Direkt unter src/app/heroes/ als eigenes Verzeichnis
+- Gallery (/) zeigt alle Erlebnisse
+- Naming: hero-vXXX-[a|b] (naechste freie Nummer aus components.json)
 
 ## Was funktioniert (technisch)
-- **Full-bleed Hero mit generiertem Bild** — der groesste visuelle Impact
-- gemini-image Batch fuer Projekt-Mockups UND Service-Visuals
-- Alternating asymmetric Layouts fuer Services
+- Lenis + GSAP Integration
+- Full-bleed Hero mit generiertem Bild
 - WebGL Shader als Signature Moment
 - CSS sticky Stacking Cards
 - toggleActions > scrub fuer Content-Reveals
-- Lenis + GSAP Integration
-- agent-browser fuer visuelles QA
-- Bebas Neue (bold display), Space Grotesk (clean body)
-- Unbounded (distinctive), Instrument Serif (elegant)
-- impeccable:critique → overdrive Pipeline
-- **Video Showreel Section** (Veo 3.1 ambient + GSAP scale reveal + letterbox)
-  - gemini-video fuer ambient Background-Videos ($1.20/8s, 720p reicht)
-  - ffmpeg CRF 28 Kompression: 8.7MB → 2.7MB
-  - Text-Shadow PFLICHT auf Video-Overlays (sonst unleserlich auf Mobile)
-  - Autoplay on scroll-enter, pause on leave (ScrollTrigger onEnter/onLeave)
-  - Letterbox-Bars (12% top/bottom) fuer cinematic Feel
-- Clip-path Wipe-Reveals fuer Portfolio-Projekte
-- Grain-Overlay (SVG feTurbulence, opacity ~0.04, overlay blend)
-- Custom Cursor (GSAP smooth follow, magnetic, context-aware labels)
-- **Full-Screen Stacking Cards** (sticky top-0, z-index stacking, GSAP dim auf vorherige)
-  - WICHTIG: Spacer (h-screen) NACH der letzten Card, sonst hat sie 0 Scroll-Raum
-  - Dim-Effekt: scale 0.92 + brightness(0.4) per scrub auf vorherige Cards
-  - Parallax: GSAP fromTo y: -8% to 8% auf Images
-- **Pinned Scroll Showcase** (CSS sticky + GSAP scrub-Timeline)
-  - Outer: hohe Hoehe (500vh), Inner: sticky top-0 h-screen
-  - GSAP scrub-Timeline mapped Scroll-Progress auf Step-Transitions
-  - autoAlpha fuer Ein/Ausblenden (visibility + opacity)
-  - Funktioniert perfekt mit Lenis (kein GSAP pin noetig!)
-- **Word-by-Word Text Reveal** (GSAP stagger)
-  - y: 110% + rotateX: -15 Entrance = 3D-Flip-Effekt
-  - Stagger: 0.12s pro Wort
-  - Wrapper braucht overflow:hidden
-  - WICHTIG: {' '} ZWISCHEN inline-block Elementen platzieren, nicht innerhalb
-- **Scroll-driven Video** (GSAP ScrollTrigger + video.currentTime)
-  - Container: hohe Hoehe (500vh), Inner: sticky top-0 h-screen
-  - ScrollTrigger.create mit scrub: 0.3
-  - onUpdate: video.currentTime = self.progress * video.duration
-  - WICHTIG: video.readyState >= 1 checken vor Setup (loadedmetadata Event)
-  - Text-Overlays: opacity + translateY basierend auf progress ranges
-  - Video komprimieren: ffmpeg CRF 28 + faststart (spart ~65%)
-- **CSS Marquee** (infinite scroll, kein JS noetig)
-  - @keyframes marquee-scroll: translateX(0 → -50%)
-  - 6+ Kopien des Textes fuer nahtloses Loop
-  - WebkitTextStroke fuer Outline-Effekt
+- Word-by-Word Text Reveal (GSAP stagger, y:110%, rotateX:-15)
+- Scroll-driven Video (GSAP ScrollTrigger + video.currentTime)
+- Clip-path Wipe-Reveals
+- Grain-Overlay (SVG feTurbulence, opacity ~0.04)
+- Custom Cursor (GSAP smooth follow, magnetic)
+- CSS Marquee (infinite scroll, kein JS)
+- Pinned Scroll Showcase (CSS sticky + GSAP scrub-Timeline)
+- gemini-image Batch ($0.50, ~60 Sek)
+- gemini-video ambient ($1.20/8s)
+- agent-browser fuer QA
 
 ## Was NICHT funktioniert
 - Websites ohne echte Assets = langweilig
-- Leere Karten/Flaechen mit nur Text
 - AI-Template Tells (corner marks, mono labels, cheesy copy)
 - scrub-Animationen fuer Reveals (opacity-0-Bug)
 - Konzept ueberspringen → generisch
-- **CSS @import fuer Fontshare in Next.js** — IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
-- **ASCII-Umlaute in Specs** — IMMER UTF-8 verwenden (ä/ö/ü, nicht ae/oe/ue), Builder kopiert 1:1
-- **mix-blend-difference auf hellem BG** — macht schwarzen Text unsichtbar, nur fuer Dark Themes
-- **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein + Manifest
-- **tmux-Sessions IMMER beenden** — Nach Build: `tmux kill-session -t name`. Vor Session-Ende: `tmux ls` pruefen
-- **Designer-Konzept allein reicht nicht** — Designer liefert kreativere Ideen, aber Builder ignoriert Assets ohne Manifest
-
-## SPEC-PFLICHTZEILEN (in JEDE creative-brief.md kopieren)
-- **OVERFLOW:** `globals.css` MUSS `body { overflow-x: hidden }` enthalten. NIEMALS `overflow: hidden` (ohne -x) auf body setzen — bricht GSAP ScrollTrigger komplett! Nur `overflow-x: hidden`. 3 von 12 Build-Fehlern waren overflow-bedingt.
+- CSS @import fuer Fontshare — IMMER `<link>` in layout.tsx
+- ASCII-Umlaute in Specs — IMMER UTF-8
+- mix-blend-difference auf hellem BG
+- body overflow:hidden (ohne -x) bricht GSAP ScrollTrigger
+- Modelle vergleichen statt Prompts/Skills iterieren
+- 7 Sektionen mittelmäßig statt 2 Sektionen WOW
+- Autonom bis v12 polieren ohne Chris einzubinden
 
 ## Self-Eval Kalibrierung
 - **Formel:** `chris_score_estimate = self_eval - 2.0`
-- **Hintergrund:** Self-Eval 9.5 → Chris 7.5 = 2.0 Punkte Inflation (historisch konsistent)
-- **Pflicht:** In GOALS.md und Experiment-Logs IMMER beide Scores angeben: "Self: X, Chris-geschätzt: Y"
-- **Entscheidungsregel:** Iterationen lohnen sich nur wenn chris_score_estimate < 8.0. Darueber: Chris fragen.
+- **Entscheidungsregel:** Iterationen nur wenn chris_score_estimate < 8.0. Darueber: Chris fragen.
 
-## Prozess-Experimente
-
-### #1: Designer → Builder Pipeline (2026-03-23, exp-warm-brutal)
-- **Score: 5/10** — Kreatives Konzept, aber Asset-Integration gescheitert
-- Designer-Agent liefert exzellentes Konzept (7 Akte, Asset-Prompts)
-- Builder nutzte generierte Bilder nicht (parallel generiert, kein Manifest)
-- Learning: Assets ZUERST + Manifest
-
-### #2: OpenAI Rules → Builder (2026-03-23, exp-cinematic-dark) ← GEWINNER
-- **Score: 7/10** — Full-bleed Hero, alle Bilder integriert, kohaerent
-- Assets-First + Manifest = perfekte Integration (7/7 Bilder)
-- Sonnet statt Opus: schneller, guenstiger, gleiche Qualitaet
-- Learning: Rules > Designer fuer zuverlaessigen Output
-
-### #3: Overdrive via Delegated Builder (2026-03-23, exp-cinematic-dark v2)
-- **Score: 7→7.5/10** — Alle 6 Aufgaben umgesetzt, aber nur +0.5
-- Dateibasierte Spec (overdrive-push.md) funktioniert als Builder-Input
-- Sonnet setzt exakt um was in der Spec steht, aber denkt nicht darueber hinaus
-- Groesster Impact: Methode-Sektion radikal umgebaut (Template→Editorial)
-- Fuer echtes WOW braucht es ein technisches Signature Piece (WebGL/3D)
-- Learning: **Delegierter Overdrive = chirurgische Verbesserungen, nicht Game-Changer**
-
-### #4: Signature Module (Opus) + Builder (Sonnet) (2026-03-23, exp-signature-hero) ← BESTES ERGEBNIS
-- **Score: 8/10** — Neuer Spitzenreiter
-- Opus baut WebGL Shader Hero selbst (noise displacement, mouse ripple, chromatic aberration)
-- Sonnet Builder baut den Rest (Layout, Sektionen, Responsive)
-- Alle 8 Assets integriert, Editorial Layouts, GSAP Animationen
-- Agent-Tool statt tmux (zuverlaessiger!)
-- Learning: **Opus fuer Kreativ-Module + Sonnet fuer systematische Arbeit = BESTER Workflow**
-- Learning: **Agent-Tool > tmux** — tmux war stuck, Agent-Tool funktioniert sofort
-
-### #5: Opus Overdrive Push (2026-03-23, exp-signature-hero v2)
-- **Score: 8→8.5/10** — Gezielte chirurgische Verbesserungen
-- Opus macht Overdrive direkt (kein Builder delegiert)
-- 4 gezielte Fixes: Mobile Nav, Portfolio Redesign, Methode Nummern, Footer
-- Groesster Impact: Mobile Nav (+2), Portfolio (+1)
-- Token-effizient (~15 Min, kein Builder-Overhead)
-- Learning: **Opus-Overdrive > Delegierter Overdrive** — Opus versteht Design-Intent besser
-
-### #6: Opus Overdrive Push #3 — Stacking Services (2026-03-23, exp-signature-hero v4)
-- **Score: 8.8→9.0/10** — Services von 8→9.5, groesster Einzelsprung
-- Full-Screen Stacking Cards ersetzen alternating blocks
-- Film Grain Overlay + Section Dividers
-- Spacer-Bug entdeckt: letzte sticky Card braucht h-screen Spacer
-- Learning: **Services-Redesign war der groesste Hebel** — die "langweiligste" Sektion upgraden bringt am meisten
-
-### #7: Opus Overdrive Push #4 — Methode + CTA + Footer (2026-03-23, exp-signature-hero v5)
-- **Score: 9.0→9.2/10** — Alle 3 schwachen Sektionen aufgewertet
-- Methode: Pinned Scroll Showcase (500vh, sticky, GSAP scrub-Timeline)
-- CTA: Split-Text Reveal (word-by-word, rotateX-15, parallax bg)
-- Footer: Infinite Marquee + 4-Column Grid
-- Learning: **CSS sticky + GSAP scrub = perfekt mit Lenis** (kein pin noetig)
-- Learning: **Inline-Block Spacing** — {' '} ZWISCHEN Elementen, nicht innerhalb
-
-### #8: impeccable:overdrive Skill-Push (2026-03-23, exp-signature-hero v6)
-- **Score: 9.2→9.5/10** — 3+1 Features, Sonnet-Agent mit Skill
-- Cinematic Preloader (Counter → Brand → Split-Panel Reveal)
-- Spring-Physics Cursor mit Ghost-Trail (4 trailing rings)
-- Scroll-Velocity Skew auf Portfolio (3° Neigung bei schnellem Scroll)
-- Footer: Live-Uhr, Slide-Up Hover, Spring Back-to-Top
-- 82k Tokens, ~8 Min — EFFIZIENTER als manuelles Opus-Overdrive (~150k, ~25 Min)
-- Learning: **Sonnet + impeccable:overdrive Skill ≈ manuelles Opus-Overdrive bei halben Kosten**
-- Learning: **Preloader = First-Impression Game-Changer**
-
-### #9: Builder-Agent mit Detailed Specs (2026-03-24, exp-morphic-flow v3)
-- **Score: ~7/10 geschaetzt** (QA 5.5 headless-limitiert, realistisch ~7)
-- 350+ Zeilen creative-brief.md mit exakten JSX/CSS/GSAP Code-Patterns pro Sektion
-- Sonnet Builder via Agent-Tool: 13 Dateien, 1888 Insertions, 0 Build-Fehler, ~10 Min
-- 3 neue Canvas-Komponenten erstellt (ServiceWireframe, ServiceNetwork, ServiceParticles)
-- v2→v3: Simple SVGs → Canvas Visuals, Grid → Horizontal Scroll, Static → Pinned Timeline
-- **FUNDAMENTALE Erkenntnis: Builder = Spec-Qualitaet**
-  - Spec enthielt Code → Builder kopierte/adaptierte praezise
-  - Spec vergass Detail → Builder ignorierte es (korrekt!)
-  - **Investition in die Spec = direkter ROI auf den Output**
-- Learning: **creative-brief.md als SINGLE-INPUT Format funktioniert** — Story + Design + Code pro Sektion
-- Learning: **~25 Min total (15 Spec + 10 Build)** fuer einen vollstaendigen Website-Rebuild
-
-### #10: Reproduzierbarkeit (2026-03-24, exp-kinetic-type v1)
-- **Score: ~6.5/10 geschaetzt** (QA 5.8 headless-limitiert)
-- Gleicher Spec→Builder Workflow, komplett anderer Stil (hell, typografie-getrieben)
-- 400+ Zeilen creative-brief.md → Sonnet Builder: 11 Dateien, 0 Build-Fehler, ~4 Min
-- **Hypothese BESTAETIGT:** Workflow ist reproduzierbar, unabhaengig vom Stil
-- 3 Bugs gefunden: ASCII-Umlaute, mix-blend-difference auf light, mobile overflow
-- Learning: **UTF-8 Pflicht in Specs**, **Heller Stil braucht subtilere Spec-Arbeit**
-
-### #11: Parallel-Build (2026-03-24, exp-parallel-dark + exp-parallel-light)
-- **Dark: 5.3/10, Light: 4.6/10** — Hypothese NICHT bestaetigt
-- 2 Sonnet-Builder parallel (~2 Min), gleiche Assets, verschiedene Specs (Dark vs Light)
-- Mechanisch perfekt (0 Fehler, 0 Konflikte), aber kein Qualitaetsgewinn
-- **FUNDAMENTALE Erkenntnis: Parallel = Optionen, nicht Qualitaet**
-  - Opus Signature Module bleibt unverzichtbar fuer WOW
-  - Sonnet-Only produziert Template-Level, egal wie detailliert die Spec
-  - Nuetzlich fuer: Rapid Prototyping, Stil-Exploration, Kunden-Praesentation
-- Learning: **Dark > Light bei gleicher Spec-Tiefe** — dramatischere Specs = visuell staerker
-
-### #12: Haiku als Builder (2026-03-24, exp-haiku-test)
-- **Score: 3.0/10** — Gleiche Spec wie parallel-dark (Sonnet: 5.3/10)
-- 61k Tokens, 110 Sekunden, 0 Build-Fehler — extrem schnell und guenstig
-- **KRITISCHER BUG:** body overflow:hidden + inner scroll wrapper → GSAP ScrollTrigger komplett kaputt
-- 4/7 Sektionen nicht funktional (Statement, Portfolio, Process, CTA)
-- CSS-only Features funktionieren (sticky cards, marquee)
-- **FUNDAMENTALE Erkenntnis: Modell-Hierarchie bestaetigt**
-  - **Opus** = Kreativ + Verstaendnis (8/10 moeglich)
-  - **Sonnet** = Solider Builder mit guter Spec (5-7/10)
-  - **Haiku** = Struktur-Kopierer ohne Verstaendnis (3/10) — NUR fuer triviale Tasks
-- Learning: **Haiku kopiert Code woertlich, versteht aber nicht die Implikationen** (z.B. overflow bricht GSAP)
-- Learning: **80% Kostenersparnis irrelevant wenn Ergebnis unbrauchbar**
-
-### #13: Codex gpt-5.4 als Builder (2026-03-24, exp-codex-test)
-- **Score: ~6.5/10 geschaetzt** — Gleiche Spec wie parallel-dark (Sonnet: 5.3, Haiku: 3.0)
-- 110,445 Tokens, 727 Zeilen, 4 Dateien, 0 Build-Fehler
-- Alle 7 Sektionen funktional, alle Bilder verwendet, Spec kreativ erweitert
-- **FUNDAMENTALE Erkenntnis: Modell-Hierarchie FINAL**
-  - **Opus** = Kreative WOW-Module, Deep Understanding (8/10)
-  - **Codex gpt-5.4** = Bester Spec-Following Builder (6.5/10)
-  - **Sonnet** = Solider Builder, folgt Spec exakt (5.3/10)
-  - **Haiku** = Struktur-Kopierer, bricht komplexe Patterns (3/10)
-- Learning: **Codex versteht React-Patterns tiefer als Sonnet** — useGSAP, matchMedia, proper cleanup
-- Learning: **Codex erweitert Spec kreativ** — Navigation, Stats, Glasmorphism, a11y (Sonnet folgt nur)
-- Learning: **Codex adaptiert an Umgebung** — erkannte Turbopack-Bug, fixte Build-Script selbst
-- Learning: **Codex ist KEIN Opus-Ersatz** — erweitert Spec, erfindet aber keine WOW-Signaturen
-- Deployed (2026-03-24, --scope Fix): https://exp-codex-test-ah9gbvjji-christian-klapproths-projects.vercel.app
-
-### #14: Skill-Test Build (2026-03-24, exp-scroll-story)
-- **Score: ~4.5/10 Chris-geschaetzt** (Self: 6.5)
-- scroll-storyteller + awwwards-animations als Skills im Builder-Prompt
-- 795 Zeilen, 7 Kapitel, 8 Bilder, 0 Build-Fehler, ~4 Min
-- **FUNDAMENTALE Erkenntnis: Skills informieren SPEC, nicht BUILD**
-  - Builder hat Skills nicht explizit geladen — Spec enthielt bereits die Patterns
-  - Skills sind Wissens-Quelle fuer Opus beim Konzept-Schreiben
-  - Ohne Opus Signature Module: kein WOW, nur solide Handwerksarbeit
-- Learning: **Skill-Wert = Konzept-Qualitaet, nicht Code-Qualitaet**
-- Learning: **Vercel Deploy braucht --scope Flag:** `npx vercel --yes --prod --token "$TOKEN" --scope christian-klapproths-projects`
-
-### Noch nicht getestet
-- Opus Signature + Codex Builder (statt Sonnet)
-- Designer + Rules + Assets-First (Kombination)
-- Opus mit Skills geladen → Spec → Builder (Skills als Opus-Input)
-
-## Was fehlt fuer WOW (~9.5/10 → 10/10)
-- ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
-- ~~Mobile Nav~~ — ERLEDIGT (Full-Screen Menu mit nummerierten Links)
-- ~~Portfolio redesignen~~ — ERLEDIGT (Editorial Info-Bar statt Overlay)
-- ~~Overdrive Push~~ — ERLEDIGT (8→8.5)
-- ~~Mehr Portfolio-Content~~ — ERLEDIGT (4 Items, 2 neue Mockups)
-- ~~Custom Cursor~~ — ERLEDIGT (Spring-Physics + Ghost-Trail, 8.5→9.2/10)
-- ~~Services aufwerten~~ — ERLEDIGT (Full-Screen Stacking Cards, 8→9.5/10)
-- ~~Film Grain~~ — ERLEDIGT (SVG feTurbulence Overlay)
-- ~~Section Dividers~~ — ERLEDIGT (animated horizontal lines)
-- ~~Methode aufwerten~~ — ERLEDIGT (Pinned Scroll Showcase, 8.5→9.2/10)
-- ~~CTA aufwerten~~ — ERLEDIGT (Split-Text Reveal, 8.5→9.3/10)
-- ~~Footer aufwerten~~ — ERLEDIGT (Marquee + Clock + Hovers, 8→9.3/10)
-- ~~impeccable:overdrive~~ — ERLEDIGT (Sonnet + Skill = effizienter als Opus manuell!)
-- ~~Preloader~~ — ERLEDIGT (Cinematic Counter → Brand → Split-Panel)
-- ~~Video~~ — ERLEDIGT (Veo 3.1 ambient, VideoShowreel Section mit scale reveal)
-- **Mobile QA** — Neue Sektionen auf Mobile testen
-- **Methode Step-Bilder** — Generieren fuer visuellere Steps
-- **Page Transitions** — Zwischen Sektionen oder Sub-Pages
-- **Sound Design** — Subtile Audio-Cues bei Interaktionen (optional, kontrovers)
-
-## BESTER Workflow (Stand 2026-03-23, aktualisiert)
-
-**Signature Module (Opus) + Assets-First + Sonnet Builder:**
-1. Projekt mit web-lab setup.sh aufsetzen
-2. gemini-image Batch: 6-8 Bilder generieren ($0.50-0.60, ~60 Sek)
-3. Image-Manifest schreiben (specs/image-manifest.json)
-4. **Opus baut Signature Module** (WebGL Shader, Custom Cursor, etc.)
-5. Detailliertes Design-Konzept mit Sektions-Specs
-6. **Sonnet Builder via Agent-Tool** (NICHT tmux!) (~7 Min)
-7. QA via agent-browser
-8. Deploy: `TOKEN=$(cat ~/.config/vercel/token) && npx vercel --yes --prod --token "$TOKEN" --scope christian-klapproths-projects`
-
-**Warum das funktioniert:**
-- Opus = kreativster Teil (WOW-Faktor)
-- Sonnet = systematischer Rest (zuverlaessig, schnell, guenstig)
-- Agent-Tool = zuverlaessiger als tmux (kein stuck, auto-cleanup)
-- Assets FIRST + Manifest = Builder nutzt sie alle
-- Gesamtzeit: ~25 Min fuer 8/10 Website
-
-## Verfuegbare Agents & Tools
-- **Agent-Tool** — Bevorzugt fuer Builder (zuverlaessiger als tmux)
-- **tmux** — Nur fuer langlaeufer die parallel laufen muessen
-- **designer.md** — .claude/agents/designer.md (Creative Director)
-- **web-lab setup.sh** — Projekt-Setup Script
-- **find-skills** — Skill-Discovery
-- **agent-browser** — Visuelles QA
-- **gemini-image / gemini-video** — Asset-Generierung (Batch!)
-- **run-codex** — OpenAI Codex als zweite Meinung
-- **Brave Search / Firecrawl** — Web-Recherche
+## Prozess-Experimente (Archiv)
+Siehe: knowledge/daily/ — 14 Experimente dokumentiert (2026-03-22 bis 2026-03-24)
+Wichtigste Erkenntnisse:
+- Opus fuer Kreativ/WOW, Sonnet fuer systematische Arbeit
+- Skills informieren SPEC, nicht BUILD
+- Builder = Spec-Qualitaet (Investition in Spec = direkter ROI)
+- Modell-Hierarchie: Opus (8/10) > Codex (6.5) > Sonnet (5.3) > Haiku (3.0)
+- Agent-Tool > tmux

@@ -10,90 +10,76 @@ Das Ergebnis bestimmt was ich in dieser Session tue.
 node ~/.claude/skills/imap-smtp-email/scripts/imap.js search --from christian.klapproth@pixintcreators.de --subject "Component Lab" --recent 24h --limit 5
 ```
 - Gibt es Antworten auf meine Mails?
-- Gibt es neues Feedback zu deployed Websites?
+- Gibt es neues Feedback zu Erlebnissen?
 - → Wenn ja: Feedback einarbeiten hat PRIORITAET
 
-## 2. Ziele checken
+## 2. Inspiration suchen
+- Awwwards SOTD/SOTY checken (Brave Search: "awwwards site of the day" + aktuelles Datum)
+- 1-2 Referenz-Sites analysieren:
+  - NICHT "sieht cool aus" sondern:
+  - Welche Easings? (expo.out? power4.inOut? custom?)
+  - Welche Uebergaenge zwischen Sektionen? (Color-Morph? Clip-Path? Stacking?)
+  - Welches Timing? (Stagger-Werte, Durations, Overlaps)
+  - Was ist der EINE Moment der im Kopf bleibt?
+  - Welcher Flow-Typ? (Vertikal, Horizontal, Pinned, Immersive)
+- Choreografie-Analyse in Daily Note festhalten
+
+## 3. Skills checken
+- Neue Skills suchen: `find-skills` fuer Patterns die bei der Inspiration aufgefallen sind
+- Installierte Skills reviewen: Kann einer davon das gefundene Pattern umsetzen?
+- awwwards-animations + gsap-plugins = PFLICHT bei jedem Build
+- Konzept-Skills je nach Erlebnis-Typ dazuladen
+
+## 4. Ziele checken
 - `GOALS.md` lesen — was ist das aktuelle Hauptziel?
 - Welche Teilziele sind offen?
 - Bin ich auf dem richtigen Weg oder brauche ich einen Kurswechsel?
 
-## 3. Experimente checken
-- `knowledge/experiments/` durchgehen — welche Websites gibt es?
-- Status pro Website: deployed? Feedback erhalten? Naechste Schritte?
-- Gibt es ein Experiment das kurz vor "fertig" ist? → Prioritaet
-
-## 4. Wissen checken
+## 5. Wissen checken
 - `knowledge/constitution.md` lesen — kuratiertes Wissen
 - Letzte Daily Notes ueberfliegen — was war der letzte Run? Was kam raus?
 - Hat sich ein Pattern bewaehrt das in die Constitution gehoert?
 
-## 5. Improvements checken
+## 6. Improvements checken
 - `IMPROVEMENTS.md` lesen — hat der Weekly Reflector Vorschlaege?
-- Offene Improvements = konkrete, umsetzbare Aufgaben (Skill bauen, Script schreiben, Prompt aendern)
-- Wenn umgesetzt: als [DONE] markieren oder loeschen
+- Offene Improvements = konkrete, umsetzbare Aufgaben
+- Wenn umgesetzt: als [DONE] markieren
 
-## 6. Entscheiden
-Basierend auf 1-5 entscheide ich WAS ich in dieser Session tue. Prioritaet:
+## 7. Entscheiden
+Basierend auf 1-6 entscheide ich WAS ich in dieser Session tue. Prioritaet:
 
 ### P1: Feedback von Chris
-→ Feedback einarbeiten. Website iterieren oder neu angehen.
+→ Feedback einarbeiten. Erlebnis iterieren oder neuen Ansatz.
 
-### P2: Experiment kurz vor fertig
-→ Polishen, QA, deployen. Ggf. Mail an Chris.
+### P2: Inspiration gefunden + Choreografie verstanden
+→ Erlebnis erschaffen das von der Inspiration LERNT (nicht kopiert).
+→ Skills aktiv laden. Choreografie-Konzept BEVOR Code.
 
 ### P3: Offene Improvements
-→ Einen Improvement-Vorschlag umsetzen (Skill bauen, Script schreiben, Fehler-Pattern fixen).
-→ Das macht mich langfristig effizienter — hat Vorrang vor "einfach weiterbauen".
+→ Skill bauen, Script schreiben, Fehler-Pattern fixen.
 
-### P4: Am Hauptziel weiterarbeiten
-→ Aus GOALS.md. Das kann sein:
-- Neues Experiment starten
-- An bestehendem Experiment weiterarbeiten
-- Prozess-Experiment durchfuehren (Builder-Agent testen, Skill-Kombination testen, etc.)
-- Recherche (neue Skills, Award-Sites, Design-Patterns)
-- Assets generieren (gemini-image, gemini-video)
+### P4: Neues Erlebnis experimentieren
+→ Andere Skill-Kombination, andere Design-Philosophie, anderer Erlebnis-Typ.
+→ NICHT gleicher Prompt mit anderem Modell!
 
-### P5: Nichts zu tun
-→ Erkenntnisse destillieren, Constitution pflegen, Skills aufraeuemen.
-→ Wenn auch das erledigt: `HEARTBEAT_OK` — Session sauber beenden.
-
-## 6. Self-Improvement checken
-
-Nach dem Handeln, VOR dem Abschliessen:
-
-### Wiederholungen erkennen
-- Mache ich etwas zum 3. Mal manuell? → **Script oder Skill daraus bauen**
-  - Beispiel: E-Mail-Check ist immer derselbe IMAP-Befehl → eigenes Script
-  - Beispiel: Immer gleiche GSAP-Patterns → als Skill verpacken (skill-creator)
-  - Beispiel: Immer gleiche QA-Schritte → agent-browser Workflow automatisieren
-
-### Token-Effizienz
-- Was hat in dieser Session unnoetig viele Tokens verbraucht?
-- Kann ich das naechstes Mal effizienter machen? (Script, Skill, besserer Prompt)
-- Gibt es Schritte die ein guenstigeres Modell (Sonnet/Haiku) uebernehmen kann?
-
-### Fehler-Patterns
-- Sind in dieser Session Fehler aufgetreten die ich schon mal hatte?
-- → In Constitution oder knowledge/workflows/ dokumentieren damit ich sie nicht wiederhole
-- Build-Fehler, TypeScript-Fehler, API-Fehler — alles was Zeit gekostet hat
-
-### Prozess verbessern
-- Funktioniert der Heartbeat-Ablauf? Fehlt ein Schritt? Ist einer ueberfluessig?
-- → HEARTBEAT.md anpassen
-- Sind meine GOALS.md noch aktuell oder muss ich umpriorisieren?
-- Hat sich ein Workflow bewaehrt? → Als Skill verpacken (`skill-creator`)
-- Hat sich ein Agent-Setup bewaehrt? → Als .claude/agents/ Template speichern
-
-### Eigenen Prompt verbessern
-- Wenn fundamentale Erkenntnisse: `scripts/agent-prompt.md` anpassen
-- Alles ist in Git — nichts geht verloren
+### P5: Nichts Konkretes
+→ Inspiration recherchieren fuer naechste Session.
+→ Constitution pflegen, Skills aufraeuemen.
+→ `HEARTBEAT_OK` — Session sauber beenden.
 
 ---
 
+## WICHTIG: Erlebnisse bauen, nicht Websites
+
+- Ein Erlebnis kann 1 Screen sein oder eine Mini-Site — egal
+- Was zaehlt: Hat es FLOW? Fuehlt es sich choreografiert an? Bleibt es im Kopf?
+- KEIN neues Repo. Direkt im Component Lab unter /heroes/
+- components.json IMMER aktualisieren (skills_loaded, inspiration_source, choreography_notes)
+- Frueh zeigen. Potenzial > Perfektion.
+
 ## Nach der Session
-1. Daily Note schreiben (`knowledge/daily/YYYY-MM-DD.md`)
-2. GOALS.md updaten (Fortschritt, naechste Schritte)
+1. Daily Note schreiben (`knowledge/daily/YYYY-MM-DD-*.md`)
+2. GOALS.md updaten
 3. Constitution updaten (wenn neue Erkenntnisse)
-4. Self-Improvement Aenderungen committen (wenn welche)
+4. components.json updaten (neues Erlebnis tracken)
 5. Git commit + push
