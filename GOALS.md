@@ -235,6 +235,12 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] bandinopla/threejs-fluid-simulation (WebGL + WebGPU)
 - [ ] Einsatz: Mouse-reaktive Fluid-Hintergruende, Smoke/Plasma-Effekte
 
+#### Research: Agentur-Portfolio-Strategie (run-20260324-1620)
+- [x] Immersive Garden (Agency of the Year 2025) analysiert
+- [x] Bruno Simon (SOTD 04.03.2026, 8.11/10) analysiert
+- [ ] **Moeglicher Paradigmenwechsel 4:** Portfolio zeigt ARBEIT, nicht Technik
+- [ ] Chris fragen: Fake-Projekte vs Website-als-Erlebnis vs Hybrid?
+
 #### Skill-Discovery
 - [x] threejs-webgl und react-three-fiber Skills in Build geladen (v016-a)
 - [x] find-skills: 3 neue 3D-Skills installiert (meshy, blender-pipeline, 3d-model-gen)
