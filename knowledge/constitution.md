@@ -1,4 +1,4 @@
-# Component Lab — Constitution v14
+# Component Lab — Constitution v15
 
 Kuratiertes Wissen. Wird bei JEDEM Run gelesen — klein und wertvoll halten.
 Identitaet, Ziele, Heartbeat leben jetzt in eigenen Workspace-Dateien (SOUL.md, GOALS.md, HEARTBEAT.md).
@@ -131,6 +131,15 @@ Der Unterschied:
 - **Low-Res Pixel Rendering** (Offscreen Canvas + imageSmoothingEnabled=false) — Offscreen Canvas bei 1/N Aufloesung erstellen, ALLES dort zeichnen (Strom, Partikel, Glow), dann per `drawImage` auf volle Groesse hochskalieren. Nearest-Neighbor Interpolation gibt automatisch Pixel-Look. `pixSnap()` fuer Grid-Snapping, `fillRect` statt `arc`, `lineCap:"square"`. PIXEL_SCALE=5 = chunky, =3 = feiner. Performant weil weniger Pixel gezeichnet werden.
 - **WebGL Image Distortion Shader** (react-three-fiber + custom GLSL) — Bild als Textur auf Plane, 3 Octaves Simplex Noise fuer fluessige Verzerrung, Mouse-Position als Ripple-Displacement, Scroll-Progress steuert Distortion-Amplitude (exponentieller Falloff: `dist*dist`). Chromatic Aberration proportional zur Verzerrung. Cover-UV-Berechnung im Shader fuer responsives Aspect-Ratio. Mouse-Lerp im useFrame (`factor 0.06`) gibt physisches Gefuehl. `dynamic(() => ..., { ssr: false })` noetig fuer Next.js. `dpr={[1, 1.5]}` fuer Performance.
 - **3D Vertex Displacement Blob** (IcosahedronGeometry detail 6 + custom Vertex Shader) — 3 Octaves 3D Simplex Noise displacen Vertices entlang Normalen. Finite-Difference Normal Computation: 2 Tangent-Offsets (eps=0.01) + Cross-Product fuer korrekte Specular-Highlights. World-Space Normals via `mat3(modelMatrix)` (NICHT `normalMatrix` — das ist View-Space). Blinn-Phong Three-Point Lighting: Orange Key (follows mouse, lerp 0.05), Cool Fill, White Rim. Fresnel-Glow (power 3.5) + Irideszenz (view-angle dependent sine-based hue shift). Reinhard Tonemapping (`color/(color+1)`) verhindert Specular-Clipping. Scroll-driven Parameter-Curves via smoothstep-Blending zwischen Phasen. Lenis Smooth Scroll + GSAP ScrollTrigger Integration.
+
+- **MeshTransmissionMaterial Glass Diamond** (drei MeshTransmissionMaterial + LatheGeometry) — Transparentes 3D-Objekt mit Screen-Space Refraction. Props animierbar via ref (`matRef.current.distortion = X`). Braucht `Environment` HDRI fuer Refraction-Content (sonst nichts sichtbar durch Glass). Performance: `resolution={256}`, `samples={6}`. `backside` fuer Innenseiten-Rendering. `ACESFilmicToneMapping` + `toneMappingExposure: 1.2` fuer Kino-Look. LatheGeometry mit 6 Profil-Punkten + 8 Segmenten = Diamond-Silhouette (pavilion + girdle + crown + table). `Environment preset="city" background={false}` = HDRI nur fuer Reflections, nicht als Background.
+
+## Wege zu sinnvollen 3D-Objekten
+1. **Meshy AI** (meshy.ai) — Text/Image → 3D → GLB. Pro-Plan ~$20/Monat fuer API. Skill: meshy-3d-generation
+2. **Sketchfab** — 800k+ CC-lizenzierte GLB-Modelle (manueller Download)
+3. **Procedural** — LatheGeometry, ExtrudeGeometry, CSG in Three.js
+4. **Blender Pipeline** — Python-scripted GLTF Export. Skill: blender-web-pipeline
+5. **useGLTF** (drei) — Laedt GLB/GLTF in R3F. Custom Materials drauf anwendbar.
 
 ## Paradigmenwechsel: WebGL > Canvas 2D > DOM
 

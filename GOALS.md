@@ -167,13 +167,29 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Optional: Environment Map fuer Reflektionen
 - [ ] Optional: Blob reagiert auf Cursor-Naehe (Vertex-Displacement)
 
-#### Naechstes Erlebnis: hero-v017-a — FBO PARTICLE MORPH
-- [ ] Chris-Feedback zu v015-a/v016-a abwarten (WebGL-Richtung bestaetigt?)
+#### hero-v017-a: PRISM — Glass Diamond (MeshTransmissionMaterial)
+- [x] Chris-Feedback (UID 25): "sinnvolle 3D-Objekte erstellen + Skills die helfen"
+- [x] WebGL-Richtung BESTAETIGT ("Gute Idee")
+- [x] 3 Skills installiert: meshy-3d-generation, blender-web-pipeline, 3d-model-generation
+- [x] Recherche: Meshy AI (Text→3D→GLB), Sketchfab (CC0), Blender Pipeline
+- [x] hero-v017-a gebaut: Erster TRANSPARENTER 3D-Hero (Glass Diamond)
+- [x] MeshTransmissionMaterial: Refraction, Chromatic Aberration, Environment-HDRI
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail informiert + Meshy API-Key angefragt
+- [ ] Chris Feedback abwarten
+- [ ] Chris Meshy-Entscheidung abwarten
+- [ ] Visuelles QA (Desktop + Mobile)
+
+#### Naechstes Erlebnis: hero-v018-a — GLTF OBJECT HERO
+- [ ] Wenn Meshy-Key: Text→3D Laptop/Tool generieren, laden mit useGLTF
+- [ ] Wenn KEIN Meshy-Key: Sketchfab CC0 Modell laden + Custom Shader
+- [ ] useGLTF-Workflow demonstrieren (echtes 3D-Modell + Custom Material)
+
+#### Backup: FBO PARTICLE MORPH
 - [ ] **FBO Particles recherchiert (2026-03-24):** GPGPU-Partikel, Positionen in DataTexture, Simulation-Shader off-screen, 16K+ Partikel bei 60fps
 - [ ] **Konzept:** Chaos → Wolke → Kristall → PixIntCreators Text (scroll-driven morph)
 - [ ] **Technik:** DataTexture + Off-screen FBO + MeshSurfaceSampler + GSAP ScrollTrigger
 - [ ] **Quellen:** Maxime Heckel (R3F FBO), Loopspeed (scroll-driven FBO), bandinopla (Fluid Sim)
-- [ ] Wenn Chris WebGL bestaetigt → Bauen. Sonst → Richtung ueberdenken.
 
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
@@ -182,8 +198,9 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 
 #### Skill-Discovery
 - [x] threejs-webgl und react-three-fiber Skills in Build geladen (v016-a)
-- [ ] find-skills nach WebGL/Shader-Skills suchen
+- [x] find-skills: 3 neue 3D-Skills installiert (meshy, blender-pipeline, 3d-model-gen)
 - [ ] shadertoy Skill fuer GLSL-Referenz nutzen
+- [ ] Meshy-Workflow testen (wenn API-Key vorhanden)
 
 ---
 
@@ -221,13 +238,15 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 16 (hero-v001 bis v016)
+- **Erlebnisse im Lab:** 17 (hero-v001 bis v017)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
-- **Skills aktiv genutzt:** 6 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, **threejs-webgl** NEU)
-- **Neue Technik:** METAMORPHIC (hero-v016-a) — erster 3D-Objekt-Hero, Vertex Displacement Shader, Blinn-Phong Lighting
-- **WebGL-Tiefe:** v015-a (2D Fragment Shader) → v016-a (3D Vertex+Fragment Shader)
+- **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, **meshy-3d-generation** NEU)
+- **Neue Technik:** PRISM (hero-v017-a) — erster TRANSPARENTER 3D-Hero, MeshTransmissionMaterial (Glass Refraction)
+- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex+Fragment) → v017-a (MeshTransmissionMaterial)
+- **Material-Paradigmen:** Opak (Custom GLSL) → Transparent (drei Transmission) → Naechstes: GLTF-Modelle
 - **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader (wie Award-Studios)
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, **3d-objekt** (NEU)
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, **glass-transmission** (NEU)
 - **Inspiration-Analysen:** 15 (+Artem Shcherban, +PARTICOLARE STUDIO)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
 - **Asset-Kosten gesamt:** ~$2.50 (video + images)
+- **3D-Objekt-Skills installiert:** meshy-3d-generation, blender-web-pipeline, 3d-model-generation

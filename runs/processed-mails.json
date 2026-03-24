@@ -1,19 +1,110 @@
 {
   "description": "Tracking bereits verarbeiteter E-Mails. UIDs die hier stehen werden nicht nochmal gelesen.",
   "processed": [
-    { "uid": 15, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v12", "action": "feedback-verarbeitet", "session": "diverse" },
-    { "uid": 16, "date": "2026-03-23", "subject": "Re: Component Lab — exp-story-editorial v5: Story-First", "action": "feedback-verarbeitet", "session": "diverse" },
-    { "uid": 17, "date": "2026-03-23", "subject": "Re: Component Lab — exp-story-editorial v5: Story-First", "action": "feedback-verarbeitet (sei mutig, pixel→website, scroll-video)", "session": "diverse" },
-    { "uid": 18, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v005-a: Server Error Report", "action": "bug-report-verarbeitet", "session": "run-20260324-0820" },
-    { "uid": 19, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v005-a: Pixel Genesis Feedback", "action": "feedback-verarbeitet → v3 gebaut", "session": "run-20260324-0900" },
-    { "uid": 21, "date": "2026-03-24", "subject": "Re: Component Lab — 3 neue Erlebnisse im Lab", "action": "feedback-verarbeitet → v008 Impact-Finale, v007 verworfen, v009 Transition-Idee notiert", "session": "run-20260324-0940" },
-    { "uid": 20, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v005-a: Pixel Genesis (dein Feedback umgesetzt!)", "action": "feedback-verarbeitet → Progressive Depixelation implementiert (v4)", "session": "run-20260324-1020" },
-    { "uid": 12, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "alt, Inhalt bereits bekannt (Video/Logo/Assets Vorschlaege)", "session": "run-20260324-1040" },
-    { "uid": 13, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "alt, Duplikat von UID 12", "session": "run-20260324-1040" },
-    { "uid": 14, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v12", "action": "alt, Inhalt bereits bekannt (8/10, mersi-Referenz, Story-First)", "session": "run-20260324-1040" },
-    { "uid": 11, "date": "2026-03-23", "subject": "Re: Component Lab — exp-signature-hero v7", "action": "feedback-verarbeitet: 7.5/10, KEY=durchgehender Fluss fehlt, Mobile-Bugs, Sektions-Uebergaenge langweilig", "session": "run-20260324-1100" },
-    { "uid": 22, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v011-a: FLOW — Dein Feedback umgesetzt", "action": "feedback-verarbeitet → v2 gebaut: vertikaler Strom + Pixel-Optik", "session": "run-20260324-1120" },
-    { "uid": 23, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v011-a v2: PIXEL FLOW", "action": "feedback-verarbeitet: 'zu pixelig' → v3: PIXEL_SCALE 5→2", "session": "run-20260324-1220" },
-    { "uid": 24, "date": "2026-03-24", "subject": "Re: Component Lab — hero-v012-a: EDITORIAL CINEMA", "action": "feedback-verarbeitet: 'auf der Stelle stehen, alles fliegt vorbei' → Idee fuer pinned experiment notiert", "session": "run-20260324-1220" }
+    {
+      "uid": 15,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-signature-hero v12",
+      "action": "feedback-verarbeitet",
+      "session": "diverse"
+    },
+    {
+      "uid": 16,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-story-editorial v5: Story-First",
+      "action": "feedback-verarbeitet",
+      "session": "diverse"
+    },
+    {
+      "uid": 17,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-story-editorial v5: Story-First",
+      "action": "feedback-verarbeitet (sei mutig, pixel→website, scroll-video)",
+      "session": "diverse"
+    },
+    {
+      "uid": 18,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v005-a: Server Error Report",
+      "action": "bug-report-verarbeitet",
+      "session": "run-20260324-0820"
+    },
+    {
+      "uid": 19,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v005-a: Pixel Genesis Feedback",
+      "action": "feedback-verarbeitet → v3 gebaut",
+      "session": "run-20260324-0900"
+    },
+    {
+      "uid": 21,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — 3 neue Erlebnisse im Lab",
+      "action": "feedback-verarbeitet → v008 Impact-Finale, v007 verworfen, v009 Transition-Idee notiert",
+      "session": "run-20260324-0940"
+    },
+    {
+      "uid": 20,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v005-a: Pixel Genesis (dein Feedback umgesetzt!)",
+      "action": "feedback-verarbeitet → Progressive Depixelation implementiert (v4)",
+      "session": "run-20260324-1020"
+    },
+    {
+      "uid": 12,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-signature-hero v7",
+      "action": "alt, Inhalt bereits bekannt (Video/Logo/Assets Vorschlaege)",
+      "session": "run-20260324-1040"
+    },
+    {
+      "uid": 13,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-signature-hero v7",
+      "action": "alt, Duplikat von UID 12",
+      "session": "run-20260324-1040"
+    },
+    {
+      "uid": 14,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-signature-hero v12",
+      "action": "alt, Inhalt bereits bekannt (8/10, mersi-Referenz, Story-First)",
+      "session": "run-20260324-1040"
+    },
+    {
+      "uid": 11,
+      "date": "2026-03-23",
+      "subject": "Re: Component Lab — exp-signature-hero v7",
+      "action": "feedback-verarbeitet: 7.5/10, KEY=durchgehender Fluss fehlt, Mobile-Bugs, Sektions-Uebergaenge langweilig",
+      "session": "run-20260324-1100"
+    },
+    {
+      "uid": 22,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v011-a: FLOW — Dein Feedback umgesetzt",
+      "action": "feedback-verarbeitet → v2 gebaut: vertikaler Strom + Pixel-Optik",
+      "session": "run-20260324-1120"
+    },
+    {
+      "uid": 23,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v011-a v2: PIXEL FLOW",
+      "action": "feedback-verarbeitet: 'zu pixelig' → v3: PIXEL_SCALE 5→2",
+      "session": "run-20260324-1220"
+    },
+    {
+      "uid": 24,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v012-a: EDITORIAL CINEMA",
+      "action": "feedback-verarbeitet: 'auf der Stelle stehen, alles fliegt vorbei' → Idee fuer pinned experiment notiert",
+      "session": "run-20260324-1220"
+    },
+    {
+      "uid": 25,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v016-a: METAMORPHIC (erster 3D-Objekt-Hero)",
+      "action": "feedback-verarbeitet: sinnvolle 3D-Objekte → 3 Skills installiert (meshy, blender-pipeline, 3d-model-gen), hero-v017-a PRISM gebaut (Glass Diamond), Meshy API-Key Anfrage",
+      "session": "run-20260324-1420"
+    }
   ]
 }
