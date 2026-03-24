@@ -1318,5 +1318,71 @@
       "unseen-studio-inspired",
       "archival-index-trend"
     ]
+  },
+  {
+    "id": "hero-v021-a",
+    "pair_id": "hero-v021",
+    "type": "experience",
+    "category": "editorial-webgl-narrative",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Editorial + WebGL Synthesis",
+    "branche": "Webdesign-Agentur",
+    "prompt_excerpt": "EMERGENCE: Brand emergiert aus WebGL noise field. Narrative + ONE Signature Moment. Chaos → Klarheit.",
+    "skills_loaded": [
+      "awwwards-animations",
+      "gsap-plugins",
+      "threejs-webgl",
+      "react-three-fiber"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "Lenis",
+      "react-three-fiber",
+      "GLSL",
+      "fbm-noise"
+    ],
+    "inspiration_source": "Adam Bricker SOTD (2 colors, content-driven), Unseen Studio (editorial restraint), Paradigm Synthesis v020+v015",
+    "choreography_notes": "Pinned hero (300vh): WebGL noise chaos → progressive calm → text emerges char-by-char through noise. Services with editorial restraint (01/02/03, serif+mono). ONE signature moment: the emergence.",
+    "technique": "WebGL FBM noise shader (5 octaves) + mouse ripple + scroll-driven amplitude. GSAP scrub timelines for char-by-char reveals. Lenis smooth scroll.",
+    "paradigm": "Synthesis: Editorial Narrative (v020) + WebGL Signature (v015-v018). Content-driven WITH one technical wow moment.",
+    "self_eval": 7.5,
+    "chris_score_estimate": 5.5,
+    "screenshots": {
+      "desktop": "",
+      "mobile": ""
+    },
+    "constitution_version": 15,
+    "workflow": "direct-opus-build",
+    "builder_model": null,
+    "run_id": "run-20260324-1600",
+    "human_rating": null,
+    "human_comment": null,
+    "design_philosophy": "Synthesis: Editorial Narrative + ONE WebGL Signature Moment. Chaos → Clarity = brand promise.",
+    "assets_generated": [],
+    "assets_used": [],
+    "tags": [
+      "editorial-webgl",
+      "emergence",
+      "noise-field",
+      "fbm-shader",
+      "paradigm-synthesis",
+      "content-driven",
+      "webgl-background",
+      "char-reveal",
+      "scroll-driven",
+      "playfair-display",
+      "space-mono",
+      "2-color-palette",
+      "lenis-smooth-scroll",
+      "film-grain",
+      "pinned-hero",
+      "editorial-restraint",
+      "react-three-fiber",
+      "pixintcreators",
+      "brand-story"
+    ]
   }
 ]

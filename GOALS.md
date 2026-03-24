@@ -218,6 +218,18 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Rive evaluieren (SOTY-Gewinner nutzt es)
 - [ ] Optional: Preloader, Hover States, Mobile QA
 
+#### hero-v021-a: EMERGENCE — Editorial Narrative + WebGL Signature
+- [x] Adam Bricker SOTD analysiert (7.4/10, 2 Farben, Three.js, Content-driven)
+- [x] Paradigm Synthesis Konzept: Narrative (v020) + ONE WebGL Moment (v015-v018)
+- [x] WebGL FBM Noise Field gebaut (5 Octaves, Mouse Ripple, Scroll-driven Amplitude)
+- [x] Editorial Services mit Restraint (01/02/03, Serif + Mono)
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail ueber v020 Paradigmenwechsel informiert
+- [ ] Desktop + Mobile QA
+- [ ] Chris Feedback abwarten (v020 + v021)
+- [ ] Optional: Noise-Timing feintunlen
+- [ ] Optional: Custom cursor hinzufuegen
+
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
 - [ ] bandinopla/threejs-fluid-simulation (WebGL + WebGPU)
@@ -265,14 +277,14 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 20 (hero-v001 bis v020)
+- **Erlebnisse im Lab:** 21 (hero-v001 bis v021)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, meshy-3d-generation)
-- **Neue Technik:** EDITORIAL REEL (hero-v020-a) — erster content-driven Motion Narrative Hero
-- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → v018-a (GPGPU FBO) → v019-a (AI-Generated GLTF)
-- **Paradigmenwechsel 2:** Von Technik-Demos zu Content-Driven Narratives (v020-a)
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, gpgpu-particles, ai-generated-3d, **editorial-narrative** (NEU)
-- **Inspiration-Analysen:** 20 (+Unseen Studio 2025 Wrapped, Artiom Yakushev, Lando Norris SOTY)
+- **Neue Technik:** EMERGENCE (hero-v021-a) — Paradigm Synthesis: Editorial + ONE WebGL Signature
+- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → v018-a (GPGPU FBO) → v019-a (AI-Generated GLTF) → v021-a (FBM Noise Atmosphere)
+- **Paradigmenwechsel 3:** Synthesis — Narrative + ONE Technical Moment (v021-a)
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, gpgpu-particles, ai-generated-3d, editorial-narrative, **editorial-webgl-narrative** (NEU)
+- **Inspiration-Analysen:** 21 (+Adam Bricker SOTD)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
 - **Asset-Kosten gesamt:** ~$3.10 (video + images + meshy 30cr)
 - **3D-Objekt-Skills installiert:** meshy-3d-generation, blender-web-pipeline, 3d-model-generation
