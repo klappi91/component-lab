@@ -877,5 +877,75 @@
       "chris-feedback-driven",
       "first-pinned-hero"
     ]
+  },
+  {
+    "id": "hero-v015-a",
+    "pair_id": "hero-v015",
+    "type": "experience",
+    "category": "generative-art",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "LIQUID GLASS — Erster WebGL-Shader-Hero. Hochwertiges Bild hinter fluessigem Glas. Mouse erzeugt Ripples. Scroll klaert die Sicht. Immer lebendig.",
+    "skills_loaded": [
+      "react-three-fiber",
+      "awwwards-animations"
+    ],
+    "skills_detected": [
+      "three.js",
+      "react-three-fiber",
+      "drei",
+      "GLSL-shader",
+      "simplex-noise",
+      "chromatic-aberration",
+      "mouse-interaction",
+      "scroll-driven",
+      "gsap",
+      "ScrollTrigger",
+      "scrub",
+      "Space-Grotesk",
+      "expo.out",
+      "power2.out"
+    ],
+    "design_philosophy": "LIQUID GLASS — Paradigmenwechsel: Erster WebGL-Shader statt Canvas 2D oder DOM. Ein cinematic Bild (Haende am Tablet, orange Licht) wird durch einen GLSL fragment shader verzerrt. 3 Schichten Simplex-Noise erzeugen fluessige Bewegung. Mouse-Position verschiebt das Bild wie Finger auf Wasser. Chromatic Aberration trennt RGB-Kanaele. Scroll-Progress klaert die Verzerrung exponentiell. Inspiration: Lusion (WebGL 3D), Immersive Garden (atmosphaerische Shader).",
+    "inspiration_source": "Lusion (lusion.co) — WebGL 3D objects als Signature Visual, interactive. Immersive Garden (immersive-g.com) — atmospheric 3D scenes, cinematic, dark. Analyse: Award-Studios nutzen WebGL/Shader als Kern, nicht DOM-Animationen.",
+    "choreography_notes": "400vh scroll space, fixed canvas + fixed text overlay.\n\nDISTORTION (0-30%): Volle Verzerrung, 3 Noise-Layer + Chromatic Aberration + Warm Tint. Bild ist abstraktes, lebendes Muster. Mouse-Ripple stark. Scroll-Indicator sichtbar.\n\nEMERGENCE (30-60%): Verzerrung faellt exponentiell. \"WIR CODIEREN\" erscheint mit blur-zu-klar + y-Offset. Bild beginnt erkennbar zu werden.\n\nCLARITY (60-90%): Fast keine Verzerrung. \"ERLEBNISSE\" schlaegt ein (12vw, orange, scale + blur). Services-Bar erscheint.\n\nRESOLVE (90-100%): Kristallklares Bild. Brand \"PIXINTCREATORS\" fade in. Volle Komposition steht.\n\nEasings: expo.out (text reveals), power2.out (services), power2.in (scroll indicator). Shader: exponential distortion falloff (dist*dist).",
+    "assets_generated": [
+      "hero-image.png (gemini-image, 2K, 16:9, cinematic studio scene, /bin/bash.10)"
+    ],
+    "assets_used": [
+      "public/heroes/hero-v015-a/hero-image.png"
+    ],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, Recherche-driven)",
+    "builder_model": null,
+    "run_id": "run-20260324-1240",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "webgl",
+      "shader",
+      "glsl",
+      "react-three-fiber",
+      "three.js",
+      "simplex-noise",
+      "chromatic-aberration",
+      "image-distortion",
+      "liquid-glass",
+      "mouse-interactive",
+      "scroll-driven",
+      "first-webgl-hero",
+      "paradigm-shift",
+      "gemini-image",
+      "space-grotesk",
+      "pixintcreators",
+      "brand"
+    ]
   }
 ]

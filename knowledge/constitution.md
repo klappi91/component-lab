@@ -129,6 +129,15 @@ Der Unterschied:
 - agent-browser fuer QA
 - **Continuous Flow Stream** (Canvas fixed + Catmull-Rom spline + Partikel) — persistentes lebendes Element das den gesamten Scroll-Journey verbindet. Sinusoidal path mit scroll-driven Amplitude/Frequenz/Phase. Motion-Trail via semi-transparent clear (rgba statt clearRect). Glow-Layers (5 passes, wide/faint → narrow/bright). Branching-Stream in Energiephase. Partikel fliessen IMMER (auch ohne Scrollen) = "always alive". Mouse-Displacement auf Pfad-Kontrollpunkte + Partikel-Repulsion.
 - **Low-Res Pixel Rendering** (Offscreen Canvas + imageSmoothingEnabled=false) — Offscreen Canvas bei 1/N Aufloesung erstellen, ALLES dort zeichnen (Strom, Partikel, Glow), dann per `drawImage` auf volle Groesse hochskalieren. Nearest-Neighbor Interpolation gibt automatisch Pixel-Look. `pixSnap()` fuer Grid-Snapping, `fillRect` statt `arc`, `lineCap:"square"`. PIXEL_SCALE=5 = chunky, =3 = feiner. Performant weil weniger Pixel gezeichnet werden.
+- **WebGL Image Distortion Shader** (react-three-fiber + custom GLSL) — Bild als Textur auf Plane, 3 Octaves Simplex Noise fuer fluessige Verzerrung, Mouse-Position als Ripple-Displacement, Scroll-Progress steuert Distortion-Amplitude (exponentieller Falloff: `dist*dist`). Chromatic Aberration proportional zur Verzerrung. Cover-UV-Berechnung im Shader fuer responsives Aspect-Ratio. Mouse-Lerp im useFrame (`factor 0.06`) gibt physisches Gefuehl. `dynamic(() => ..., { ssr: false })` noetig fuer Next.js. `dpr={[1, 1.5]}` fuer Performance.
+
+## Paradigmenwechsel: WebGL > Canvas 2D > DOM
+
+Award-Studios (Lusion, Immersive Garden, makemepulse) nutzen WebGL/GLSL als KERN. Nicht als Add-On. Canvas 2D und DOM-Animationen sind fuer 7/10. Fuer 9+/10 braucht es Shader. Die Reihenfolge fuer Impressivitaet:
+1. **Custom GLSL Shader** (Distortion, Fluid, Particles) → WOW
+2. **Three.js 3D Scenes** (Interactive Objects, Environments) → Impressive
+3. **Canvas 2D** (Particles, Streams, Effects) → Good
+4. **DOM + GSAP** (Transforms, Reveals, Pins) → Baseline
 
 ## Was NICHT funktioniert
 - **CSS 3D perspective + camera zoom:** Wenn Container `perspective: Xpx` hat und Camera-Kind per GSAP `translateZ(Y)` bekommt mit Y > X → alles HINTER dem Betrachter = unsichtbar. Elemente die NACH dem Zoom sichtbar sein muessen (Brand, CTA) MUESSEN ausserhalb des perspective-Containers leben.

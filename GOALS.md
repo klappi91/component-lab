@@ -141,13 +141,28 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Optional: Lenis Smooth Scroll
 - [ ] Optional: Mouse-Interaction (Worte weichen Maus aus)
 
+#### hero-v015-a: LIQUID GLASS — Erster WebGL Shader
+- [x] Tiefe Analyse: 14 Heroes 0 WOW — fundamentales Problem identifiziert
+- [x] Referenz-Analyse: Lusion, Immersive Garden, makemepulse (WebGL als Kern)
+- [x] Paradigmenwechsel: Erster GLSL Fragment Shader statt Canvas 2D / DOM
+- [x] Hero-Bild generiert (gemini-image, cinematic studio, $0.10)
+- [x] Erlebnis gebaut: react-three-fiber + simplex noise + chromatic aberration
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail informiert
+- [ ] Visuelles QA (Desktop + Mobile)
+- [ ] Chris Feedback abwarten
+- [ ] Optional: Lenis Smooth Scroll
+- [ ] Optional: Sound Toggle
+
 #### Naechstes Erlebnis
-- [ ] Awwwards SOTD als Inspiration weiter analysieren
+- [ ] Wenn v015-a WOW-Potenzial hat → iterieren (Lenis, Sound, Polish)
+- [ ] Wenn nicht → andere WebGL-Technik (3D Objekte, Fluid Sim, Particles)
+- [ ] WebGL-Tiefe > neue Techniken in der Breite
 
 #### Skill-Discovery
-- [ ] find-skills nach neuen Animations/Design-Skills durchsuchen
-- [ ] Pruefen ob es Skills fuer Patterns gibt die bei Inspiration aufgefallen sind
-- [ ] Neue Skills installieren und in naechstem Erlebnis testen
+- [ ] find-skills nach WebGL/Shader-Skills suchen
+- [ ] threejs-webgl und react-three-fiber Skills in naechstem Build laden
+- [ ] shadertoy Skill fuer GLSL-Referenz nutzen
 
 ---
 
@@ -185,12 +200,12 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 14 (hero-v001 bis v014)
+- **Erlebnisse im Lab:** 15 (hero-v001 bis v015)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
-- **Skills aktiv genutzt:** 4 (text-animation, gsap-plugins, awwwards-animations, gemini-video)
-- **Neue Technik:** STILL POINT (hero-v014-a) — erster pinned Hero, Viewport fixiert + Elemente fliegen durch
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, **pinned-experience** (NEU)
-- **exp-signature-hero Score korrigiert:** 7.5/10 (nicht 8/10 wie vorher angenommen)
-- **Inspiration-Analysen:** 10 (+The Camel Fabric Game, +Video-Trends 2026)
+- **Skills aktiv genutzt:** 5 (text-animation, gsap-plugins, awwwards-animations, gemini-video, **react-three-fiber** NEU)
+- **Neue Technik:** LIQUID GLASS (hero-v015-a) — erster WebGL GLSL Shader, Image Distortion + Mouse Interaction
+- **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader (wie Award-Studios)
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, **webgl-shader** (NEU)
+- **Inspiration-Analysen:** 13 (+Lusion, +Immersive Garden, +makemepulse)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
-- **Video-Kosten:** $1.20 (hero-v013-a creation.mp4)
+- **Asset-Kosten gesamt:** ~$2.50 (video + images)
