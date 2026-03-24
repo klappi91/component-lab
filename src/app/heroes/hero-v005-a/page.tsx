@@ -8,25 +8,22 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══════════════════════════════════════════════════════════
-   PIXEL GENESIS v2 — Echte Website → Pixel → Zusammensetzen
-   Chris-Feedback: "Eine Webseite in echte Pixel zerlegen,
-   die wenn alle wieder zusammen kommen das Bild ergeben"
+   PIXEL GENESIS v3 — TRUE Pixel Decomposition
+
+   Chris: "Eine Webseite in echte Pixel zerlegen die wenn
+   alle wieder zusammen kommen das Bild ergeben — DAS wäre WOW"
+
+   v3 Approach:
+   - Image loads → briefly visible as pixel grid
+   - SHATTERS outward (each pixel keeps its REAL color)
+   - Scroll drives REASSEMBLY
+   - When assembled → crossfade to crystal-clear image
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── Brand ─── */
 const ORANGE = "#FF6B00";
 const DARK = "#0A0A0A";
 const LIGHT = "#F5F5F0";
-const MUTED = "#555";
-const OR = 255, OG = 107, OB = 0;
-
-/* ─── Phases ─── */
-const PHASES = [
-  { num: "01", label: "Der Pixel.", sub: "Alles beginnt hier." },
-  { num: "02", label: "Die Ordnung.", sub: "Struktur entsteht." },
-  { num: "03", label: "Die Farbe.", sub: "Design nimmt Form an." },
-  { num: "04", label: "Das Erlebnis.", sub: "Vom Pixel zur Website." },
-];
 
 /* ─── Easing ─── */
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -35,21 +32,23 @@ const easeOutExpo = (t: number) => (t >= 1 ? 1 : 1 - 2 ** (-10 * t));
 const easeInOutQuart = (t: number) =>
   t < 0.5 ? 8 * t ** 4 : 1 - (-2 * t + 2) ** 4 / 2;
 const easeOutCubic = (t: number) => 1 - (1 - t) ** 3;
+const easeInCubic = (t: number) => t * t * t;
 
 /* ─── Types ─── */
 interface Particle {
-  chaosX: number;
-  chaosY: number;
-  imgX: number;
-  imgY: number;
+  homeX: number;
+  homeY: number;
+  scatterX: number;
+  scatterY: number;
   r: number;
   g: number;
   b: number;
   cellW: number;
   cellH: number;
-  delay: number;
-  colorDelay: number;
-  seed: number;
+  shatterDelay: number; // Stagger for the shatter animation (center → edge)
+  reassembleDelay: number; // Per-particle offset for wave-like reassembly
+  angle: number; // Direction of scatter
+  dist: number; // Distance of scatter
 }
 
 interface ImgArea {
@@ -66,24 +65,23 @@ interface ImgArea {
 /* ─── Calculate image area + grid ─── */
 function calcArea(cw: number, ch: number, imgW: number, imgH: number): ImgArea {
   const aspect = imgW / imgH;
-  let w = cw * 0.82;
+  let w = cw * 0.78;
   let h = w / aspect;
-  if (h > ch * 0.82) {
-    h = ch * 0.82;
+  if (h > ch * 0.78) {
+    h = ch * 0.78;
     w = h * aspect;
   }
   const x = (cw - w) / 2;
   const y = (ch - h) / 2;
 
-  // Responsive particle size: ~14px on desktop, ~10px on mobile
-  const targetSize = Math.max(10, Math.min(16, cw / 130));
-  const cols = Math.max(30, Math.floor(w / targetSize));
-  const rows = Math.max(18, Math.floor(h / targetSize));
+  const targetSize = Math.max(8, Math.min(14, cw / 140));
+  const cols = Math.max(40, Math.floor(w / targetSize));
+  const rows = Math.max(25, Math.floor(h / targetSize));
 
   return { x, y, w, h, cols, rows, cellW: w / cols, cellH: h / rows };
 }
 
-/* ─── Create particles from image data ─── */
+/* ─── Create particles from image ─── */
 function createParticles(
   imgData: ImageData,
   area: ImgArea,
@@ -92,40 +90,53 @@ function createParticles(
 ): Particle[] {
   const particles: Particle[] = [];
   const { x: ox, y: oy, cols, rows, cellW, cellH } = area;
+  const centerX = cw / 2;
+  const centerY = ch / 2;
+  const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      // Sample center of grid cell from image
+      // Sample center of cell from image
       const sx = Math.floor(((col + 0.5) / cols) * imgData.width);
       const sy = Math.floor(((row + 0.5) / rows) * imgData.height);
       const idx = (sy * imgData.width + sx) * 4;
 
-      // Target position
-      const imgX = ox + col * cellW + cellW / 2;
-      const imgY = oy + row * cellH + cellH / 2;
+      // Home position (where this pixel belongs)
+      const homeX = ox + col * cellW + cellW / 2;
+      const homeY = oy + row * cellH + cellH / 2;
 
-      // Chaos: burst from center in all directions
-      const angle = Math.random() * Math.PI * 2;
-      const dist = 120 + Math.random() * Math.max(cw, ch) * 0.6;
+      // Scatter: outward from image center with randomness
+      const dx = homeX - centerX;
+      const dy = homeY - centerY;
+      const distFromCenter = Math.sqrt(dx * dx + dy * dy);
+      const baseAngle = Math.atan2(dy, dx);
+      const angle = baseAngle + (Math.random() - 0.5) * 1.2; // ±34° random spread
+      const dist = 200 + Math.random() * Math.max(cw, ch) * 0.7;
 
-      // Distance from center → color delay (center pixels reveal color first)
-      const dx = col / cols - 0.5;
-      const dy = row / rows - 0.5;
-      const distNorm = Math.sqrt(dx * dx + dy * dy) / 0.707; // normalize to 0-1
+      const scatterX = homeX + Math.cos(angle) * dist;
+      const scatterY = homeY + Math.sin(angle) * dist;
+
+      // Shatter delay: center shatters first, edges last
+      const normDist = distFromCenter / maxDist;
+      const shatterDelay = normDist * 0.4 + Math.random() * 0.15;
+
+      // Reassemble delay: edges arrive first, center last (inward wave)
+      const reassembleDelay = (1 - normDist) * 0.2 + Math.random() * 0.08;
 
       particles.push({
-        chaosX: cw / 2 + Math.cos(angle) * dist,
-        chaosY: ch / 2 + Math.sin(angle) * dist,
-        imgX,
-        imgY,
+        homeX,
+        homeY,
+        scatterX,
+        scatterY,
         r: imgData.data[idx],
         g: imgData.data[idx + 1],
         b: imgData.data[idx + 2],
         cellW,
         cellH,
-        delay: Math.random() * 0.08,
-        colorDelay: distNorm * 0.25 + Math.random() * 0.1,
-        seed: Math.random() * 1000,
+        shatterDelay,
+        reassembleDelay,
+        angle,
+        dist,
       });
     }
   }
@@ -139,17 +150,18 @@ function createParticles(
 
 export default function HeroV005A() {
   const wrapRef = useRef<HTMLDivElement>(null);
-  const introRef = useRef<HTMLElement>(null);
-  const genesisRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const revealRef = useRef<HTMLElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const progressRef = useRef(0);
+  const scrollProgressRef = useRef(0);
+  const shatterProgressRef = useRef(0); // 0 = assembled, 1 = fully scattered
   const particlesRef = useRef<Particle[]>([]);
   const rafRef = useRef(0);
   const imgElRef = useRef<HTMLImageElement | null>(null);
   const areaRef = useRef<ImgArea | null>(null);
+  const mouseRef = useRef({ x: -1000, y: -1000 });
+  const imageLoadedRef = useRef(false);
 
   /* ═══ Canvas + Particle System ═══ */
   useEffect(() => {
@@ -180,6 +192,20 @@ export default function HeroV005A() {
     };
     window.addEventListener("resize", onResize);
 
+    // Mouse tracking
+    const onMouse = (e: MouseEvent) => {
+      mouseRef.current = { x: e.clientX, y: e.clientY };
+    };
+    window.addEventListener("mousemove", onMouse);
+
+    // Touch tracking
+    const onTouch = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouseRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+    };
+    window.addEventListener("touchmove", onTouch, { passive: true });
+
     // ─── Load target image ───
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -199,153 +225,137 @@ export default function HeroV005A() {
       const imgData = offCtx.getImageData(0, 0, img.naturalWidth, img.naturalHeight);
 
       particlesRef.current = createParticles(imgData, area, cw, ch);
+      imageLoadedRef.current = true;
+
+      // Start assembled, then auto-shatter after brief delay
+      shatterProgressRef.current = 0;
+      setTimeout(() => {
+        // Animate shatter: 0 → 1 over 1.8s
+        gsap.to(shatterProgressRef, {
+          current: 1,
+          duration: 1.8,
+          ease: "expo.out",
+        });
+      }, 800); // Show assembled for 0.8s first
     };
 
     // ─── Render Loop ───
     const render = () => {
       ctx.clearRect(0, 0, cw, ch);
-      const p = progressRef.current;
       const particles = particlesRef.current;
       const area = areaRef.current;
       const t = performance.now() * 0.001;
+      const scrollP = scrollProgressRef.current;
+      const shatterP = shatterProgressRef.current;
+      const mx = mouseRef.current.x;
+      const my = mouseRef.current.y;
 
-      // Pre-load: pulsing pixel
-      if (particles.length === 0) {
-        const pulse = Math.sin(t * 3) * 0.3 + 0.7;
+      // Loading state
+      if (!imageLoadedRef.current) {
+        // Subtle loading indicator
+        const pulse = Math.sin(t * 4) * 0.3 + 0.7;
         ctx.fillStyle = ORANGE;
-        ctx.globalAlpha = pulse;
-        ctx.fillRect(cw / 2 - 3, ch / 2 - 3, 6, 6);
-        ctx.globalAlpha = pulse * 0.08;
-        ctx.fillRect(cw / 2 - 22, ch / 2 - 22, 44, 44);
+        ctx.globalAlpha = pulse * 0.6;
+        const s = 4;
+        ctx.fillRect(cw / 2 - s, ch / 2 - s, s * 2, s * 2);
         ctx.globalAlpha = 1;
         rafRef.current = requestAnimationFrame(render);
         return;
       }
 
+      // Combined progress: shatter drives scatter, scroll drives reassembly
+      // shatterP: 0 = assembled, 1 = scattered
+      // scrollP: 0 = start, 1 = end
+      // effectiveScatter: how scattered the particles currently are
+      // When shattered but not scrolled: effectiveScatter = 1
+      // As scroll progresses: effectiveScatter decreases toward 0
+      const reassembleT = clamp01(scrollP / 0.82); // Use 82% of scroll for reassembly
+      const effectiveScatter = shatterP * (1 - easeInOutQuart(reassembleT));
+
       /* ═══ DRAW PARTICLES ═══ */
       for (let i = 0; i < particles.length; i++) {
         const px = particles[i];
-        let x: number, y: number, size: number;
-        let cr: number, cg: number, cb: number, alpha: number;
 
-        if (p < 0.12) {
-          /* ── Phase 1: EMERGENCE — pixel explodes into orange particles ── */
-          const pt = clamp01(p / 0.12);
-          if (pt < px.delay * 5) continue;
+        // Shatter animation: per-particle stagger
+        const particleShatter = clamp01(
+          (shatterP - px.shatterDelay) / (1 - px.shatterDelay)
+        );
+        const shatterEased = easeOutExpo(particleShatter);
 
-          const moveT = easeOutExpo(clamp01((pt - px.delay * 5) * 2));
-          x = lerp(cw / 2, px.chaosX, moveT);
-          y = lerp(ch / 2, px.chaosY, moveT);
+        // Reassemble animation: per-particle stagger
+        const particleReassemble = clamp01(
+          (reassembleT - px.reassembleDelay) / (1 - px.reassembleDelay)
+        );
+        const reassembleEased = easeInOutQuart(particleReassemble);
 
-          // Living noise
-          x += Math.sin(t * 2.5 + px.seed) * 4 * moveT;
-          y += Math.cos(t * 2.1 + px.seed * 1.3) * 4 * moveT;
+        // Position: lerp between home and scatter based on effective state
+        const currentScatter = shatterEased * (1 - reassembleEased);
+        let x = lerp(px.homeX, px.scatterX, currentScatter);
+        let y = lerp(px.homeY, px.scatterY, currentScatter);
 
-          size = 2 + moveT * 3;
-          cr = OR;
-          cg = OG;
-          cb = OB;
-          alpha = 0.3 + moveT * 0.5;
-        } else if (p < 0.55) {
-          /* ── Phase 2: ORDER + COLOR MORPH ──
-             Particles fly to positions. Colors smoothly morph
-             from orange to real image colors, center-first. */
-          const pt = clamp01((p - 0.12) / 0.43);
-          const moveT = easeInOutQuart(pt);
-
-          x = lerp(px.chaosX, px.imgX, moveT);
-          y = lerp(px.chaosY, px.imgY, moveT);
-
-          // Noise fades as particles settle
-          const noise = (1 - moveT) * 5;
-          x += Math.sin(t * 1.5 + px.seed) * noise;
-          y += Math.cos(t * 1.2 + px.seed * 1.3) * noise;
-
-          // Smooth color morph with per-particle offset
-          const rawColorT = clamp01((pt - px.colorDelay) / (0.85 - px.colorDelay));
-          const colorT = easeOutCubic(rawColorT);
-          cr = Math.round(lerp(OR, px.r, colorT));
-          cg = Math.round(lerp(OG, px.g, colorT));
-          cb = Math.round(lerp(OB, px.b, colorT));
-
-          // Size grows as particles approach positions
-          const maxCell = Math.max(px.cellW, px.cellH);
-          size = lerp(4, maxCell * 0.65, moveT);
-          alpha = 0.8 + moveT * 0.2;
-        } else if (p < 0.78) {
-          /* ── Phase 3: RESOLVE — fill gaps, reach full cell size ── */
-          const pt = clamp01((p - 0.55) / 0.23);
-          const et = easeOutCubic(pt);
-
-          x = px.imgX;
-          y = px.imgY;
-          cr = px.r;
-          cg = px.g;
-          cb = px.b;
-
-          const maxCell = Math.max(px.cellW, px.cellH);
-          size = lerp(maxCell * 0.65, maxCell * 1.06, et);
-          alpha = 1;
-        } else {
-          /* ── Phase 4: CROSSFADE — particles hold while image fades in ── */
-          x = px.imgX;
-          y = px.imgY;
-          cr = px.r;
-          cg = px.g;
-          cb = px.b;
-
-          const maxCell = Math.max(px.cellW, px.cellH);
-          size = maxCell * 1.06;
-
-          // Particles fade out as real image fades in
-          const fadeT = clamp01((p - 0.78) / 0.22);
-          alpha = 1 - easeOutCubic(fadeT);
+        // Subtle drift when scattered
+        if (currentScatter > 0.1) {
+          const drift = currentScatter * 6;
+          x += Math.sin(t * 0.8 + px.angle * 3) * drift;
+          y += Math.cos(t * 0.6 + px.dist * 0.01) * drift;
         }
 
-        ctx.fillStyle = `rgb(${cr},${cg},${cb})`;
-        ctx.globalAlpha = alpha;
+        // Mouse interaction: gentle push when scattered
+        if (currentScatter > 0.05 && mx > 0) {
+          const dmx = x - mx;
+          const dmy = y - my;
+          const mouseDist = Math.sqrt(dmx * dmx + dmy * dmy);
+          if (mouseDist < 180 && mouseDist > 1) {
+            const pushForce = (1 - mouseDist / 180) * 25 * currentScatter;
+            x += (dmx / mouseDist) * pushForce;
+            y += (dmy / mouseDist) * pushForce;
+          }
+        }
+
+        // Size: full cell when assembled, slightly smaller when scattered
+        const maxCell = Math.max(px.cellW, px.cellH);
+        const size = lerp(maxCell * 1.02, maxCell * 0.6, currentScatter);
+
+        // Alpha: full when assembled, slightly transparent when scattered
+        const alpha = lerp(1, 0.7 + Math.random() * 0.05, currentScatter);
+
+        ctx.fillStyle = `rgb(${px.r},${px.g},${px.b})`;
+        ctx.globalAlpha = clamp01(alpha);
         ctx.fillRect(x - size / 2, y - size / 2, size, size);
       }
 
-      /* ═══ CROSSFADE: Draw real image over particles ═══ */
-      if (p > 0.72 && imgElRef.current && area) {
-        const fadeT = easeOutCubic(clamp01((p - 0.72) / 0.28));
+      /* ═══ CROSSFADE: Sharp image over assembled particles ═══ */
+      if (scrollP > 0.7 && imgElRef.current && area) {
+        const fadeT = easeOutCubic(clamp01((scrollP - 0.7) / 0.25));
         ctx.globalAlpha = fadeT;
 
-        // Subtle rounded rect clip for "screen" feel
-        const r = 8;
+        // Rounded rect clip
+        const r = 10;
         ctx.save();
         ctx.beginPath();
-        ctx.moveTo(area.x + r, area.y);
-        ctx.lineTo(area.x + area.w - r, area.y);
-        ctx.quadraticCurveTo(area.x + area.w, area.y, area.x + area.w, area.y + r);
-        ctx.lineTo(area.x + area.w, area.y + area.h - r);
-        ctx.quadraticCurveTo(
-          area.x + area.w,
-          area.y + area.h,
-          area.x + area.w - r,
-          area.y + area.h
-        );
-        ctx.lineTo(area.x + r, area.y + area.h);
-        ctx.quadraticCurveTo(area.x, area.y + area.h, area.x, area.y + area.h - r);
-        ctx.lineTo(area.x, area.y + r);
-        ctx.quadraticCurveTo(area.x, area.y, area.x + r, area.y);
-        ctx.closePath();
+        ctx.roundRect(area.x - 2, area.y - 2, area.w + 4, area.h + 4, r);
         ctx.clip();
-
         ctx.drawImage(imgElRef.current, area.x, area.y, area.w, area.h);
         ctx.restore();
 
-        // Subtle border glow when image is nearly fully visible
-        if (fadeT > 0.5) {
-          ctx.globalAlpha = (fadeT - 0.5) * 0.3;
+        // Subtle orange border glow when image is visible
+        if (fadeT > 0.3) {
+          ctx.globalAlpha = (fadeT - 0.3) * 0.25;
           ctx.strokeStyle = ORANGE;
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 1.5;
           ctx.beginPath();
-          ctx.roundRect(area.x - 1, area.y - 1, area.w + 2, area.h + 2, r + 1);
+          ctx.roundRect(area.x - 3, area.y - 3, area.w + 6, area.h + 6, r + 2);
           ctx.stroke();
         }
       }
+
+      /* ═══ Vignette ═══ */
+      ctx.globalAlpha = 0.4;
+      const vg = ctx.createRadialGradient(cw / 2, ch / 2, cw * 0.3, cw / 2, ch / 2, cw * 0.8);
+      vg.addColorStop(0, "transparent");
+      vg.addColorStop(1, "rgba(0,0,0,0.6)");
+      ctx.fillStyle = vg;
+      ctx.fillRect(0, 0, cw, ch);
 
       ctx.globalAlpha = 1;
       rafRef.current = requestAnimationFrame(render);
@@ -356,6 +366,8 @@ export default function HeroV005A() {
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("mousemove", onMouse);
+      window.removeEventListener("touchmove", onTouch);
     };
   }, []);
 
@@ -373,171 +385,134 @@ export default function HeroV005A() {
   /* ═══ GSAP Choreography ═══ */
   useGSAP(
     () => {
-      if (!wrapRef.current) return;
+      if (!wrapRef.current || !sectionRef.current) return;
 
-      /* ── Intro entrance ── */
-      const introTl = gsap.timeline({ delay: 0.3 });
-      introTl.from(".intro-pixel", {
-        scale: 0,
-        opacity: 0,
-        duration: 1.4,
-        ease: "expo.out",
+      /* ── Pinned canvas: scroll drives reassembly ── */
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=500%",
+        pin: true,
+        scrub: 1.5,
+        onUpdate: (self) => {
+          scrollProgressRef.current = self.progress;
+        },
       });
-      introTl.from(
-        ".intro-heading",
-        { y: 60, opacity: 0, duration: 1.2, ease: "expo.out" },
-        0.5
-      );
-      introTl.from(
-        ".intro-accent",
-        { y: 40, opacity: 0, duration: 1, ease: "expo.out" },
-        0.8
-      );
-      introTl.from(
-        ".intro-sub",
-        { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" },
-        1.1
-      );
-      introTl.from(
-        ".scroll-line",
-        { scaleY: 0, duration: 0.6, ease: "power2.out" },
-        1.4
+
+      /* ── Text overlays ── */
+
+      // "ZERLEGT." appears during/after shatter
+      gsap.fromTo(
+        ".text-shatter",
+        { opacity: 0, y: 20, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: "expo.out",
+          delay: 1.6,
+        }
       );
 
-      /* ── Intro scroll-out ── */
-      gsap.to(".intro-content", {
-        y: -120,
+      // "ZERLEGT." fades out when scroll begins
+      gsap.to(".text-shatter", {
         opacity: 0,
+        y: -30,
+        ease: "power2.in",
         scrollTrigger: {
-          trigger: introRef.current,
+          trigger: sectionRef.current,
           start: "top top",
-          end: "bottom top",
+          end: "+=5%",
           scrub: 1,
         },
       });
 
-      /* ── GENESIS — pinned canvas, scroll drives particle animation ── */
-      ScrollTrigger.create({
-        trigger: genesisRef.current,
-        start: "top top",
-        end: "+=600%",
-        pin: true,
-        scrub: 1.5,
-        onUpdate: (self) => {
-          progressRef.current = self.progress;
+      // Scroll indicator
+      gsap.fromTo(
+        ".scroll-indicator",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.8, ease: "power2.out", delay: 2.8 }
+      );
+      gsap.to(".scroll-indicator", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=3%",
+          scrub: 1,
         },
       });
 
-      /* ── Phase labels ── */
-      const starts = [0, 14, 56, 80];
-      const ends = [10, 53, 76, 100];
-
-      PHASES.forEach((_, i) => {
-        gsap.fromTo(
-          `.phase-${i}`,
-          { opacity: 0, y: 25 },
-          {
-            opacity: 1,
-            y: 0,
-            ease: "expo.out",
-            scrollTrigger: {
-              trigger: genesisRef.current,
-              start: `top+=${starts[i]}% top`,
-              end: `top+=${starts[i] + 5}% top`,
-              scrub: 1,
-            },
-          }
-        );
-
-        if (i < 3) {
-          gsap.to(`.phase-${i}`, {
-            opacity: 0,
-            y: -15,
-            ease: "power2.in",
-            scrollTrigger: {
-              trigger: genesisRef.current,
-              start: `top+=${ends[i] - 3}% top`,
-              end: `top+=${ends[i]}% top`,
-              scrub: 1,
-            },
-          });
-        }
-      });
-
-      /* ── Progress bar ── */
+      // Progress counter (shows reassembly %)
       gsap.fromTo(
-        ".progress-fill",
-        { scaleX: 0 },
+        ".progress-counter",
+        { opacity: 0 },
         {
-          scaleX: 1,
+          opacity: 0.6,
           scrollTrigger: {
-            trigger: genesisRef.current,
-            start: "top top",
-            end: "+=600%",
+            trigger: sectionRef.current,
+            start: "+=3%",
+            end: "+=8%",
             scrub: 1,
           },
         }
       );
 
-      /* ── REVEAL section ── */
+      gsap.to(".progress-counter", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "+=78%",
+          end: "+=85%",
+          scrub: 1,
+        },
+      });
+
+      // Final reveal text
       gsap.fromTo(
-        ".reveal-heading",
-        { scale: 0.35, opacity: 0 },
+        ".text-reveal",
+        { opacity: 0, y: 40, scale: 0.9 },
         {
-          scale: 1,
           opacity: 1,
+          y: 0,
+          scale: 1,
           ease: "expo.out",
           scrollTrigger: {
-            trigger: revealRef.current,
-            start: "top 85%",
-            end: "top 25%",
+            trigger: sectionRef.current,
+            start: "+=82%",
+            end: "+=92%",
             scrub: 1.5,
           },
         }
       );
 
       gsap.fromTo(
-        ".reveal-sub",
-        { y: 50, opacity: 0 },
+        ".text-brand",
+        { opacity: 0, y: 20 },
         {
-          y: 0,
           opacity: 1,
-          ease: "power2.out",
+          y: 0,
+          ease: "expo.out",
           scrollTrigger: {
-            trigger: revealRef.current,
-            start: "top 55%",
-            end: "top 25%",
-            scrub: 1,
+            trigger: sectionRef.current,
+            start: "+=88%",
+            end: "+=95%",
+            scrub: 1.5,
           },
         }
       );
 
+      // Progress bar
       gsap.fromTo(
-        ".reveal-cta",
-        { y: 30, opacity: 0 },
+        ".progress-fill",
+        { scaleX: 0 },
         {
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
+          scaleX: 1,
           scrollTrigger: {
-            trigger: revealRef.current,
-            start: "top 45%",
-            end: "top 20%",
-            scrub: 1,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        ".reveal-fill",
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          ease: "power4.inOut",
-          scrollTrigger: {
-            trigger: revealRef.current,
-            start: "top 35%",
-            end: "center center",
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "+=500%",
             scrub: 1,
           },
         }
@@ -545,6 +520,22 @@ export default function HeroV005A() {
     },
     { scope: wrapRef }
   );
+
+  /* ═══ Progress counter update ═══ */
+  const counterRef = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    const update = () => {
+      if (counterRef.current) {
+        const pct = Math.round(
+          easeInOutQuart(clamp01(scrollProgressRef.current / 0.82)) * 100
+        );
+        counterRef.current.textContent = `${pct}%`;
+      }
+      requestAnimationFrame(update);
+    };
+    const raf = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   /* ═══════════════════════════════════════════════════════════
      RENDER
@@ -558,7 +549,7 @@ export default function HeroV005A() {
       {/* ── Grain ── */}
       <svg
         className="pointer-events-none fixed inset-0 z-50 h-full w-full"
-        style={{ opacity: 0.035 }}
+        style={{ opacity: 0.03 }}
       >
         <filter id="g">
           <feTurbulence
@@ -586,240 +577,105 @@ export default function HeroV005A() {
       />
 
       {/* ═══════════════════════════════════════════
-          SECTION 1: INTRO — The Single Pixel
+          MAIN SECTION — Pinned Canvas Experience
           ═══════════════════════════════════════════ */}
       <section
-        ref={introRef}
-        className="relative flex h-screen flex-col items-center justify-center"
+        ref={sectionRef}
+        className="relative h-screen w-full"
       >
-        <div className="intro-content flex flex-col items-center gap-6 px-6 text-center">
-          <div className="intro-pixel relative mb-4">
-            <div
-              className="animate-pulse"
-              style={{
-                width: 8,
-                height: 8,
-                background: ORANGE,
-                boxShadow: `0 0 20px ${ORANGE}80, 0 0 60px ${ORANGE}30, 0 0 100px ${ORANGE}15`,
-              }}
-            />
-          </div>
+        {/* Canvas */}
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 z-10"
+        />
 
-          <h1
-            className="intro-heading select-none"
+        {/* ── Text: "ZERLEGT." after shatter ── */}
+        <div className="text-shatter pointer-events-none absolute inset-0 z-20 flex items-center justify-center opacity-0">
+          <div className="text-center">
+            <h1
+              className="tracking-tight"
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+                fontSize: "clamp(3rem, 8vw, 7rem)",
+                fontWeight: 600,
+                color: LIGHT,
+                lineHeight: 1,
+              }}
+            >
+              ZER<span style={{ color: ORANGE }}>LEGT</span>.
+            </h1>
+          </div>
+        </div>
+
+        {/* ── Scroll indicator ── */}
+        <div className="scroll-indicator pointer-events-none absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3 opacity-0">
+          <span
+            className="text-xs uppercase tracking-[0.3em]"
+            style={{ fontFamily: "'General Sans', sans-serif", color: LIGHT, opacity: 0.5 }}
+          >
+            Scroll to rebuild
+          </span>
+          <div
+            className="h-10 w-px"
+            style={{ background: `linear-gradient(to bottom, ${ORANGE}, transparent)` }}
+          />
+        </div>
+
+        {/* ── Progress counter ── */}
+        <div className="progress-counter pointer-events-none absolute right-8 top-1/2 z-20 -translate-y-1/2 opacity-0">
+          <span
+            ref={counterRef}
+            className="tabular-nums"
             style={{
               fontFamily: "'Clash Display', sans-serif",
-              fontSize: "clamp(32px, 6vw, 100px)",
-              fontWeight: 700,
-              lineHeight: 1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Alles beginnt mit
-          </h1>
-
-          <h1
-            className="intro-accent select-none"
-            style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: "clamp(36px, 7vw, 110px)",
-              fontWeight: 400,
-              fontStyle: "italic",
-              lineHeight: 1,
+              fontSize: "clamp(1rem, 2vw, 1.5rem)",
+              fontWeight: 500,
               color: ORANGE,
             }}
           >
-            einem Pixel.
-          </h1>
-
-          <p
-            className="intro-sub mt-4"
-            style={{
-              fontFamily: "'General Sans', sans-serif",
-              fontSize: "clamp(12px, 1.2vw, 18px)",
-              color: MUTED,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-            }}
-          >
-            Scroll um zu erschaffen
-          </p>
+            0%
+          </span>
         </div>
 
-        <div
-          className="absolute bottom-8 flex flex-col items-center gap-2"
-          style={{ opacity: 0.3 }}
-        >
-          <div
-            className="scroll-line h-10 w-px origin-top"
-            style={{ background: LIGHT }}
-          />
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          SECTION 2: GENESIS — Scroll-driven Canvas
-          Website wird aus Pixeln zusammengesetzt
-          ═══════════════════════════════════════════ */}
-      <section
-        ref={genesisRef}
-        className="relative h-screen overflow-hidden"
-      >
-        <canvas ref={canvasRef} className="absolute inset-0 block" />
-
-        {/* Phase labels — bottom left */}
-        {PHASES.map((phase, i) => (
-          <div
-            key={i}
-            className={`phase-${i} pointer-events-none absolute bottom-[12%] left-[5%] opacity-0 will-change-transform`}
-          >
-            <span
-              style={{
-                fontFamily: "'General Sans', sans-serif",
-                fontSize: "clamp(10px, 0.9vw, 13px)",
-                letterSpacing: "0.3em",
-                textTransform: "uppercase",
-                color: ORANGE,
-                fontWeight: 500,
-              }}
-            >
-              {phase.num} / 04
-            </span>
+        {/* ── Final reveal text ── */}
+        <div className="text-reveal pointer-events-none absolute inset-0 z-20 flex items-end justify-center pb-16 opacity-0">
+          <div className="text-center">
             <h2
               style={{
                 fontFamily: "'Instrument Serif', serif",
-                fontSize: "clamp(28px, 4.5vw, 72px)",
+                fontSize: "clamp(1.5rem, 3.5vw, 3rem)",
                 fontWeight: 400,
                 fontStyle: "italic",
-                lineHeight: 1.1,
                 color: LIGHT,
-                marginTop: 4,
+                lineHeight: 1.2,
               }}
             >
-              {phase.label}
+              Vom Pixel zur Website.
             </h2>
-            <p
-              style={{
-                fontFamily: "'General Sans', sans-serif",
-                fontSize: "clamp(12px, 1.1vw, 17px)",
-                color: MUTED,
-                marginTop: 8,
-                fontWeight: 300,
-              }}
-            >
-              {phase.sub}
-            </p>
           </div>
-        ))}
+        </div>
 
-        {/* Progress bar */}
-        <div
-          className="absolute bottom-6 left-[5%] right-[5%] h-px"
-          style={{ background: `${LIGHT}10` }}
-        >
+        {/* ── Brand name ── */}
+        <div className="text-brand pointer-events-none absolute inset-0 z-20 flex items-end justify-center pb-6 opacity-0">
+          <span
+            className="text-xs uppercase tracking-[0.4em]"
+            style={{
+              fontFamily: "'General Sans', sans-serif",
+              color: ORANGE,
+              opacity: 0.7,
+            }}
+          >
+            PixInt Creators
+          </span>
+        </div>
+
+        {/* ── Progress bar ── */}
+        <div className="absolute bottom-0 left-0 z-30 h-[2px] w-full" style={{ background: "rgba(255,255,255,0.06)" }}>
           <div
-            className="progress-fill h-full origin-left will-change-transform"
+            className="progress-fill h-full origin-left"
             style={{ background: ORANGE, transform: "scaleX(0)" }}
           />
         </div>
-
-        {/* Watermark */}
-        <span
-          className="pointer-events-none absolute right-[5%] top-6"
-          style={{
-            fontFamily: "'General Sans', sans-serif",
-            fontSize: "clamp(10px, 0.8vw, 12px)",
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-            color: `${LIGHT}20`,
-          }}
-        >
-          PixIntCreators
-        </span>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          SECTION 3: REVEAL — Vom Pixel zur Website
-          ═══════════════════════════════════════════ */}
-      <section
-        ref={revealRef}
-        className="relative flex h-screen flex-col items-center justify-center overflow-hidden"
-      >
-        <div
-          className="reveal-fill absolute inset-0 origin-bottom"
-          style={{ background: ORANGE, transform: "scaleY(0)" }}
-        />
-
-        <div className="relative z-10 flex flex-col items-center gap-4 px-8 text-center">
-          <h2
-            className="reveal-heading select-none"
-            style={{
-              fontFamily: "'Clash Display', sans-serif",
-              fontSize: "clamp(36px, 8vw, 150px)",
-              fontWeight: 700,
-              lineHeight: 0.95,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Vom Pixel
-            <br />
-            <span
-              style={{
-                fontFamily: "'Instrument Serif', serif",
-                fontWeight: 400,
-                fontStyle: "italic",
-              }}
-            >
-              zur Website.
-            </span>
-          </h2>
-
-          <p
-            className="reveal-sub"
-            style={{
-              fontFamily: "'General Sans', sans-serif",
-              fontSize: "clamp(14px, 1.5vw, 22px)",
-              fontWeight: 300,
-              color: LIGHT,
-              opacity: 0.75,
-              maxWidth: 480,
-              lineHeight: 1.7,
-              marginTop: 8,
-            }}
-          >
-            Intelligent. Kreativ. Auf den Punkt.
-            <br />
-            PixIntCreators — Wir codieren Erlebnisse.
-          </p>
-
-          <a
-            href="mailto:info@pixintcreators.de"
-            className="reveal-cta mt-6 inline-block border px-10 py-4 transition-all duration-300 hover:bg-white hover:text-black"
-            style={{
-              fontFamily: "'General Sans', sans-serif",
-              fontSize: "clamp(11px, 1vw, 15px)",
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-              borderColor: `${LIGHT}40`,
-              color: LIGHT,
-            }}
-          >
-            Projekt starten
-          </a>
-        </div>
-
-        <span
-          className="absolute bottom-6 z-10"
-          style={{
-            fontFamily: "'General Sans', sans-serif",
-            fontSize: "clamp(10px, 0.8vw, 13px)",
-            letterSpacing: "0.2em",
-            color: `${LIGHT}40`,
-          }}
-        >
-          info@pixintcreators.de
-        </span>
       </section>
     </div>
   );
