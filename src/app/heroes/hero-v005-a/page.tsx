@@ -29,8 +29,6 @@ const LIGHT = "#F5F5F0";
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 const easeOutExpo = (t: number) => (t >= 1 ? 1 : 1 - 2 ** (-10 * t));
-const easeInOutQuart = (t: number) =>
-  t < 0.5 ? 8 * t ** 4 : 1 - (-2 * t + 2) ** 4 / 2;
 const easeOutCubic = (t: number) => 1 - (1 - t) ** 3;
 const easeInCubic = (t: number) => t * t * t;
 
@@ -264,13 +262,10 @@ export default function HeroV005A() {
       }
 
       // Combined progress: shatter drives scatter, scroll drives reassembly
-      // shatterP: 0 = assembled, 1 = scattered
-      // scrollP: 0 = start, 1 = end
-      // effectiveScatter: how scattered the particles currently are
-      // When shattered but not scrolled: effectiveScatter = 1
-      // As scroll progresses: effectiveScatter decreases toward 0
-      const reassembleT = clamp01(scrollP / 0.82); // Use 82% of scroll for reassembly
-      const effectiveScatter = shatterP * (1 - easeInOutQuart(reassembleT));
+      // Use easeInCubic for reassembly: stays scattered LONG, then snaps together
+      // This creates a dramatic "nothing happening... BAM assembled" feel
+      const reassembleT = clamp01(scrollP / 0.85); // Use 85% of scroll for reassembly
+      const reassembleEase = easeInCubic(reassembleT); // Slow start, fast finish
 
       /* ═══ DRAW PARTICLES ═══ */
       for (let i = 0; i < particles.length; i++) {
@@ -282,14 +277,14 @@ export default function HeroV005A() {
         );
         const shatterEased = easeOutExpo(particleShatter);
 
-        // Reassemble animation: per-particle stagger
+        // Reassemble: per-particle stagger for wave effect
         const particleReassemble = clamp01(
-          (reassembleT - px.reassembleDelay) / (1 - px.reassembleDelay)
+          (reassembleEase - px.reassembleDelay) / (1 - px.reassembleDelay)
         );
-        const reassembleEased = easeInOutQuart(particleReassemble);
+        const reassembleSmooth = easeOutCubic(particleReassemble);
 
-        // Position: lerp between home and scatter based on effective state
-        const currentScatter = shatterEased * (1 - reassembleEased);
+        // Position: lerp between home and scatter
+        const currentScatter = shatterEased * (1 - reassembleSmooth);
         let x = lerp(px.homeX, px.scatterX, currentScatter);
         let y = lerp(px.homeY, px.scatterY, currentScatter);
 
@@ -324,9 +319,92 @@ export default function HeroV005A() {
         ctx.fillRect(x - size / 2, y - size / 2, size, size);
       }
 
+      /* ═══ CANVAS TEXT: "ZERLEGT." — synced with particle state ═══ */
+      if (shatterP > 0.5 && scrollP < 0.08) {
+        const textFadeIn = clamp01((shatterP - 0.5) / 0.5);
+        const textFadeOut = scrollP > 0.02 ? clamp01((scrollP - 0.02) / 0.06) : 0;
+        const textAlpha = textFadeIn * (1 - textFadeOut);
+        if (textAlpha > 0.01) {
+          ctx.save();
+          ctx.globalAlpha = textAlpha;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          const fontSize = Math.min(cw * 0.08, 100);
+          ctx.font = `600 ${fontSize}px 'Clash Display', sans-serif`;
+          ctx.fillStyle = LIGHT;
+          ctx.fillText("ZER", cw / 2 - fontSize * 0.95, ch / 2);
+          ctx.fillStyle = ORANGE;
+          ctx.fillText("LEGT.", cw / 2 + fontSize * 0.7, ch / 2);
+          ctx.restore();
+        }
+      }
+
+      /* ═══ CANVAS TEXT: "Scroll to rebuild" indicator ═══ */
+      if (shatterP > 0.8 && scrollP < 0.05) {
+        const indicatorAlpha = clamp01((shatterP - 0.8) / 0.2) *
+          (1 - clamp01(scrollP / 0.05)) * 0.5;
+        if (indicatorAlpha > 0.01) {
+          ctx.save();
+          ctx.globalAlpha = indicatorAlpha;
+          ctx.textAlign = "center";
+          ctx.font = `400 ${Math.min(cw * 0.012, 13)}px 'General Sans', sans-serif`;
+          ctx.fillStyle = LIGHT;
+          ctx.letterSpacing = "3px";
+          ctx.fillText("SCROLL TO REBUILD", cw / 2, ch - 60);
+          // Animated line
+          const lineH = 30;
+          ctx.strokeStyle = ORANGE;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(cw / 2, ch - 40);
+          ctx.lineTo(cw / 2, ch - 40 + lineH);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      /* ═══ CANVAS TEXT: Progress counter ═══ */
+      if (scrollP > 0.03 && scrollP < 0.88) {
+        const counterFadeIn = clamp01((scrollP - 0.03) / 0.05);
+        const counterFadeOut = scrollP > 0.82 ? clamp01((scrollP - 0.82) / 0.06) : 0;
+        const counterAlpha = counterFadeIn * (1 - counterFadeOut) * 0.5;
+        if (counterAlpha > 0.01) {
+          const pct = Math.round(reassembleEase * 100);
+          ctx.save();
+          ctx.globalAlpha = counterAlpha;
+          ctx.textAlign = "right";
+          ctx.font = `500 ${Math.min(cw * 0.02, 22)}px 'Clash Display', sans-serif`;
+          ctx.fillStyle = ORANGE;
+          ctx.fillText(`${pct}%`, cw - 40, ch / 2);
+          ctx.restore();
+        }
+      }
+
+      /* ═══ CANVAS TEXT: "Vom Pixel zur Website." — final reveal ═══ */
+      if (scrollP > 0.82) {
+        const revealT = easeOutCubic(clamp01((scrollP - 0.82) / 0.15));
+        ctx.save();
+        ctx.globalAlpha = revealT;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        const revealSize = Math.min(cw * 0.035, 36);
+        ctx.font = `400 italic ${revealSize}px 'Instrument Serif', serif`;
+        ctx.fillStyle = LIGHT;
+        ctx.fillText("Vom Pixel zur Website.", cw / 2, ch - 70 + (1 - revealT) * 30);
+        // Brand
+        if (scrollP > 0.9) {
+          const brandT = easeOutCubic(clamp01((scrollP - 0.9) / 0.08));
+          ctx.globalAlpha = brandT * 0.6;
+          ctx.font = `400 ${Math.min(cw * 0.01, 11)}px 'General Sans', sans-serif`;
+          ctx.fillStyle = ORANGE;
+          ctx.fillText("PIXINT CREATORS", cw / 2, ch - 35 + (1 - brandT) * 15);
+        }
+        ctx.restore();
+      }
+
       /* ═══ CROSSFADE: Sharp image over assembled particles ═══ */
-      if (scrollP > 0.7 && imgElRef.current && area) {
-        const fadeT = easeOutCubic(clamp01((scrollP - 0.7) / 0.25));
+      if (scrollP > 0.75 && imgElRef.current && area) {
+        const fadeT = easeOutCubic(clamp01((scrollP - 0.75) / 0.2));
         ctx.globalAlpha = fadeT;
 
         // Rounded rect clip
@@ -399,110 +477,6 @@ export default function HeroV005A() {
         },
       });
 
-      /* ── Text overlays ── */
-
-      // "ZERLEGT." appears during/after shatter
-      gsap.fromTo(
-        ".text-shatter",
-        { opacity: 0, y: 20, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.2,
-          ease: "expo.out",
-          delay: 1.6,
-        }
-      );
-
-      // "ZERLEGT." fades out when scroll begins
-      gsap.to(".text-shatter", {
-        opacity: 0,
-        y: -30,
-        ease: "power2.in",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=5%",
-          scrub: 1,
-        },
-      });
-
-      // Scroll indicator
-      gsap.fromTo(
-        ".scroll-indicator",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.8, ease: "power2.out", delay: 2.8 }
-      );
-      gsap.to(".scroll-indicator", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=3%",
-          scrub: 1,
-        },
-      });
-
-      // Progress counter (shows reassembly %)
-      gsap.fromTo(
-        ".progress-counter",
-        { opacity: 0 },
-        {
-          opacity: 0.6,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "+=3%",
-            end: "+=8%",
-            scrub: 1,
-          },
-        }
-      );
-
-      gsap.to(".progress-counter", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "+=78%",
-          end: "+=85%",
-          scrub: 1,
-        },
-      });
-
-      // Final reveal text
-      gsap.fromTo(
-        ".text-reveal",
-        { opacity: 0, y: 40, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "+=82%",
-            end: "+=92%",
-            scrub: 1.5,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        ".text-brand",
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "+=88%",
-            end: "+=95%",
-            scrub: 1.5,
-          },
-        }
-      );
-
       // Progress bar
       gsap.fromTo(
         ".progress-fill",
@@ -521,21 +495,7 @@ export default function HeroV005A() {
     { scope: wrapRef }
   );
 
-  /* ═══ Progress counter update ═══ */
-  const counterRef = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const update = () => {
-      if (counterRef.current) {
-        const pct = Math.round(
-          easeInOutQuart(clamp01(scrollProgressRef.current / 0.82)) * 100
-        );
-        counterRef.current.textContent = `${pct}%`;
-      }
-      requestAnimationFrame(update);
-    };
-    const raf = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  /* (text rendering moved to canvas) */
 
   /* ═══════════════════════════════════════════════════════════
      RENDER
@@ -589,85 +549,7 @@ export default function HeroV005A() {
           className="absolute inset-0 z-10"
         />
 
-        {/* ── Text: "ZERLEGT." after shatter ── */}
-        <div className="text-shatter pointer-events-none absolute inset-0 z-20 flex items-center justify-center opacity-0">
-          <div className="text-center">
-            <h1
-              className="tracking-tight"
-              style={{
-                fontFamily: "'Clash Display', sans-serif",
-                fontSize: "clamp(3rem, 8vw, 7rem)",
-                fontWeight: 600,
-                color: LIGHT,
-                lineHeight: 1,
-              }}
-            >
-              ZER<span style={{ color: ORANGE }}>LEGT</span>.
-            </h1>
-          </div>
-        </div>
-
-        {/* ── Scroll indicator ── */}
-        <div className="scroll-indicator pointer-events-none absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3 opacity-0">
-          <span
-            className="text-xs uppercase tracking-[0.3em]"
-            style={{ fontFamily: "'General Sans', sans-serif", color: LIGHT, opacity: 0.5 }}
-          >
-            Scroll to rebuild
-          </span>
-          <div
-            className="h-10 w-px"
-            style={{ background: `linear-gradient(to bottom, ${ORANGE}, transparent)` }}
-          />
-        </div>
-
-        {/* ── Progress counter ── */}
-        <div className="progress-counter pointer-events-none absolute right-8 top-1/2 z-20 -translate-y-1/2 opacity-0">
-          <span
-            ref={counterRef}
-            className="tabular-nums"
-            style={{
-              fontFamily: "'Clash Display', sans-serif",
-              fontSize: "clamp(1rem, 2vw, 1.5rem)",
-              fontWeight: 500,
-              color: ORANGE,
-            }}
-          >
-            0%
-          </span>
-        </div>
-
-        {/* ── Final reveal text ── */}
-        <div className="text-reveal pointer-events-none absolute inset-0 z-20 flex items-end justify-center pb-16 opacity-0">
-          <div className="text-center">
-            <h2
-              style={{
-                fontFamily: "'Instrument Serif', serif",
-                fontSize: "clamp(1.5rem, 3.5vw, 3rem)",
-                fontWeight: 400,
-                fontStyle: "italic",
-                color: LIGHT,
-                lineHeight: 1.2,
-              }}
-            >
-              Vom Pixel zur Website.
-            </h2>
-          </div>
-        </div>
-
-        {/* ── Brand name ── */}
-        <div className="text-brand pointer-events-none absolute inset-0 z-20 flex items-end justify-center pb-6 opacity-0">
-          <span
-            className="text-xs uppercase tracking-[0.4em]"
-            style={{
-              fontFamily: "'General Sans', sans-serif",
-              color: ORANGE,
-              opacity: 0.7,
-            }}
-          >
-            PixInt Creators
-          </span>
-        </div>
+        {/* All text now rendered directly on canvas for perfect sync */}
 
         {/* ── Progress bar ── */}
         <div className="absolute bottom-0 left-0 z-30 h-[2px] w-full" style={{ background: "rgba(255,255,255,0.06)" }}>
