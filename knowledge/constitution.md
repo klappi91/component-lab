@@ -231,8 +231,23 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Learning: **Haiku kopiert Code woertlich, versteht aber nicht die Implikationen** (z.B. overflow bricht GSAP)
 - Learning: **80% Kostenersparnis irrelevant wenn Ergebnis unbrauchbar**
 
+### #13: Codex gpt-5.4 als Builder (2026-03-24, exp-codex-test)
+- **Score: ~6.5/10 geschaetzt** — Gleiche Spec wie parallel-dark (Sonnet: 5.3, Haiku: 3.0)
+- 110,445 Tokens, 727 Zeilen, 4 Dateien, 0 Build-Fehler
+- Alle 7 Sektionen funktional, alle Bilder verwendet, Spec kreativ erweitert
+- **FUNDAMENTALE Erkenntnis: Modell-Hierarchie FINAL**
+  - **Opus** = Kreative WOW-Module, Deep Understanding (8/10)
+  - **Codex gpt-5.4** = Bester Spec-Following Builder (6.5/10)
+  - **Sonnet** = Solider Builder, folgt Spec exakt (5.3/10)
+  - **Haiku** = Struktur-Kopierer, bricht komplexe Patterns (3/10)
+- Learning: **Codex versteht React-Patterns tiefer als Sonnet** — useGSAP, matchMedia, proper cleanup
+- Learning: **Codex erweitert Spec kreativ** — Navigation, Stats, Glasmorphism, a11y (Sonnet folgt nur)
+- Learning: **Codex adaptiert an Umgebung** — erkannte Turbopack-Bug, fixte Build-Script selbst
+- Learning: **Codex ist KEIN Opus-Ersatz** — erweitert Spec, erfindet aber keine WOW-Signaturen
+- Deployment blockiert (Vercel-Token abgelaufen)
+
 ### Noch nicht getestet
-- Codex als Builder
+- Opus Signature + Codex Builder (statt Sonnet)
 - Designer + Rules + Assets-First (Kombination)
 
 ## Was fehlt fuer WOW (~9.5/10 → 10/10)

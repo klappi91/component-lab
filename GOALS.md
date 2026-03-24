@@ -80,7 +80,12 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - Ergebnis: 61k Tokens, 110s, 0 Build-Fehler — aber body overflow:hidden bricht GSAP komplett
   - Erkenntnisse: Haiku nur fuer triviale Tasks (Static Pages, Boilerplate, CSS-only). NICHT fuer Awwwards.
   - Modell-Hierarchie bestaetigt: Opus (8/10) > Sonnet (5-7/10) > Haiku (3/10)
-- [ ] **Codex als Builder testen** — Letztes offenes Modell-Experiment
+- [x] **Codex als Builder testen** — exp-codex-test, ~6.5/10 (Sonnet: 5.3, Haiku: 3.0)
+  - Ergebnis: 110k Tokens, 727 Zeilen, 0 Build-Fehler, alle 7 Sektionen + alle Bilder
+  - Codex = Bester Spec-Following Builder. useGSAP, matchMedia, proper cleanup, erweitert Spec kreativ
+  - Modell-Hierarchie FINAL: Opus (8/10) > Codex gpt-5.4 (6.5/10) > Sonnet (5.3/10) > Haiku (3/10)
+  - Deployment blockiert (Vercel-Token abgelaufen)
+  - Naechster Test: Opus Signature + Codex Builder (statt Sonnet)
 
 #### 4. Abgeschlossene Prozess-Experimente (2026-03-23)
 - [x] Designer-Agent → Builder Pipeline (exp-warm-brutal, 5/10)
@@ -113,10 +118,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 11 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light, haiku-test)
+- **Websites deployed:** 11 + 1 nicht deployed (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light, haiku-test, codex-test[blocked])
 - **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 + Morphic-Flow v2 warten auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
-- **Prozess-Experimente durchgefuehrt:** 13 (Ziel: mindestens 3 ✓✓) — inkl. Haiku-Test (3.0/10, Modell-Hierarchie bestaetigt)
+- **Prozess-Experimente durchgefuehrt:** 14 (Ziel: mindestens 3 ✓✓) — inkl. Codex gpt-5.4 (~6.5/10, Modell-Hierarchie FINAL)
 - **Skills installiert:** 6 neue (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator)
 - **Agent-Team:** 5-Rollen-Architektur designed, Agent-Definitionen ready, noch nicht getestet
 - **Sessions am 2026-03-23:** 25
