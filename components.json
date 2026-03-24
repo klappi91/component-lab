@@ -740,5 +740,79 @@
       "ink-in-water",
       "design-driven"
     ]
+  },
+  {
+    "id": "hero-v013-a",
+    "pair_id": "hero-v013",
+    "type": "experience",
+    "category": "video-hero",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Time Control Director",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": null,
+    "prompt_excerpt": "CREATION TIMELINE — Scroll-driven Video. User kontrolliert ZEIT. Video zeigt Schoepfung (orange Licht entsteht aus Dunkelheit). 5 Phasen: VOID (Letterbox oeffnet) → GENESIS (Licht entsteht) → EMERGENCE (WIR ERSCHAFFEN bricht durch) → STATEMENT (ERLEBNISSE + blur) → BRAND (PixIntCreators materialisiert). Erster Video-basierter Hero.",
+    "skills_loaded": [
+      "gsap-scrolltrigger",
+      "gemini-video"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "lenis",
+      "video-scrub",
+      "scroll-driven-video",
+      "clip-path",
+      "letter-spacing-animation",
+      "custom-cursor",
+      "SVG-grain",
+      "backdrop-filter-blur",
+      "letterbox",
+      "pulse-ring"
+    ],
+    "design_philosophy": "CREATION TIMELINE — Video als Zeitachse, Scroll als Zeitkontrolle. Der User scrubbt buchstaeblich durch einen Schoepfungsprozess. Aus Dunkelheit entsteht Licht, aus Licht entsteht die Marke. Erster Hero der ein KI-generiertes Video als Kernelement nutzt. Inspiriert von Film Credits + scroll-driven Video Pattern.",
+    "inspiration_source": "Web Design Trends 2026: 'Full-bleed video with oversized typography'. The Camel Fabric Game (Adoratorio Studio, Awwwards) — Immersive Storytelling + Interaction. Constitution: 'Scroll-driven Video (GSAP ScrollTrigger + video.currentTime)' als bewiesene Technik.",
+    "choreography_notes": "5 Phasen, 500vh scroll space, pinned:\n\nVOID (0-20%): Letterbox bars retract (power4.inOut). Video startet bei 0s. Scroll hint 'Scroll to create'. Progress line waechst.\n\nGENESIS (20-45%): Video scrubbt zu ~3.6s. Orange Ember erscheint im Video. Time counter label erscheint (opacity 0.6).\n\nEMERGENCE (45-65%): Video ~3.6-5.2s. Blur-Overlay steigt. 'WIR' clip-path inset reveal (expo.out). 'ERSCHAFFEN' per-letter stagger (y:80, rotateX:-45, 0.008s stagger, expo.out). Orange accent line (power4.inOut).\n\nSTATEMENT (65-82%): Video ~5.2-6.5s. 'ERLEBNISSE' scale 0.6→1 + deblur (power4.out). Video backdrop blur 30px.\n\nBRAND (82-100%): Previous text fades. Dark overlay. Pulse ring (scale 0→8, orange border). PixIntCreators letter-spacing 1.5em→0.15em (expo.inOut). Tagline + CTA fade in (expo.out).\n\nEasings: expo.out (text), power4.inOut (wipes), expo.inOut (letter-spacing), linear (video scrub + blur).",
+    "assets_generated": [
+      "creation.mp4 (5.6MB, gemini-video Veo 3.1: orange embers in dark void, 8s, 720p, $1.20)"
+    ],
+    "assets_used": [
+      "creation.mp4"
+    ],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, video-first concept + gemini-video asset)",
+    "builder_model": null,
+    "run_id": "run-20260324-1200",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "video-hero",
+      "pixintcreators",
+      "brand",
+      "scroll-driven-video",
+      "video-scrub",
+      "gemini-video",
+      "veo-3.1",
+      "ai-generated-video",
+      "creation-metaphor",
+      "time-control",
+      "letterbox",
+      "clip-path",
+      "letter-spacing-animation",
+      "backdrop-blur",
+      "pulse-ring",
+      "custom-cursor",
+      "lenis-smooth-scroll",
+      "film-grain",
+      "dark-void",
+      "orange-ember",
+      "5-phasen",
+      "first-video-hero"
+    ]
   }
 ]

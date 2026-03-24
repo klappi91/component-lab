@@ -108,12 +108,25 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Erlebnis gebaut: Erster Hero OHNE Canvas/WebGL — pure GSAP Choreografie
 - [x] Build erfolgreich, components.json aktualisiert
 - [ ] Visual QA (Desktop + Mobile)
-- [ ] Chris zeigen, Feedback einholen
+- [x] Chris per Mail informiert (zusammen mit v013-a)
+- [ ] Chris-Feedback abwarten
 - [ ] Optional: SplitText fuer character-level Brand-Reveal
 - [ ] Optional: Echte Fotos / besseres Hero-Bild
 
+#### hero-v013-a: CREATION TIMELINE — Scroll-Driven Video
+- [x] Awwwards + Trends recherchiert (The Camel Fabric Game, Video-Trends 2026)
+- [x] Konzept: Scroll = Zeitkontrolle, Video = Schoepfungsprozess
+- [x] Video generiert (gemini-video Veo 3.1, 8s, 720p, orange embers, $1.20)
+- [x] Erlebnis gebaut: Erster VIDEO-HERO (5 Phasen, scroll-driven video.currentTime)
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail informiert
+- [ ] Video visuell pruefen
+- [ ] Visual QA (Desktop + Mobile, agent-browser)
+- [ ] Chris-Feedback abwarten
+- [ ] Optional: 1080p/4K Video regenerieren
+- [ ] Optional: Video-Poster-Frame als Fallback
+
 #### Naechstes Erlebnis
-- [ ] Video-basierter Hero (gemini-video Ambient Loop)
 - [ ] Awwwards SOTD als Inspiration weiter analysieren
 
 #### Skill-Discovery
@@ -157,11 +170,12 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 12 (hero-v001 bis v012)
+- **Erlebnisse im Lab:** 13 (hero-v001 bis v013)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
-- **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
-- **Neue Technik:** Editorial Cinema (hero-v012-a) — erster design-driven Hero ohne Canvas/WebGL, pure GSAP clip-path Choreografie
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, **editorial** (NEU)
+- **Skills aktiv genutzt:** 4 (text-animation, gsap-plugins, awwwards-animations, gemini-video)
+- **Neue Technik:** Creation Timeline (hero-v013-a) — erster Video-Hero, scroll-driven video.currentTime + KI-generiertes Video
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, **video-hero** (NEU)
 - **exp-signature-hero Score korrigiert:** 7.5/10 (nicht 8/10 wie vorher angenommen)
-- **Inspiration-Analysen:** 9 (+Unseen Studio 2025 Wrapped, +Shed.design SOTD)
+- **Inspiration-Analysen:** 10 (+The Camel Fabric Game, +Video-Trends 2026)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
+- **Video-Kosten:** $1.20 (hero-v013-a creation.mp4)
