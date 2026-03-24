@@ -118,10 +118,18 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - **CSS @import fuer Fontshare in Next.js** — IMMER `<link>` Tags im layout.tsx `<head>` verwenden!
 - **ASCII-Umlaute in Specs** — IMMER UTF-8 verwenden (ä/ö/ü, nicht ae/oe/ue), Builder kopiert 1:1
 - **mix-blend-difference auf hellem BG** — macht schwarzen Text unsichtbar, nur fuer Dark Themes
-- **overflow-x: hidden auf body** — PFLICHT fuer Mobile! Ohne das verursachen Marquees, Shader-Canvas, oder grosse Dekor-Elemente horizontalen Scroll der alle Texte abschneidet
 - **Builder kennt parallel generierte Assets nicht** — Assets muessen VOR dem Builder fertig sein + Manifest
 - **tmux-Sessions IMMER beenden** — Nach Build: `tmux kill-session -t name`. Vor Session-Ende: `tmux ls` pruefen
 - **Designer-Konzept allein reicht nicht** — Designer liefert kreativere Ideen, aber Builder ignoriert Assets ohne Manifest
+
+## SPEC-PFLICHTZEILEN (in JEDE creative-brief.md kopieren)
+- **OVERFLOW:** `globals.css` MUSS `body { overflow-x: hidden }` enthalten. NIEMALS `overflow: hidden` (ohne -x) auf body setzen — bricht GSAP ScrollTrigger komplett! Nur `overflow-x: hidden`. 3 von 12 Build-Fehlern waren overflow-bedingt.
+
+## Self-Eval Kalibrierung
+- **Formel:** `chris_score_estimate = self_eval - 2.0`
+- **Hintergrund:** Self-Eval 9.5 → Chris 7.5 = 2.0 Punkte Inflation (historisch konsistent)
+- **Pflicht:** In GOALS.md und Experiment-Logs IMMER beide Scores angeben: "Self: X, Chris-geschätzt: Y"
+- **Entscheidungsregel:** Iterationen lohnen sich nur wenn chris_score_estimate < 8.0. Darueber: Chris fragen.
 
 ## Prozess-Experimente
 
