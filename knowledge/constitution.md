@@ -33,8 +33,9 @@ Was zaehlt: Hat es einen FLOW? Fuehlt es sich choreografiert an? Bleibt es im Ko
 - **INSPIRATION SUCHEN + CHOREOGRAFIE VERSTEHEN** — Awwwards-Sites analysieren, den ABLAUF verstehen, dann selber erschaffen
 - **NEUE SKILLS SUCHEN** — aktiv nach Skills suchen die neue Moeglichkeiten eroeffnen
 
-### Design-Feedback (2026-03-23)
-- **DURCHGEHENDER FLUSS** — "die ganze Zeit irgendein Element sich mitbewegt" = DAS macht Awwwards-Sites aus
+### Design-Feedback (2026-03-23/24)
+- **DURCHGEHENDER FLUSS** — "die ganze Zeit irgendein Element sich mitbewegt" = DAS macht Awwwards-Sites aus. Score 7.5/10 fuer exp-signature-hero v7 WEIL dieser Fluss fehlt. "Man hat sie vergessen nachdem man sie verlassen hat."
+- **UEBERGAENGE SPIELERISCH** — Sektions-Uebergaenge duerfen nicht nur Scrollen sein, sie brauchen visuelle Verbindung
 - **STORY FIRST** — erst Geschichte, dann Design, dann Code
 - **DURCHDACHT > EFFEKTE** — jeder Effekt muss der Erzaehlung dienen
 - **"SEI MUTIG UND ERFINDE NEUE DINGE"**
@@ -126,6 +127,7 @@ Der Unterschied:
 - gemini-image Batch ($0.50, ~60 Sek)
 - gemini-video ambient ($1.20/8s)
 - agent-browser fuer QA
+- **Continuous Flow Stream** (Canvas fixed + Catmull-Rom spline + Partikel) — persistentes lebendes Element das den gesamten Scroll-Journey verbindet. Sinusoidal path mit scroll-driven Amplitude/Frequenz/Phase. Motion-Trail via semi-transparent clear (rgba statt clearRect). Glow-Layers (5 passes, wide/faint → narrow/bright). Branching-Stream in Energiephase. Partikel fliessen IMMER (auch ohne Scrollen) = "always alive". Mouse-Displacement auf Pfad-Kontrollpunkte + Partikel-Repulsion.
 
 ## Was NICHT funktioniert
 - **CSS 3D perspective + camera zoom:** Wenn Container `perspective: Xpx` hat und Camera-Kind per GSAP `translateZ(Y)` bekommt mit Y > X → alles HINTER dem Betrachter = unsichtbar. Elemente die NACH dem Zoom sichtbar sein muessen (Brand, CTA) MUESSEN ausserhalb des perspective-Containers leben.

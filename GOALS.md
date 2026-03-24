@@ -88,6 +88,19 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Mobile QA (agent-browser)
 - [ ] Chris zeigen
 
+#### hero-v011-a: FLOW — Der kreative Faden (CONTINUOUS FLOW)
+- [x] Chris-Feedback (UID 11) verarbeitet: "durchgehender Fluss fehlt", 7.5/10 exp-signature-hero
+- [x] FC Porto Memorial (SOTD 23.03.2026) analysiert — Tunnel Animation, Community Creativity 9.0
+- [x] Konzept: Erster Hero mit PERSISTENTEM, LEBENDIGEM Element das IMMER sichtbar ist
+- [x] Build: Canvas-Partikelstrom + Catmull-Rom Spline + Scroll-morphing + Mouse-Reaktion
+- [x] Choreografie: 5 Phasen (Origin→Form→Energie→Fokus→Brand) mit durchgehendem Strom
+- [x] Build erfolgreich, components.json aktualisiert
+- [ ] Desktop QA (agent-browser oder manuell)
+- [ ] Mobile QA
+- [ ] Chris zeigen + Feedback einholen
+- [ ] Optional: Lenis Smooth Scroll
+- [ ] Optional: Text-Glow wenn Strom nahe an Text ist
+
 #### Naechstes Erlebnis
 - [ ] Video-basierter Hero (gemini-video Ambient Loop)
 - [ ] Awwwards SOTD als Inspiration weiter analysieren
@@ -119,7 +132,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - ~~Skills nur installieren~~ → Skills AKTIV ins Konzept laden
 
 ### Externe Experimente (Archiv, nicht fortgesetzt)
-- exp-signature-hero: 8/10 Chris — Bestes Ergebnis, abgeschlossen
+- exp-signature-hero: 7.5/10 Chris — "Solide aber man vergisst sie", durchgehender Fluss fehlt
 - exp-story-editorial v6: deployed, wartet auf Feedback
 - exp-cinematic-dark v2: 7.5/10, Referenz
 - exp-morphic-flow v3: ~7/10, Pipeline-Test
@@ -133,9 +146,10 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 10 (hero-v001 bis v010)
+- **Erlebnisse im Lab:** 11 (hero-v001 bis v011)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
-- **Neue Technik:** DOM-Physics + Magnetic Mouse (hero-v009-a) — erster Hero mit eigener Physik-Simulation
+- **Neue Technik:** Continuous Flow Stream (hero-v011-a) — erster Hero mit persistentem lebendigem Element
+- **exp-signature-hero Score korrigiert:** 7.5/10 (nicht 8/10 wie vorher angenommen)
 - **Inspiration-Analysen:** 7 (mersi, DD.NYC, Aupale/Locomotive, Unseen Studio, Kris Temmerman, shed.design, Darknode)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
