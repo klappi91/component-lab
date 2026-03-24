@@ -51,11 +51,23 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 - **URL:** https://exp-cinematic-dark.vercel.app
 - **Entscheidung:** exp-signature-hero ist besser. Cinematic-dark als Referenz behalten.
 
+#### 1c. exp-morphic-flow — Pipeline-Test (Dark Morphic)
+- **Status:** v2 deployed, QA Score 6.5/10 (realistisch ~5 Chris-Score)
+- **URL:** https://exp-morphic-flow.vercel.app
+- **GitHub:** https://github.com/klappi91/weblab-exp-morphic-flow
+- **Stil:** Dark, SVG-heavy, Canvas Flow-Field Hero, Kinetic Typography
+- **Pipeline-Test:** 3/6 Phasen erfolgreich delegiert (Assets, QA, Polish)
+- **Erkenntnis:** Agent-Team funktioniert für Support-Rollen, Builder braucht detailliertere Specs
+- **Naechste Schritte:**
+  - [ ] v3: Builder-Agent mit detaillierten Sektions-Specs testen
+  - [ ] Service-SVGs durch echte generative Illustrationen ersetzen
+  - [ ] Showcase mit dramatischen Hover-Reveals
+
 #### 3. Naechste Prozess-Experimente (Prioritaet)
-- [ ] **Agent-Team-Pipeline testen** — 5-Rollen-Team (Creative Director→Asset Creator+Animation Expert→Builder→QA)
-  - Hypothese: Spezialisierte Agents + neue Skills (gsap-plugins, awwwards-animations) → konsistent 9+/10
-  - Agent-Definitionen ready in .claude/agents/
-  - Neue Skills: SplitText, MorphSVG, Flip, DrawSVG, Generative Art, Physics
+- [x] **Agent-Team-Pipeline testen** — exp-morphic-flow, 6.5/10 QA, 3/6 Phasen delegiert
+  - Ergebnis: Support-Agents (Assets, QA, Polish) funktionieren. Builder-Agent braucht mehr Spec-Detail.
+  - Hypothese NICHT bestätigt (9+/10 nicht erreicht), aber Pipeline-Grundlage validiert
+- [ ] **Builder-Agent mit Detailed Specs** — Nächster Test: vollständiger Builder-Agent mit Sektions-Level Specs + fertigen Signature-Modulen
 - [ ] **Reproduzierbarkeit testen** — Bewiesenen Workflow auf NEUES Projekt anwenden (anderer Stil)
 - [ ] **Parallel-Build** — 2 Builder mit verschiedenen Prompts, gleiche Reference-Daten, vergleichen
 - [ ] **Anderes Modell testen** — Was liefert Haiku als Builder? Oder Codex?
@@ -91,10 +103,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 6 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial)
-- **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 wartet auf Bewertung
+- **Websites deployed:** 7 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow)
+- **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 + Morphic-Flow v2 warten auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
-- **Prozess-Experimente durchgefuehrt:** 8 (Ziel: mindestens 3 ✓✓)
+- **Prozess-Experimente durchgefuehrt:** 9 (Ziel: mindestens 3 ✓✓) — inkl. Agent-Team-Pipeline
 - **Skills installiert:** 6 neue (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator)
 - **Agent-Team:** 5-Rollen-Architektur designed, Agent-Definitionen ready, noch nicht getestet
 - **Sessions am 2026-03-23:** 25
