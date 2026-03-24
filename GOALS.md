@@ -236,12 +236,13 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Erlebnis gebaut: Master-Timeline, Typing-Animation, Pixel-Transformationen
 - [x] Build erfolgreich, components.json aktualisiert
 - [x] Chris per Mail informiert
-- [ ] Chris Feedback abwarten
-- [ ] Timings feinjustieren nach Feedback
+- [x] **Chris Feedback (UID 29): "Punkt zu gross, wieso seitwaerts, Story fehlt"**
+- [x] **hero-v022-b gebaut: VERTIKAL, 4px, 5 Story-Etappen mit Bedeutung**
+- [x] Chris per Mail informiert (v022-b)
+- [ ] Chris v022-b Feedback abwarten
 - [ ] Mobile QA
-- [ ] Optional: Pixel-Glow/Shadow waehrend Transitionen
 - [ ] Optional: Mouse-Interaction (Pixel folgt Cursor leicht)
-- [ ] Optional: Echtes Bild in Panel 4 statt Text-Card
+- [ ] Optional: SplitText fuer Brand-Reveal
 
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
@@ -296,7 +297,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 22 (hero-v001 bis v022)
+- **Erlebnisse im Lab:** 23 (hero-v001 bis v022-b)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, meshy-3d-generation)
 - **Neue Technik:** EMERGENCE (hero-v021-a) — Paradigm Synthesis: Editorial + ONE WebGL Signature
