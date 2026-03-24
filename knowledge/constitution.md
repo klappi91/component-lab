@@ -127,6 +127,7 @@ Der Unterschied:
 - agent-browser fuer QA
 
 ## Was NICHT funktioniert
+- **CSS 3D perspective + camera zoom:** Wenn Container `perspective: Xpx` hat und Camera-Kind per GSAP `translateZ(Y)` bekommt mit Y > X → alles HINTER dem Betrachter = unsichtbar. Elemente die NACH dem Zoom sichtbar sein muessen (Brand, CTA) MUESSEN ausserhalb des perspective-Containers leben.
 - Websites ohne echte Assets = langweilig
 - AI-Template Tells (corner marks, mono labels, cheesy copy)
 - scrub-Animationen fuer Reveals (opacity-0-Bug)

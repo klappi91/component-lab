@@ -233,8 +233,9 @@
     "builder_model": null,
     "run_id": "run-20260324-0820",
     "human_rating": null,
-    "human_comment": null,
-    "tags": ["typografie-only", "pixintcreators", "brand", "3d-perspective", "mouse-interactive", "translateZ", "preserve-3d", "zoom-through", "layer-flash", "ambient-particles", "canvas", "custom-cursor", "cursor-glow", "text-glow", "vignette", "grain", "mobile-fallback", "auto-tilt", "depth-parallax", "interactivity-first"]
+    "human_comment": "v007 langweilig. v008 Potenzial, aber Ende fehlte. v009 gut als Transition.",
+    "iteration_notes": "v2: Impact-Finale hinzugefuegt — Partikel-Konvergenz → Orange Glow-Pulse → Brand materialisiert → Tagline + CTA. Brand/Impact aus 3D-Camera rausgelöst (z>perspective = unsichtbar Bug). Corner marks entfernt.",
+    "tags": ["typografie-only", "pixintcreators", "brand", "3d-perspective", "mouse-interactive", "translateZ", "preserve-3d", "zoom-through", "layer-flash", "ambient-particles", "canvas", "custom-cursor", "cursor-glow", "text-glow", "vignette", "grain", "mobile-fallback", "auto-tilt", "depth-parallax", "interactivity-first", "impact-moment", "particle-convergence", "brand-emergence", "cta"]
   },
   {
     "id": "hero-v009-a",

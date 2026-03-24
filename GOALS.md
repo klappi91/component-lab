@@ -44,16 +44,8 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Uebergaenge zwischen Phasen verbessern
 - [ ] Mouse-Parallax auf TYPOGRAFIE-Buchstaben
 
-#### hero-v007-a: VOM PIXEL ZUR WEBSITE — Scroll-Driven Creation
-- [x] Chris-Feedback verarbeiten (Mail 23.03.: scroll-driven Video, Assets, sei mutig)
-- [x] Konzept: Browser-Mockup zeigt Website die sich beim Scrollen aufbaut (5 Phasen)
-- [x] Choreografie + Build (GSAP pin/scrub, chapter cards, progress bar)
-- [x] QA: Screenshots Desktop (Intro, Phasen, Outro OK)
-- [ ] gemini-image: echtes Hero-Image + Service-Illustrationen generieren
-- [ ] gemini-video: Scroll-driven Video fuer BEWEGUNG-Phase
-- [ ] Lenis Smooth Scroll
-- [ ] Wireframes sichtbarer (hellere Farbe, animated dash)
-- [ ] Chris zeigen, Feedback einholen
+#### hero-v007-a: VOM PIXEL ZUR WEBSITE — Scroll-Driven Creation (VERWORFEN)
+- [x] Chris-Feedback: "passiert nicht viel, langweilig" → nicht weiterverfolgt
 
 #### hero-v008-a: TYPOGRAPHIC DEPTH — 3D Parallax Typography
 - [x] Kris Temmerman recherchiert (neuroproductions.be, WebGPU, "Portfolio = Game")
@@ -62,7 +54,12 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Build: CSS 3D perspective + Canvas particles + Layer-Flash + Brand Reveal
 - [x] components.json aktualisiert
 - [x] Chris ueber v005-v007 per Mail informiert (3 neue Erlebnisse)
-- [ ] Chris-Feedback einholen
+- [x] Chris-Feedback: "hat Potenzial, aber am Ende fehlt abschliessendes Element"
+- [x] **v2: Impact-Finale — Partikel-Konvergenz → Orange Pulse → Brand materialisiert → CTA**
+- [x] **Bug: Brand/Impact aus 3D-Camera extrahiert (z>perspective = unsichtbar)**
+- [x] **QA: Alle 5 Phasen verifiziert (Initial → Zoom → Impact → Brand → CTA)**
+- [x] **Chris per Mail informiert**
+- [ ] Chris v2 Feedback abwarten
 - [ ] Optional: WebGL-Upgrade fuer dramatischere Tiefe
 
 #### hero-v009-a: MAGNETIC TYPE FIELD — Physics-Based Word Interaction

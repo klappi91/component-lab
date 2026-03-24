@@ -8,26 +8,22 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══════════════════════════════════════════════════════════
-   hero-v008-a: TYPOGRAPHIC DEPTH
+   hero-v008-a: TYPOGRAPHIC DEPTH — v2
    3D Parallax Typography — Mouse steuert Perspektive
 
-   ERSTES Erlebnis mit MOUSE-INTERAKTION (nicht nur scroll).
-   Mehrere massive Typography-Layer auf verschiedenen Z-Ebenen.
-   Mouse = 3D Perspektive (rotateX/Y) + Layer-Parallax.
-   Scroll = Zoom durch die Schichten + Brand Reveal.
+   v2: Chris-Feedback — "am Ende fehlt ein abschliessendes Element"
+   → IMPACT-MOMENT nach Zoom-Through hinzugefuegt
+   → Partikel konvergieren → Orange Pulse → Brand materialisiert
+   → CTA als Abschluss
 
-   Signature Moments:
-   1. Mouse bewegen = 3D Welt reagiert (sofort)
-   2. Layer-Flash beim Durchfliegen (Scroll)
-   3. Ambient Particles im Raum (Canvas, maus-reaktiv)
-   4. Brand Reveal nach Zoom-Through
-
-   Choreografie:
+   Choreografie (v2):
    - Entrance: Dunkelheit → Partikel erscheinen → Layers gestaffelt
    - Idle: Mouse = 3D tilt + parallax + Partikel reagieren
    - Scroll 0-55%: Zoom through — jeder Layer flasht und fliegt vorbei
-   - Scroll 55-75%: Raum wird still, Brand waechst
-   - Scroll 75-100%: Tagline + Subtitle + Decorative Line
+   - Scroll 50-62%: IMPACT — Partikel konvergieren, orange Pulse
+   - Scroll 60-80%: Brand MATERIALISIERT aus der Energie
+   - Scroll 80-95%: Tagline + Subtitle + Line
+   - Scroll 92-100%: CTA Einladung
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── Brand ─── */
@@ -112,7 +108,7 @@ const BRAND = {
 };
 
 /* ─── Particle System ─── */
-const PARTICLE_COUNT = 120;
+const PARTICLE_COUNT = 150;
 
 interface Particle {
   x: number;
@@ -157,6 +153,8 @@ export default function HeroV008A() {
   const taglineRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const impactRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   const cursorGlowRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -164,6 +162,7 @@ export default function HeroV008A() {
   const flashRefs = useRef<(HTMLDivElement | null)[]>([]);
   const particles = useRef<Particle[]>([]);
   const mouseScreen = useRef({ x: 0, y: 0 });
+  const scrollProgressRef = useRef(0);
   const animFrame = useRef<number>(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -172,7 +171,7 @@ export default function HeroV008A() {
     setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
   }, []);
 
-  /* ─── Particle canvas ─── */
+  /* ─── Particle canvas (scroll-aware) ─── */
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -198,39 +197,103 @@ export default function HeroV008A() {
 
       const mx = mouseScreen.current.x;
       const my = mouseScreen.current.y;
+      const sp = scrollProgressRef.current;
+
+      // Impact phase detection
+      const impactPhase = sp > 0.48 && sp < 0.66;
+      const impactPeak = 0.56;
+      const impactIntensity = impactPhase
+        ? sp < impactPeak
+          ? Math.min(1, (sp - 0.48) / 0.08)
+          : Math.max(0, 1 - (sp - impactPeak) / 0.10)
+        : 0;
 
       for (const p of particles.current) {
-        // Drift
-        p.x += p.vx * p.speed;
-        p.y += p.vy * p.speed;
+        // Drift (reduced during impact)
+        if (!impactPhase) {
+          p.x += p.vx * p.speed;
+          p.y += p.vy * p.speed;
+        } else {
+          p.x += p.vx * p.speed * (1 - impactIntensity * 0.8);
+          p.y += p.vy * p.speed * (1 - impactIntensity * 0.8);
+        }
 
-        // Wrap
-        if (p.x < -10) p.x = w + 10;
-        if (p.x > w + 10) p.x = -10;
-        if (p.y < -10) p.y = h + 10;
-        if (p.y > h + 10) p.y = -10;
+        // Wrap (skip during impact to prevent teleporting)
+        if (!impactPhase) {
+          if (p.x < -10) p.x = w + 10;
+          if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10;
+          if (p.y > h + 10) p.y = -10;
+        }
 
-        // Mouse repulsion (gentle)
-        if (!isMobile) {
+        // Mouse repulsion (reduced during impact)
+        if (!isMobile && impactIntensity < 0.5) {
           const dx = p.x - mx;
           const dy = p.y - my;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 200) {
             const force = (200 - dist) / 200;
-            p.x += (dx / dist) * force * 2;
-            p.y += (dy / dist) * force * 2;
+            p.x += (dx / dist) * force * 2 * (1 - impactIntensity);
+            p.y += (dy / dist) * force * 2 * (1 - impactIntensity);
+          }
+        }
+
+        // IMPACT: Converge to center then explode outward
+        if (impactPhase) {
+          const centerX = w / 2;
+          const centerY = h / 2;
+          const dx = centerX - p.x;
+          const dy = centerY - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (sp < impactPeak) {
+            // CONVERGE — particles rush inward
+            if (dist > 5) {
+              const force = impactIntensity * 7 * p.speed;
+              p.x += (dx / dist) * force;
+              p.y += (dy / dist) * force;
+            }
+          } else {
+            // EXPLODE — particles burst outward
+            if (dist > 2) {
+              const explodeForce = (1 - impactIntensity) * 5 * p.speed;
+              p.x -= (dx / dist) * explodeForce;
+              p.y -= (dy / dist) * explodeForce;
+            }
           }
         }
 
         // Draw
         const depthScale = 0.3 + p.z * 0.7;
+        const impactSizeBoost = impactPhase ? 1 + impactIntensity * 2.5 : 1;
+
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * depthScale, 0, Math.PI * 2);
-        ctx.fillStyle =
-          p.z > 0.7
-            ? `rgba(255,107,0,${p.opacity * depthScale})`
-            : `rgba(255,255,255,${p.opacity * depthScale * 0.6})`;
+        ctx.arc(p.x, p.y, p.size * depthScale * impactSizeBoost, 0, Math.PI * 2);
+
+        // Color: all glow orange during impact
+        if (impactIntensity > 0.3) {
+          const glow = Math.min(1, p.opacity * depthScale + impactIntensity * 0.6);
+          ctx.fillStyle = `rgba(255,107,0,${glow})`;
+        } else {
+          ctx.fillStyle =
+            p.z > 0.7
+              ? `rgba(255,107,0,${p.opacity * depthScale})`
+              : `rgba(255,255,255,${p.opacity * depthScale * 0.6})`;
+        }
         ctx.fill();
+      }
+
+      // Impact center glow (canvas-level, additional to the CSS glow)
+      if (impactIntensity > 0.2) {
+        const gradient = ctx.createRadialGradient(
+          w / 2, h / 2, 0,
+          w / 2, h / 2, 200 * impactIntensity
+        );
+        gradient.addColorStop(0, `rgba(255,107,0,${impactIntensity * 0.4})`);
+        gradient.addColorStop(0.5, `rgba(255,107,0,${impactIntensity * 0.15})`);
+        gradient.addColorStop(1, "rgba(255,107,0,0)");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, w, h);
       }
 
       animFrame.current = requestAnimationFrame(draw);
@@ -317,7 +380,9 @@ export default function HeroV008A() {
       duration: 6,
       ease: "sine.inOut",
     });
-    return () => { tl.kill(); };
+    return () => {
+      tl.kill();
+    };
   }, [isMobile]);
 
   /* ─── GSAP Animations ─── */
@@ -329,12 +394,17 @@ export default function HeroV008A() {
       const tagline = taglineRef.current;
       const subtitle = subtitleRef.current;
       const line = lineRef.current;
+      const impact = impactRef.current;
+      const cta = ctaRef.current;
 
       /* ─── Initial states ─── */
+      // Brand stays HIDDEN — only revealed during impact
       if (brand) gsap.set(brand, { opacity: 0, scale: 0.7 });
       if (tagline) gsap.set(tagline, { opacity: 0, y: 50 });
       if (subtitle) gsap.set(subtitle, { opacity: 0, y: 30 });
       if (line) gsap.set(line, { scaleX: 0, opacity: 0 });
+      if (impact) gsap.set(impact, { opacity: 0, scale: 0.3 });
+      if (cta) gsap.set(cta, { opacity: 0, y: 20 });
 
       layerRefs.current.forEach((el) => {
         if (el) gsap.set(el, { opacity: 0, scale: 0.5 });
@@ -343,10 +413,10 @@ export default function HeroV008A() {
         if (el) gsap.set(el, { opacity: 0 });
       });
 
-      /* ─── Entrance timeline ─── */
+      /* ─── Entrance timeline (layers only, no brand) ─── */
       const entrance = gsap.timeline({ delay: 0.3 });
 
-      // Layers stagger in (deepest first = most dramatic)
+      // Layers stagger in (deepest first)
       layerRefs.current.forEach((el, i) => {
         if (!el) return;
         entrance.to(
@@ -361,18 +431,6 @@ export default function HeroV008A() {
         );
       });
 
-      // Brand entrance (overlapping with last layers)
-      entrance.to(
-        brand,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.6,
-          ease: "expo.out",
-        },
-        0.5
-      );
-
       /* ─── Scroll timeline ─── */
       const scroll = gsap.timeline({
         scrollTrigger: {
@@ -381,6 +439,9 @@ export default function HeroV008A() {
           end: "bottom bottom",
           scrub: 1.5,
           pin: sceneRef.current,
+          onUpdate: (self) => {
+            scrollProgressRef.current = self.progress;
+          },
         },
       });
 
@@ -436,41 +497,76 @@ export default function HeroV008A() {
         );
       });
 
-      /* Phase 2: Brand grows (55% → 75%) */
-      scroll.to(
-        brand,
-        {
-          scale: 1.12,
-          duration: 0.2,
-          ease: "power4.inOut",
-        },
-        0.55
-      );
+      /* Phase 2: IMPACT — energy converges (53% → 62%) */
+      // The CSS glow pulses (particles handle canvas glow separately)
+      if (impact) {
+        // Glow builds
+        scroll.to(
+          impact,
+          { opacity: 1, scale: 1.5, duration: 0.05, ease: "power2.in" },
+          0.51
+        );
+        // Peak flash
+        scroll.to(
+          impact,
+          { scale: 3, opacity: 0.8, duration: 0.03, ease: "none" },
+          0.56
+        );
+        // Glow expands and fades
+        scroll.to(
+          impact,
+          { scale: 5, opacity: 0, duration: 0.08, ease: "expo.out" },
+          0.59
+        );
+      }
 
-      /* Phase 3: Final reveal (75% → 100%) */
-      scroll.to(
-        brand,
-        { scale: 1, duration: 0.08, ease: "power2.out" },
-        0.75
-      );
+      /* Phase 3: Brand MATERIALIZES from the energy (60% → 80%) */
+      if (brand) {
+        scroll.to(
+          brand,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.18,
+            ease: "expo.out",
+          },
+          0.60
+        );
+      }
 
-      scroll.to(
-        tagline,
-        { opacity: 1, y: 0, duration: 0.1, ease: "expo.out" },
-        0.78
-      );
+      /* Phase 4: Details reveal (80% → 95%) */
+      if (tagline) {
+        scroll.to(
+          tagline,
+          { opacity: 1, y: 0, duration: 0.08, ease: "expo.out" },
+          0.80
+        );
+      }
 
-      scroll.to(
-        subtitle,
-        { opacity: 1, y: 0, duration: 0.1, ease: "expo.out" },
-        0.85
-      );
+      if (subtitle) {
+        scroll.to(
+          subtitle,
+          { opacity: 1, y: 0, duration: 0.08, ease: "expo.out" },
+          0.85
+        );
+      }
 
-      scroll.to(
-        line,
-        { scaleX: 1, opacity: 1, duration: 0.12, ease: "expo.out" },
-        0.9
-      );
+      if (line) {
+        scroll.to(
+          line,
+          { scaleX: 1, opacity: 1, duration: 0.08, ease: "expo.out" },
+          0.88
+        );
+      }
+
+      /* Phase 5: CTA invitation (92% → 100%) */
+      if (cta) {
+        scroll.to(
+          cta,
+          { opacity: 1, y: 0, duration: 0.08, ease: "power2.out" },
+          0.92
+        );
+      }
     },
     { scope: wrapRef }
   );
@@ -525,7 +621,6 @@ export default function HeroV008A() {
                 border: `1.5px solid ${ORANGE}`,
                 pointerEvents: "none",
                 zIndex: 9999,
-                mixBlendMode: "difference",
               }}
             >
               <div
@@ -555,7 +650,7 @@ export default function HeroV008A() {
             background: DARK,
           }}
         >
-          {/* Ambient particles */}
+          {/* Ambient particles (scroll-aware) */}
           <canvas
             ref={canvasRef}
             style={{
@@ -599,7 +694,9 @@ export default function HeroV008A() {
                 >
                   {/* Flash overlay for this layer */}
                   <div
-                    ref={(el) => { flashRefs.current[i] = el; }}
+                    ref={(el) => {
+                      flashRefs.current[i] = el;
+                    }}
                     style={{
                       position: "absolute",
                       inset: 0,
@@ -613,7 +710,9 @@ export default function HeroV008A() {
                   />
                   {/* Text */}
                   <div
-                    ref={(el) => { layerRefs.current[i] = el; }}
+                    ref={(el) => {
+                      layerRefs.current[i] = el;
+                    }}
                     style={{
                       position: "absolute",
                       inset: 0,
@@ -645,98 +744,167 @@ export default function HeroV008A() {
                 </div>
               ))}
 
-              {/* Brand layer (z=0) */}
-              <div
-                ref={brandRef}
+            </div>
+          </div>
+
+          {/* Impact glow — OUTSIDE 3D to avoid camera z-clip */}
+          <div
+            ref={impactRef}
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "50vmin",
+              height: "50vmin",
+              transform: "translate(-50%, -50%)",
+              borderRadius: "50%",
+              background: `radial-gradient(circle, ${ORANGE}80 0%, ${ORANGE}30 35%, ${ORANGE}08 60%, transparent 80%)`,
+              opacity: 0,
+              pointerEvents: "none",
+              zIndex: 8,
+              filter: "blur(30px)",
+            }}
+          />
+
+          {/* Brand overlay — OUTSIDE 3D, unaffected by camera zoom */}
+          <div
+            ref={brandRef}
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+              opacity: 0,
+              willChange: "transform, opacity",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+                fontSize: "clamp(48px, 12vw, 180px)",
+                fontWeight: 700,
+                color: LIGHT,
+                letterSpacing: "-0.04em",
+                lineHeight: 0.85,
+                textAlign: "center",
+                textShadow: `0 0 80px rgba(255,255,255,0.08)`,
+              }}
+            >
+              {BRAND.line1}
+            </div>
+            <div
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontSize: "clamp(36px, 8vw, 120px)",
+                fontWeight: 400,
+                fontStyle: "italic",
+                color: ORANGE,
+                letterSpacing: "0.02em",
+                lineHeight: 1,
+                marginTop: "-0.5vw",
+                textAlign: "center",
+                textShadow: `0 0 60px rgba(255,107,0,0.3), 0 0 120px rgba(255,107,0,0.1)`,
+              }}
+            >
+              {BRAND.line2}
+            </div>
+
+            <div
+              ref={taglineRef}
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+                fontSize: "clamp(14px, 2vw, 28px)",
+                fontWeight: 500,
+                color: LIGHT,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                marginTop: "clamp(24px, 4vh, 48px)",
+                opacity: 0,
+              }}
+            >
+              {BRAND.tagline}
+            </div>
+
+            <div
+              ref={subtitleRef}
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontSize: "clamp(12px, 1.4vw, 20px)",
+                fontWeight: 400,
+                fontStyle: "italic",
+                color: `${LIGHT}88`,
+                marginTop: "clamp(8px, 1.5vh, 16px)",
+                opacity: 0,
+              }}
+            >
+              {BRAND.subtitle}
+            </div>
+
+            <div
+              ref={lineRef}
+              style={{
+                width: "clamp(40px, 6vw, 80px)",
+                height: 2,
+                background: ORANGE,
+                marginTop: "clamp(20px, 3vh, 40px)",
+                borderRadius: 1,
+                transformOrigin: "center",
+                opacity: 0,
+              }}
+            />
+
+            {/* CTA — choreographic ending */}
+            <div
+              ref={ctaRef}
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+                fontSize: "clamp(11px, 1.1vw, 15px)",
+                fontWeight: 400,
+                color: ORANGE,
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                marginTop: "clamp(32px, 5vh, 64px)",
+                opacity: 0,
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                pointerEvents: "auto",
+                cursor: "pointer",
+                transition: "letter-spacing 0.4s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.letterSpacing = "0.4em";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.letterSpacing = "0.25em";
+              }}
+            >
+              <span>Erlebnis starten</span>
+              <span
                 style={{
-                  position: "absolute",
-                  inset: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  transformStyle: "preserve-3d",
-                  transform: "translateZ(0px)",
-                  zIndex: 10,
-                  opacity: 0,
-                  willChange: "transform, opacity",
+                  display: "inline-block",
+                  width: 24,
+                  height: 1,
+                  background: ORANGE,
+                  position: "relative",
                 }}
               >
-                <div
+                <span
                   style={{
-                    fontFamily: "'Clash Display', sans-serif",
-                    fontSize: "clamp(48px, 12vw, 180px)",
-                    fontWeight: 700,
-                    color: LIGHT,
-                    letterSpacing: "-0.04em",
-                    lineHeight: 0.85,
-                    textAlign: "center",
-                    textShadow: `0 0 80px rgba(255,255,255,0.08)`,
-                  }}
-                >
-                  {BRAND.line1}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "'Instrument Serif', serif",
-                    fontSize: "clamp(36px, 8vw, 120px)",
-                    fontWeight: 400,
-                    fontStyle: "italic",
-                    color: ORANGE,
-                    letterSpacing: "0.02em",
-                    lineHeight: 1,
-                    marginTop: "-0.5vw",
-                    textAlign: "center",
-                    textShadow: `0 0 60px rgba(255,107,0,0.3), 0 0 120px rgba(255,107,0,0.1)`,
-                  }}
-                >
-                  {BRAND.line2}
-                </div>
-
-                <div
-                  ref={taglineRef}
-                  style={{
-                    fontFamily: "'Clash Display', sans-serif",
-                    fontSize: "clamp(14px, 2vw, 28px)",
-                    fontWeight: 500,
-                    color: LIGHT,
-                    letterSpacing: "0.15em",
-                    textTransform: "uppercase",
-                    marginTop: "clamp(24px, 4vh, 48px)",
-                    opacity: 0,
-                  }}
-                >
-                  {BRAND.tagline}
-                </div>
-
-                <div
-                  ref={subtitleRef}
-                  style={{
-                    fontFamily: "'Instrument Serif', serif",
-                    fontSize: "clamp(12px, 1.4vw, 20px)",
-                    fontWeight: 400,
-                    fontStyle: "italic",
-                    color: `${LIGHT}88`,
-                    marginTop: "clamp(8px, 1.5vh, 16px)",
-                    opacity: 0,
-                  }}
-                >
-                  {BRAND.subtitle}
-                </div>
-
-                <div
-                  ref={lineRef}
-                  style={{
-                    width: "clamp(40px, 6vw, 80px)",
-                    height: 2,
-                    background: ORANGE,
-                    marginTop: "clamp(20px, 3vh, 40px)",
-                    borderRadius: 1,
-                    transformOrigin: "center",
-                    opacity: 0,
+                    position: "absolute",
+                    right: 0,
+                    top: -3,
+                    width: 7,
+                    height: 7,
+                    borderRight: `1px solid ${ORANGE}`,
+                    borderTop: `1px solid ${ORANGE}`,
+                    transform: "rotate(45deg)",
                   }}
                 />
-              </div>
+              </span>
             </div>
           </div>
 
@@ -801,35 +969,6 @@ export default function HeroV008A() {
               opacity: 0.4,
             }}
           />
-
-          {/* Corner marks */}
-          <div style={{ position: "absolute", top: 24, left: 24, zIndex: 20 }}>
-            <span
-              style={{
-                fontFamily: "'Clash Display', sans-serif",
-                fontSize: 11,
-                fontWeight: 500,
-                color: `${LIGHT}33`,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-              }}
-            >
-              008-a
-            </span>
-          </div>
-          <div style={{ position: "absolute", top: 24, right: 24, zIndex: 20 }}>
-            <span
-              style={{
-                fontFamily: "'Clash Display', sans-serif",
-                fontSize: 11,
-                fontWeight: 500,
-                color: `${LIGHT}33`,
-                letterSpacing: "0.15em",
-              }}
-            >
-              Typographic Depth
-            </span>
-          </div>
         </div>
       </div>
     </>
