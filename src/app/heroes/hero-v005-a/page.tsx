@@ -8,8 +8,9 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══════════════════════════════════════════════════════════
-   PIXEL GENESIS — Vom Pixel zur Website
-   Scroll-driven Particle → Image Transformation
+   PIXEL GENESIS v2 — Echte Website → Pixel → Zusammensetzen
+   Chris-Feedback: "Eine Webseite in echte Pixel zerlegen,
+   die wenn alle wieder zusammen kommen das Bild ergeben"
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── Brand ─── */
@@ -17,13 +18,9 @@ const ORANGE = "#FF6B00";
 const DARK = "#0A0A0A";
 const LIGHT = "#F5F5F0";
 const MUTED = "#555";
+const OR = 255, OG = 107, OB = 0;
 
-/* ─── Particle Grid ─── */
-const GRID_COLS = 52;
-const GRID_ROWS = 30;
-const TOTAL = GRID_COLS * GRID_ROWS; // 1560
-
-/* ─── Phase definitions ─── */
+/* ─── Phases ─── */
 const PHASES = [
   { num: "01", label: "Der Pixel.", sub: "Alles beginnt hier." },
   { num: "02", label: "Die Ordnung.", sub: "Struktur entsteht." },
@@ -32,23 +29,14 @@ const PHASES = [
 ];
 
 /* ─── Easing ─── */
-function lerp(a: number, b: number, t: number) {
-  return a + (b - a) * t;
-}
-function clamp01(v: number) {
-  return v < 0 ? 0 : v > 1 ? 1 : v;
-}
-function easeOutExpo(t: number) {
-  return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
-}
-function easeInOutQuart(t: number) {
-  return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
-}
-function easeOutCubic(t: number) {
-  return 1 - Math.pow(1 - t, 3);
-}
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+const easeOutExpo = (t: number) => (t >= 1 ? 1 : 1 - 2 ** (-10 * t));
+const easeInOutQuart = (t: number) =>
+  t < 0.5 ? 8 * t ** 4 : 1 - (-2 * t + 2) ** 4 / 2;
+const easeOutCubic = (t: number) => 1 - (1 - t) ** 3;
 
-/* ─── Particle type ─── */
+/* ─── Types ─── */
 interface Particle {
   chaosX: number;
   chaosY: number;
@@ -57,124 +45,96 @@ interface Particle {
   r: number;
   g: number;
   b: number;
-  fullSize: number;
+  cellW: number;
+  cellH: number;
   delay: number;
+  colorDelay: number;
   seed: number;
 }
 
-/* ─── Fallback: procedural website wireframe ─── */
-function createFallbackImage(w: number, h: number): ImageData {
-  const c = document.createElement("canvas");
-  c.width = w;
-  c.height = h;
-  const ctx = c.getContext("2d")!;
-
-  // Background
-  ctx.fillStyle = DARK;
-  ctx.fillRect(0, 0, w, h);
-
-  // Nav bar
-  ctx.fillStyle = "#111";
-  ctx.fillRect(0, 0, w, h * 0.055);
-  ctx.fillStyle = ORANGE;
-  ctx.fillRect(w * 0.04, h * 0.015, w * 0.07, h * 0.025);
-  // Nav links
-  for (let i = 0; i < 4; i++) {
-    ctx.fillStyle = "#444";
-    ctx.fillRect(w * 0.55 + i * w * 0.1, h * 0.02, w * 0.06, h * 0.015);
-  }
-
-  // Hero section — large block
-  ctx.fillStyle = "#131313";
-  ctx.fillRect(w * 0.04, h * 0.08, w * 0.92, h * 0.38);
-  // Hero text simulation
-  ctx.fillStyle = LIGHT;
-  ctx.font = `bold ${Math.round(h * 0.09)}px sans-serif`;
-  ctx.fillText("WIR CODIEREN", w * 0.08, h * 0.24);
-  ctx.fillStyle = ORANGE;
-  ctx.font = `italic bold ${Math.round(h * 0.09)}px serif`;
-  ctx.fillText("ERLEBNISSE", w * 0.08, h * 0.36);
-  // Hero accent line
-  ctx.fillStyle = ORANGE;
-  ctx.fillRect(w * 0.08, h * 0.39, w * 0.15, h * 0.004);
-
-  // Three service cards
-  const cardW = w * 0.28;
-  const cardH = h * 0.3;
-  const cardY = h * 0.52;
-  for (let i = 0; i < 3; i++) {
-    const cx = w * 0.04 + i * (cardW + w * 0.02);
-    // Card bg
-    ctx.fillStyle = "#0F0F0F";
-    ctx.fillRect(cx, cardY, cardW, cardH);
-    // Top accent
-    ctx.fillStyle = i === 0 ? ORANGE : "#222";
-    ctx.fillRect(cx, cardY, cardW, h * 0.004);
-    // Number
-    ctx.fillStyle = "#1A1A1A";
-    ctx.font = `bold ${Math.round(h * 0.14)}px sans-serif`;
-    ctx.fillText(`0${i + 1}`, cx + cardW * 0.06, cardY + cardH * 0.55);
-    // Text lines
-    ctx.fillStyle = "#333";
-    ctx.fillRect(cx + cardW * 0.06, cardY + cardH * 0.65, cardW * 0.7, h * 0.01);
-    ctx.fillRect(cx + cardW * 0.06, cardY + cardH * 0.75, cardW * 0.5, h * 0.008);
-  }
-
-  // Footer
-  ctx.fillStyle = "#0C0C0C";
-  ctx.fillRect(0, h * 0.88, w, h * 0.12);
-  ctx.fillStyle = ORANGE;
-  ctx.fillRect(w * 0.04, h * 0.92, w * 0.05, h * 0.015);
-  ctx.fillStyle = "#333";
-  ctx.fillRect(w * 0.04, h * 0.95, w * 0.2, h * 0.008);
-
-  return ctx.getImageData(0, 0, w, h);
+interface ImgArea {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  cols: number;
+  rows: number;
+  cellW: number;
+  cellH: number;
 }
 
-/* ─── Init particles from image data ─── */
-function initParticles(
-  imageData: ImageData,
-  canvasW: number,
-  canvasH: number
+/* ─── Calculate image area + grid ─── */
+function calcArea(cw: number, ch: number, imgW: number, imgH: number): ImgArea {
+  const aspect = imgW / imgH;
+  let w = cw * 0.82;
+  let h = w / aspect;
+  if (h > ch * 0.82) {
+    h = ch * 0.82;
+    w = h * aspect;
+  }
+  const x = (cw - w) / 2;
+  const y = (ch - h) / 2;
+
+  // Responsive particle size: ~14px on desktop, ~10px on mobile
+  const targetSize = Math.max(10, Math.min(16, cw / 130));
+  const cols = Math.max(30, Math.floor(w / targetSize));
+  const rows = Math.max(18, Math.floor(h / targetSize));
+
+  return { x, y, w, h, cols, rows, cellW: w / cols, cellH: h / rows };
+}
+
+/* ─── Create particles from image data ─── */
+function createParticles(
+  imgData: ImageData,
+  area: ImgArea,
+  cw: number,
+  ch: number
 ): Particle[] {
   const particles: Particle[] = [];
-  const cellW = canvasW / GRID_COLS;
-  const cellH = canvasH / GRID_ROWS;
+  const { x: ox, y: oy, cols, rows, cellW, cellH } = area;
 
-  for (let row = 0; row < GRID_ROWS; row++) {
-    for (let col = 0; col < GRID_COLS; col++) {
-      // Sample image pixel
-      const sx = Math.floor((col / GRID_COLS) * imageData.width);
-      const sy = Math.floor((row / GRID_ROWS) * imageData.height);
-      const idx = (sy * imageData.width + sx) * 4;
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      // Sample center of grid cell from image
+      const sx = Math.floor(((col + 0.5) / cols) * imgData.width);
+      const sy = Math.floor(((row + 0.5) / rows) * imgData.height);
+      const idx = (sy * imgData.width + sx) * 4;
 
       // Target position
-      const imgX = col * cellW + cellW / 2;
-      const imgY = row * cellH + cellH / 2;
+      const imgX = ox + col * cellW + cellW / 2;
+      const imgY = oy + row * cellH + cellH / 2;
 
-      // Chaos burst from center
+      // Chaos: burst from center in all directions
       const angle = Math.random() * Math.PI * 2;
-      const dist = 80 + Math.random() * Math.max(canvasW, canvasH) * 0.55;
+      const dist = 120 + Math.random() * Math.max(cw, ch) * 0.6;
+
+      // Distance from center → color delay (center pixels reveal color first)
+      const dx = col / cols - 0.5;
+      const dy = row / rows - 0.5;
+      const distNorm = Math.sqrt(dx * dx + dy * dy) / 0.707; // normalize to 0-1
 
       particles.push({
-        chaosX: canvasW / 2 + Math.cos(angle) * dist,
-        chaosY: canvasH / 2 + Math.sin(angle) * dist,
+        chaosX: cw / 2 + Math.cos(angle) * dist,
+        chaosY: ch / 2 + Math.sin(angle) * dist,
         imgX,
         imgY,
-        r: imageData.data[idx],
-        g: imageData.data[idx + 1],
-        b: imageData.data[idx + 2],
-        fullSize: Math.max(cellW, cellH) * 1.08,
-        delay: Math.random() * 0.12,
+        r: imgData.data[idx],
+        g: imgData.data[idx + 1],
+        b: imgData.data[idx + 2],
+        cellW,
+        cellH,
+        delay: Math.random() * 0.08,
+        colorDelay: distNorm * 0.25 + Math.random() * 0.1,
         seed: Math.random() * 1000,
       });
     }
   }
+
   return particles;
 }
 
 /* ═══════════════════════════════════════════════════════════
-   MAIN COMPONENT
+   COMPONENT
    ═══════════════════════════════════════════════════════════ */
 
 export default function HeroV005A() {
@@ -183,152 +143,138 @@ export default function HeroV005A() {
   const genesisRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const revealRef = useRef<HTMLElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   const progressRef = useRef(0);
   const particlesRef = useRef<Particle[]>([]);
   const rafRef = useRef(0);
-  const cursorRef = useRef<HTMLDivElement>(null);
+  const imgElRef = useRef<HTMLImageElement | null>(null);
+  const areaRef = useRef<ImgArea | null>(null);
 
-  /* ─── Canvas + Particle System ─── */
+  /* ═══ Canvas + Particle System ═══ */
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     let cw = window.innerWidth;
     let ch = window.innerHeight;
-    canvas.width = cw;
-    canvas.height = ch;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    const setCanvasSize = () => {
+      canvas.width = cw * dpr;
+      canvas.height = ch * dpr;
+      canvas.style.width = cw + "px";
+      canvas.style.height = ch + "px";
+    };
+    setCanvasSize();
+
+    const ctx = canvas.getContext("2d")!;
+    ctx.scale(dpr, dpr);
 
     const onResize = () => {
       cw = window.innerWidth;
       ch = window.innerHeight;
-      canvas.width = cw;
-      canvas.height = ch;
+      setCanvasSize();
+      ctx.resetTransform();
+      ctx.scale(dpr, dpr);
     };
     window.addEventListener("resize", onResize);
 
-    // Load image or use fallback
-    const loadTarget = (): Promise<ImageData> =>
-      new Promise((resolve) => {
-        const img = new Image();
-        img.crossOrigin = "anonymous";
-        img.src = "/heroes/hero-v005-a/target.png";
+    // ─── Load target image ───
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = "/heroes/hero-v005-a/target.png";
 
-        const timeout = setTimeout(() => {
-          resolve(createFallbackImage(560, 320));
-        }, 1500);
+    img.onload = () => {
+      imgElRef.current = img;
+      const area = calcArea(cw, ch, img.naturalWidth, img.naturalHeight);
+      areaRef.current = area;
 
-        img.onload = () => {
-          clearTimeout(timeout);
-          const off = document.createElement("canvas");
-          off.width = img.width;
-          off.height = img.height;
-          const offCtx = off.getContext("2d")!;
-          offCtx.drawImage(img, 0, 0);
-          resolve(offCtx.getImageData(0, 0, img.width, img.height));
-        };
-        img.onerror = () => {
-          clearTimeout(timeout);
-          resolve(createFallbackImage(560, 320));
-        };
-      });
+      // Extract pixel data
+      const off = document.createElement("canvas");
+      off.width = img.naturalWidth;
+      off.height = img.naturalHeight;
+      const offCtx = off.getContext("2d")!;
+      offCtx.drawImage(img, 0, 0);
+      const imgData = offCtx.getImageData(0, 0, img.naturalWidth, img.naturalHeight);
 
-    loadTarget().then((imageData) => {
-      particlesRef.current = initParticles(imageData, cw, ch);
-    });
+      particlesRef.current = createParticles(imgData, area, cw, ch);
+    };
 
     // ─── Render Loop ───
-    const ctx = canvas.getContext("2d")!;
-
     const render = () => {
       ctx.clearRect(0, 0, cw, ch);
       const p = progressRef.current;
       const particles = particlesRef.current;
+      const area = areaRef.current;
       const t = performance.now() * 0.001;
 
-      // Pre-load: single pulsing pixel
+      // Pre-load: pulsing pixel
       if (particles.length === 0) {
         const pulse = Math.sin(t * 3) * 0.3 + 0.7;
         ctx.fillStyle = ORANGE;
         ctx.globalAlpha = pulse;
         ctx.fillRect(cw / 2 - 3, ch / 2 - 3, 6, 6);
-        ctx.globalAlpha = pulse * 0.12;
-        ctx.fillRect(cw / 2 - 25, ch / 2 - 25, 50, 50);
+        ctx.globalAlpha = pulse * 0.08;
+        ctx.fillRect(cw / 2 - 22, ch / 2 - 22, 44, 44);
         ctx.globalAlpha = 1;
         rafRef.current = requestAnimationFrame(render);
         return;
       }
 
-      /* ─── Draw particles based on scroll progress ─── */
+      /* ═══ DRAW PARTICLES ═══ */
       for (let i = 0; i < particles.length; i++) {
         const px = particles[i];
+        let x: number, y: number, size: number;
+        let cr: number, cg: number, cb: number, alpha: number;
 
-        let x: number,
-          y: number,
-          size: number,
-          cr: number,
-          cg: number,
-          cb: number,
-          alpha: number;
+        if (p < 0.12) {
+          /* ── Phase 1: EMERGENCE — pixel explodes into orange particles ── */
+          const pt = clamp01(p / 0.12);
+          if (pt < px.delay * 5) continue;
 
-        if (p < 0.18) {
-          /* ── Phase 1: EMERGENCE — single pixel explodes into chaos ── */
-          const pt = clamp01(p / 0.18);
-          const visible = pt > px.delay * 4;
-          if (!visible) continue;
-
-          const moveT = easeOutExpo(clamp01((pt - px.delay * 4) * 1.8));
+          const moveT = easeOutExpo(clamp01((pt - px.delay * 5) * 2));
           x = lerp(cw / 2, px.chaosX, moveT);
           y = lerp(ch / 2, px.chaosY, moveT);
 
           // Living noise
-          x += Math.sin(t * 2.5 + px.seed) * 5 * moveT;
-          y += Math.cos(t * 2.1 + px.seed * 1.3) * 5 * moveT;
+          x += Math.sin(t * 2.5 + px.seed) * 4 * moveT;
+          y += Math.cos(t * 2.1 + px.seed * 1.3) * 4 * moveT;
 
-          size = 2 + moveT * 2.5;
-          cr = 255;
-          cg = 107;
-          cb = 0;
-          alpha = moveT * 0.8;
-        } else if (p < 0.48) {
-          /* ── Phase 2: ORDER — chaos flows to image positions ── */
-          const pt = clamp01((p - 0.18) / 0.3);
-          const et = easeInOutQuart(pt);
+          size = 2 + moveT * 3;
+          cr = OR;
+          cg = OG;
+          cb = OB;
+          alpha = 0.3 + moveT * 0.5;
+        } else if (p < 0.55) {
+          /* ── Phase 2: ORDER + COLOR MORPH ──
+             Particles fly to positions. Colors smoothly morph
+             from orange to real image colors, center-first. */
+          const pt = clamp01((p - 0.12) / 0.43);
+          const moveT = easeInOutQuart(pt);
 
-          x = lerp(px.chaosX, px.imgX, et);
-          y = lerp(px.chaosY, px.imgY, et);
+          x = lerp(px.chaosX, px.imgX, moveT);
+          y = lerp(px.chaosY, px.imgY, moveT);
 
-          // Fading noise
-          const noise = (1 - et) * 4;
+          // Noise fades as particles settle
+          const noise = (1 - moveT) * 5;
           x += Math.sin(t * 1.5 + px.seed) * noise;
           y += Math.cos(t * 1.2 + px.seed * 1.3) * noise;
 
-          // Color starts hinting
-          const colorHint = et * 0.15;
-          cr = Math.round(lerp(255, px.r, colorHint));
-          cg = Math.round(lerp(107, px.g, colorHint));
-          cb = Math.round(lerp(0, px.b, colorHint));
+          // Smooth color morph with per-particle offset
+          const rawColorT = clamp01((pt - px.colorDelay) / (0.85 - px.colorDelay));
+          const colorT = easeOutCubic(rawColorT);
+          cr = Math.round(lerp(OR, px.r, colorT));
+          cg = Math.round(lerp(OG, px.g, colorT));
+          cb = Math.round(lerp(OB, px.b, colorT));
 
-          size = lerp(4, px.fullSize * 0.45, et);
-          alpha = 0.8 + et * 0.2;
-        } else if (p < 0.76) {
-          /* ── Phase 3: COLOR — orange resolves to actual image colors ── */
-          const pt = clamp01((p - 0.48) / 0.28);
-          const et = easeOutCubic(pt);
-
-          x = px.imgX;
-          y = px.imgY;
-
-          const colorT = 0.15 + et * 0.85;
-          cr = Math.round(lerp(255, px.r, colorT));
-          cg = Math.round(lerp(107, px.g, colorT));
-          cb = Math.round(lerp(0, px.b, colorT));
-
-          size = lerp(px.fullSize * 0.45, px.fullSize * 0.85, et);
-          alpha = 1;
-        } else {
-          /* ── Phase 4: SHARPEN — full resolution, blocks merge ── */
-          const pt = clamp01((p - 0.76) / 0.24);
+          // Size grows as particles approach positions
+          const maxCell = Math.max(px.cellW, px.cellH);
+          size = lerp(4, maxCell * 0.65, moveT);
+          alpha = 0.8 + moveT * 0.2;
+        } else if (p < 0.78) {
+          /* ── Phase 3: RESOLVE — fill gaps, reach full cell size ── */
+          const pt = clamp01((p - 0.55) / 0.23);
           const et = easeOutCubic(pt);
 
           x = px.imgX;
@@ -336,13 +282,69 @@ export default function HeroV005A() {
           cr = px.r;
           cg = px.g;
           cb = px.b;
-          size = lerp(px.fullSize * 0.85, px.fullSize, et);
+
+          const maxCell = Math.max(px.cellW, px.cellH);
+          size = lerp(maxCell * 0.65, maxCell * 1.06, et);
           alpha = 1;
+        } else {
+          /* ── Phase 4: CROSSFADE — particles hold while image fades in ── */
+          x = px.imgX;
+          y = px.imgY;
+          cr = px.r;
+          cg = px.g;
+          cb = px.b;
+
+          const maxCell = Math.max(px.cellW, px.cellH);
+          size = maxCell * 1.06;
+
+          // Particles fade out as real image fades in
+          const fadeT = clamp01((p - 0.78) / 0.22);
+          alpha = 1 - easeOutCubic(fadeT);
         }
 
         ctx.fillStyle = `rgb(${cr},${cg},${cb})`;
         ctx.globalAlpha = alpha;
         ctx.fillRect(x - size / 2, y - size / 2, size, size);
+      }
+
+      /* ═══ CROSSFADE: Draw real image over particles ═══ */
+      if (p > 0.72 && imgElRef.current && area) {
+        const fadeT = easeOutCubic(clamp01((p - 0.72) / 0.28));
+        ctx.globalAlpha = fadeT;
+
+        // Subtle rounded rect clip for "screen" feel
+        const r = 8;
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(area.x + r, area.y);
+        ctx.lineTo(area.x + area.w - r, area.y);
+        ctx.quadraticCurveTo(area.x + area.w, area.y, area.x + area.w, area.y + r);
+        ctx.lineTo(area.x + area.w, area.y + area.h - r);
+        ctx.quadraticCurveTo(
+          area.x + area.w,
+          area.y + area.h,
+          area.x + area.w - r,
+          area.y + area.h
+        );
+        ctx.lineTo(area.x + r, area.y + area.h);
+        ctx.quadraticCurveTo(area.x, area.y + area.h, area.x, area.y + area.h - r);
+        ctx.lineTo(area.x, area.y + r);
+        ctx.quadraticCurveTo(area.x, area.y, area.x + r, area.y);
+        ctx.closePath();
+        ctx.clip();
+
+        ctx.drawImage(imgElRef.current, area.x, area.y, area.w, area.h);
+        ctx.restore();
+
+        // Subtle border glow when image is nearly fully visible
+        if (fadeT > 0.5) {
+          ctx.globalAlpha = (fadeT - 0.5) * 0.3;
+          ctx.strokeStyle = ORANGE;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.roundRect(area.x - 1, area.y - 1, area.w + 2, area.h + 2, r + 1);
+          ctx.stroke();
+        }
       }
 
       ctx.globalAlpha = 1;
@@ -357,27 +359,21 @@ export default function HeroV005A() {
     };
   }, []);
 
-  /* ─── Custom cursor ─── */
+  /* ═══ Custom Cursor ═══ */
   useEffect(() => {
     const el = cursorRef.current;
     if (!el) return;
     const move = (e: MouseEvent) => {
-      gsap.to(el, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.5,
-        ease: "power3.out",
-      });
+      gsap.to(el, { x: e.clientX, y: e.clientY, duration: 0.5, ease: "power3.out" });
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
-  /* ─── GSAP Choreography ─── */
+  /* ═══ GSAP Choreography ═══ */
   useGSAP(
     () => {
-      const wrap = wrapRef.current;
-      if (!wrap) return;
+      if (!wrapRef.current) return;
 
       /* ── Intro entrance ── */
       const introTl = gsap.timeline({ delay: 0.3 });
@@ -420,11 +416,11 @@ export default function HeroV005A() {
         },
       });
 
-      /* ── GENESIS — pinned scroll drives canvas progress ── */
+      /* ── GENESIS — pinned canvas, scroll drives particle animation ── */
       ScrollTrigger.create({
         trigger: genesisRef.current,
         start: "top top",
-        end: "+=500%",
+        end: "+=600%",
         pin: true,
         scrub: 1.5,
         onUpdate: (self) => {
@@ -432,12 +428,11 @@ export default function HeroV005A() {
         },
       });
 
-      /* ── Phase labels — fade in/out at scroll positions ── */
-      PHASES.forEach((_, i) => {
-        const start = [0, 20, 50, 76][i];
-        const end = [18, 48, 76, 100][i];
+      /* ── Phase labels ── */
+      const starts = [0, 14, 56, 80];
+      const ends = [10, 53, 76, 100];
 
-        // Fade in
+      PHASES.forEach((_, i) => {
         gsap.fromTo(
           `.phase-${i}`,
           { opacity: 0, y: 25 },
@@ -447,14 +442,13 @@ export default function HeroV005A() {
             ease: "expo.out",
             scrollTrigger: {
               trigger: genesisRef.current,
-              start: `top+=${start + 1}% top`,
-              end: `top+=${start + 6}% top`,
+              start: `top+=${starts[i]}% top`,
+              end: `top+=${starts[i] + 5}% top`,
               scrub: 1,
             },
           }
         );
 
-        // Fade out (not the last)
         if (i < 3) {
           gsap.to(`.phase-${i}`, {
             opacity: 0,
@@ -462,8 +456,8 @@ export default function HeroV005A() {
             ease: "power2.in",
             scrollTrigger: {
               trigger: genesisRef.current,
-              start: `top+=${end - 4}% top`,
-              end: `top+=${end}% top`,
+              start: `top+=${ends[i] - 3}% top`,
+              end: `top+=${ends[i]}% top`,
               scrub: 1,
             },
           });
@@ -479,7 +473,7 @@ export default function HeroV005A() {
           scrollTrigger: {
             trigger: genesisRef.current,
             start: "top top",
-            end: "+=500%",
+            end: "+=600%",
             scrub: 1,
           },
         }
@@ -534,7 +528,6 @@ export default function HeroV005A() {
         }
       );
 
-      // Orange fill from bottom
       gsap.fromTo(
         ".reveal-fill",
         { scaleY: 0 },
@@ -553,7 +546,9 @@ export default function HeroV005A() {
     { scope: wrapRef }
   );
 
-  /* ═══ RENDER ═══ */
+  /* ═══════════════════════════════════════════════════════════
+     RENDER
+     ═══════════════════════════════════════════════════════════ */
   return (
     <div
       ref={wrapRef}
@@ -598,7 +593,6 @@ export default function HeroV005A() {
         className="relative flex h-screen flex-col items-center justify-center"
       >
         <div className="intro-content flex flex-col items-center gap-6 px-6 text-center">
-          {/* The pixel */}
           <div className="intro-pixel relative mb-4">
             <div
               className="animate-pulse"
@@ -611,7 +605,6 @@ export default function HeroV005A() {
             />
           </div>
 
-          {/* Heading */}
           <h1
             className="intro-heading select-none"
             style={{
@@ -639,7 +632,6 @@ export default function HeroV005A() {
             einem Pixel.
           </h1>
 
-          {/* Subtitle */}
           <p
             className="intro-sub mt-4"
             style={{
@@ -654,7 +646,6 @@ export default function HeroV005A() {
           </p>
         </div>
 
-        {/* Scroll indicator */}
         <div
           className="absolute bottom-8 flex flex-col items-center gap-2"
           style={{ opacity: 0.3 }}
@@ -668,15 +659,13 @@ export default function HeroV005A() {
 
       {/* ═══════════════════════════════════════════
           SECTION 2: GENESIS — Scroll-driven Canvas
+          Website wird aus Pixeln zusammengesetzt
           ═══════════════════════════════════════════ */}
       <section
         ref={genesisRef}
         className="relative h-screen overflow-hidden"
       >
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 block"
-        />
+        <canvas ref={canvasRef} className="absolute inset-0 block" />
 
         {/* Phase labels — bottom left */}
         {PHASES.map((phase, i) => (
@@ -734,7 +723,7 @@ export default function HeroV005A() {
           />
         </div>
 
-        {/* Corner: PixIntCreators watermark */}
+        {/* Watermark */}
         <span
           className="pointer-events-none absolute right-[5%] top-6"
           style={{
@@ -756,7 +745,6 @@ export default function HeroV005A() {
         ref={revealRef}
         className="relative flex h-screen flex-col items-center justify-center overflow-hidden"
       >
-        {/* Orange background fill */}
         <div
           className="reveal-fill absolute inset-0 origin-bottom"
           style={{ background: ORANGE, transform: "scaleY(0)" }}
@@ -821,7 +809,6 @@ export default function HeroV005A() {
           </a>
         </div>
 
-        {/* Bottom credit */}
         <span
           className="absolute bottom-6 z-10"
           style={{

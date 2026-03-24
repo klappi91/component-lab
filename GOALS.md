@@ -19,13 +19,15 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 
 ### Offene Aufgaben
 
-#### hero-v005-a: Pixel Genesis — Iteration
+#### hero-v005-a: Pixel Genesis v2 — Chris-Feedback Iteration
 - [x] Chris-Feedback einarbeiten (scroll-driven transformation, "Vom Pixel zur Website")
 - [x] Erlebnis choreografieren und bauen (canvas particle system, 4 Phasen)
 - [x] In components.json tracken
-- [ ] Echtes Bild mit gemini-image generieren (statt Fallback-Wireframe)
-- [ ] Mobile testen (agent-browser)
+- [x] Echtes Bild mit gemini-image generieren (2K, PixIntCreators brand)
+- [x] Neues Chris-Feedback (24.03. 07:30): "echte Pixel → Bild zusammensetzen = WOW"
+- [x] v2 gebaut: ~6000 Partikel, smooth color-morph, Crossfade zu echtem Bild
 - [ ] Chris zeigen, Feedback einholen
+- [ ] Mobile testen (agent-browser)
 - [ ] Iteration basierend auf Feedback
 
 #### hero-v006-a: DESTILLIERT — Typographic Process Dissection
