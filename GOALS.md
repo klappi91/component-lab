@@ -72,7 +72,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - Fundamentale Erkenntnis: "Builder = Spec-Qualitaet". Investition in Spec = direkter ROI.
   - QA 5.5/10 (headless-limitiert), realistisch ~7/10 (besser als v2's 6.5)
 - [x] **Reproduzierbarkeit testen** — exp-kinetic-type v1.1 (hell, typografie-getrieben), QA 5.8/10 → Workflow reproduzierbar bestätigt
-- [ ] **Parallel-Build** — 2 Builder mit verschiedenen Prompts, gleiche Reference-Daten, vergleichen
+- [x] **Parallel-Build** — 2 Builder (Dark vs Light), gleiche Assets, vergleichen
+  - Ergebnis: Dark 5.3/10, Light 4.6/10. Mechanisch perfekt, aber kein Qualitaetsgewinn.
+  - Erkenntnisse: Parallel = Optionen (Rapid Prototyping), nicht Qualitaet. Opus Signature Module bleibt unverzichtbar.
+  - Nuetzlich fuer: schnelle Stil-Exploration, Kunden-Praesentation ("welche Richtung?")
 - [ ] **Anderes Modell testen** — Was liefert Haiku als Builder? Oder Codex?
 
 #### 4. Abgeschlossene Prozess-Experimente (2026-03-23)
@@ -106,10 +109,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 8 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type)
+- **Websites deployed:** 10 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light)
 - **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 + Morphic-Flow v2 warten auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
-- **Prozess-Experimente durchgefuehrt:** 11 (Ziel: mindestens 3 ✓✓) — inkl. Agent-Team-Pipeline + Builder-Detailed-Specs + Reproduzierbarkeit
+- **Prozess-Experimente durchgefuehrt:** 12 (Ziel: mindestens 3 ✓✓) — inkl. Parallel-Build (NICHT bestaetigt: Optionen ≠ Qualitaet)
 - **Skills installiert:** 6 neue (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator)
 - **Agent-Team:** 5-Rollen-Architektur designed, Agent-Definitionen ready, noch nicht getestet
 - **Sessions am 2026-03-23:** 25

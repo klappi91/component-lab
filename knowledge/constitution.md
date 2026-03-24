@@ -208,9 +208,18 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - 3 Bugs gefunden: ASCII-Umlaute, mix-blend-difference auf light, mobile overflow
 - Learning: **UTF-8 Pflicht in Specs**, **Heller Stil braucht subtilere Spec-Arbeit**
 
+### #11: Parallel-Build (2026-03-24, exp-parallel-dark + exp-parallel-light)
+- **Dark: 5.3/10, Light: 4.6/10** — Hypothese NICHT bestaetigt
+- 2 Sonnet-Builder parallel (~2 Min), gleiche Assets, verschiedene Specs (Dark vs Light)
+- Mechanisch perfekt (0 Fehler, 0 Konflikte), aber kein Qualitaetsgewinn
+- **FUNDAMENTALE Erkenntnis: Parallel = Optionen, nicht Qualitaet**
+  - Opus Signature Module bleibt unverzichtbar fuer WOW
+  - Sonnet-Only produziert Template-Level, egal wie detailliert die Spec
+  - Nuetzlich fuer: Rapid Prototyping, Stil-Exploration, Kunden-Praesentation
+- Learning: **Dark > Light bei gleicher Spec-Tiefe** — dramatischere Specs = visuell staerker
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
-- Parallel-Build (2 Builder, verschiedene Prompts)
 
 ## Was fehlt fuer WOW (~9.5/10 → 10/10)
 - ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
