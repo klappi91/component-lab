@@ -101,6 +101,17 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Optional: Lenis Smooth Scroll
 - [ ] Optional: Text-Glow wenn Strom nahe an Text ist
 
+#### hero-v012-a: EDITORIAL CINEMA — Design-Driven Choreografie
+- [x] Awwwards SOTD recherchiert (Unseen Studio 2025 Wrapped, Shed.design)
+- [x] Choreografie-Konzept: 4 Phasen (Opening → Image Wipe → Services → Brand Close)
+- [x] Hero-Bild generiert (gemini-image: orange Tinte in Wasser, 170KB WebP)
+- [x] Erlebnis gebaut: Erster Hero OHNE Canvas/WebGL — pure GSAP Choreografie
+- [x] Build erfolgreich, components.json aktualisiert
+- [ ] Visual QA (Desktop + Mobile)
+- [ ] Chris zeigen, Feedback einholen
+- [ ] Optional: SplitText fuer character-level Brand-Reveal
+- [ ] Optional: Echte Fotos / besseres Hero-Bild
+
 #### Naechstes Erlebnis
 - [ ] Video-basierter Hero (gemini-video Ambient Loop)
 - [ ] Awwwards SOTD als Inspiration weiter analysieren
@@ -146,10 +157,11 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 11 (hero-v001 bis v011)
+- **Erlebnisse im Lab:** 12 (hero-v001 bis v012)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
-- **Neue Technik:** Pixel Flow (hero-v011-a v2) — vertikaler Strom + Low-Res Offscreen Canvas + Nearest-Neighbor Upscale
+- **Neue Technik:** Editorial Cinema (hero-v012-a) — erster design-driven Hero ohne Canvas/WebGL, pure GSAP clip-path Choreografie
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, **editorial** (NEU)
 - **exp-signature-hero Score korrigiert:** 7.5/10 (nicht 8/10 wie vorher angenommen)
-- **Inspiration-Analysen:** 7 (mersi, DD.NYC, Aupale/Locomotive, Unseen Studio, Kris Temmerman, shed.design, Darknode)
+- **Inspiration-Analysen:** 9 (+Unseen Studio 2025 Wrapped, +Shed.design SOTD)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)

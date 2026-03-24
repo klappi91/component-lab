@@ -675,5 +675,70 @@
       "chris-feedback-flow",
       "always-alive"
     ]
+  },
+  {
+    "id": "hero-v012-a",
+    "pair_id": "hero-v012",
+    "type": "experience",
+    "category": "editorial",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Editorial Cinema Director",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": null,
+    "prompt_excerpt": "EDITORIAL CINEMA — Cinematic opening credits. Pure GSAP Choreografie ohne Canvas/WebGL. WOW kommt aus TIMING, LAYOUT und TYPOGRAFIE. 4 Phasen: Title Reveal (clip-path + diagonal offset) → Image Wipe (center expand + parallax) → Services (asymmetrisch, 3 Richtungen) → Brand Close (orange pulse + letter-spacing contract).",
+    "skills_loaded": [],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "lenis",
+      "clip-path-reveals",
+      "custom-cursor",
+      "SVG-grain",
+      "mix-blend-difference"
+    ],
+    "design_philosophy": "EDITORIAL CINEMA — Design-driven statt tech-driven. Kein Canvas, kein WebGL, kein Partikel-System. Stattdessen: praezise GSAP Choreografie, asymmetrisches Layout, dramatische clip-path Reveals, cinematic Image (Tinte in Wasser), letter-spacing als Animation. Inspiriert von Magazine-Editorials und Film Opening Credits.",
+    "inspiration_source": "Unseen Studio 2025 Wrapped (SOTD 24.03.2026) — Editorial rhythm, chapter markers, mixed media, pacing. Shed.design (SOTD 23.03.2026, by Isaac Powell) — Letter-spaced typography, clean editorial aesthetic. Constitution: 'Der Unterschied ist CHOREOGRAFIE, nicht Tools'.",
+    "choreography_notes": "4 Phasen mit praezisem Timing:\n\nOPENING (auto, 0.3-2.5s): [001] marker → 3 Title words clip-path reveal (stagger 0.2s, expo.out, 1.4s each) mit diagonal offset (ml-0 → ml-6vw → ml-12vw) → Orange accent line draws (power4.inOut) → Subtitle fade.\n\nREVEAL (scroll, pinned +150%): Image wipe clip-path inset(45%→0%) from center + scale settle (1.12→1.0) + watermark drift + title parallax up (-25vh fade) + caption appears at 75%.\n\nSERVICES (trigger, top 80%): 3 services asymmetrisch — svc-1 clip from left + x:-40, svc-2 clip from bottom + y:30, svc-3 clip from right + x:40. Rule lines between (power4.inOut). Service descriptions stagger 0.12s.\n\nBRAND CLOSE (trigger, top 65%): Orange pulse circle scale(0→60) + letter-spacing contracts (1em→0.3em, expo.out) + tagline + orange divider + CTA with hover fill animation (cubic-bezier 0.19,1,0.22,1).",
+    "assets_generated": [
+      "hero-bg.png (2.7MB, gemini-image: orange ink dispersing in dark water)",
+      "hero-bg.webp (170KB, optimized)"
+    ],
+    "assets_used": [
+      "hero-bg.webp"
+    ],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, Inspiration-driven concept)",
+    "builder_model": null,
+    "run_id": "run-20260324-1140",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "editorial",
+      "cinematic",
+      "pixintcreators",
+      "brand",
+      "clip-path-reveals",
+      "gsap-choreography",
+      "no-canvas",
+      "no-webgl",
+      "typography-focused",
+      "asymmetric-layout",
+      "letter-spacing-animation",
+      "image-wipe",
+      "orange-pulse",
+      "custom-cursor",
+      "magnetic-hover",
+      "lenis-smooth-scroll",
+      "film-grain",
+      "gemini-image-asset",
+      "ink-in-water",
+      "design-driven"
+    ]
   }
 ]
