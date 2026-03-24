@@ -112,6 +112,20 @@
       "subject": "Re: Component Lab — hero-v017-a: PRISM + 3D-Objekt-Workflow entdeckt",
       "action": "Meshy API-Key erhalten und gespeichert",
       "session": "run-20260324-1520"
+    },
+    {
+      "uid": 27,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v020-a: EDITORIAL REEL (neuer Ansatz)",
+      "action": "feedback-verarbeitet: Nebel-Hero sagt nichts aus, Sektionen gut",
+      "session": "run-20260324-1700"
+    },
+    {
+      "uid": 28,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v020-a: EDITORIAL REEL (neuer Ansatz)",
+      "action": "feedback-verarbeitet: PIXEL JOURNEY Konzept — Pixel als persistenter Charakter durch horizontalen Scroll → hero-v022-a gebaut",
+      "session": "run-20260324-1700"
     }
   ]
 }

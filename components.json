@@ -1384,5 +1384,71 @@
       "pixintcreators",
       "brand-story"
     ]
+  },
+  {
+    "id": "hero-v022-a",
+    "pair_id": "hero-v022",
+    "type": "experience",
+    "category": "pixel-journey",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Pixel as Persistent Character",
+    "branche": "Webdesign-Agentur",
+    "prompt_excerpt": "PIXEL JOURNEY: Ein Pixel wird aus einem Typing-Cursor geboren und transformiert sich durch jede Sektion. Dot → Line → Background → Card → Returns.",
+    "skills_loaded": [
+      "awwwards-animations",
+      "gsap-plugins",
+      "text-animation"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "Lenis",
+      "horizontal-scroll",
+      "typing-animation",
+      "pixel-transformations"
+    ],
+    "inspiration_source": "Chris direct concept (24.03.2026): Pixel als persistentes Element das durch horizontalen Scroll mitkommt und in jeder Sektion eine andere Rolle spielt",
+    "choreography_notes": "Master Timeline (duration 5): Track horizontal slide + pixel transformations synchronized. Typing intro → pixel birth pulse → elastic settle → scroll journey. Pixel: center(12x12) → dot(10x10 left) → line(35vw×2px) → background(100vw×100vh) → card(480×260 rounded) → dot(12x12 center). Content reveals per panel via scrubbed to() tweens.",
+    "technique": "Single GSAP master timeline driving both horizontal scroll and pixel transforms. Pixel is position:fixed, content inside pixel for bg+card phases. Typing animation as separate useEffect with cursor-to-pixel transition via getBoundingClientRect. Lenis smooth scroll.",
+    "paradigm": "Persistent Character: One element transforms through the entire experience, creating the durchgehender Fluss Chris has been requesting.",
+    "self_eval": 7.5,
+    "chris_score_estimate": 6.5,
+    "screenshots": {
+      "desktop": "",
+      "mobile": ""
+    },
+    "constitution_version": 15,
+    "workflow": "direct-opus-build",
+    "builder_model": null,
+    "run_id": "run-20260324-1700",
+    "human_rating": null,
+    "human_comment": null,
+    "design_philosophy": "The Pixel IS the brand. Born from a cursor, it transforms through every section — dot, line, background, card — creating the persistent flow that connects the entire narrative.",
+    "assets_generated": [],
+    "assets_used": [],
+    "tags": [
+      "pixel-journey",
+      "persistent-element",
+      "horizontal-scroll",
+      "typing-animation",
+      "cursor-to-pixel",
+      "pixel-transforms",
+      "durchgehender-fluss",
+      "chris-concept",
+      "editorial",
+      "playfair-display",
+      "space-mono",
+      "2-color-palette",
+      "lenis-smooth-scroll",
+      "film-grain",
+      "scrubbed-timeline",
+      "content-driven",
+      "pixintcreators",
+      "brand-story",
+      "master-timeline",
+      "position-fixed-pixel"
+    ]
   }
 ]

@@ -226,9 +226,22 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Build erfolgreich, components.json aktualisiert
 - [x] Chris per Mail ueber v020 Paradigmenwechsel informiert
 - [ ] Desktop + Mobile QA
-- [ ] Chris Feedback abwarten (v020 + v021)
+- [x] Chris Feedback: v021 Nebel "sagt nichts aus", Sektionen gefallen → PIXEL JOURNEY Konzept
 - [ ] Optional: Noise-Timing feintunlen
 - [ ] Optional: Custom cursor hinzufuegen
+
+#### hero-v022-a: PIXEL JOURNEY — Persistent Pixel Character (CHRIS-KONZEPT)
+- [x] Chris-Feedback (UIDs 27+28): "Pixel als Element das mitkommt durch jede Sektion"
+- [x] Choreografie geplant: 6 Phasen (Genesis→Dot→Line→Background→Card→Return)
+- [x] Erlebnis gebaut: Master-Timeline, Typing-Animation, Pixel-Transformationen
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail informiert
+- [ ] Chris Feedback abwarten
+- [ ] Timings feinjustieren nach Feedback
+- [ ] Mobile QA
+- [ ] Optional: Pixel-Glow/Shadow waehrend Transitionen
+- [ ] Optional: Mouse-Interaction (Pixel folgt Cursor leicht)
+- [ ] Optional: Echtes Bild in Panel 4 statt Text-Card
 
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
@@ -283,7 +296,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 21 (hero-v001 bis v021)
+- **Erlebnisse im Lab:** 22 (hero-v001 bis v022)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, meshy-3d-generation)
 - **Neue Technik:** EMERGENCE (hero-v021-a) — Paradigm Synthesis: Editorial + ONE WebGL Signature
