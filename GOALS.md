@@ -61,9 +61,18 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Chris-Feedback einholen
 - [ ] Optional: WebGL-Upgrade fuer dramatischere Tiefe
 
+#### hero-v009-a: MAGNETIC TYPE FIELD — Physics-Based Word Interaction
+- [x] Awwwards SOTD analysiert (shed.design SOTD 23.03, Darknode SOTD 21.03)
+- [x] Konzept: 30 Worte als Physik-Entitaeten, Mouse = Magnet, Scroll = Chaos→Ordnung→Brand
+- [x] Build: DOM-Physics + Golden-Angle Formation + Cursor-Glow Canvas + Touch-Support
+- [x] components.json aktualisiert
+- [ ] Chris-Feedback einholen
+- [ ] Physics-Konstanten feintunlen
+- [ ] Lenis Smooth Scroll integrieren
+
 #### Naechstes Erlebnis
-- [ ] Kris Temmerman TIEFER analysieren (Video/Recording seiner Site suchen)
-- [ ] Neues Erlebnis basierend auf Analyse
+- [ ] Neues Erlebnis: Horizontal Scroll, Clip-Path Wipe, oder Video-Integration
+- [ ] Awwwards SOTD als Inspiration weiter analysieren
 
 #### Skill-Discovery
 - [ ] find-skills nach neuen Animations/Design-Skills durchsuchen
@@ -106,9 +115,9 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 8 (hero-v001 bis v008)
+- **Erlebnisse im Lab:** 9 (hero-v001 bis v009)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
-- **Neue Technik:** CSS 3D perspective + Mouse-Interaktion (hero-v008-a) — erster interaktiver Hero
-- **Inspiration-Analysen:** 5 (mersi, DD.NYC, Aupale/Locomotive, Unseen Studio, Kris Temmerman)
+- **Neue Technik:** DOM-Physics + Magnetic Mouse (hero-v009-a) — erster Hero mit eigener Physik-Simulation
+- **Inspiration-Analysen:** 7 (mersi, DD.NYC, Aupale/Locomotive, Unseen Studio, Kris Temmerman, shed.design, Darknode)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)

@@ -235,5 +235,32 @@
     "human_rating": null,
     "human_comment": null,
     "tags": ["typografie-only", "pixintcreators", "brand", "3d-perspective", "mouse-interactive", "translateZ", "preserve-3d", "zoom-through", "layer-flash", "ambient-particles", "canvas", "custom-cursor", "cursor-glow", "text-glow", "vignette", "grain", "mobile-fallback", "auto-tilt", "depth-parallax", "interactivity-first"]
+  },
+  {
+    "id": "hero-v009-a",
+    "pair_id": "hero-v009",
+    "type": "experience",
+    "category": "interaktiv",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "Magnetic Type Field: 30 Webdesign-Worte als Physik-Entitaeten im Raum. Mouse = Magnet (Anziehung). Scroll transformiert 4 Phasen: CHAOS (freies Driften, Mouse zieht an) → GRAVITATION (Schwerkraft steigt, wichtige Worte werden orange) → FORMATION (Golden-Angle Spirale, Chaos → Ordnung) → BRAND (Worte orbiten raus, PIXINT CREATORS erscheint).",
+    "skills_loaded": ["awwwards-animations"],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "custom-physics", "magnetic-attraction", "word-repulsion", "golden-angle-spiral", "cursor-glow-canvas", "touch-support", "SVG-grain", "vignette"],
+    "design_philosophy": "Physik-basierte Interaktion statt nur Scroll. Worte als lebendige Entitaeten die auf Mouse reagieren. Chaos → Ordnung = die Transformation die ein Designer schafft. Erster Hero mit eigener Physik-Simulation.",
+    "inspiration_source": "shed.design (SOTD 23.03.2026, Isaac Powell) — massive Typography, character-spaced headings, 3-font system. Kris Temmerman neuroproductions.be — Interaktivitaet als Differenzierungsmerkmal. Constitution: 'Interaktivitaet ist der vergessene WOW-Faktor'.",
+    "choreography_notes": "Phase 0 CHAOS (0-15%): 30 Worte driften, vx/vy random, gentle sine drift. Mouse: magnetStrength 800, radius 350. Phase 1 GRAVITATION (15-45%): gravityY 0.15, damping 0.97, important words turn orange (lerp colorProgress). Phase 2 FORMATION (45-70%): Golden Angle spiral sort by importance, spring 0.08 rising to formation. Rotation dampens. Phase 3 BRAND (70-100%): words orbit out (radius 0.55*vh), fade to 15% opacity. PIXINT (white) + CREATORS (orange) scale in (expo.out), tagline + subtitle follow. Cursor canvas: radial orange glow + magnetic field lines (8 rotating lines). 500vh scroll space.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, physics-first + interaction-driven)",
+    "builder_model": null,
+    "run_id": "run-20260324-0840",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": ["interaktiv", "pixintcreators", "brand", "physics-simulation", "magnetic-mouse", "word-field", "golden-angle-spiral", "chaos-to-order", "dom-physics", "cursor-glow", "canvas-overlay", "touch-support", "formation", "brand-reveal", "grain", "vignette", "custom-cursor", "scroll-driven", "4-phasen"]
   }
 ]
