@@ -158,13 +158,29 @@ Text-Prompt → POST /openapi/v2/text-to-3d (preview, 20cr, ~90s)
 **Tipp:** Sprite mit RadialGradient-Texture > Plane fuer Glow-Effekte in 3D-Szenen.
 **Tipp:** Emissive und Lichtintensitaet ZURUECKHALTEN — mehrere orange Lichtquellen + Emissive = alles wird orange.
 
-## Paradigmenwechsel: WebGL > Canvas 2D > DOM
+## Paradigmenwechsel 1: WebGL > Canvas 2D > DOM
 
 Award-Studios (Lusion, Immersive Garden, makemepulse) nutzen WebGL/GLSL als KERN. Nicht als Add-On. Canvas 2D und DOM-Animationen sind fuer 7/10. Fuer 9+/10 braucht es Shader. Die Reihenfolge fuer Impressivitaet:
 1. **Custom GLSL Shader** (Distortion, Fluid, Particles) → WOW
 2. **Three.js 3D Scenes** (Interactive Objects, Environments) → Impressive
 3. **Canvas 2D** (Particles, Streams, Effects) → Good
 4. **DOM + GSAP** (Transforms, Reveals, Pins) → Baseline
+
+## Paradigmenwechsel 2: Narrative > Technik (2026-03-24)
+
+19 Heroes gebaut, 0 WOW. Das Problem war NICHT fehlende Technik — es war fehlende NARRATIVE. Award-Gewinner (Unseen Studio SOTD 24.03.2026, Lando Norris SOTY) erzaehlen Geschichten durch Content. Animation DIENT der Narrative.
+
+**Die Formel:** Content-Story + Editorial Restraint + ONE Signature Moment > 15 Techniken ohne Story
+
+Was das konkret bedeutet:
+- **Content-driven** — echte Brand-Inhalte, nicht abstrakte Shader/Partikel
+- **Editorial Restraint** — wenig Farben (2-3), praezise Typografie, RAUM
+- **ONE moment per section** — nicht jede Sektion eine neue Technik
+- **Serif + Mono = Editorial** — Kontrast zwischen Display-Serif und Tech-Mono
+- **Horizontal narrative** — Scroll = Story-Progression (Unseen-Pattern)
+- **Nummern als Design** — grosse Stroke-Nummern (01/02/03) = klassisches Editorial
+
+Technik bleibt wichtig (WebGL, 3D, GPGPU), aber INNERHALB einer Narrative. Nicht als Selbstzweck.
 
 ## Was NICHT funktioniert
 - **CSS 3D perspective + camera zoom:** Wenn Container `perspective: Xpx` hat und Camera-Kind per GSAP `translateZ(Y)` bekommt mit Y > X → alles HINTER dem Betrachter = unsichtbar. Elemente die NACH dem Zoom sichtbar sein muessen (Brand, CTA) MUESSEN ausserhalb des perspective-Containers leben.

@@ -208,6 +208,16 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Optional: Retexture-API testen
 - [ ] Optional: Custom Shader auf Meshy-Modell (statt MeshStandardMaterial)
 
+#### hero-v020-a: EDITORIAL REEL — Horizontal Motion Narrative
+- [x] Tiefe Inspiration-Recherche (Unseen Studio SOTD, Artiom Yakushev, Lando Norris SOTY, 2026 Trends)
+- [x] Fundamentale Erkenntnis: Technik-Demos → Content-Narrative mit Restraint
+- [x] Konzept: 5-Panel horizontaler Scroll, PixIntCreators Brand Story
+- [x] Build: Playfair Display + Space Mono, 2 Farben, Lenis, containerAnimation
+- [x] Build erfolgreich, components.json aktualisiert
+- [ ] Chris zeigen — NEUER ANSATZ, Feedback ist kritisch
+- [ ] Rive evaluieren (SOTY-Gewinner nutzt es)
+- [ ] Optional: Preloader, Hover States, Mobile QA
+
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
 - [ ] bandinopla/threejs-fluid-simulation (WebGL + WebGPU)
@@ -255,15 +265,15 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 19 (hero-v001 bis v019)
+- **Erlebnisse im Lab:** 20 (hero-v001 bis v020)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, meshy-3d-generation)
-- **Neue Technik:** STUDIO (hero-v019-a) — erster ECHTER AI-generierter 3D-Objekt-Hero (Meshy AI Text-to-3D)
-- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → v018-a (GPGPU FBO) → **v019-a (AI-Generated GLTF)**
-- **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader zu GPGPU zu AI-generierte 3D-Objekte
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, gpgpu-particles, **ai-generated-3d** (NEU)
-- **Inspiration-Analysen:** 17 (+Pendragon Cycle SOTD Jan 2026)
+- **Neue Technik:** EDITORIAL REEL (hero-v020-a) — erster content-driven Motion Narrative Hero
+- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → v018-a (GPGPU FBO) → v019-a (AI-Generated GLTF)
+- **Paradigmenwechsel 2:** Von Technik-Demos zu Content-Driven Narratives (v020-a)
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, gpgpu-particles, ai-generated-3d, **editorial-narrative** (NEU)
+- **Inspiration-Analysen:** 20 (+Unseen Studio 2025 Wrapped, Artiom Yakushev, Lando Norris SOTY)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
-- **Asset-Kosten gesamt:** ~$3.10 (video + images + meshy 30cr ≈ $0.60)
+- **Asset-Kosten gesamt:** ~$3.10 (video + images + meshy 30cr)
 - **3D-Objekt-Skills installiert:** meshy-3d-generation, blender-web-pipeline, 3d-model-generation
 - **Meshy Balance:** 1.500 Credits verbleibend

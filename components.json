@@ -1258,5 +1258,65 @@
       "product-hero",
       "first-real-object"
     ]
+  },
+  {
+    "id": "hero-v020-a",
+    "pair_id": "hero-v020",
+    "type": "experience",
+    "category": "editorial",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": null,
+    "branche": "Webdesign-Agentur",
+    "brief": null,
+    "prompt_excerpt": "Editorial Motion Narrative — Content tells the story, animation serves it. Horizontal scroll through PixIntCreators services with editorial restraint.",
+    "skills_loaded": [
+      "gsap-scrolltrigger",
+      "awwwards-animations"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "Lenis",
+      "containerAnimation",
+      "gsap.quickTo"
+    ],
+    "design_philosophy": "EDITORIAL REEL — Fundamental shift from technique demos to content-driven narrative. Inspired by Unseen Studio 2025 Wrapped (SOTD 24.03.2026). Only 2 colors (black + orange), editorial serif + mono typography, ONE motion moment per panel. Animation SERVES the story, it IS NOT the story. Horizontal scroll = story progression through PixIntCreators' services.",
+    "inspiration_source": "Unseen Studio 2025 Wrapped (Awwwards SOTD 24.03.2026, 7.44/10) — horizontal scroll year-in-review, 2-color palette (black+gold), big typography, WordPress, custom preloader, parallax within horizontal. School of Motion: 'bold typography, unexpected cursor interactions, transitions both modern and timeless'. Also: 2026 trends — Archival Index (editorial grid), Motion Narrative (scroll = storyteller), Creative Process (showing the work).",
+    "choreography_notes": "5 PANELS horizontal scroll:\n\nOPENING (auto, 0.5s delay): 'PixIntCreators' char-by-char from bottom (expo.out, stagger 0.04s, 1.2s) → orange divider grows from center (power4.inOut, 1.0s) → tagline fade up (power2.out, 0.8s) → labels fade (power2.out, stagger 0.1s). Scroll hint fades on first scroll.\n\nSERVICE PANELS x3 (containerAnimation, onEnter once at 75%): Large stroke numbers (01/02/03) with PARALLAX — drift right +60px during scroll-through (editorial depth). Content cascade: number reveal (expo.out, 1.0s) → title (-0.7s overlap) → description (-0.4s) → accent line (power4.inOut) → tags stagger (power2.out, 0.06s). Thin vertical separator line per panel.\n\nCLOSING (containerAnimation, onEnter once at 65%): 'Bereit für das 1% das im Kopf bleibt?' word-by-word (expo.out, stagger 0.1s). '1%' highlighted in orange. Arrow slides in, email CTA fades up.\n\nGlobal: Lenis smooth scroll (lerp 0.08), custom cursor (quickTo, power3.out), progress bar (orange, scaleX 0→1), film grain overlay (SVG feTurbulence, opacity 0.035).",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": 15,
+    "workflow": "inspiration-research → choreography-concept → direct-build (no builder agent)",
+    "builder_model": null,
+    "run_id": "run-20260324-1540",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "editorial",
+      "horizontal-scroll",
+      "motion-narrative",
+      "content-driven",
+      "pixintcreators",
+      "brand-story",
+      "playfair-display",
+      "space-mono",
+      "number-parallax",
+      "containerAnimation",
+      "editorial-restraint",
+      "2-color-palette",
+      "custom-cursor",
+      "quickTo",
+      "lenis-smooth-scroll",
+      "film-grain",
+      "progress-bar",
+      "unseen-studio-inspired",
+      "archival-index-trend"
+    ]
   }
 ]
