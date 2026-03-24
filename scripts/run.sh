@@ -9,6 +9,20 @@ cd ~/projects/component-lab
 SESSION_NAME="component-lab"
 LOG_FILE="runs/cron.log"
 
+# === Cooldown pruefen (IMP-001) ===
+# Nach 2x HEARTBEAT_OK in Folge: 2h Pause um Tokens zu sparen
+COOLDOWN_FILE="runs/.cooldown"
+if [ -f "$COOLDOWN_FILE" ]; then
+  COOLDOWN_AGE=$(( $(date +%s) - $(stat -c %Y "$COOLDOWN_FILE") ))
+  if [ "$COOLDOWN_AGE" -lt 7200 ]; then
+    echo "$(date): Cooldown aktiv (${COOLDOWN_AGE}s / 7200s), ueberspringe." >> "$LOG_FILE"
+    exit 0
+  else
+    rm -f "$COOLDOWN_FILE"
+    echo "$(date): Cooldown abgelaufen, starte normal." >> "$LOG_FILE"
+  fi
+fi
+
 # === Pruefen ob Agent noch arbeitet ===
 PANE_PID=$(tmux list-panes -t "$SESSION_NAME" -F '#{pane_pid}' 2>/dev/null)
 if [ -n "$PANE_PID" ]; then
