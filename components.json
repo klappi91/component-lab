@@ -1450,5 +1450,70 @@
       "master-timeline",
       "position-fixed-pixel"
     ]
+  },
+  {
+    "id": "hero-v022-b",
+    "pair_id": "hero-v022",
+    "type": "experience",
+    "category": "pixel-journey",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Pixel Story — Vertikale Pixel-Reise",
+    "branche": "Webdesign-Agentur",
+    "prompt_excerpt": "PIXEL STORY: Vom Pixel zum Erlebnis. 5 Etappen vertikal: Idee → Design (Dot) → Intelligenz (4 Dots) → Erlebnis (Explosion) → Marke. Chris-Feedback: vertikal, kleiner, klare Story.",
+    "skills_loaded": [
+      "awwwards-animations",
+      "gsap-plugins"
+    ],
+    "skills_detected": [
+      "gsap",
+      "ScrollTrigger",
+      "useGSAP",
+      "Lenis",
+      "pinned-scroll",
+      "pixel-transformations",
+      "clone-pixels",
+      "scrub-timeline"
+    ],
+    "inspiration_source": "Chris feedback (UID 29): v022-a Pixel zu gross, horizontal unerwuenscht, Story fehlt. Iteration: vertikal, 4px pixel, klare Etappen mit Bedeutung.",
+    "choreography_notes": "Pinned vertical scroll (6000px). Pixel: center(4px glow) → left-dot(4px accent) → center-split(4×4px 2x2 grid) → explosion(fullscreen orange) → accent-dot(4px). Content reveals/fades between sections. 5 clear story stages: Idee, Design, Intelligenz, Erlebnis, Marke.",
+    "technique": "Single pinned GSAP timeline (duration 5, scrub 1.2). Pixel position:fixed with box-shadow glow. 3 clone divs for section 2 split effect. Function-based values for resize safety. Lenis smooth scroll.",
+    "paradigm": "Persistent Character V2: Vertical + Story-driven. Each pixel state has MEANING: alone = idea, dot = design element, 4 dots = AI amplification, fullscreen = creative energy, return = brand identity.",
+    "self_eval": 7.0,
+    "chris_score_estimate": 5.5,
+    "screenshots": {
+      "desktop": "",
+      "mobile": ""
+    },
+    "constitution_version": 15,
+    "workflow": "feedback-iteration",
+    "builder_model": null,
+    "run_id": "run-20260324-1740",
+    "human_rating": null,
+    "human_comment": null,
+    "design_philosophy": "Vom Pixel zum Erlebnis: Story first, vertical flow, tiny pixel (4px) that grows through meaningful stages. Each transformation serves the narrative, not just visual effect.",
+    "assets_generated": [],
+    "assets_used": [],
+    "tags": [
+      "pixel-journey",
+      "persistent-element",
+      "vertical-scroll",
+      "pinned",
+      "story-driven",
+      "pixel-split",
+      "pixel-explosion",
+      "clone-pixels",
+      "editorial",
+      "playfair-display",
+      "space-mono",
+      "2-color-palette",
+      "lenis-smooth-scroll",
+      "film-grain",
+      "scrubbed-timeline",
+      "content-driven",
+      "pixintcreators",
+      "brand-story",
+      "chris-feedback-iteration"
+    ]
   }
 ]
