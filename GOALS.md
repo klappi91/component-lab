@@ -160,16 +160,25 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] Konzept: Lebende 3D-Form, IcosahedronGeometry detail 6, 3D Simplex Noise Vertex Displacement
 - [x] Erlebnis gebaut: Blinn-Phong Three-Point Lighting, Fresnel, Irideszenz, Lenis Smooth Scroll
 - [x] Build erfolgreich, components.json aktualisiert
-- [ ] Chris Feedback einholen
+- [x] Chris per Mail informiert (run-20260324-1320)
+- [ ] Chris Feedback abwarten
 - [ ] Visuelles QA (Desktop + Mobile)
 - [ ] Optional: Post-Processing (Bloom)
 - [ ] Optional: Environment Map fuer Reflektionen
 - [ ] Optional: Blob reagiert auf Cursor-Naehe (Vertex-Displacement)
 
-#### Naechstes Erlebnis
-- [ ] v015-a oder v016-a iterieren wenn Chris WOW-Potenzial sieht
-- [ ] Sonst: Fluid Simulation oder GPU Particles als naechste WebGL-Tiefe
-- [ ] WebGL-Tiefe > neue Techniken in der Breite
+#### Naechstes Erlebnis: hero-v017-a — FBO PARTICLE MORPH
+- [ ] Chris-Feedback zu v015-a/v016-a abwarten (WebGL-Richtung bestaetigt?)
+- [ ] **FBO Particles recherchiert (2026-03-24):** GPGPU-Partikel, Positionen in DataTexture, Simulation-Shader off-screen, 16K+ Partikel bei 60fps
+- [ ] **Konzept:** Chaos → Wolke → Kristall → PixIntCreators Text (scroll-driven morph)
+- [ ] **Technik:** DataTexture + Off-screen FBO + MeshSurfaceSampler + GSAP ScrollTrigger
+- [ ] **Quellen:** Maxime Heckel (R3F FBO), Loopspeed (scroll-driven FBO), bandinopla (Fluid Sim)
+- [ ] Wenn Chris WebGL bestaetigt → Bauen. Sonst → Richtung ueberdenken.
+
+#### Backup: Fluid Simulation
+- [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
+- [ ] bandinopla/threejs-fluid-simulation (WebGL + WebGPU)
+- [ ] Einsatz: Mouse-reaktive Fluid-Hintergruende, Smoke/Plasma-Effekte
 
 #### Skill-Discovery
 - [x] threejs-webgl und react-three-fiber Skills in Build geladen (v016-a)
