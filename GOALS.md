@@ -180,16 +180,24 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Chris Meshy-Entscheidung abwarten
 - [ ] Visuelles QA (Desktop + Mobile)
 
-#### Naechstes Erlebnis: hero-v018-a — GLTF OBJECT HERO
-- [ ] Wenn Meshy-Key: Text→3D Laptop/Tool generieren, laden mit useGLTF
-- [ ] Wenn KEIN Meshy-Key: Sketchfab CC0 Modell laden + Custom Shader
-- [ ] useGLTF-Workflow demonstrieren (echtes 3D-Modell + Custom Material)
+#### hero-v018-a: NEBULA — GPGPU Particle Morph
+- [x] FBO Ping-Pong Setup (2 WebGLRenderTarget, FloatType, 128x128)
+- [x] Simulation Shader (Curl Noise + Morph Force + Mouse Repulsion + Orbit)
+- [x] Render Shader (Points, Additive Blending, Size Attenuation)
+- [x] 4 Scroll-Phasen (Chaos → Converge → Form → Brand Reveal)
+- [x] Desktop QA: Nebula ✓, Convergence ✓, Sphere ✓, Brand Text ✓
+- [x] Chris per Mail informiert
+- [ ] Chris Feedback abwarten
+- [ ] Mobile QA
+- [ ] Optional: Partikel morphen in Text/Logo statt Sphaere
+- [ ] Optional: SIZE=256 (65K Partikel)
+- [ ] Optional: Farb-Variationen nach Phase/Position
 
-#### Backup: FBO PARTICLE MORPH
-- [ ] **FBO Particles recherchiert (2026-03-24):** GPGPU-Partikel, Positionen in DataTexture, Simulation-Shader off-screen, 16K+ Partikel bei 60fps
-- [ ] **Konzept:** Chaos → Wolke → Kristall → PixIntCreators Text (scroll-driven morph)
-- [ ] **Technik:** DataTexture + Off-screen FBO + MeshSurfaceSampler + GSAP ScrollTrigger
-- [ ] **Quellen:** Maxime Heckel (R3F FBO), Loopspeed (scroll-driven FBO), bandinopla (Fluid Sim)
+#### Naechstes Erlebnis: hero-v019-a
+- [ ] Wenn Meshy-Key: GLTF Object Hero (Text→3D → Custom Shader)
+- [ ] Wenn KEIN Meshy-Key: Sketchfab CC0 Modell + Custom Material
+- [ ] Oder: FBO Particles + 3D-Modell Kombination (dissolve/reform)
+- [ ] Oder: Fluid Simulation (Navier-Stokes in GLSL)
 
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
@@ -238,15 +246,14 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 17 (hero-v001 bis v017)
+- **Erlebnisse im Lab:** 18 (hero-v001 bis v018)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
-- **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, **meshy-3d-generation** NEU)
-- **Neue Technik:** PRISM (hero-v017-a) — erster TRANSPARENTER 3D-Hero, MeshTransmissionMaterial (Glass Refraction)
-- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex+Fragment) → v017-a (MeshTransmissionMaterial)
-- **Material-Paradigmen:** Opak (Custom GLSL) → Transparent (drei Transmission) → Naechstes: GLTF-Modelle
-- **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader (wie Award-Studios)
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, **glass-transmission** (NEU)
-- **Inspiration-Analysen:** 15 (+Artem Shcherban, +PARTICOLARE STUDIO)
+- **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, meshy-3d-generation)
+- **Neue Technik:** NEBULA (hero-v018-a) — erster GPGPU/FBO Hero, GPU-berechnete Partikel-Positionen
+- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → **v018-a (GPGPU FBO Particles)**
+- **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader zu GPGPU Simulation
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, **gpgpu-particles** (NEU)
+- **Inspiration-Analysen:** 16 (+Immersive Garden SOTD 18.03.2026)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
 - **Asset-Kosten gesamt:** ~$2.50 (video + images)
 - **3D-Objekt-Skills installiert:** meshy-3d-generation, blender-web-pipeline, 3d-model-generation
