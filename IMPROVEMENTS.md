@@ -10,11 +10,9 @@ Wenn ein Improvement umgesetzt ist: Zeile loeschen oder als [DONE] markieren.
 ### [DONE] IMP-001: HEARTBEAT_OK Cooldown einbauen (Token-Effizienz)
 Umgesetzt in run-20260324-0420: Cooldown-Logic in `scripts/run.sh` + `scripts/cooldown.sh`.
 
-### IMP-002: Neue Skills in echtem Build testen
-**Problem:** 6 Skills installiert (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator) aber keiner davon in einem echten Build verwendet. Wir wissen nicht ob sie tatsaechlich bessere Ergebnisse liefern.
-**Loesung:** Naechster Build: mindestens 2 der neuen Skills gezielt einsetzen. Scroll-storyteller + awwwards-animations sind die vielversprechendsten fuer den Story-First-Ansatz.
-**Impact:** Potentiell neues Qualitaets-Niveau, Skills sind sonst totes Gewicht.
-**Aufwand:** Kein Extra-Aufwand — einfach beim naechsten Build laden.
+### [DONE] IMP-002: Neue Skills in echtem Build testen
+Umgesetzt in run-20260324-0540: exp-scroll-story mit scroll-storyteller + awwwards-animations.
+**Ergebnis:** Skills sind am wertvollsten in der SPEC-PHASE (Opus Konzept), nicht der BUILD-PHASE (Sonnet Code). Builder hat Skills nicht explizit geladen — die Patterns waren bereits im Spec eingebettet. Score ~4.5/10 Chris-geschaetzt (Sonnet-only, kein Opus Signature Module). Skills allein machen keinen WOW-Faktor — der kommt vom Opus Signature Piece.
 
 ### [DONE] IMP-003: Overflow-Bug als Spec-Pflichtzeile
 Umgesetzt in run-20260324-0440: Spec-Pflichtzeile in Constitution + web-lab setup.sh Build-Command eingefuegt.

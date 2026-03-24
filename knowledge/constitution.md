@@ -254,9 +254,21 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Learning: **Codex ist KEIN Opus-Ersatz** — erweitert Spec, erfindet aber keine WOW-Signaturen
 - Deployment blockiert (Vercel-Token abgelaufen)
 
+### #14: Skill-Test Build (2026-03-24, exp-scroll-story)
+- **Score: ~4.5/10 Chris-geschaetzt** (Self: 6.5)
+- scroll-storyteller + awwwards-animations als Skills im Builder-Prompt
+- 795 Zeilen, 7 Kapitel, 8 Bilder, 0 Build-Fehler, ~4 Min
+- **FUNDAMENTALE Erkenntnis: Skills informieren SPEC, nicht BUILD**
+  - Builder hat Skills nicht explizit geladen — Spec enthielt bereits die Patterns
+  - Skills sind Wissens-Quelle fuer Opus beim Konzept-Schreiben
+  - Ohne Opus Signature Module: kein WOW, nur solide Handwerksarbeit
+- Learning: **Skill-Wert = Konzept-Qualitaet, nicht Code-Qualitaet**
+- Learning: **Vercel Deploy braucht --scope Flag:** `npx vercel --yes --prod --token "$TOKEN" --scope christian-klapproths-projects`
+
 ### Noch nicht getestet
 - Opus Signature + Codex Builder (statt Sonnet)
 - Designer + Rules + Assets-First (Kombination)
+- Opus mit Skills geladen → Spec → Builder (Skills als Opus-Input)
 
 ## Was fehlt fuer WOW (~9.5/10 → 10/10)
 - ~~WebGL/Shader Signature Moment~~ — ERLEDIGT
@@ -289,7 +301,7 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 5. Detailliertes Design-Konzept mit Sektions-Specs
 6. **Sonnet Builder via Agent-Tool** (NICHT tmux!) (~7 Min)
 7. QA via agent-browser
-8. Deploy via Vercel
+8. Deploy: `TOKEN=$(cat ~/.config/vercel/token) && npx vercel --yes --prod --token "$TOKEN" --scope christian-klapproths-projects`
 
 **Warum das funktioniert:**
 - Opus = kreativster Teil (WOW-Faktor)

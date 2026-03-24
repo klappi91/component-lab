@@ -63,6 +63,20 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - [ ] Service-SVGs durch echte generative Illustrationen ersetzen
   - [ ] Showcase mit dramatischen Hover-Reveals
 
+#### 1d. exp-scroll-story — Skill-Test (Scroll Cinema)
+- **Status:** v1 deployed, QA läuft
+- **URL:** https://exp-scroll-story.vercel.app
+- **GitHub:** https://github.com/klappi91/weblab-exp-scroll-story
+- **Stil:** "Scroll Cinema" — 7 Kapitel, kein Nav, Film-artig
+- **Fonts:** Cabinet Grotesk + Instrument Serif + General Sans (Fontshare)
+- **IMP-002:** Skills scroll-storyteller + awwwards-animations getestet
+- **Self-Eval:** 6.5/10 (Chris-geschätzt: ~4.5/10)
+- **Erkenntnis:** Skills informieren Spec, nicht Build. Kein Opus Signature = kein WOW.
+- **Nächste Schritte:**
+  - [ ] QA-Ergebnisse auswerten
+  - [ ] Optional: Opus Signature Module nachrüsten (WebGL/Shader)
+  - [ ] Vercel-Token Problem lösen (--scope Flag dokumentieren)
+
 #### 3. Naechste Prozess-Experimente (Prioritaet)
 - [x] **Agent-Team-Pipeline testen** — exp-morphic-flow, 6.5/10 QA, 3/6 Phasen delegiert
   - Ergebnis: Support-Agents (Assets, QA, Polish) funktionieren. Builder-Agent braucht mehr Spec-Detail.
@@ -118,10 +132,10 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 11 + 1 nicht deployed (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light, haiku-test, codex-test[blocked])
+- **Websites deployed:** 12 + 1 nicht deployed (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light, haiku-test, scroll-story, codex-test[blocked])
 - **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 + Morphic-Flow v2 warten auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
-- **Prozess-Experimente durchgefuehrt:** 14 (Ziel: mindestens 3 ✓✓) — inkl. Codex gpt-5.4 (~6.5/10, Modell-Hierarchie FINAL)
+- **Prozess-Experimente durchgefuehrt:** 15 (Ziel: mindestens 3 ✓✓) — inkl. exp-scroll-story Skill-Test
 - **Skills installiert:** 6 neue (gsap-plugins, awwwards-animations, 3d-web-experience, scroll-storyteller, svg-animations, lottie-animator)
 - **Agent-Team:** 5-Rollen-Architektur designed, Agent-Definitionen ready, noch nicht getestet
 - **Sessions am 2026-03-23:** 25
