@@ -283,6 +283,7 @@ export default function HeroV018A() {
               color: "#fff",
               letterSpacing: "0.25em",
               textTransform: "uppercase",
+              textShadow: "0 0 40px rgba(0,0,0,0.8), 0 0 80px rgba(0,0,0,0.5)",
               opacity: 0,
             }}
           >
@@ -296,6 +297,7 @@ export default function HeroV018A() {
               fontWeight: 300,
               color: ORANGE,
               letterSpacing: "0.15em",
+              textShadow: "0 0 30px rgba(0,0,0,0.8)",
               opacity: 0,
             }}
           >
