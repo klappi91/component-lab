@@ -185,6 +185,19 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Learning: **Sonnet + impeccable:overdrive Skill ≈ manuelles Opus-Overdrive bei halben Kosten**
 - Learning: **Preloader = First-Impression Game-Changer**
 
+### #9: Builder-Agent mit Detailed Specs (2026-03-24, exp-morphic-flow v3)
+- **Score: ~7/10 geschaetzt** (QA 5.5 headless-limitiert, realistisch ~7)
+- 350+ Zeilen creative-brief.md mit exakten JSX/CSS/GSAP Code-Patterns pro Sektion
+- Sonnet Builder via Agent-Tool: 13 Dateien, 1888 Insertions, 0 Build-Fehler, ~10 Min
+- 3 neue Canvas-Komponenten erstellt (ServiceWireframe, ServiceNetwork, ServiceParticles)
+- v2→v3: Simple SVGs → Canvas Visuals, Grid → Horizontal Scroll, Static → Pinned Timeline
+- **FUNDAMENTALE Erkenntnis: Builder = Spec-Qualitaet**
+  - Spec enthielt Code → Builder kopierte/adaptierte praezise
+  - Spec vergass Detail → Builder ignorierte es (korrekt!)
+  - **Investition in die Spec = direkter ROI auf den Output**
+- Learning: **creative-brief.md als SINGLE-INPUT Format funktioniert** — Story + Design + Code pro Sektion
+- Learning: **~25 Min total (15 Spec + 10 Build)** fuer einen vollstaendigen Website-Rebuild
+
 ### Noch nicht getestet
 - Designer + Rules + Assets-First (Kombination)
 - Parallel-Build (2 Builder, verschiedene Prompts)
