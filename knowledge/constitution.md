@@ -218,7 +218,21 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
   - Nuetzlich fuer: Rapid Prototyping, Stil-Exploration, Kunden-Praesentation
 - Learning: **Dark > Light bei gleicher Spec-Tiefe** — dramatischere Specs = visuell staerker
 
+### #12: Haiku als Builder (2026-03-24, exp-haiku-test)
+- **Score: 3.0/10** — Gleiche Spec wie parallel-dark (Sonnet: 5.3/10)
+- 61k Tokens, 110 Sekunden, 0 Build-Fehler — extrem schnell und guenstig
+- **KRITISCHER BUG:** body overflow:hidden + inner scroll wrapper → GSAP ScrollTrigger komplett kaputt
+- 4/7 Sektionen nicht funktional (Statement, Portfolio, Process, CTA)
+- CSS-only Features funktionieren (sticky cards, marquee)
+- **FUNDAMENTALE Erkenntnis: Modell-Hierarchie bestaetigt**
+  - **Opus** = Kreativ + Verstaendnis (8/10 moeglich)
+  - **Sonnet** = Solider Builder mit guter Spec (5-7/10)
+  - **Haiku** = Struktur-Kopierer ohne Verstaendnis (3/10) — NUR fuer triviale Tasks
+- Learning: **Haiku kopiert Code woertlich, versteht aber nicht die Implikationen** (z.B. overflow bricht GSAP)
+- Learning: **80% Kostenersparnis irrelevant wenn Ergebnis unbrauchbar**
+
 ### Noch nicht getestet
+- Codex als Builder
 - Designer + Rules + Assets-First (Kombination)
 
 ## Was fehlt fuer WOW (~9.5/10 → 10/10)
