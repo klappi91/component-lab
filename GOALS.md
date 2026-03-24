@@ -38,6 +38,17 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Uebergaenge zwischen Phasen verbessern
 - [ ] Mouse-Parallax auf TYPOGRAFIE-Buchstaben
 
+#### hero-v007-a: VOM PIXEL ZUR WEBSITE — Scroll-Driven Creation
+- [x] Chris-Feedback verarbeiten (Mail 23.03.: scroll-driven Video, Assets, sei mutig)
+- [x] Konzept: Browser-Mockup zeigt Website die sich beim Scrollen aufbaut (5 Phasen)
+- [x] Choreografie + Build (GSAP pin/scrub, chapter cards, progress bar)
+- [x] QA: Screenshots Desktop (Intro, Phasen, Outro OK)
+- [ ] gemini-image: echtes Hero-Image + Service-Illustrationen generieren
+- [ ] gemini-video: Scroll-driven Video fuer BEWEGUNG-Phase
+- [ ] Lenis Smooth Scroll
+- [ ] Wireframes sichtbarer (hellere Farbe, animated dash)
+- [ ] Chris zeigen, Feedback einholen
+
 #### Naechstes Erlebnis
 - [ ] Kris Temmerman (neuroproductions.be) tief analysieren — Creativity 8.03!
 - [ ] Neues Erlebnis basierend auf Analyse
@@ -83,7 +94,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 6 (hero-v001 bis v006)
+- **Erlebnisse im Lab:** 7 (hero-v001 bis v007)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
 - **Inspiration-Analysen:** 4 (mersi-architecture.com, DD.NYC, Aupale Vodka/Locomotive, Unseen Studio 2025)

@@ -181,5 +181,32 @@
     "human_rating": null,
     "human_comment": null,
     "tags": ["typografie-only", "pixintcreators", "brand", "self-demonstrating", "process-dissection", "scramble-decode", "character-spread", "variable-font-wave", "easing-visualization", "canvas", "color-flood", "destilliert", "aupale-inspired", "skills-active", "custom-cursor", "grain"]
+  },
+  {
+    "id": "hero-v007-a",
+    "pair_id": "hero-v007",
+    "type": "experience",
+    "category": "scroll-storytelling",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "Scroll-driven Creation Story: Browser-Mockup zeigt eine Website die sich beim Scrollen Schicht fuer Schicht aufbaut. 5 Phasen: Struktur (Wireframe) → Typografie → Farbe → Bild → Bewegung. Jede Phase erklaert was eine Website besonders macht.",
+    "skills_loaded": ["gsap-scrolltrigger"],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "clip-path", "custom-cursor", "SVG-grain", "stagger", "back.out", "expo.out", "power4.inOut"],
+    "design_philosophy": "Meta-Erlebnis: Eine Website die zeigt wie eine Website entsteht. Browser-Mockup als Buehne, Scroll als Zeitachse. Jede Phase fuegt einen Layer hinzu der eine Website von 'nichts' zu 'besonders' macht.",
+    "inspiration_source": "Chris-Feedback: 'Vom Pixel zur Website', 'Was macht eine Website aus', 'scroll-driven Video/Frames', 'sei mutig und erfinde neue Dinge'. Apple-style scroll-driven sequences.",
+    "choreography_notes": "Intro: 'Was macht eine Website besonders?' (7vw Clash Display + Instrument Serif italic). Journey: pinned browser (74vw, 72vh) mit 8000px scroll space. Phase-Labels als chapter cards links (4vw, Clash Display). P1 STRUKTUR: wireframe boxes stagger in (power2.out). P2 TYPOGRAFIE: word-by-word hero reveal (expo.out, rotateX:-15), nav + service texts. P3 FARBE: borders dashed→solid, backgrounds add, CTA turns orange. P4 BILD: hero image clip-path wipe (inset, power4.inOut), service icons back.out(1.7). P5 BEWEGUNG: parallax shifts, CTA glow, motion lines sweep. End: chrome fades, result overlay. Progress bar throughout.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, Chris-Feedback-driven)",
+    "builder_model": null,
+    "run_id": "run-20260324-0720",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": ["scroll-storytelling", "pixintcreators", "brand", "browser-mockup", "progressive-build", "website-creation", "5-phasen", "wireframe-to-website", "scroll-driven", "chapter-cards", "progress-bar", "clip-path-wipe", "custom-cursor", "grain", "chris-feedback", "meta-erlebnis"]
   }
 ]
