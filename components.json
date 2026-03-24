@@ -100,5 +100,32 @@
     "human_rating": null,
     "human_comment": null,
     "tags": ["scroll-storytelling", "scroll-driven", "pin", "scrub", "marquee", "word-reveal", "neon-akzent", "grain", "minimal"]
+  },
+  {
+    "id": "hero-v004-a",
+    "pair_id": "hero-v004",
+    "type": "experience",
+    "category": "typografie-only",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "Typografie-First Experience fuer PixIntCreators. PIXINT-Buchstaben als massive Hero-Elemente die sich beim Scrollen auseinanderziehen, CREATORS enthuellen, Services als Text-Theater cyclen, CTA mit Farb-Morph.",
+    "skills_loaded": [],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "mouse-parallax", "SVG-grain", "custom-cursor"],
+    "design_philosophy": "Typografie IST der Hero. Keine Bilder, kein WebGL, kein Video. Die Worte und ihre Animation sind das Erlebnis.",
+    "inspiration_source": "DD.NYC (dd.nyc) — Awwwards SOTD. Massive 130px Headline, Single Font, Orange Akzent, Worte SIND der Hero.",
+    "choreography_notes": "4 Phasen Hero: Entrance (expo.out stagger) → Spread (power4.inOut, 6 Richtungen) → CREATORS reveal → Reassemble + Exit. Services: 3x Enter/Exit cycling (blur-exit). CTA: scale 0.2→1 + scaleY background fill + pulse.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, inspiration-driven)",
+    "builder_model": null,
+    "run_id": "run-20260324-0620",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": ["typografie-only", "pixintcreators", "brand", "massive-type", "mouse-parallax", "scroll-driven", "services-theater", "cta-morph", "grain", "custom-cursor", "dd-nyc-inspired"]
   }
 ]
