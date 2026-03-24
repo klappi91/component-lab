@@ -1195,5 +1195,68 @@
       "fourth-webgl-hero",
       "first-gpgpu"
     ]
+  },
+  {
+    "id": "hero-v019-a",
+    "pair_id": "hero-v019",
+    "type": "experience",
+    "category": "3d-objekt",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": null,
+    "branche": null,
+    "brief": null,
+    "prompt_excerpt": "Erster Hero mit ECHTEM AI-generierten 3D-Objekt (Meshy AI). Laptop als kreatives Portal — vom Dunkel zum Leuchten.",
+    "skills_loaded": [
+      "meshy-3d-generation",
+      "react-three-fiber",
+      "threejs-webgl",
+      "gsap-scrolltrigger",
+      "awwwards-animations"
+    ],
+    "skills_detected": [
+      "useGLTF",
+      "GSAP",
+      "ScrollTrigger",
+      "Lenis",
+      "MeshStandardMaterial",
+      "Environment",
+      "AdditiveBlending"
+    ],
+    "design_philosophy": "Restraint — every 3D element serves the narrative (Pendragon Cycle)",
+    "inspiration_source": "Pendragon Cycle (SOTD Jan 2026): WebGL with restraint, 3D serving story",
+    "choreography_notes": "4 Phasen: DARK (silhouette) → IGNITE (screen glow) → RADIATE (creative energy) → BRAND. Signature moment: the ignition when screen blazes orange.",
+    "assets_generated": [
+      {
+        "type": "3d-model",
+        "source": "meshy-ai",
+        "cost": 30,
+        "file": "public/models/laptop.glb",
+        "size": "1.4MB",
+        "original_size": "21MB"
+      }
+    ],
+    "assets_used": [
+      "public/models/laptop.glb"
+    ],
+    "screenshots": {
+      "mobile": "",
+      "desktop": ""
+    },
+    "constitution_version": 15,
+    "workflow": "meshy-text-to-3d → gltf-transform-optimize → useGLTF-hero",
+    "builder_model": null,
+    "run_id": "run-20260324-1520",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": [
+      "meshy-ai",
+      "text-to-3d",
+      "gltf",
+      "webgl",
+      "ai-generated-3d",
+      "product-hero",
+      "first-real-object"
+    ]
   }
 ]

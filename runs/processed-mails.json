@@ -105,6 +105,13 @@
       "subject": "Re: Component Lab — hero-v016-a: METAMORPHIC (erster 3D-Objekt-Hero)",
       "action": "feedback-verarbeitet: sinnvolle 3D-Objekte → 3 Skills installiert (meshy, blender-pipeline, 3d-model-gen), hero-v017-a PRISM gebaut (Glass Diamond), Meshy API-Key Anfrage",
       "session": "run-20260324-1420"
+    },
+    {
+      "uid": 26,
+      "date": "2026-03-24",
+      "subject": "Re: Component Lab — hero-v017-a: PRISM + 3D-Objekt-Workflow entdeckt",
+      "action": "Meshy API-Key erhalten und gespeichert",
+      "session": "run-20260324-1520"
     }
   ]
 }

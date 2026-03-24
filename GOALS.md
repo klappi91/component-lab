@@ -193,11 +193,20 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Optional: SIZE=256 (65K Partikel)
 - [ ] Optional: Farb-Variationen nach Phase/Position
 
-#### Naechstes Erlebnis: hero-v019-a
-- [ ] Wenn Meshy-Key: GLTF Object Hero (Text→3D → Custom Shader)
-- [ ] Wenn KEIN Meshy-Key: Sketchfab CC0 Modell + Custom Material
-- [ ] Oder: FBO Particles + 3D-Modell Kombination (dissolve/reform)
-- [ ] Oder: Fluid Simulation (Navier-Stokes in GLSL)
+#### hero-v019-a: STUDIO — Erster Meshy AI 3D-Hero
+- [x] Chris Meshy API-Key erhalten (UID 26, 1.530 Credits)
+- [x] Text-to-3D: Laptop generiert (Preview 20cr + Refine 10cr = 30cr)
+- [x] gltf-transform Optimierung: 21 MB → 1.4 MB (Draco + WebP)
+- [x] Erlebnis gebaut: useGLTF + custom materials + scroll-driven glow
+- [x] Sprite-Glow statt Plane (Plane renderte als Rechteck)
+- [x] Desktop QA: Alle 4 Phasen verifiziert (Dark ✓, Ignite ✓, Radiate ✓, Brand ✓)
+- [x] Build erfolgreich, components.json aktualisiert
+- [x] Chris per Mail informiert
+- [ ] Chris Feedback abwarten
+- [ ] Mobile QA
+- [ ] Optional: Besserer Prompt fuer hoehere Modell-Qualitaet
+- [ ] Optional: Retexture-API testen
+- [ ] Optional: Custom Shader auf Meshy-Modell (statt MeshStandardMaterial)
 
 #### Backup: Fluid Simulation
 - [ ] Navier-Stokes in GLSL (Multi-Pass: Velocity, Pressure, Advection, Render)
@@ -208,7 +217,7 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [x] threejs-webgl und react-three-fiber Skills in Build geladen (v016-a)
 - [x] find-skills: 3 neue 3D-Skills installiert (meshy, blender-pipeline, 3d-model-gen)
 - [ ] shadertoy Skill fuer GLSL-Referenz nutzen
-- [ ] Meshy-Workflow testen (wenn API-Key vorhanden)
+- [x] Meshy-Workflow getestet: Text→3D→Optimize→Hero funktioniert (30cr, ~5 Min)
 
 ---
 
@@ -246,14 +255,15 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 18 (hero-v001 bis v018)
+- **Erlebnisse im Lab:** 19 (hero-v001 bis v019)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 7 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, threejs-webgl, meshy-3d-generation)
-- **Neue Technik:** NEBULA (hero-v018-a) — erster GPGPU/FBO Hero, GPU-berechnete Partikel-Positionen
-- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → **v018-a (GPGPU FBO Particles)**
-- **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader zu GPGPU Simulation
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, **gpgpu-particles** (NEU)
-- **Inspiration-Analysen:** 16 (+Immersive Garden SOTD 18.03.2026)
+- **Neue Technik:** STUDIO (hero-v019-a) — erster ECHTER AI-generierter 3D-Objekt-Hero (Meshy AI Text-to-3D)
+- **WebGL-Tiefe:** v015-a (2D Fragment) → v016-a (3D Vertex) → v017-a (Glass Transmission) → v018-a (GPGPU FBO) → **v019-a (AI-Generated GLTF)**
+- **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader zu GPGPU zu AI-generierte 3D-Objekte
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, 3d-objekt, glass-transmission, gpgpu-particles, **ai-generated-3d** (NEU)
+- **Inspiration-Analysen:** 17 (+Pendragon Cycle SOTD Jan 2026)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
-- **Asset-Kosten gesamt:** ~$2.50 (video + images)
+- **Asset-Kosten gesamt:** ~$3.10 (video + images + meshy 30cr ≈ $0.60)
 - **3D-Objekt-Skills installiert:** meshy-3d-generation, blender-web-pipeline, 3d-model-generation
+- **Meshy Balance:** 1.500 Credits verbleibend

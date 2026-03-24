@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Meshy raw output (large GLB files)
+meshy_output/**/*.glb

@@ -143,6 +143,21 @@ Der Unterschied:
 4. **Blender Pipeline** — Python-scripted GLTF Export. Skill: blender-web-pipeline
 5. **useGLTF** (drei) — Laedt GLB/GLTF in R3F. Custom Materials drauf anwendbar.
 
+### Meshy AI Pipeline (GETESTET, funktioniert)
+```
+Text-Prompt → POST /openapi/v2/text-to-3d (preview, 20cr, ~90s)
+→ POST /openapi/v2/text-to-3d (refine, 10cr, ~110s)
+→ Download GLB (20-30 MB)
+→ npx @gltf-transform/cli optimize input.glb output.glb --compress draco --texture-compress webp
+→ Output: ~1-2 MB GLB (97% Reduktion!)
+→ useGLTF("/models/model.glb") in R3F
+→ scene.clone(true) + traverse + custom MeshStandardMaterial
+```
+**Kosten:** 30 Credits pro Modell (~$0.60). Balance: 1.500 Credits.
+**Qualitaet:** Gut fuer stilisierte Heroes, aber AI-Artefakte sichtbar. Nicht photoreal.
+**Tipp:** Sprite mit RadialGradient-Texture > Plane fuer Glow-Effekte in 3D-Szenen.
+**Tipp:** Emissive und Lichtintensitaet ZURUECKHALTEN — mehrere orange Lichtquellen + Emissive = alles wird orange.
+
 ## Paradigmenwechsel: WebGL > Canvas 2D > DOM
 
 Award-Studios (Lusion, Immersive Garden, makemepulse) nutzen WebGL/GLSL als KERN. Nicht als Add-On. Canvas 2D und DOM-Animationen sind fuer 7/10. Fuer 9+/10 braucht es Shader. Die Reihenfolge fuer Impressivitaet:
