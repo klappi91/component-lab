@@ -154,14 +154,26 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Optional: Lenis Smooth Scroll
 - [ ] Optional: Sound Toggle
 
+#### hero-v016-a: METAMORPHIC — Erster 3D-Objekt-Hero
+- [x] WebGL-Recherche: Fluid Sim, Morphing Spheres, Codrops Twisted Spheres
+- [x] Awwwards-Recherche: Artem Shcherban (SOTD 22.03), PARTICOLARE STUDIO (SOTD 20.03)
+- [x] Konzept: Lebende 3D-Form, IcosahedronGeometry detail 6, 3D Simplex Noise Vertex Displacement
+- [x] Erlebnis gebaut: Blinn-Phong Three-Point Lighting, Fresnel, Irideszenz, Lenis Smooth Scroll
+- [x] Build erfolgreich, components.json aktualisiert
+- [ ] Chris Feedback einholen
+- [ ] Visuelles QA (Desktop + Mobile)
+- [ ] Optional: Post-Processing (Bloom)
+- [ ] Optional: Environment Map fuer Reflektionen
+- [ ] Optional: Blob reagiert auf Cursor-Naehe (Vertex-Displacement)
+
 #### Naechstes Erlebnis
-- [ ] Wenn v015-a WOW-Potenzial hat → iterieren (Lenis, Sound, Polish)
-- [ ] Wenn nicht → andere WebGL-Technik (3D Objekte, Fluid Sim, Particles)
+- [ ] v015-a oder v016-a iterieren wenn Chris WOW-Potenzial sieht
+- [ ] Sonst: Fluid Simulation oder GPU Particles als naechste WebGL-Tiefe
 - [ ] WebGL-Tiefe > neue Techniken in der Breite
 
 #### Skill-Discovery
+- [x] threejs-webgl und react-three-fiber Skills in Build geladen (v016-a)
 - [ ] find-skills nach WebGL/Shader-Skills suchen
-- [ ] threejs-webgl und react-three-fiber Skills in naechstem Build laden
 - [ ] shadertoy Skill fuer GLSL-Referenz nutzen
 
 ---
@@ -200,12 +212,13 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 15 (hero-v001 bis v015)
+- **Erlebnisse im Lab:** 16 (hero-v001 bis v016)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
-- **Skills aktiv genutzt:** 5 (text-animation, gsap-plugins, awwwards-animations, gemini-video, **react-three-fiber** NEU)
-- **Neue Technik:** LIQUID GLASS (hero-v015-a) — erster WebGL GLSL Shader, Image Distortion + Mouse Interaction
+- **Skills aktiv genutzt:** 6 (text-animation, gsap-plugins, awwwards-animations, gemini-video, react-three-fiber, **threejs-webgl** NEU)
+- **Neue Technik:** METAMORPHIC (hero-v016-a) — erster 3D-Objekt-Hero, Vertex Displacement Shader, Blinn-Phong Lighting
+- **WebGL-Tiefe:** v015-a (2D Fragment Shader) → v016-a (3D Vertex+Fragment Shader)
 - **Paradigmenwechsel:** Von Canvas 2D / DOM zu WebGL Shader (wie Award-Studios)
-- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, **webgl-shader** (NEU)
-- **Inspiration-Analysen:** 13 (+Lusion, +Immersive Garden, +makemepulse)
+- **Erlebnis-Typen abgedeckt:** typografie-only, generative-art, scroll-storytelling, 3d-szene, interaktiv, horizontal-scroll, single-element, editorial, video-hero, pinned-experience, webgl-shader, **3d-objekt** (NEU)
+- **Inspiration-Analysen:** 15 (+Artem Shcherban, +PARTICOLARE STUDIO)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
 - **Asset-Kosten gesamt:** ~$2.50 (video + images)
