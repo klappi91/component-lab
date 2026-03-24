@@ -252,7 +252,7 @@ Kernregeln: Design-System zuerst, erster Viewport = Einheit, expressive Fonts, f
 - Learning: **Codex erweitert Spec kreativ** — Navigation, Stats, Glasmorphism, a11y (Sonnet folgt nur)
 - Learning: **Codex adaptiert an Umgebung** — erkannte Turbopack-Bug, fixte Build-Script selbst
 - Learning: **Codex ist KEIN Opus-Ersatz** — erweitert Spec, erfindet aber keine WOW-Signaturen
-- Deployment blockiert (Vercel-Token abgelaufen)
+- Deployed (2026-03-24, --scope Fix): https://exp-codex-test-ah9gbvjji-christian-klapproths-projects.vercel.app
 
 ### #14: Skill-Test Build (2026-03-24, exp-scroll-story)
 - **Score: ~4.5/10 Chris-geschaetzt** (Self: 6.5)

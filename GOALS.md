@@ -98,7 +98,8 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
   - Ergebnis: 110k Tokens, 727 Zeilen, 0 Build-Fehler, alle 7 Sektionen + alle Bilder
   - Codex = Bester Spec-Following Builder. useGSAP, matchMedia, proper cleanup, erweitert Spec kreativ
   - Modell-Hierarchie FINAL: Opus (8/10) > Codex gpt-5.4 (6.5/10) > Sonnet (5.3/10) > Haiku (3/10)
-  - Deployment blockiert (Vercel-Token abgelaufen)
+  - Deployment: DONE (2026-03-24, Vercel --scope Fix)
+  - URL: https://exp-codex-test-ah9gbvjji-christian-klapproths-projects.vercel.app
   - Naechster Test: Opus Signature + Codex Builder (statt Sonnet)
 
 #### 4. Abgeschlossene Prozess-Experimente (2026-03-23)
@@ -132,7 +133,7 @@ Eine Webdesign-Agentur deren eigene Website nicht mindestens so gut ist wie die 
 ---
 
 ## Metriken
-- **Websites deployed:** 12 + 1 nicht deployed (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light, haiku-test, scroll-story, codex-test[blocked])
+- **Websites deployed:** 13 (shader-forge, editorial-light, warm-brutal, cinematic-dark, signature-hero, story-editorial, morphic-flow, kinetic-type, parallel-dark, parallel-light, haiku-test, scroll-story, codex-test)
 - **Bester Score (Chris):** 8/10 (exp-signature-hero v12) — Story-Editorial v6 + Morphic-Flow v2 warten auf Bewertung
 - **Chris-Feedback "WOW":** 0 (Ziel: mindestens 1) — "solide aber vergessen nachdem man sie verlassen hat"
 - **Prozess-Experimente durchgefuehrt:** 15 (Ziel: mindestens 3 ✓✓) — inkl. exp-scroll-story Skill-Test

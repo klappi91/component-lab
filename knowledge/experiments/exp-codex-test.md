@@ -2,7 +2,8 @@
 
 ## Status
 - **Score:** ~6.5/10 (geschaetzt, konservativ)
-- **Deployed:** NEIN (Vercel-Token abgelaufen)
+- **Deployed:** JA (2026-03-24, Vercel --scope Fix)
+- **URL:** https://exp-codex-test-ah9gbvjji-christian-klapproths-projects.vercel.app
 - **GitHub:** https://github.com/klappi91/weblab-exp-codex-test
 - **Build:** 0 Fehler
 
@@ -59,6 +60,6 @@
 - **Haiku** = Billig aber unbrauchbar fuer Awwwards (3.0/10)
 
 ## Naechste Schritte
-- [ ] Vercel-Token erneuern und deployen
+- [x] Vercel-Token erneuern und deployen (2026-03-24, --scope Fix)
 - [ ] Codex als Builder im "Opus Signature + Builder" Workflow testen (statt Sonnet)
 - [ ] Vergleich: Opus Signature + Codex Builder vs. Opus Signature + Sonnet Builder
