@@ -127,5 +127,32 @@
     "human_rating": null,
     "human_comment": null,
     "tags": ["typografie-only", "pixintcreators", "brand", "massive-type", "mouse-parallax", "scroll-driven", "services-theater", "cta-morph", "grain", "custom-cursor", "dd-nyc-inspired"]
+  },
+  {
+    "id": "hero-v005-a",
+    "pair_id": "hero-v005",
+    "type": "experience",
+    "category": "scroll-storytelling",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "Scroll-driven Pixel-Genesis: 1560 Particles starten als einzelnes oranges Pixel, explodieren chaotisch, ordnen sich zu Grid-Positionen, nehmen Bildfarben an und formen eine Website. 4 Phasen (Pixel, Ordnung, Farbe, Erlebnis), Canvas-Render-Loop, GSAP ScrollTrigger scrub.",
+    "skills_loaded": [],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "pin", "scrub", "canvas", "particle-system", "custom-cursor", "SVG-grain"],
+    "design_philosophy": "Vom Pixel zur Website — der User scrollt und ERSCHAFFT. Die Transformation IST die Story. Particles als Metapher fuer den kreativen Prozess.",
+    "inspiration_source": "Chris-Feedback (Scroll-driven Video/Frames), Apple-style scroll-driven sequences, Crownd Estates frame-by-frame animation (Awwwards)",
+    "choreography_notes": "4 Phasen: 0-18% Emergence (expo.out burst from center), 18-48% Order (inOutQuart → image positions), 48-76% Color (orange → sampled image colors), 76-100% Sharpen (blocks merge to full resolution). Phase labels bottom-left, progress bar bottom. Intro with pulsing single pixel, Reveal with scale-up + orange fill.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, Chris-Feedback-driven)",
+    "builder_model": null,
+    "run_id": "run-20260324-0640",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": ["scroll-storytelling", "pixintcreators", "canvas", "particle-system", "scroll-driven", "pixel-genesis", "transformation", "4-phasen", "custom-cursor", "grain", "procedural-fallback", "chris-feedback"]
   }
 ]

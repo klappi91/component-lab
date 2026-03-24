@@ -19,11 +19,19 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 
 ### Offene Aufgaben
 
+#### hero-v005-a: Pixel Genesis — Iteration
+- [x] Chris-Feedback einarbeiten (scroll-driven transformation, "Vom Pixel zur Website")
+- [x] Erlebnis choreografieren und bauen (canvas particle system, 4 Phasen)
+- [x] In components.json tracken
+- [ ] Echtes Bild mit gemini-image generieren (statt Fallback-Wireframe)
+- [ ] Mobile testen (agent-browser)
+- [ ] Chris zeigen, Feedback einholen
+- [ ] Iteration basierend auf Feedback
+
 #### Naechstes Erlebnis
 - [ ] Inspiration suchen (Awwwards SOTD analysieren, Choreografie zerlegen)
 - [ ] Skills laden (awwwards-animations + gsap-plugins + passender Konzept-Skill)
 - [ ] Erlebnis choreografieren und bauen (im Component Lab, /heroes/)
-- [ ] In components.json tracken (skills_loaded, inspiration, choreography_notes)
 
 #### Skill-Discovery
 - [ ] find-skills nach neuen Animations/Design-Skills durchsuchen
@@ -66,8 +74,8 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 4 (hero-v001 bis v003)
+- **Erlebnisse im Lab:** 5 (hero-v001 bis v005)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
 - **Skills aktiv genutzt:** 0 von 6 (Ziel: alle mindestens 1x)
-- **Inspiration-Analysen:** 1 (mersi-architecture.com) — Ziel: regelmaessig
+- **Inspiration-Analysen:** 2 (mersi-architecture.com, DD.NYC) — Ziel: regelmaessig
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
