@@ -44,11 +44,12 @@ export default async function HeroPage({
           branche: component.branche,
           model: component.model,
           skills_requested: component.skills_requested,
+          skills_loaded: component.skills_loaded,
           skills_detected: component.skills_detected,
           human_rating: component.human_rating,
           human_comment: component.human_comment,
-          judge_claude: component.judge_claude,
-          judge_codex: component.judge_codex,
+          judge_claude: component.judge_claude ?? null,
+          judge_codex: component.judge_codex ?? null,
           created: component.created,
         }}
       />

@@ -65,7 +65,7 @@ export default async function ComparePage({
                 </span>
                 <span className="text-xs text-muted">{variant.model}</span>
                 <div className="flex gap-1">
-                  {variant.skills_requested.map((skill) => (
+                  {(variant.skills_loaded || variant.skills_requested || []).map((skill) => (
                     <span
                       key={skill}
                       className="text-[10px] font-mono bg-surface px-1.5 py-0.5 rounded text-muted"

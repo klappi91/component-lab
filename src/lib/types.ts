@@ -10,7 +10,7 @@ export type Category =
   | "single-element"
   | "collage-mixed-media";
 
-export type ComponentType = "hero" | "section" | "nav" | "footer" | "cta";
+export type ComponentType = "hero" | "experience" | "section" | "nav" | "footer" | "cta";
 
 export type JudgeVerdict = {
   winner: boolean;
@@ -29,8 +29,11 @@ export type ComponentEntry = {
   branche: string;
   brief: string;
   prompt_excerpt: string;
-  skills_requested: string[];
+  skills_requested?: string[];
+  skills_loaded?: string[];
   skills_detected: string[];
+  design_philosophy?: string | null;
+  choreography_notes?: string | null;
   assets_generated: string[];
   assets_used: string[];
   screenshots: { mobile: string; desktop: string };
@@ -43,9 +46,9 @@ export type ComponentEntry = {
   agent_self_rating?: { score: number; reasoning: string } | null;
   human_rating: number | null;
   human_comment: string | null;
-  judge_claude: JudgeVerdict | null;
-  judge_codex: JudgeVerdict | null;
-  judge_consensus: "winner" | "loser" | "both-good" | "both-bad" | null;
+  judge_claude?: JudgeVerdict | null;
+  judge_codex?: JudgeVerdict | null;
+  judge_consensus?: "winner" | "loser" | "both-good" | "both-bad" | null;
   tags: string[];
 };
 

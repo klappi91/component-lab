@@ -14,12 +14,13 @@ type OverlayProps = {
     persona: string;
     branche: string;
     model: string;
-    skills_requested: string[];
+    skills_requested?: string[];
+    skills_loaded?: string[];
     skills_detected: string[];
     human_rating: number | null;
     human_comment: string | null;
-    judge_claude: JudgeVerdict | null;
-    judge_codex: JudgeVerdict | null;
+    judge_claude?: JudgeVerdict | null;
+    judge_codex?: JudgeVerdict | null;
     created: string;
   };
 };
@@ -120,9 +121,9 @@ export function HeroOverlay({ component }: OverlayProps) {
                 Skills
               </h3>
               <div>
-                <span className="text-[10px] text-muted block mb-1">Angefordert</span>
+                <span className="text-[10px] text-muted block mb-1">Geladen</span>
                 <div className="flex flex-wrap gap-1">
-                  {component.skills_requested.map((s) => (
+                  {(component.skills_loaded || component.skills_requested || []).map((s) => (
                     <span key={s} className="text-[10px] font-mono bg-accent/10 text-accent px-1.5 py-0.5 rounded">
                       {s}
                     </span>
