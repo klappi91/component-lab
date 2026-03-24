@@ -154,5 +154,32 @@
     "human_rating": null,
     "human_comment": null,
     "tags": ["scroll-storytelling", "pixintcreators", "canvas", "particle-system", "scroll-driven", "pixel-genesis", "transformation", "4-phasen", "custom-cursor", "grain", "procedural-fallback", "chris-feedback"]
+  },
+  {
+    "id": "hero-v006-a",
+    "pair_id": "hero-v006",
+    "type": "experience",
+    "category": "typografie-only",
+    "created": "2026-03-24",
+    "model": "claude-opus-4-6",
+    "persona": "Kreativdirektor",
+    "branche": "PixIntCreators (eigene Agentur)",
+    "brief": "",
+    "prompt_excerpt": "Typographic Process Dissection — DESTILLIERT. 3 Phasen: TYPOGRAFIE (massive Clash Display 16vw, character spread + variable weight wave), BEWEGUNG (Canvas easing curves visualization, 3 curves linear/ease-out/expo.out drawn live), DESTILLIERT (orange background flood, Instrument Serif italic 14vw, brand reveal).",
+    "skills_loaded": ["text-animation", "gsap-plugins", "awwwards-animations"],
+    "skills_detected": ["gsap", "ScrollTrigger", "useGSAP", "SplitType", "pin", "scrub", "canvas", "custom-cursor", "SVG-grain", "variable-font-weight", "scramble-decode", "character-reveal", "line-reveal", "word-reveal", "color-morph"],
+    "design_philosophy": "Self-demonstrating Webdesign: Jede Sektion demonstriert IHR Thema durch sich selbst. TYPOGRAFIE-Sektion IST spektakulaere Typografie. BEWEGUNG-Sektion ZEIGT Easing live. DESTILLIERT = das Ergebnis wenn alles zusammenkommt.",
+    "inspiration_source": "Aupale Vodka (Locomotive, SOTD 17.03.2026) — Product-Dissection Pattern: Ein Objekt in Aspekte zerlegen, jeder mit eigenem Sticky-Reveal. 168px Headings, Instrument Serif + Helvetica Now Display. Unseen Studio 2025 Wrapped (SOTD 24.03.2026) — Timeline + mixed media.",
+    "choreography_notes": "Intro: Scramble decode (30ms/tick, 0.4 chars/frame). Phase 1 TYPOGRAFIE: back.out(1.7) char entrance → scrub char spread (individual y/x/rotate/scale/color, 200% scroll) + continuous weight wave (300↔900, 0.08s stagger). Phase 2 BEWEGUNG: chars from center (expo.out) → Canvas easing curves drawn live (scrub, 3 curves with moving dots + glow on orange) → word-by-word opacity reveal. Phase 3 DESTILLIERT: scaleY orange flood (power4.inOut) → char scale 0.2→1 (expo.out, 0.06s stagger) → subtitle + brand fade in.",
+    "assets_generated": [],
+    "assets_used": [],
+    "screenshots": { "mobile": "", "desktop": "" },
+    "constitution_version": "v14",
+    "workflow": "selbst-gebaut (Opus direkt, inspiration-driven + skills aktiv geladen)",
+    "builder_model": null,
+    "run_id": "run-20260324-0700",
+    "human_rating": null,
+    "human_comment": null,
+    "tags": ["typografie-only", "pixintcreators", "brand", "self-demonstrating", "process-dissection", "scramble-decode", "character-spread", "variable-font-wave", "easing-visualization", "canvas", "color-flood", "destilliert", "aupale-inspired", "skills-active", "custom-cursor", "grain"]
   }
 ]

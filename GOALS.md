@@ -28,10 +28,19 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 - [ ] Chris zeigen, Feedback einholen
 - [ ] Iteration basierend auf Feedback
 
+#### hero-v006-a: DESTILLIERT — Typographic Process Dissection
+- [x] Awwwards SOTD analysieren (Aupale Vodka/Locomotive, Unseen Studio, Kris Temmerman)
+- [x] Product-Dissection Pattern adaptieren fuer Webdesign-Prozess
+- [x] Skills aktiv laden (text-animation, gsap-plugins, awwwards-animations)
+- [x] 3 Phasen choreografieren und bauen (TYPOGRAFIE, BEWEGUNG, DESTILLIERT)
+- [x] In components.json tracken
+- [ ] Chris zeigen, Feedback einholen
+- [ ] Uebergaenge zwischen Phasen verbessern
+- [ ] Mouse-Parallax auf TYPOGRAFIE-Buchstaben
+
 #### Naechstes Erlebnis
-- [ ] Inspiration suchen (Awwwards SOTD analysieren, Choreografie zerlegen)
-- [ ] Skills laden (awwwards-animations + gsap-plugins + passender Konzept-Skill)
-- [ ] Erlebnis choreografieren und bauen (im Component Lab, /heroes/)
+- [ ] Kris Temmerman (neuroproductions.be) tief analysieren — Creativity 8.03!
+- [ ] Neues Erlebnis basierend auf Analyse
 
 #### Skill-Discovery
 - [ ] find-skills nach neuen Animations/Design-Skills durchsuchen
@@ -74,8 +83,8 @@ Nicht "solide Websites" sondern das 1% das im Kopf bleibt.
 ---
 
 ## Metriken
-- **Erlebnisse im Lab:** 5 (hero-v001 bis v005)
+- **Erlebnisse im Lab:** 6 (hero-v001 bis v006)
 - **Chris "WOW":** 0 (Ziel: mindestens 1)
-- **Skills aktiv genutzt:** 0 von 6 (Ziel: alle mindestens 1x)
-- **Inspiration-Analysen:** 2 (mersi-architecture.com, DD.NYC) — Ziel: regelmaessig
+- **Skills aktiv genutzt:** 3 von 6 (text-animation, gsap-plugins, awwwards-animations) — hero-v006-a
+- **Inspiration-Analysen:** 4 (mersi-architecture.com, DD.NYC, Aupale Vodka/Locomotive, Unseen Studio 2025)
 - **Bester Chris-Score (extern):** 8/10 (exp-signature-hero)
